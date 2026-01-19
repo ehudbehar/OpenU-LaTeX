@@ -1,0 +1,110 @@
+#\DeclareLyXModule{OpenU Formatting}
+#DescriptionBegin
+#Includes commands and settings for the document layout. Author: Ehud Behar. Updated 2026-Jan-19
+#DescriptionEnd
+#Author: Ehud Behar
+
+Format 66
+
+Requires xcolor,amssymb,enumitem,graphicx
+
+ClassOptions
+  Other "fleqn,leqno,provide=*,bidi=default"
+End
+
+# Choose the engine that will process the .tex file when opened in TeXShop, TeXWorks or TeXstudio
+AddToPreamble
+% !TEX TS-program = lualatex
+EndPreamble
+
+AddToPreamble
+\definecolor{DGray}{RGB}{149,149,149} % Dark Gray
+\definecolor{LGray}{RGB}{216,216,216} % Light Gray
+\definecolor{VDGray}{RGB}{110,110,110} % VeryDarkGray
+EndPreamble
+
+# Defone font sizes
+AddToPreamble
+% Define normal size to be 11.5pt
+\def\normalsize{%
+  \@setfontsize\normalsize{11.5}{17pt}%
+  \abovedisplayskip 11.5pt plus 2.3pt minus 6.9pt
+  \abovedisplayshortskip 0.0pt plus 3.45pt
+  \belowdisplayskip 11.5pt plus 2.3pt minus 6.9pt
+  \belowdisplayshortskip 6.9pt plus 3.45pt minus 3.45pt
+  \let\@listi\@listI
+}%
+% Define small size to be 9.5pt
+\def\small{%
+  \@setfontsize\small{9.5}{14.04pt}%
+  \abovedisplayskip 9.5pt plus 1.9pt minus 5.7pt
+  \abovedisplayshortskip 0.0pt plus 2.85pt
+  \belowdisplayskip 9.5pt plus 1.9pt minus 5.7pt
+  \belowdisplayshortskip 5.7pt plus 2.85pt minus 2.85pt
+  \def\@listi{%
+    \leftmargin\leftmargini
+    \topsep4.16391pt plus 2.08261pt minus 2.08261pt
+    \parsep2.08261pt plus 1.04063pt minus 1.04063pt
+    \itemsep\parsep
+  }%
+}%
+% Define smallr font size; the 'r' stands for "reduced" or "relative". This font size is used only in the headers
+\def\smallr{\@setfontsize\smallr{10pt}{14.782pt}}%
+\def\Huge{\@setfontsize\Huge{30pt}{36pt}}%
+\def\huge{\@setfontsize\huge{26.0975pt}{31.317pt}}%
+\def\Large{\@setfontsize\Large{20.075pt}{22.0pt}}%
+\def\large{\@setfontsize\large{17.063pt}{18.0pt}}%
+EndPreamble
+
+# fontspec and babel commands to select fonts
+AddToPreamble
+% Load fontspec package
+\usepackage{fontspec}
+\defaultfontfeatures{Scale=MatchUppercase, Ligatures=TeX}
+% Glyph em-dash is not available in NarkisimMF, print it en-dash:
+\catcode`—=\active \protected\def—{\char`\--}
+% Use unicode-math package, so math fonts scales to 11.5pt font size
+\usepackage[mathbf=sym]{unicode-math}
+\setmathfont{Cambria} %to do: change this to cambria
+% Make emphasized math also in bold:
+\setmathfont{Latin Modern Math}[version=bold,FakeBold=3]
+% Use Latin Modern Math for blackboard
+\let\mathbb\relax
+\DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}%
+
+% add babel font commands to end of preamble
+\usepackage{etoolbox}
+\AtEndPreamble{%
+\babelfont[english]{rm}
+    [Script=Latin,
+     SizeFeatures={
+         {Size={10-},Scale=0.86956},
+         {Size={9-10},Scale=0.894736},
+         {Size={8-9},Scale=1},
+         {Size={-8}}
+     },
+     BoldFeatures={
+         SizeFeatures={
+             {Size={10-},Scale=0.86956},
+             {Size={9-10},Scale=0.894736},
+             {Size={8-9},Scale=1},
+             {Size={-8}}
+         }
+     }]
+    {Times New Roman}
+% Main Hebrew font (rm family)
+\babelfont[hebrew]{rm}[Script=Hebrew]{NarkisimMF}%
+% Monospace Hebrew font (teletype, tt family)
+\babelfont[hebrew]{tt}[Script=Hebrew]{Courier New}
+% Sans serif Hebrew font (sf family)
+\babelfont[hebrew]{sf}[Script=Hebrew]{Open Sans Hebrew}
+% NarkisTamMF is used in the headers
+\babelfont[hebrew]{narkistam}[Script=Hebrew,BoldFont=NarkisTamMF]{NarkisTamMF}
+\setlocalecaption{hebrew}{part}{כרך}
+\setlocalecaption{hebrew}{chapter}{יחידה}
+\setlocalecaption{hebrew}{contents}{תוכן עניינים ל\partname\ \thepart}
+%  \gappto\captionshebrew{\renewcommand\chaptername{יחידה}}
+%  \gappto\captionshebrew{\renewcommand\partname{כרך}}
+%  \gappto\captionshebrew{\renewcommand\contentsname{תוכן עניינים ל\partname\ \thepart}}
+}
+EndPreamble

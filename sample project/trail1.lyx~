@@ -5,15 +5,21 @@
 \save_transient_properties true
 \origin unavailable
 \textclass book
+\begin_preamble
+\usepackage{fontspec}
+\usepackage{etoolbox}
+
+\AfterPackage{babel}{%
+  \babelfont[hebrew]{rm}[Script=Hebrew]{Arial}%
+}
+\end_preamble
+\options leqno,provide=*,bidi=default
 \use_default_options true
-\begin_modules
-OpenU_formatting
-\end_modules
 \maintain_unincluded_children no
 \language hebrew
 \language_package babel
 \inputencoding utf8-plain
-\fontencoding auto
+\fontencoding default
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -93,21 +99,8 @@ OpenU_formatting
 
 \begin_body
 
-\begin_layout Part
-ניסיון
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset toc
-LatexCommand tableofcontents
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
-הקדמה
+מבוא
 \end_layout
 
 \begin_layout Standard
@@ -144,42 +137,9 @@ LatexCommand tableofcontents
 abc def
 \lang hebrew
 ,
- המשך ש.
- 
-\family typewriter
-בדיקה
-\family default
-.
- 
-\family sans
-בדיקה מספר 2
-\family default
-.
-\end_layout
-
-\begin_layout Section
-מבוא
-\end_layout
-
-\begin_layout Standard
-זחט יכל,
- 
-\begin_inset Formula $x\in\mathbb{R}$
-\end_inset
-
-,
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-y=x^{2}
-\end{equation}
-
-\end_inset
-
-
+ זחט.
 \end_layout
 
 \end_body
 \end_document
+

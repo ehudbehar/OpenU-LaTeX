@@ -181,5 +181,23 @@ y=x^{2}
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+narkistamfamily 
+\backslash
+large בדיקה
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document

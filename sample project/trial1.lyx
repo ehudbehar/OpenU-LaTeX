@@ -15,7 +15,7 @@
 
 % Redefine the headings page style (used on regular pages)
 \renewcommand{\ps@headings}{%
-  \renewcommand{\@oddhead}{\hfill\thepage\  321 \chaptername\ \thechapter}
+  \renewcommand{\@oddhead}{\hfil\textbf{\narkistamfamily{\smallr\textcolor{VDGray}{\rightmark}}\hskip8mm{\large\thepage}}}
   \renewcommand{\@evenhead}{\thepage}%
   \renewcommand{\@oddfoot}{}% 	
   \renewcommand{\@evenfoot}{}%

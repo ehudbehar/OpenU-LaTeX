@@ -5,6 +5,26 @@
 \save_transient_properties true
 \origin unavailable
 \textclass book
+\begin_preamble
+\renewcommand{\ps@plain}{%
+  \renewcommand{\@oddhead}{\hfill\thepage}%
+  \renewcommand{\@evenhead}{\chaptername\ \thechapter\hfill\thepage}%
+  \renewcommand{\@oddfoot}{\hfill\thepage\hfill}%
+  \renewcommand{\@evenfoot}{\hfill\thepage}%
+}
+
+% Redefine the headings page style (used on regular pages)
+\renewcommand{\ps@headings}{%
+  \renewcommand{\@oddhead}{\hfill\thepage\  321 \chaptername\ \thechapter}
+  \renewcommand{\@evenhead}{\thepage}%
+  \renewcommand{\@oddfoot}{}% 	
+  \renewcommand{\@evenfoot}{}%
+}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+
+\pagestyle{headings}
+\end_preamble
 \use_default_options true
 \begin_modules
 OpenU_formatting
@@ -187,16 +207,30 @@ status open
 
 \begin_layout Plain Layout
 
-
+{
 \backslash
 narkistamfamily 
 \backslash
-large בדיקה
+large בדיקה}
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+לורם איפסום
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+לורם איפסום
 \end_layout
 
 \end_body

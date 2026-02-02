@@ -1,6 +1,6 @@
 #\DeclareLyXModule{OpenU Formatting}
 #DescriptionBegin
-#Includes commands and settings for the document layout. Author: Ehud Behar. Updated 2026-Jan-19
+#Includes commands and settings for the document layout. Author: Ehud Behar. Updated 2026-Feb-2
 #DescriptionEnd
 #Author: Ehud Behar
 
@@ -9,7 +9,7 @@ Format 66
 Requires xcolor,amssymb,enumitem,graphicx
 
 ClassOptions
-  Other "fleqn,leqno,provide=*,bidi=default"
+  Other "fleqn,leqno,provide=*,bidi=default,openany"
 End
 
 # Choose the engine that will process the .tex file when opened in TeXShop, TeXWorks or TeXstudio
@@ -103,8 +103,30 @@ AddToPreamble
 \setlocalecaption{hebrew}{part}{כרך}
 \setlocalecaption{hebrew}{chapter}{יחידה}
 \setlocalecaption{hebrew}{contents}{תוכן עניינים ל\partname\ \thepart}
-%  \gappto\captionshebrew{\renewcommand\chaptername{יחידה}}
-%  \gappto\captionshebrew{\renewcommand\partname{כרך}}
-%  \gappto\captionshebrew{\renewcommand\contentsname{תוכן עניינים ל\partname\ \thepart}}
+\renewcommand{\thepage}{\textdir TLT\csname @arabic\endcsname \c@page} %Reverse direction of page numbers
 }
+\renewcommand{\ps@plain}{%
+  \renewcommand{\@oddhead}{\hfill\thepage}%
+  \renewcommand{\@evenhead}{\hfill\thepage}%
+  \renewcommand{\@oddfoot}{plainodd}%
+  \renewcommand{\@evenfoot}{plaineven}%
+}
+
+% ToDo: setup correct headers
+% Redefine the headings page style (used on regular pages)
+\renewcommand{\ps@headings}{%
+  \renewcommand{\@oddhead}{\hfill\thepage\  \chaptername\ \thechapter}
+  \renewcommand{\@evenhead}{\thepage}%
+  \renewcommand{\@oddfoot}{\hfil משהו \hfil}%
+  \renewcommand{\@evenfoot}{\thepage}%
+}
+
+% Customize chapter and section marks
+\renewcommand{\chaptermark}[1]{%
+  \markboth{\thechapter.\ #1}{}%
+}
+\renewcommand{\sectionmark}[1]{%
+  \markright{\thesection\ #1}%
+}
+\pagestyle{headings}
 EndPreamble

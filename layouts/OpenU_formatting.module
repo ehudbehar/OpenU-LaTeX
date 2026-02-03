@@ -65,7 +65,7 @@ AddToPreamble
 \catcode`—=\active \protected\def—{\char`\--}
 % Use unicode-math package, so math fonts scales to 11.5pt font size
 \usepackage[mathbf=sym]{unicode-math}
-\setmathfont{Cambria} %to do: change this to cambria
+\setmathfont{Latin Modern Math} %to do: change this to cambria
 % Make emphasized math also in bold:
 \setmathfont{Latin Modern Math}[version=bold,FakeBold=3]
 % Use Latin Modern Math for blackboard

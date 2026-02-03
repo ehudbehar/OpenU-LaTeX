@@ -1,6 +1,6 @@
 #\DeclareLyXModule{OpenU Formatting}
 #DescriptionBegin
-#Includes commands and settings for the document layout. Author: Ehud Behar. Updated 2026-Feb-2
+#Includes commands and settings for the document layout. Author: Ehud Behar. Updated 2026-Feb-3
 #DescriptionEnd
 #Author: Ehud Behar
 
@@ -105,28 +105,45 @@ AddToPreamble
 \setlocalecaption{hebrew}{contents}{תוכן עניינים ל\partname\ \thepart}
 \renewcommand{\thepage}{\textdir TLT\csname @arabic\endcsname \c@page} %Reverse direction of page numbers
 }
+% Redefine the plain page style (used on chapter opening pages)
 \renewcommand{\ps@plain}{%
-  \renewcommand{\@oddhead}{\hfill\thepage}%
+  \renewcommand{\@oddhead}{\hbox{\vbox{\hfill{\large\thepage}\vskip2mm\hrule}}}
   \renewcommand{\@evenhead}{\hfill\thepage}%
-  \renewcommand{\@oddfoot}{plainodd}%
-  \renewcommand{\@evenfoot}{plaineven}%
+  \renewcommand{\@oddfoot}{}%
+  \renewcommand{\@evenfoot}{}%
 }
 
-% ToDo: setup correct headers
 % Redefine the headings page style (used on regular pages)
 \renewcommand{\ps@headings}{%
-  \renewcommand{\@oddhead}{\hfill\thepage\  \chaptername\ \thechapter}
-  \renewcommand{\@evenhead}{\thepage}%
-  \renewcommand{\@oddfoot}{\hfil משהו \hfil}%
-  \renewcommand{\@evenfoot}{\thepage}%
+  \renewcommand{\@oddhead}{\hbox{\vbox{\hfill{\rightmark\hskip2mm\large\thepage}\vskip1mm\hrule}}}
+  \renewcommand{\@evenhead}{\hbox{\vbox{{\large\thepage}~\leftmark\vskip1mm\hrule}}}
 }
 
 % Customize chapter and section marks
 \renewcommand{\chaptermark}[1]{%
-  \markboth{\thechapter.\ #1}{}%
+  \markboth{\chaptername~\thechapter\hskip0.2cm #1}{}%
 }
 \renewcommand{\sectionmark}[1]{%
-  \markright{\thesection\ #1}%
+  \markright{{\textdir TLT\thesection}~#1}%
 }
 \pagestyle{headings}
+
+% main matter page layout
+\pagewidth=210mm \paperwidth=\pagewidth
+\pageheight=297mm \paperheight=\pageheight
+\textwidth=125mm
+\textheight=220mm
+\marginparsep=7mm
+\marginparwidth=43mm
+\evensidemargin=0cm
+\headheight=22pt
+\topmargin=0mm
+\headsep=10mm
+% apply a twosided layout in which margins are not swapped on alternate pages:
+\oddsidemargin=\evensidemargin
+\@twocolumnfalse
+\@twosidetrue
+% and marginal notes stay always on the same side:
+\@mparswitchfalse
+\@reversemarginfalse
 EndPreamble

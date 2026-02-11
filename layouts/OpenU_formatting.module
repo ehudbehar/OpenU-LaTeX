@@ -1,6 +1,6 @@
 #\DeclareLyXModule{OpenU Formatting}
 #DescriptionBegin
-#Includes commands and settings for the document layout. Author: Ehud Behar. Updated 2026-Feb-3
+#Includes commands and settings for the document layout. Author: Ehud Behar. Updated 2026-Feb-11
 #DescriptionEnd
 #Author: Ehud Behar
 
@@ -150,4 +150,22 @@ AddToPreamble
 % and marginal notes stay always on the same side:
 \@mparswitchfalse
 \@reversemarginfalse
+EndPreamble
+
+# General formatting
+
+AddToPreamble
+% Redefine \emph{...} to be in boldface
+\DeclareTextFontCommand{\emph}{\boldmath\bfseries}
+
+% set paragraph skip to 8pt
+\parskip=8pt plus 2pt minus 2pt
+% no paragraph indentation
+\parindent=0pt
+% glue inserted at end of paragraphs
+\parfillskip=20pt plus 1fil
+
+% Relax the strict rules of line-breaking and paragraph formatting
+\tolerance 9999%
+\emergencystretch 3em%
 EndPreamble

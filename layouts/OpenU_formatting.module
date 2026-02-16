@@ -110,17 +110,15 @@ AddToPreamble
 \newlength\headwidth \headwidth=\dimexpr\textwidth+\marginparsep+\marginparwidth
 
 % Redefine the plain page style (used on chapter opening pages)
-\renewcommand{\ps@plain}{%
-  \renewcommand{\@oddhead}{\hbox{\vbox{\hsize=\headwidth \hfill{\narkistamfamily\large\thepage}\vskip2mm\hrule}}}
-  \renewcommand{\@evenhead}{\hfill\thepage}%
-  \renewcommand{\@oddfoot}{}%
-  \renewcommand{\@evenfoot}{}%
+\def\ps@plain{%
+  \def\@oddhead{\vbox{\hsize=\headwidth \hfill{\narkistamfamily\large\thepage}\vskip1mm\hrule}\hskip\dimexpr-\marginparwidth-\marginparsep}
+  \def\@evenhead{\vbox{\hsize=\headwidth \hfill\thepage\vskip1mm\hrule}\hskip\dimexpr-\marginparwidth-\marginparsep} % chapters headings are not supposed to appear on even pages; we define it just in case
 }
 
 % Redefine the headings page style (used on regular pages)
-\renewcommand{\ps@headings}{%
-  \renewcommand{\@oddhead}{\hbox{\vbox{\hsize=\headwidth \hfill{\narkistamfamily\rightmark\hskip2mm\large\thepage}\vskip1mm\hrule}}}
-  \renewcommand{\@evenhead}{\hbox{\vbox{\hsize=\headwidth \narkistamfamily{\large\thepage}~\leftmark\vskip1mm\hrule}}}
+\def\ps@headings{%
+  \def\@oddhead{\vbox{\hsize=\headwidth \hfill{\narkistamfamily\rightmark\hskip2mm\large\thepage}\vskip1mm\hrule}\hskip\dimexpr-\marginparwidth-\marginparsep}
+  \def\@evenhead{\vbox{\hsize=\headwidth \narkistamfamily{\large\thepage}~\leftmark\vskip1mm\hrule}\hskip\dimexpr-\marginparwidth-\marginparsep}
 }
 
 % Customize chapter and section marks

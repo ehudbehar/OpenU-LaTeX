@@ -1,6 +1,6 @@
 #\DeclareLyXModule{OpenU Formatting}
 #DescriptionBegin
-#Includes commands and settings for the document layout. Author: Ehud Behar. Updated 2026-Feb-11
+#Includes commands and settings for the document layout. Author: Ehud Behar. Updated 2026-Feb-20
 #DescriptionEnd
 #Author: Ehud Behar
 
@@ -106,7 +106,26 @@ AddToPreamble
 \renewcommand{\thepage}{\textdir TLT\csname @arabic\endcsname \c@page} %Reverse direction of page numbers
 }
 
-% Define a new length `\headwidth` that is a total width of the headers:
+% main matter page layout
+\pagewidth=210mm \paperwidth=\pagewidth
+\pageheight=297mm \paperheight=\pageheight
+\textwidth=125mm
+\textheight=220mm
+\marginparsep=7mm
+\marginparwidth=43mm
+\evensidemargin=0cm
+\headheight=22pt
+\topmargin=0mm
+\headsep=10mm
+% apply a twosided layout in which margins are not swapped on alternate pages:
+\oddsidemargin=\evensidemargin
+\@twocolumnfalse
+\@twosidetrue
+% and marginal notes stay always on the same side:
+\@mparswitchfalse
+\@reversemarginfalse
+
+% Define a new length `\headwidth` which is the total width of the headers:
 \newlength\headwidth \headwidth=\dimexpr\textwidth+\marginparsep+\marginparwidth
 
 % Redefine the plain page style (used on chapter opening pages)
@@ -129,25 +148,6 @@ AddToPreamble
   \markright{{\textdir TLT\thesection}~#1}%
 }
 \pagestyle{headings}
-
-% main matter page layout
-\pagewidth=210mm \paperwidth=\pagewidth
-\pageheight=297mm \paperheight=\pageheight
-\textwidth=125mm
-\textheight=220mm
-\marginparsep=7mm
-\marginparwidth=43mm
-\evensidemargin=0cm
-\headheight=22pt
-\topmargin=0mm
-\headsep=10mm
-% apply a twosided layout in which margins are not swapped on alternate pages:
-\oddsidemargin=\evensidemargin
-\@twocolumnfalse
-\@twosidetrue
-% and marginal notes stay always on the same side:
-\@mparswitchfalse
-\@reversemarginfalse
 EndPreamble
 
 # General formatting

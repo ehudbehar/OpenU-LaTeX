@@ -9,7 +9,7 @@ Format 66
 Requires xcolor,amssymb,enumitem,graphicx
 
 ClassOptions
-  Other "fleqn,leqno,provide=*,bidi=basicֿ"
+  Other "fleqn,leqno,provide=*,bidi=default"
 End
 
 # Choose the engine that will process the .tex file when opened in TeXShop, TeXWorks or TeXstudio

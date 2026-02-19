@@ -9,7 +9,7 @@ Format 66
 Requires xcolor,amssymb,enumitem,graphicx
 
 ClassOptions
-  Other "fleqn,leqno,provide=*,bidi=default,openany"
+  Other "fleqn,leqno,provide=*,bidi=basicֿ"
 End
 
 # Choose the engine that will process the .tex file when opened in TeXShop, TeXWorks or TeXstudio
@@ -75,6 +75,15 @@ AddToPreamble
 % add babel font commands to end of preamble
 \usepackage{etoolbox}
 \AtEndPreamble{%
+\babelprovide[main,import=he,onchar=fonts ids]{hebrew}
+% Main Hebrew font (rm family)
+\babelfont[hebrew]{rm}[Script=Hebrew]{NarkisimMF}%
+% Monospace Hebrew font (teletype, tt family)
+\babelfont[hebrew]{tt}[Script=Hebrew]{Courier New}
+% Sans serif Hebrew font (sf family)
+\babelfont[hebrew]{sf}[Script=Hebrew]{Open Sans Hebrew}
+% NarkisTamMF is used in the headers
+\babelfont[hebrew]{narkistam}[Script=Hebrew,BoldFont=NarkisTamMF]{NarkisTamMF}
 \babelfont[english]{rm}
     [Script=Latin,
      SizeFeatures={
@@ -92,14 +101,6 @@ AddToPreamble
          }
      }]
     {Times New Roman}
-% Main Hebrew font (rm family)
-\babelfont[hebrew]{rm}[Script=Hebrew]{NarkisimMF}%
-% Monospace Hebrew font (teletype, tt family)
-\babelfont[hebrew]{tt}[Script=Hebrew]{Courier New}
-% Sans serif Hebrew font (sf family)
-\babelfont[hebrew]{sf}[Script=Hebrew]{Open Sans Hebrew}
-% NarkisTamMF is used in the headers
-\babelfont[hebrew]{narkistam}[Script=Hebrew,BoldFont=NarkisTamMF]{NarkisTamMF}
 \setlocalecaption{hebrew}{part}{כרך}
 \setlocalecaption{hebrew}{chapter}{יחידה}
 \setlocalecaption{hebrew}{contents}{תוכן עניינים ל\partname\ \thepart}

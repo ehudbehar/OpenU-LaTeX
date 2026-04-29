@@ -4,3 +4,6 @@
 ### fonts directory
 - Windows: `C:/Windows/Fonts/` or `C:/Users/〈user_name〉/AppData/Local/Microsoft/Windows/Fonts/`
 - macOS: `/Library/Fonts` or `/Users/〈user_name〉/Library/Fonts`
+
+## To Do
+- [ ] Consider writing custom LaTeX macros to define appearance of titles for chapters, sections, subsections and table of contents

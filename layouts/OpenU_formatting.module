@@ -107,6 +107,10 @@ AddToPreamble
 \setlocalecaption{hebrew}{contents}{תוכן עניינים ל\partname\ \thepart}
 \renewcommand{\thepage}{\textdir TLT\csname @arabic\endcsname \c@page} %Reverse direction of page numbers
 }
+% change numbering of sections and subsections; change part counter with Hebrew numerals
+\renewcommand{\thesection}{\arabic{section}.\thechapter}
+\renewcommand{\thesubsection}{\arabic{subsection}.\thesection}
+\renewcommand{\thepart}{\localecounter{letters}{part}}
 
 % main matter page layout
 \pagewidth=210mm \paperwidth=\pagewidth

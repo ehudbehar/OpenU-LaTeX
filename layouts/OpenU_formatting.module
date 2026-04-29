@@ -152,6 +152,165 @@ AddToPreamble
 \pagestyle{headings}
 EndPreamble
 
+## Titles (chapter,section,subsec etc.) formatting
+AddToPreamble
+%% Titles (chapter,section,subsec etc.) formatting
+% Part title
+\def\@part[#1]#2{%
+  \thispagestyle{empty}
+  \refstepcounter{part}%
+  \markboth{}{}%
+%\AddToHookNext{shipout/background}{\put(\dimexpr .85\paperwidth-4.5cm,-200){\includegraphics[width=4.5cm]{logo.pdf}}}
+  \vspace*{\fill}
+    {\raggedright
+     \interlinepenalty \@M
+     \normalfont
+     \ifnum \c@secnumdepth >-2\relax
+       \narkistamfamily\Huge\bfseries\textcolor{DGray}{\@title}
+       \par
+       \vskip 20\p@
+     \fi
+     \huge\bfseries\textcolor{DGray}{\partname\ \thepart}\par \textcolor{DGray}{יחידות}\par}%
+  \vspace*{\fill}
+\clearpage\thispagestyle{empty}%\input{copyright}
+\newpage
+}
+
+% Chapter title
+\def\@makechapterhead#1{%
+\vspace*{1cm}%
+  {\noindent\normalfont
+      \narkistamfamily\huge\bfseries\textcolor{DGray}{\chaptername\ \thechapter} % < the only change
+        \par\nobreak
+        \vskip -10\p@
+    \interlinepenalty10000
+    #1\par\nobreak
+    \vskip30pt
+  }}
+ 
+% Starred chapter title
+\def\@makeschapterhead#1{%
+  \nointerlineskip % To make schapters and sections be similar in the v direction
+  \vspace*{1cm}%
+  {\noindent\normalfont
+    \interlinepenalty10000
+    \narkistamfamily\huge\bfseries#1\par\nobreak % < the only change
+    \vskip30pt
+  }}
+ 
+% Section title; The only changes are: \narkistam font switch, add a vspace to the toc entry, add a vspace*
+\renewcommand\section{%
+\addtocontents{toc}{\protect\addvspace{5pt}} % adds a vspace to the toc file before every section
+\nointerlineskip %added
+\vspace*{2cm} %added
+\@startsection {section}{1}{\z@}%
+  {0pt} %changed
+  {2.3ex plus .2ex}%
+  {\normalfont\narkistamfamily\Large\bfseries}}
+  
+% Subsection title; Similar to section, the only change is the \narkistam font switch
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+  {-3.25ex\@plus -1ex \@minus -.2ex}%
+  {1.5ex \@plus .2ex}%
+  {\normalfont\narkistamfamily\large\bfseries}} % changed
+
+% Make starred section and starred chapter similar; Copied from the parskip package
+\patchcmd\@startsection
+ {\addvspace\@tempskipa}
+ {\advance\@tempskipa-\parskip\addvspace\@tempskipa}
+ {}{\typeout{Couldn’t patch \string\@startsection}}
+
+% Right align the sections and subsections titles and change the counter numbers color to gray
+\renewcommand{\@seccntformat}[1]{%
+\hbox to 45pt{\textcolor{DGray}{\csname the#1\endcsname}\hss}}
+
+% Table of Contens formatting
+\renewcommand\tableofcontents{%
+\pagestyle{plain}
+\markboth{\@title}{תוכן העניינים}
+% print the title of tableOfContents. Don't use \chapter* as in book.cls so that no \write\stepcounter{chapter} is inserted
+  \nointerlineskip % To make schapters and sections be similar in the v direction
+  \vspace*{1cm}%
+  {\noindent\normalfont
+    \interlinepenalty\@M
+    \narkistamfamily\huge\bfseries \contentsname \par\nobreak % < the only change
+    \vskip20pt
+  }
+  \@starttoc{toc}%
+}
+
+% Lengths used in foramtting toc entries
+\newlength{\tocparskip}      \setlength{\tocparskip}{0pt} % parskip is 0 in toc
+\newlength{\tocbaselineskip} \setlength{\tocbaselineskip}{13.8pt} % baseline skip is different that the main text
+\newlength{\tocsecskip}      \setlength{\tocsecskip}{10pt} % a new length used to make a larger space between chapeters and between sections
+
+% Redefine the starttoc macro
+\def\@starttoc#1{%
+  \begingroup
+  \setlength{\baselineskip}{\tocbaselineskip} \setlength{\parskip}{\tocparskip} % added
+    \makeatletter
+    \@input{\jobname.#1}%
+    \if@filesw
+      \expandafter\newwrite\csname tf@#1\endcsname
+      \immediate\openout \csname tf@#1\endcsname \jobname.#1\relax
+    \fi
+    \@nobreakfalse
+  \endgroup %original def ends here
+  % Add a \clearpage so the toc is on a separate page from the rest of the document
+  \clearpage
+ }
+ 
+% chapter in toc. chaptername added; do it with patchcmd
+\renewcommand*\l@chapter[2]{%
+  \ifnum \c@tocdepth >\m@ne
+    \addpenalty{-\@highpenalty}%
+    \vskip 0.0em \@plus\p@% changed
+    \setlength\@tempdima{1.5em}%
+    \begingroup
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \leavevmode \bfseries
+      \advance\leftskip\@tempdima
+      \hskip -\leftskip
+      \chaptername\ #1\nobreak\hfil
+      \nobreak\hb@xt@\@pnumwidth{\hss #2%
+                                 \kern-\p@\kern\p@}\par
+      \penalty\@highpenalty
+    \endgroup
+  \fi}
+
+% Chapter in toc, only a small change, do it with pacthcmd
+\def\@chapter[#1]#2{%
+\addtocontents{toc}{\protect\addvspace{\tocsecskip}} % adds a vspace to the toc file before every chapter
+  \ifnum \c@secnumdepth >\m@ne
+                       \if@mainmatter
+                         \refstepcounter{chapter}%
+                         \typeout{\@chapapp\space\thechapter.}%
+                         \addcontentsline{toc}{chapter}%
+                         {\thechapter:\ #1}% <<  changed
+                       \else
+                         \addcontentsline{toc}{chapter}{#1}%
+                       \fi
+                    \else
+                      \addcontentsline{toc}{chapter}{#1}%
+                    \fi
+                    \chaptermark{#1}%
+                    \addtocontents{lof}{\protect\addvspace{10\p@}}%
+                    \addtocontents{lot}{\protect\addvspace{10\p@}}%
+                    \if@twocolumn
+                      \@topnewpage[\@makechapterhead{#2}]%
+                    \else
+                      \@makechapterhead{#2}%
+                      \@afterheading
+                    \fi}
+                    
+% Sections and subsections in toc:
+\renewcommand\@dotsep{1000} % wide enough so dots are not printed
+\newlength\tocindent \setlength\tocindent{3em}
+\renewcommand*\l@section{\@dottedtocline{1}{0em}{\tocindent}}
+\renewcommand*\l@subsection{\@dottedtocline{2}{\tocindent}{25pt}}
+EndPreamble
+
 # General formatting
 
 AddToPreamble

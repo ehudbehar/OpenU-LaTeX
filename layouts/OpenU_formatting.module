@@ -332,3 +332,106 @@ AddToPreamble
 \tolerance 9999%
 \emergencystretch 3em%
 EndPreamble
+
+## Text and Figures typed in the margins:
+
+AddToPreamble
+%% Text and Figures typed in the margins
+%Change margin par font size to small:
+\def\@marginparreset{%
+  \reset@font
+  \raggedright\small %<-- Change the font size and make the text ragged right
+  \@setminipage
+}
+EndPreamble
+
+AddToPreamble
+% Floats numbering and captions
+\AtBeginDocument{\renewcommand{\thefigure}{\arabic{figure}}}
+% Load sidenotes package to define marginfigure env.
+\usepackage{sidenotes}
+% Redefine caption style for marginfigures to be similar to regular ones
+\DeclareCaptionStyle{marginfigure}{font=small,labelfont=bf,labelsep=newline,}
+% customise the captions in floats (like figure and tables)
+%\usepackage{caption} not need since sidenots is loaded
+\captionsetup{%
+  singlelinecheck=false,
+  justification=raggedright,
+  font=small,
+  labelfont=bf,
+  labelsep=newline,
+  indention=0pt,
+  skip=0.1\baselineskip,
+}
+EndPreamble
+
+Float
+	Type	   		      marginfigure
+	GuiName			      MarginFigure
+	AllowedPlacement	none
+	AllowsSideways		0
+	AllowsWide		    0
+	Extension		      lof
+	NumberWithin		  chapter
+	Style			        plain
+	ListName		      "List of Figures"
+	ListCommand	    	listoffigures
+  RefPrefix   	  	fig
+	IsPredefined	   	1
+	UsesFloatPkg		  false
+End
+
+# Define a new environment `marginfigure*` for un-numbered figures (mainly portraits of people)
+AddToPreamble
+\newenvironment{marginfigure*}[1][]
+    {
+\marginfigure[#1]
+\selectlanguage{english}
+\captionsetup{labelformat=empty,justification=raggedright}
+    }
+    { 
+\addtocounter{figure}{-1}
+\endmarginfigure
+    }
+EndPreamble
+
+Float
+  Type              marginfigure*
+  GuiName	          marginFigure*
+  AllowedPlacement  none
+  AllowsSideways    0
+  AllowsWide        0
+  Extension         lof
+  NumberWithin      chapter
+  Style             plain
+  ListName          "List of Figures"
+  ListCommand       listoffigures
+  RefPrefix         fig
+  IsPredefined      1
+  UsesFloatPkg      false
+End
+
+InsetLayout Flex:MarginNote
+	LyXType               custom
+	LabelString           MarginNote
+	LatexType             command
+	LatexName             marginalnote
+	Decoration Classic
+	Font
+	  Size                Small
+	EndFont
+	LabelFont
+	  Color               marginlabel
+	  Size                Small
+	EndFont
+	MultiPar              true
+	NeedProtect           true
+	AddToToc              marginalnote
+	IsTocCaption          true
+	Preamble
+	\DeclareRobustCommand{\marginalnote}[1]{\marginpar{%
+	  \textcolor{DGray}{$\blacktriangleleft$}~{#1}%
+	}}
+	EndPreamble
+	ResetsFont true
+End

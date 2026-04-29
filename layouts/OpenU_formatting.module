@@ -1,4 +1,5 @@
 #\DeclareLyXModule{OpenU Formatting}
+#\DeclareCategory{OpenUniversity}
 #DescriptionBegin
 #Includes commands and settings for the document layout. Author: Ehud Behar. Updated 2026-Feb-20
 #DescriptionEnd

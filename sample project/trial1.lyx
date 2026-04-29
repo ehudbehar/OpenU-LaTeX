@@ -10,62 +10,6 @@
 OpenU_formatting
 \end_modules
 \maintain_unincluded_children no
-\begin_local_layout
-Format 111
-Provides amsthm 1 # Prevent autoloading of amsthm package
-# Define Counters
-Counter definition
-    Within         chapter
-End
-
-Counter example
-    Within         chapter
-End
-
-Style Definition
-    Category              Reasoning
-    Margin                Dynamic
-    LatexType             Environment
-    LatexName             definition
-    ResetArgs             1
-    Argument              1
-            LabelString    "Additional Theorem Text"
-            Tooltip        "Additional text appended to the theorem header"
-            IsTocCaption      1
-         Decoration    Minimalistic
-        EndArgument
-    AddToToc              "משפטים והגדרות"
-    IsTocCaption          1
-    LabelSep              xx
-    TopSep                1
-    BottomSep             1
-    LabelType             Static
-    LabelCounter          definition
-    LabelString           "הגדרה \thedefinition"
-    LabelFont
-      Shape               Up
-      Series              Bold
-    EndFont
-    RefPrefix             def
-    Preamble
-\newcounter{definition}
-\counterwithin{definition}{chapter}
-\renewcommand{\thedefinition}{\arabic{definition}.\thechapter}
-\newenvironment{definition}[1][]%
-{%
-  \refstepcounter{definition}%
-  \vskip16pt%
-  \par\hrule\vskip10pt%
-  \noindent\textbf{הגדרה \thedefinition}%
-  \if\relax\detokenize{#1}\relax\else\ (#1)\fi%
-  \hfil\break\nobreak%
-}%
-{%
-  \nobreak\par\vskip8pt\hrule\vskip8pt%
-}
-    EndPreamble
-End
-\end_local_layout
 \language hebrew
 \language_package babel
 \inputencoding utf8-plain

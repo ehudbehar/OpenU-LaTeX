@@ -324,5 +324,242 @@ large בדיקה}
 לורם איפסום
 \end_layout
 
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+יחידוּת הגבול
+\end_layout
+
+\end_inset
+
+ תהי 
+\begin_inset Formula $f$
+\end_inset
+
+ פונקציה המוגדרת בסביבה מנוקבת של 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+.
+ אם יש ל־
+\begin_inset Formula $f$
+\end_inset
+
+ גבול כאשר 
+\begin_inset Formula $x$
+\end_inset
+
+ שואף ל־
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ אז גבול זה הוא יחיד.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+המשך.
+\end_layout
+
+\begin_layout Chapter
+פונקציות רציפות
+\end_layout
+
+\begin_layout Standard
+בפרק הקודם הכרנו את מושג הרציפות של פונקציה בנקודה.
+\end_layout
+
+\begin_layout Standard
+נעבור כעת לדון בפונקציות רציפות בקטע.
+ הרציפות בקטע טומנת בחובה רציפות בכל אחת מנקודות הקטע;
+ וכפי שניווכח בסעיפים הבאים,
+ ניתן להסיק ממנה מסקנות רבות ומעניינות על התנהגות הפונקציה בקטע.
+\end_layout
+
+\begin_layout Corollary
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+leavevmode 
+\backslash
+vspace{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+שכל פולינום הוא פונקציה רציפה בכל נקודה על הישר.
+\end_layout
+
+\begin_layout Enumerate
+כל פונקציה רציונלית רציפה בכל נקודה בתחום הגדרתה.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+המשך.
+\end_layout
+
+\begin_layout Theorem
+ארבע הפונקציות הטריגונומטריות היסודיות 
+\begin_inset Formula $\cos$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\sin$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\tan$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\cot$
+\end_inset
+
+ רציפות בכל נקודה בתחום הגדרתן.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+נוכיח כעת משפט כללי יותר מן הטענה האחרונה,
+ ונקבל את רציפותה של פונקציית ההרכבה של פונקציות רציפות כמסקנה ממנו.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset CommandInset label
+LatexCommand label
+name "thm:functions_composition"
+
+\end_inset
+
+תהיינה 
+\begin_inset Formula $f$
+\end_inset
+
+ ו־
+\begin_inset Formula $g$
+\end_inset
+
+ שתי פונקציות שעבורן מתקיים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $f$
+\end_inset
+
+ רציפה 
+\begin_inset Flex MarginNote
+status open
+
+\begin_layout Plain Layout
+נתון א כולל את ההנחה ש־
+\begin_inset Formula $f$
+\end_inset
+
+ מוגדרת בסביבה של 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+;
+ נתון ב כולל את ההנחה ש־ 
+\begin_inset Formula $g$
+\end_inset
+
+ מוגדרת בסביבה נקובה של 
+\begin_inset Formula $t_{0}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+בנקודה 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+קיים הגבול 
+\begin_inset Formula $\lim_{t\to t_{0}}g\left(t\right)=x_{0}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Theorem
+בתנאים אלה מתקיים:
+\begin_inset Formula 
+\[
+\lim\left(f\circ g\right)\left(t\right)=f\left(x_{0}\right)=\lim_{x\to x_{0}}f\left(x\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כפי שכבר צוין,
+ אפשר להסיק ממשפט 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "thm:functions_composition"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ את העובדה שפעולת ההרכבה בין פונקציות "שומרת" על רציפות.
+\end_layout
+
 \end_body
 \end_document

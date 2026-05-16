@@ -1,0 +1,656 @@
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass book
+\use_default_options true
+\master Infi1Vol2.lyx
+\begin_modules
+OpenU_formatting
+OpenU_Theorems
+\end_modules
+\maintain_unincluded_children no
+\begin_local_layout
+Format 111
+Style Proof
+    CopyStyle             Definition
+    DependsOn             Definition
+    LatexName             proof
+    LabelString           "הוכחה"
+    RefPrefix             prf
+    Preamble
+\newenvironment{proof}[1][]%
+  {%
+    \vskip6pt%
+    \noindent{\bfseries\narkistamfamily הוכחה}%
+    \if\relax\detokenize{#1}\relax\else\ (#1)\fi%
+    \hfil\break%
+  }%
+  {%
+    \par\ignorespacesafterend
+  }%
+    EndPreamble
+End
+\end_local_layout
+\language hebrew
+\language_package babel
+\inputencoding utf8-plain
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format pdf5
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification default
+\crossref_package refstyle
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 33cm
+\paperheight 33mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style hebrew
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\docbook_mathml_version 0
+\end_header
+
+\begin_body
+
+\begin_layout Title
+חשבון אינפיניטיסימלי
+\family roman
+\series medium
+\shape up
+\size largest
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+1
+\end_layout
+
+\begin_layout Author
+גיל אלון
+\end_layout
+
+\begin_layout Date
+
+\numeric on
+2026
+\end_layout
+
+\begin_layout Part
+כרך שלישי
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+הנגזרת
+\end_layout
+
+\begin_layout Standard
+מטרות היחידה
+\end_layout
+
+\begin_layout Itemize
+להכיר את מושג הנגזרת והגדרתו הפורמלית
+\end_layout
+
+\begin_layout Itemize
+לפתח את כללי הגזירה היסודיים
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+clearpage
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+begingroup
+\end_layout
+
+\begin_layout Plain Layout
+  
+\backslash
+pagestyle{empty}
+\end_layout
+
+\begin_layout Plain Layout
+  
+\backslash
+cleardoublepage
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+endgroup
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+הקדמה
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+addcontentsline{toc}{section}{הקדמה}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+החשבון האינפיניטסימלי הוא תולדה של התמודדות ממושכת עם מכלול בעיות פיסיקליות וגיאומטריות שהטרידו את המחשבה המדעית מראשיתה.
+ מתוך שתי בעיות מרכזיות מבין אלה צמח מושג הנגזרת.
+ הבעיה האחת היא מציאת המהירות והתאוצה 
+\emph on
+הרגעיים
+\emph default
+ של גוף נע,
+ כאשר נתון המרחק שעבר הגוף כפונקציה של הזמן.
+\end_layout
+
+\begin_layout Standard
+הבעיה האחרת היא מציאת משיק לעקומה נתונה בנקודה מסוימת עליה.
+ לבעיה גיאומטרית זאת יש השלכות רבות במדע השימושי.
+\end_layout
+
+\begin_layout Standard
+באופטיקה,
+ לדוגמה,
+ כדי לחשב את זווית הפגיעה של קרן אור בעדשה,
+ בנקודה מסוימת,
+ יש לקבוע את כיוונו של המשיק לפני העדשה באותה נקודה.
+ כמו כן,
+ בחקר התנועה של גוף הנע לאורך עקומה,
+ כיוון תנועתו בכל רגע הוא ככיוון המשיק למסלולו בנקודה בה הוא נמצא באותו רגע.
+ בפרק 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:derivative-background"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ נבחן את הדרך לפתרון בעיות אלה וכך נגיע למושג הנגזרת,
+ שהגדרתו מופיעה בתחילת פרק 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:derivative-def"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+רקע למושג הנגזרת
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:derivative-background"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+מהירות
+\end_layout
+
+\begin_layout Question
+גובהו של מגדל הוא
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+180
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+מ'.כדור המושמט מראשו נופל 
+\begin_inset Formula $5t^{2}$
+\end_inset
+
+ מ' ב־
+\begin_inset Formula $t$
+\end_inset
+
+ שניות.
+\end_layout
+
+\begin_layout Enumerate
+מה יהיה גובה הכדור מעל פני הקרקע כעבור 
+\begin_inset Formula $t$
+\end_inset
+
+ שניות?
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+מה יהיה גובה הכדור מעל פני הקרקע כעבור שנייה אחת?
+\end_layout
+
+\begin_layout Enumerate
+מה יהיה גובה הכדור מעל פני הקרקע כעבור שתי שניות?
+\end_layout
+
+\begin_layout Enumerate
+איזה מרחק עובר הכדור בשנייה הראשונה?בשניה השנייה?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Solution
+פתרון לשאלה
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+כדי להקל את הניסוח בהמשך,
+ נגדיר את מושג ההעתק של גוף בתנועה אנכית:
+\end_layout
+
+\begin_layout Definition
+
+\emph on
+ההעתק של גוף הנמצא בתנועה אנכית
+\emph default
+,
+ בפרק הזמן שבית 
+\begin_inset Formula $t_{1}$
+\end_inset
+
+ ל־ 
+\begin_inset Formula $t_{2}$
+\end_inset
+
+ (בהנחה ש־ 
+\begin_inset Formula $t_{1}<t_{2}$
+\end_inset
+
+),
+ הוא ההפרש שבין גובהו ברגע 
+\begin_inset Formula $t_{2}$
+\end_inset
+
+ לגובהו ברגע 
+\begin_inset Formula $t_{1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+הגדרת הנגזרת ומסקנות ראשונות
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:derivative-def"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ערכו המוחלט של ההעתק מבטא את המרחק שעבר הגוף בפרק הזמן הנתון;
+ סימן ההעתק מבטא את מגמת השינוי (מעלה או מטה) שחל במיקום הגוף בפרק זמן זה.
+\end_layout
+
+\begin_layout Question
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\backslash
+leavevmode 
+\backslash
+vspace{-
+\backslash
+baselineskip}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+מהו ההעתק של הכדור בשאלה 1,
+ בפרק הזמן שבין 
+\begin_inset Formula $t_{1}=2$
+\end_inset
+
+ ל־ 
+\begin_inset Formula $t_{2}=3$
+\end_inset
+
+?
+ מהי משמעות הסימן השלילי?
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+מהו ההעתק של הכדור בפרק הזמן שבין 
+\begin_inset Formula $t_{1}$
+\end_inset
+
+ ל־ 
+\begin_inset Formula $t_{2}$
+\end_inset
+
+ (עבור 
+\begin_inset Formula $t_{2}$
+\end_inset
+
+,
+\begin_inset Formula $t_{1}$
+\end_inset
+
+ כלשהם)?
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+אנו מגיעים כעת אל שאלת המפתח של סעיף זה,
+ אשר הטיפול בה היה הצעד הראשון בפיתוחו של החשבון הדיפרנציאלי.
+\end_layout
+
+\begin_layout Standard
+מהי מהירותו של הכדור הנופל 
+\emph on
+ברגע מסוים
+\emph default
+ —
+ למשל,
+ ברגע 
+\begin_inset Formula $t=2$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+שאלה זו אינה פשוטה,
+ שהרי הכדור אינו נופל בקצב קבוע אלא במהירות הולכת וגדלה.
+ יתר על כן,
+ מאחר שבמושג המהירות אנו משתמשים לתיאור היחס שבין ההעתק לבין פרק הזמן שבו עבר הכדור העתק זה,
+ הרי שלמעשה אין בכלל מובן למהירות ברגע מסוים.
+ בכל זאת קיימת בתודעתנו תחושה ברורה,
+ שצריך להיות מובן למושג מעין זה.
+ בדוגמה שלנו —
+ תהיה אשר תהיה 
+\begin_inset Quotes eld
+\end_inset
+
+המהירות הרגעית
+\begin_inset Quotes erd
+\end_inset
+
+,
+ היא חייבת להיות דבר־מה ההולך וגדל עם הזמן.
+ ננסה אפוא להגדיר את המושב 
+\begin_inset Quotes eld
+\end_inset
+
+מהירות רגעית
+\begin_inset Quotes erd
+\end_inset
+
+ בצורה מתקבלת על הדעת,
+ שתתאים לתפיסתנו האינטואיטיבית.
+\end_layout
+
+\begin_layout Standard
+נפתח במושג פשוט בהרבה —
+ מושג המהירות הממוצעת בפרק זמן מסוים.
+ אין כל קושי בהגדרת מושג זה.
+\end_layout
+
+\begin_layout Definition
+
+\emph on
+המהירות הממוצעת של גוף הנמצא בתנועה אנכית
+\emph default
+,
+ בפרק הזמן שבין 
+\begin_inset Formula $t_{1}$
+\end_inset
+
+ ל־ 
+\begin_inset Formula $t_{2}$
+\end_inset
+
+ (בהנחה ש־ 
+\begin_inset Formula $t_{1}<t_{2}$
+\end_inset
+
+) היא:
+\begin_inset Formula 
+\[
+\frac{t_{1}\text{\ ל\ }t_{2}}{t_{2}-t_{1}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+ובקיצור:
+ המהירות הממוצעת היא היחס שבין ההעתק לזמן.
+\end_layout
+
+\end_body
+\end_document

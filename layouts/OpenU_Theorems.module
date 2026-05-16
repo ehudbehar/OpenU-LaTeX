@@ -254,24 +254,10 @@ Style Question
 End
 
 Style Solution
-    Category              Reasoning
-    Margin                Dynamic
-    LatexType             Environment
+    CopyStyle             Example
+    DependsOn             Example
     LatexName             solution
-    LabelType             Above
     LabelCounter          question
-    ResetArgs             1
-    Argument              1
-            LabelString    "Additional Theorem Text"
-            Tooltip        "Additional text appended to the theorem header"
-            IsTocCaption      1
-         Decoration    Minimalistic
-        EndArgument
-    AddToToc              "משפטים והגדרות"
-    IsTocCaption          1
-    LabelSep              xx
-    TopSep                1
-    BottomSep             1
     LabelString           "פתרון \thequestion"
     LabelFont
       Shape               Up

@@ -1,7 +1,7 @@
 #\DeclareLyXModule{OpenU Theorems}
 #\DeclareCategory{OpenUniversity}
 #DescriptionBegin
-#Defines theorem environments in Hebrew. To be used with babel. Author: Ehud Behar. Updated 2026-April-29
+#Defines theorem environments in Hebrew. To be used with babel. Author: Ehud Behar. Updated 2026-May-16
 #DescriptionEnd
 #Author: Ehud Behar
 
@@ -12,11 +12,15 @@ Counter definition
     Within         chapter
 End
 
+Counter question
+    Within         chapter
+End
+
+Counter example
+    Within         chapter
+End
+
 AddToPreamble
-% Create a new counter for thm-like environments, reset every time a new \chapter{...} is started
-\newcounter{definition}[chapter]
-% thm number is printed before chapter number:
-\renewcommand{\thedefinition}{\thechapter.\arabic{definition}}
 EndPreamble
 
 Style Definition
@@ -45,6 +49,10 @@ Style Definition
     EndFont
     RefPrefix             def
     Preamble
+% Create a new counter for thm-like environments, reset every time a new \chapter{...} is started
+\newcounter{definition}[chapter]
+% thm number is printed before chapter number:
+\renewcommand{\thedefinition}{\thechapter.\arabic{definition}}
 % shared thm-like environment:
 \newcommand{\thmblockshared}[3]{%
   \newenvironment{#1}[1][]%
@@ -61,7 +69,7 @@ Style Definition
   }%
 }
 
-% Create a new definition environment using 
+% Create a new definition environment 
 \thmblockshared{definition}{definition}{הגדרה}
     EndPreamble
 End
@@ -142,19 +150,38 @@ Style Proof
 End
 
 Style Example
-    CopyStyle             Definition
-    DependsOn             Definition
+    Category              Reasoning
+    Margin                Dynamic
+    LatexType             Environment
     LatexName             example
-    LabelString           "◀ דוגמה \thedefinition"
+    LabelType             Above
+    LabelCounter          example
+    ResetArgs             1
+    Argument              1
+            LabelString    "Additional Theorem Text"
+            Tooltip        "Additional text appended to the theorem header"
+            IsTocCaption      1
+         Decoration    Minimalistic
+        EndArgument
+    AddToToc              "משפטים והגדרות"
+    IsTocCaption          1
+    LabelSep              xx
+    TopSep                1
+    BottomSep             1
+    LabelString           "◀ דוגמה \theexample"
+    LabelFont
+      Shape               Up
+      Series              Bold
+    EndFont
     RefPrefix             exmpl
-
     Preamble
+\newcounter{example}[chapter]
 \newenvironment{example}[1][]%
   {%
-    \refstepcounter{definition}%
+    \refstepcounter{example}%
     \vskip6pt%
-    \noindent\textcolor{DGray}{$\blacktriangleleft$}\ {\bfseries\narkistamfamily דוגמה \thedefinition}%
-    \if\relax\detokenize{#1}\relax\else{\narkistamfamily:\ #1}\fi%
+    \noindent\textcolor{DGray}{$\blacktriangleleft$}\ {\bfseries\narkistamfamily דוגמה \theexample}%
+    \if\relax\detokenize{#1}\relax\else{\bfseries\narkistamfamily:\ #1}\fi%
     \hfil\break%
   }%
   {%
@@ -164,19 +191,99 @@ Style Example
 End
 
 Style Examples
-    CopyStyle             Definition
-    DependsOn             Definition
+    CopyStyle             Example
+    DependsOn             Example
     LatexName             examples
-    LabelString           "◀ דוגמאות \thedefinition"
+    LabelString           "◀ דוגמאות \theexample"
     RefPrefix             exmpl
 
     Preamble
 \newenvironment{examples}[1][]%
   {%
-    \refstepcounter{definition}%
+    \refstepcounter{example}%
     \vskip6pt%
-    \noindent\textcolor{DGray}{$\blacktriangleleft$}\ {\bfseries\narkistamfamily דוגמאות \thedefinition}%
-    \if\relax\detokenize{#1}\relax\else{\narkistamfamily:\ #1}\fi%
+    \noindent\textcolor{DGray}{$\blacktriangleleft$}\ {\bfseries\narkistamfamily דוגמאות \theexample}%
+    \if\relax\detokenize{#1}\relax\else{\bfseries\narkistamfamily:\ #1}\fi%
+    \hfil\break%
+  }%
+  {%
+    \par\ignorespacesafterend
+  }%
+    EndPreamble
+End
+
+Style Question
+    Category              Reasoning
+    Margin                Dynamic
+    LatexType             Environment
+    LatexName             question
+    LabelType             Above
+    LabelCounter          question
+    ResetArgs             1
+    Argument              1
+            LabelString    "Additional Theorem Text"
+            Tooltip        "Additional text appended to the theorem header"
+            IsTocCaption      1
+         Decoration    Minimalistic
+        EndArgument
+    AddToToc              "משפטים והגדרות"
+    IsTocCaption          1
+    LabelSep              xx
+    TopSep                1
+    BottomSep             1
+    LabelString           "שאלה \thequestion"
+    LabelFont
+      Shape               Up
+      Series              Bold
+    EndFont
+    RefPrefix             questn
+    Preamble
+\newcounter{question}[chapter]
+\newenvironment{question}[1][]%
+  {%
+    \refstepcounter{question}%
+    \vskip6pt%
+    \noindent{\bfseries\narkistamfamily שאלה \thequestion}%
+    \if\relax\detokenize{#1}\relax\else{\bfseries\narkistamfamily:\ #1}\fi%
+    \hfil\break%
+  }%
+  {%
+    \par\ignorespacesafterend
+  }%
+    EndPreamble
+End
+
+Style Solution
+    Category              Reasoning
+    Margin                Dynamic
+    LatexType             Environment
+    LatexName             solution
+    LabelType             Above
+    LabelCounter          question
+    ResetArgs             1
+    Argument              1
+            LabelString    "Additional Theorem Text"
+            Tooltip        "Additional text appended to the theorem header"
+            IsTocCaption      1
+         Decoration    Minimalistic
+        EndArgument
+    AddToToc              "משפטים והגדרות"
+    IsTocCaption          1
+    LabelSep              xx
+    TopSep                1
+    BottomSep             1
+    LabelString           "פתרון \thequestion"
+    LabelFont
+      Shape               Up
+      Series              Bold
+    EndFont
+    RefPrefix             solutn
+    Preamble
+\newenvironment{solution}[1][]%
+  {%
+    \vskip6pt%
+    \noindent{\bfseries\narkistamfamily פתרון \thequestion}%
+    \if\relax\detokenize{#1}\relax\else{\bfseries\narkistamfamily:\ #1}\fi%
     \hfil\break%
   }%
   {%

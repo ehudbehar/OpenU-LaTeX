@@ -7,7 +7,8 @@
 
 Format 66
 
-Requires xcolor,amssymb,enumitem,graphicx
+Requires xcolor,amsmath,amssymb,enumitem,graphicx
+Provides amsthm 1 # Prevent autoloading of amsthm package
 
 ClassOptions
   Other "fleqn,leqno,provide=*,bidi=default"

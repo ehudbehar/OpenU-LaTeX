@@ -12,10 +12,6 @@ Counter definition
     Within         chapter
 End
 
-Counter lemma
-    Within         chapter
-End
-
 AddToPreamble
 % Create a new counter for thm-like environments, reset every time a new \chapter{...} is started
 \newcounter{definition}[chapter]
@@ -56,8 +52,8 @@ Style Definition
     \refstepcounter{#2}%
     \vskip6pt%
     \par\hrule\vskip16pt%
-    \noindent\textbf{#3\ \csname the#2\endcsname}%
-    \if\relax\detokenize{##1}\relax\else\ (##1)\fi%
+    \noindent{\bfseries\narkistamfamily#3\ }\csname the#2\endcsname%
+    \if\relax\detokenize{##1}\relax\else(\bfseries\narkistamfamily\ ##1)\fi%
     \hfil\break\nobreak%
   }%
   {%
@@ -124,3 +120,67 @@ End
 #\thmblockshared{remark}{definition}{הערה}
 #    EndPreamble
 #End
+
+Style Proof
+    CopyStyle             Definition
+    DependsOn             Definition
+    LatexName             proof
+    LabelString           "הוכחה"
+    RefPrefix             prf
+    Preamble
+\newenvironment{proof}[1][]%
+  {%
+    \vskip6pt%
+    \noindent{\bfseries\narkistamfamily הוכחה}%
+    \if\relax\detokenize{#1}\relax\else\ (#1)\fi%
+    \hfil\break%
+  }%
+  {%
+    \par\ignorespacesafterend
+  }%
+    EndPreamble
+End
+
+Style Example
+    CopyStyle             Definition
+    DependsOn             Definition
+    LatexName             example
+    LabelString           "◀ דוגמה \thedefinition"
+    RefPrefix             exmpl
+
+    Preamble
+\newenvironment{example}[1][]%
+  {%
+    \refstepcounter{definition}%
+    \vskip6pt%
+    \noindent\textcolor{DGray}{$\blacktriangleleft$}\ {\bfseries\narkistamfamily דוגמה \thedefinition}%
+    \if\relax\detokenize{#1}\relax\else{\narkistamfamily:\ #1}\fi%
+    \hfil\break%
+  }%
+  {%
+    \par\ignorespacesafterend
+  }%
+    EndPreamble
+End
+
+Style Examples
+    CopyStyle             Definition
+    DependsOn             Definition
+    LatexName             examples
+    LabelString           "◀ דוגמאות \thedefinition"
+    RefPrefix             exmpl
+
+    Preamble
+\newenvironment{examples}[1][]%
+  {%
+    \refstepcounter{definition}%
+    \vskip6pt%
+    \noindent\textcolor{DGray}{$\blacktriangleleft$}\ {\bfseries\narkistamfamily דוגמאות \thedefinition}%
+    \if\relax\detokenize{#1}\relax\else{\narkistamfamily:\ #1}\fi%
+    \hfil\break%
+  }%
+  {%
+    \par\ignorespacesafterend
+  }%
+    EndPreamble
+End

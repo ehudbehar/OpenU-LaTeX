@@ -7,3 +7,4 @@
 
 ## To Do
 - [ ] Consider writing custom LaTeX macros to define appearance of titles for chapters, sections, subsections and table of contents
+- [ ] Calling font NarkisTam Bold doesn't work. Fix it

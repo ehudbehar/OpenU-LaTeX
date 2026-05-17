@@ -143,6 +143,24 @@ End
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\trianglemath}{\tag*{\ensuremath{\triangleright}}}
+{\hfill\triangleright}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FormulaMacro
+\newcommand{\triangletext}{{\parfillskip0pt\hfill\ensuremath{\triangleright}\par}}
+{\text{\triangleright}\hfill}
+\end_inset
+
+
+\end_layout
+
 \begin_layout Title
 חשבון אינפיניטיסימלי
 \family roman

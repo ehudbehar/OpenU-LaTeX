@@ -20,3 +20,4 @@ To add keyboard shortcuts, create a new file named `user.bind` in LyX user direc
 - [ ] Consider writing custom LaTeX macros to define appearance of titles for chapters, sections, subsections and table of contents
 - [ ] Calling font NarkisTam Bold doesn't work. Fix it
 - [ ] `qedtext` inside `enumerate` raises Underfull hbox warning
+- [ ] Consider setting `partopsep` of trivlists to zero: `\partopsep0pt`

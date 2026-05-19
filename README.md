@@ -7,7 +7,7 @@
 
 ### key bindings
 To add keyboard shortcuts, create a new file named `user.bind` in LyX user directory
-- Windows: `~\AppData\Roaming\LyX2.5\bind`
+- Windows: `C:\Users\ehud\AppData\Roaming\LyX2.5\bind`
 - macOS: `/Users/〈user_name〉/Library/Application Support/LyX-2.5/bind/user.bind`
 ```
 \bind "M-minus" "unicode-insert 0x05be" # Ctrl + -
@@ -19,5 +19,4 @@ To add keyboard shortcuts, create a new file named `user.bind` in LyX user direc
 ## To Do
 - [ ] Consider writing custom LaTeX macros to define appearance of titles for chapters, sections, subsections and table of contents
 - [ ] Calling font NarkisTam Bold doesn't work. Fix it
-- [ ] `qedtext` inside `enumerate` raises Underfull hbox warning
 - [ ] Consider setting `partopsep` of trivlists to zero: `\partopsep0pt`

@@ -11,28 +11,6 @@ OpenU_formatting
 OpenU_Theorems
 \end_modules
 \maintain_unincluded_children no
-\begin_local_layout
-Format 111
-Style Proof
-    CopyStyle             Definition
-    DependsOn             Definition
-    LatexName             proof
-    LabelString           "הוכחה"
-    RefPrefix             prf
-    Preamble
-\newenvironment{proof}[1][]%
-  {%
-    \vskip6pt%
-    \noindent{\bfseries\narkistamfamily הוכחה}%
-    \if\relax\detokenize{#1}\relax\else\ (#1)\fi%
-    \hfil\break%
-  }%
-  {%
-    \par\ignorespacesafterend
-  }%
-    EndPreamble
-End
-\end_local_layout
 \language hebrew
 \language_package babel
 \inputencoding utf8-plain

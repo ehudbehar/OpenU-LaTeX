@@ -58,8 +58,8 @@ Style Definition
   \newenvironment{#1}[1][]%
   {%
     \refstepcounter{#2}%
-    \vskip6pt%
-    \par\hrule\vskip16pt%
+    \vskip8pt%
+    \par\hrule\vskip8pt%
     \noindent{\bfseries\narkistamfamily#3\ }\csname the#2\endcsname%
     \if\relax\detokenize{##1}\relax\else(\bfseries\narkistamfamily\ ##1)\fi%
     \par%

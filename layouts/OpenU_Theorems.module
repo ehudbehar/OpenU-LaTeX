@@ -181,18 +181,14 @@ Style Example
     RefPrefix             exmpl
     Preamble
 \newcounter{example}[chapter]
-\DeclareRobustCommand{\exampleqed}{%
-  \ifmmode {\quad\hbox{\exampleqedsymbol}}
-  \else
-    \leavevmode\unskip\penalty9999 \hbox{}\nobreak\hfill
-    \quad\hbox{\exampleqedsymbol}%
-  \fi
-}
-\def\exampleqedsymbol{\leavevmode $\blacktriangleright$}
+\renewcommand{\theexample}{\thechapter.\arabic{example}}
+\def\exampleqedsymbol{\leavevmode$\blacktriangleright$}
 \newenvironment{example}[1][]%
   {%
+    \refstepcounter{example}
     \par\vskip6pt%
-    \pushQED{\exampleqed}%
+    \let\qedsymbol\exampleqedsymbol % local; reverts after \end{example}
+    \pushQED{\qed}%
     \topsep0pt\partopsep0pt\relax
     \trivlist
     \item[\hskip\labelsep
@@ -217,8 +213,10 @@ Style Examples
     Preamble
 \newenvironment{examples}[1][]%
   {%
+    \refstepcounter{example}
     \par\vskip6pt%
-    \pushQED{\exampleqed}%
+    \let\qedsymbol\exampleqedsymbol % local; reverts after \end{example}
+    \pushQED{\qed}%
     \topsep0pt\partopsep0pt\relax
     \trivlist
     \item[\hskip\labelsep

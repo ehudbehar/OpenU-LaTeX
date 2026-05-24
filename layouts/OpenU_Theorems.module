@@ -6,7 +6,7 @@
 #Author: Ehud Behar
 
 Format 66
-Requires amsthm # load package amsthm
+Requires amsthm
 # Define Counters
 Counter definition
     Within         chapter

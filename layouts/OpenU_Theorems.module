@@ -173,7 +173,7 @@ Style Example
     LabelSep              xx
     TopSep                1
     BottomSep             1
-    LabelString           "◀ דוגמה \theexample"
+    LabelString           "דוגמה \theexample ◀"
     LabelFont
       Shape               Up
       Series              Bold
@@ -207,7 +207,7 @@ Style Examples
     CopyStyle             Example
     DependsOn             Example
     LatexName             examples
-    LabelString           "◀ דוגמאות \theexample"
+    LabelString           "דוגמאות \theexample ◀"
     RefPrefix             exmpl
 
     Preamble

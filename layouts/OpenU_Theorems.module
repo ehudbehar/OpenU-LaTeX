@@ -6,7 +6,7 @@
 #Author: Ehud Behar
 
 Format 66
-Provides amsthm 1 # Prevent autoloading of amsthm package
+Requires amsthm # load package amsthm
 # Define Counters
 Counter definition
     Within         chapter
@@ -136,15 +136,20 @@ Style Proof
     LabelString           "הוכחה"
     RefPrefix             prf
     Preamble
-\newenvironment{proof}[1][]%
+\def\qedsymbol{\leavevmode $\square$}
+\renewenvironment{proof}[1][]%
   {%
-    \vskip6pt%
-    \noindent{\bfseries\narkistamfamily הוכחה}%
-    \if\relax\detokenize{#1}\relax\else\ (#1)\fi%
-    \par%
+    \par\vskip6pt%
+    \pushQED{\qed}%
+    \topsep0pt\partopsep0pt\relax
+    \trivlist
+    \item[\hskip\labelsep
+      {\bfseries\narkistamfamily הוכחה%
+       \if\relax\detokenize{#1}\relax\else\ (#1)\fi}]%
+    \hfil\break\ignorespaces
   }%
   {%
-    \par\ignorespacesafterend
+    \popQED\endtrivlist\@endpefalse
   }%
     EndPreamble
 End
@@ -176,19 +181,31 @@ Style Example
     RefPrefix             exmpl
     Preamble
 \newcounter{example}[chapter]
+\DeclareRobustCommand{\exampleqed}{%
+  \ifmmode {\quad\hbox{\exampleqedsymbol}}
+  \else
+    \leavevmode\unskip\penalty9999 \hbox{}\nobreak\hfill
+    \quad\hbox{\exampleqedsymbol}%
+  \fi
+}
+\def\exampleqedsymbol{\leavevmode $\blacktriangleright$}
 \newenvironment{example}[1][]%
   {%
-    \refstepcounter{example}%
-    \vskip6pt%
-    \noindent\textcolor{DGray}{$\blacktriangleleft$}\ {\bfseries\narkistamfamily דוגמה \theexample}%
-    \if\relax\detokenize{#1}\relax\else{\bfseries\narkistamfamily:\ #1}\fi%
-    \par%
+    \par\vskip6pt%
+    \pushQED{\exampleqed}%
+    \topsep0pt\partopsep0pt\relax
+    \trivlist
+    \item[\hskip\labelsep
+      $\blacktriangleleft$~{\bfseries\narkistamfamily דוגמה \theexample%
+       \if\relax\detokenize{#1}\relax\else\ (#1)\fi}]%
+    \hfil\break\ignorespaces
   }%
   {%
-    \par\ignorespacesafterend
+    \popQED\endtrivlist\@endpefalse
   }%
     EndPreamble
 End
+
 
 Style Examples
     CopyStyle             Example
@@ -200,14 +217,17 @@ Style Examples
     Preamble
 \newenvironment{examples}[1][]%
   {%
-    \refstepcounter{example}%
-    \vskip6pt%
-    \noindent\textcolor{DGray}{$\blacktriangleleft$}\ {\bfseries\narkistamfamily דוגמאות \theexample}%
-    \if\relax\detokenize{#1}\relax\else{\bfseries\narkistamfamily:\ #1}\fi%
-    \par%
+    \par\vskip6pt%
+    \pushQED{\exampleqed}%
+    \topsep0pt\partopsep0pt\relax
+    \trivlist
+    \item[\hskip\labelsep
+      $\blacktriangleleft$~{\bfseries\narkistamfamily דוגמאות \theexample%
+       \if\relax\detokenize{#1}\relax\else\ (#1)\fi}]%
+    \hfil\break\ignorespaces
   }%
   {%
-    \par\ignorespacesafterend
+    \popQED\endtrivlist\@endpefalse
   }%
     EndPreamble
 End

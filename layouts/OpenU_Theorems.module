@@ -70,7 +70,7 @@ Style Definition
     \nobreak\par
     \vskip\dimexpr\baselineskip
     \hrule
-    \vskip\dimexpr\parskip
+    \vskip\dimexpr\parskip/2
     \par%
   }%
 }

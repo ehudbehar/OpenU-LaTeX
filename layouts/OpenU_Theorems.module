@@ -236,13 +236,46 @@ Style Examples
     EndPreamble
 End
 
+AddToPreamble
+\newwrite\solutionwrite
+\immediate\openout\solutionwrite=solutionlist.tex
+\newwrite\hintwrite
+\immediate\openout\hintwrite=hintlist.tex
+% Close the output and print the stream inside a chapter
+\AtEndDocument{%
+  \immediate\closeout\hintwrite
+  \immediate\closeout\solutionwrite
+  \chapter*{רמזים ופתרונות לשאלות בכרך \thepart}
+  \section*{רמזים לשאלות ביחידה \thechapter}
+  \input hintlist
+  \section*{פתרונות לשאלות ביחידה \thechapter}
+  \input solutionlist
+}
+
+\protected\def\SolMarginRef#1{%
+	\marginpar{%
+		\leavevmode
+		\rlap{\pdfextension literal direct {0.847 0.847 0.847 rg}{\vrule height 5.8192mm width\marginparwidth depth 4.0747mm}\pdfextension literal direct {0 g}}
+		\hskip4pt#1% 6pt gap from right edge
+	}%
+}
+\protected\def\SolHintMarginRef#1{%
+	\marginpar{%
+		\leavevmode
+		\rlap{\pdfextension literal direct {0.847 0.847 0.847 rg}{\vrule height 4.5mm width\marginparwidth depth 2.6mm}\pdfextension literal direct {0 g}}
+		\hskip4pt#1% 6pt gap from right edge
+	}%
+}
+EndPreamble
+
 Style Question
     Category              Reasoning
     Margin                Dynamic
     LatexType             Environment
     LatexName             question
-    LabelType             Above
+    LabelType             Static
     LabelCounter          question
+    RefPrefix             questn
     ResetArgs             1
     Argument              1
             LabelString    "Additional Theorem Text"
@@ -260,44 +293,113 @@ Style Question
       Shape               Up
       Series              Bold
     EndFont
-    RefPrefix             questn
     Preamble
 \newcounter{question}[chapter]
-\newenvironment{question}[1][]%
-  {%
-    \refstepcounter{question}%
-    \vskip6pt%
-    \noindent{\bfseries\narkistamfamily שאלה \thequestion}%
-    \if\relax\detokenize{#1}\relax\else{\bfseries\narkistamfamily:\ #1}\fi%
-    \par%
+\renewcommand{\thequestion}{\thechapter.\arabic{question}}
+\newenvironment{question}[1][]{%
+  \gdef\exerciseopt{#1}%
+  \refstepcounter{question}%
+  \par\vspace{\parskip}%
+  \noindent{\normalfont\bfseries שאלה \thequestion}%
+  \if\relax\detokenize{#1}\relax\else~{\bfseries(#1)}\fi%
+  \par%
   }%
   {%
-    \par\ignorespacesafterend
+  \label{ques:\thequestion}
+  \SolMarginRef{%
+הפתרון בעמוד \pageref{sol:\thequestion}}
+\par\ignorespacesafterend
   }%
     EndPreamble
 End
 
 Style Solution
-    CopyStyle             Example
-    DependsOn             Example
+    CopyStyle             Question
+    DependsOn             Question
     LatexName             solution
-    LabelCounter          question
+    LabelCounter          ""
     LabelString           "פתרון \thequestion"
-    LabelFont
-      Shape               Up
-      Series              Bold
-    EndFont
     RefPrefix             solutn
     Preamble
-\newenvironment{solution}[1][]%
-  {%
-    \vskip6pt%
-    \noindent{\bfseries\narkistamfamily פתרון \thequestion}%
-    \if\relax\detokenize{#1}\relax\else{\bfseries\narkistamfamily:\ #1}\fi%
-    \par%
+\newenvironment{solutionaux}[2][]{%
+  \par\noindent{\normalfont\bfseries תשובה #2}%
+  \if\relax\detokenize{#1}\relax\else~{\bfseries(#1)}\fi%
+  \par
+}
+{%
+\par\ignorespacesafterend
+}
+
+\NewDocumentEnvironment{solution}{+b}{
+  \immediate\write\solutionwrite{^^J%
+    \detokenize{\begin{solutionaux}}[\exerciseopt]^^J
+    \string{\thequestion\string}^^J%
+    \noexpand\label{sol:\thequestion}^^J%
+    \detokenize{#1}^^J%
+    \noexpand\SolMarginRef{השאלה בעמוד \noexpand\pageref{ques:\thequestion}}^^J%
+    \detokenize{\end{solutionaux}}
   }%
-  {%
-    \par\ignorespacesafterend
+}{%
+\immediate\write\solutionwrite{\noexpand\vspace{\parskip}}
+}
+    EndPreamble
+End
+
+
+
+Style QuestionW/Hint
+    CopyStyle             Question
+    DependsOn             Question
+    LatexName             questionremez
+    LabelString           "שאלה (עם רמז) \thequestion"
+    RefPrefix             questn
+    Preamble
+\newenvironment{questionremez}[1][]{%
+  \gdef\exerciseopt{#1}%
+  \refstepcounter{question}%
+  \par\vspace{\parskip}%
+  \noindent{\normalfont\bfseries שאלה \thequestion}%
+  \if\relax\detokenize{#1}\relax\else~{\bfseries(#1)}\fi%
+  \par%
+  \SolHintMarginRef{רמז בעמוד \pageref{hint:\thequestion}}%
+  \SolHintMarginRef{התשובה בעמוד \pageref{sol:\thequestion}}%
+}%
+{%
+  \label{ques:\thequestion}
+  \par\ignorespacesafterend
+}%
+    EndPreamble
+End
+
+Style Hint
+    CopyStyle             Question
+    DependsOn             Question
+    LatexName             hint
+    LabelCounter          ""
+    LabelString           "רמז \thequestion"
+    RefPrefix             hint
+    Preamble
+\newenvironment{hintaux}[2][]{%
+  \par\noindent{\normalfont\bfseries רמז #2}%
+  \if\relax\detokenize{#1}\relax\else~{\bfseries(#1)}\fi%
+  \par
+}
+{%
+\par\ignorespacesafterend
+}
+
+\NewDocumentEnvironment{hint}{+b}{
+  \immediate\write\hintwrite{^^J%
+    \detokenize{\begin{hintaux}}[\exerciseopt]^^J
+    \string{\thequestion\string}^^J%
+    \noexpand\label{hint:\thequestion}^^J%
+    \detokenize{#1}^^J%
+    \noexpand\SolHintMarginRef{השאלה בעמוד \noexpand\pageref{ques:\thequestion}}^^J%
+    \noexpand\SolHintMarginRef{התשובה בעמוד \noexpand\pageref{sol:\thequestion}}^^J%
+    \detokenize{\end{hintaux}}
   }%
+}{%
+\immediate\write\hintwrite{\noexpand\vspace{\parskip}}
+}
     EndPreamble
 End

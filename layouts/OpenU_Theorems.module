@@ -1,7 +1,7 @@
 #\DeclareLyXModule{OpenU Theorems}
 #\DeclareCategory{OpenUniversity}
 #DescriptionBegin
-#Defines theorem environments in Hebrew. To be used with babel. Author: Ehud Behar. Updated 2026-May-24
+#Defines theorem environments in Hebrew. To be used with babel. Author: Ehud Behar. Updated 2026-June-1
 #DescriptionEnd
 #Author: Ehud Behar
 

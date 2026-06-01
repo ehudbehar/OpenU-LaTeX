@@ -73,18 +73,31 @@ AddToPreamble
 \let\mathbb\relax
 \DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}%
 
+\babelfont[hebrew]{rm}[
+  Script=Hebrew,
+%  Path =./fonts/,
+  ItalicFont=narkisimmf-bold.TTF,
+  BoldFont=narkisimmf-bold.TTF
+]{narkisimmf-medium.TTF}
+\babelfont[hebrew]{narkistam}[
+  Script=Hebrew,
+%  Path=./fonts/,
+  BoldFont=Narkiss_Tam_Bold.otf
+]{Narkiss_Tam_Regular.otf}
+
+
 % add babel font commands to end of preamble
 \usepackage{etoolbox}
 \AtEndPreamble{%
 \babelprovide[main,import=he,onchar=fonts ids]{hebrew}
 % Main Hebrew font (rm family)
-\babelfont[hebrew]{rm}[Script=Hebrew]{NarkisimMF}%
+\babelfont[hebrew]{rm}[Script=Hebrew,UprightFont=narkisimmf-medium.TTF,BoldFont=narkisimmf-bold.TTF]{NarkisimMF}%
 % Monospace Hebrew font (teletype, tt family)
 \babelfont[hebrew]{tt}[Script=Hebrew]{Courier New}
 % Sans serif Hebrew font (sf family)
 \babelfont[hebrew]{sf}[Script=Hebrew]{Open Sans Hebrew}
 % NarkisTamMF is used in the headers
-\babelfont[hebrew]{narkistam}[Script=Hebrew,BoldFont=NarkisTamMF]{NarkisTamMF}
+\babelfont[hebrew]{narkistam}[Script=Hebrew,Scale=0.968,UprightFont=Narkiss_Tam_Regular.otf,BoldFont=Narkiss_Tam_Bold.otf]{NarkisTamMF}
 \babelfont[english]{rm}
     [Script=Latin,
      SizeFeatures={

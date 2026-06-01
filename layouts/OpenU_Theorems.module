@@ -142,7 +142,7 @@ Style Proof
     LabelString           "הוכחה"
     RefPrefix             prf
     Preamble
-\def\qedsymbol{\leavevmode $\square$}
+\def\qedsymbol{\leavevmode\textcolor{DGray}{$\square$}}
 \renewenvironment{proof}[1][]%
   {%
     \par\vskip6pt%
@@ -188,7 +188,7 @@ Style Example
     Preamble
 \newcounter{example}[chapter]
 \renewcommand{\theexample}{\thechapter.\arabic{example}}
-\def\exampleqedsymbol{\leavevmode$\blacktriangleright$}
+\def\exampleqedsymbol{\leavevmode\textcolor{DGray}{$\blacktriangleleft$}}
 \newenvironment{example}[1][]%
   {%
     \refstepcounter{example}
@@ -198,7 +198,7 @@ Style Example
     \topsep0pt\partopsep0pt\relax
     \trivlist
     \item[\hskip\labelsep
-      $\blacktriangleleft$~{\bfseries\narkistamfamily דוגמה \theexample%
+      \textcolor{DGray}{$\blacktriangleleft$}~{\bfseries\narkistamfamily דוגמה \theexample%
        \if\relax\detokenize{#1}\relax\else\ (#1)\fi}]%
     \hfil\break\ignorespaces
   }%
@@ -226,7 +226,7 @@ Style Examples
     \topsep0pt\partopsep0pt\relax
     \trivlist
     \item[\hskip\labelsep
-      $\blacktriangleleft$~{\bfseries\narkistamfamily דוגמאות \theexample%
+      \textcolor{DGray}{$\blacktriangleleft$}~{\bfseries\narkistamfamily דוגמאות \theexample%
        \if\relax\detokenize{#1}\relax\else\ (#1)\fi}]%
     \hfil\break\ignorespaces
   }%

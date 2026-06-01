@@ -1,13 +1,13 @@
 #\DeclareLyXModule{OpenU Formatting}
 #\DeclareCategory{OpenUniversity}
 #DescriptionBegin
-#Includes commands and settings for the document layout. Author: Ehud Behar. Updated 2026-May-16
+#Includes commands and settings for the document layout. Author: Ehud Behar. Updated 2026-June-1
 #DescriptionEnd
 #Author: Ehud Behar
 
 Format 66
 
-Requires xcolor,amsmath,amssymb,enumitem,graphicx,amsthm
+Requires xcolor,amsmath,amssymb,enumitem,graphicx
 
 ClassOptions
   Other "fleqn,leqno,provide=*,bidi=default"

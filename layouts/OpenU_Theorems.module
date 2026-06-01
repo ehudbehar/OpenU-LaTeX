@@ -188,7 +188,7 @@ Style Example
     Preamble
 \newcounter{example}[chapter]
 \renewcommand{\theexample}{\thechapter.\arabic{example}}
-\def\exampleqedsymbol{\leavevmode\textcolor{DGray}{$\blacktriangleleft$}}
+\def\exampleqedsymbol{\leavevmode\textcolor{DGray}{$\blacktriangleright$}}
 \newenvironment{example}[1][]%
   {%
     \refstepcounter{example}

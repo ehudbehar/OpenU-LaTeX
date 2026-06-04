@@ -73,19 +73,6 @@ AddToPreamble
 \let\mathbb\relax
 \DeclareMathAlphabet{\mathbb}{U}{msb}{m}{n}%
 
-\babelfont[hebrew]{rm}[
-  Script=Hebrew,
-%  Path =./fonts/,
-  ItalicFont=narkisimmf-bold.TTF,
-  BoldFont=narkisimmf-bold.TTF
-]{narkisimmf-medium.TTF}
-\babelfont[hebrew]{narkistam}[
-  Script=Hebrew,
-%  Path=./fonts/,
-  BoldFont=Narkiss_Tam_Bold.otf
-]{Narkiss_Tam_Regular.otf}
-
-
 % add babel font commands to end of preamble
 \usepackage{etoolbox}
 \AtEndPreamble{%

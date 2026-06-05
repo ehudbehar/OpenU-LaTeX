@@ -18,6 +18,8 @@ To add keyboard shortcuts, create a new file named `user.bind` in LyX user direc
 
 ## To Do
 - [ ] Consider writing custom LaTeX macros to define appearance of titles for chapters, sections, subsections and table of contents
-- [ ] Calling font NarkisTam Bold doesn't work. There are few new fonts in overleaf temp project. Implement to our project
+- [ ] Share with Gil Alon the overleaf project that uses fonts
 - [ ] Consider setting `partopsep` of trivlists to zero: `\partopsep0pt`
-- [ ] Create LyX styles from latex macros in `detokenize.tex` in overleaf temp project, for solutions and questions referencing
+- [ ] Make vertical skip of display equations and itemize envs shorter, or even zero
+- [ ] Consider using `KeepEmpty 1` in all theorem envs
+- [ ] `OutlinerName` is not defined for margin figure and `משפטים והגדרות`. fix it

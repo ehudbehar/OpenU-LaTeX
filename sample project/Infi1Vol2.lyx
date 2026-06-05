@@ -673,7 +673,7 @@ endgroup
 \end_layout
 
 \begin_layout Standard
-בךרך כלל נסמן קבוצות באותיות לטיניות גדולות –
+בדרך כלל נסמן קבוצות באותיות לטיניות גדולות –
 \family roman
 \series medium
 \shape up
@@ -935,7 +935,7 @@ qedhere
 .
 \end_layout
 
-\begin_layout Question
+\begin_layout QuestionW/Hint
 \begin_inset ERT
 status open
 
@@ -982,6 +982,17 @@ status open
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Hint
+היזכרו בהגדרה.
+\end_layout
+
 \begin_layout Standard
 \begin_inset Separator plain
 \end_inset
@@ -1084,7 +1095,7 @@ Natural Numbers
 
 \end_layout
 
-\begin_layout Question
+\begin_layout QuestionW/Hint
 כיצד יש לכתוב בכתיב מתמטי:
  
 \begin_inset Quotes eld
@@ -1099,6 +1110,75 @@ Natural Numbers
 \end_inset
 
 ?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Hint
+רמז לשאלה
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\numeric on
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+2
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\numeric off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+בפרק ראשון.
 \end_layout
 
 \begin_layout Standard

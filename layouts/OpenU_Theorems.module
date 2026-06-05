@@ -1,7 +1,7 @@
 #\DeclareLyXModule{OpenU Theorems}
 #\DeclareCategory{OpenUniversity}
 #DescriptionBegin
-#Defines theorem environments in Hebrew. To be used with babel. Author: Ehud Behar. Updated 2026-June-1
+#Defines theorem environments in Hebrew. To be used with babel. Author: Ehud Behar. Updated 2026-June-5
 #DescriptionEnd
 #Author: Ehud Behar
 
@@ -62,8 +62,8 @@ Style Definition
 \par
 \hrule
 \vskip\dimexpr\parskip/2
-    \noindent{\bfseries\narkistamfamily#3\ }\csname the#2\endcsname%
-    \if\relax\detokenize{##1}\relax\else{\bfseries\narkistamfamily\ ##1}\fi%
+    \noindent{\bfseries\narkistamfamily#3\ \csname the#2\endcsname}%
+    \if\relax\detokenize{##1}\relax\else{\bfseries\narkistamfamily\ (##1)}\fi%
     \newline%
   }%
   {%

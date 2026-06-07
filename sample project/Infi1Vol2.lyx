@@ -143,14 +143,14 @@ status open
 
 \begin_layout Plain Layout
 \align center
-יט סיון ה'תשפו
+כב סיון ה'תשפו
 \end_layout
 
 \begin_layout Plain Layout
 \align center
 
 \numeric on
-24
+7
 \numeric off
  ביוני 
 \numeric on
@@ -289,7 +289,7 @@ placement document
 alignment document
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -332,7 +332,7 @@ placement document
 alignment document
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
@@ -527,10 +527,24 @@ Gottfried Wilhelm Leibnitz (1646--1716)
 המספרים הממשיים
 \end_layout
 
-\begin_layout Section*
-מטרות היחידה
+\begin_layout Goals
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+לשים לב שה 
+\lang english
+bullet
+\lang hebrew
+־ים בתוך הסביבה של מטרות היחידה ולא מחוצה לה.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
 \begin_layout Itemize
 להכיר מושגי יסוד בשפה המתמטית.
 \end_layout
@@ -556,60 +570,8 @@ Gottfried Wilhelm Leibnitz (1646--1716)
 להוכיח קיום שורשים בעזרת אקסיומת השלמות.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Separator plain
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-כרגע משתמשים בקוד לטקס ישיר,
- אמצא לזה פתרון
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\backslash
-clearpage
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-begingroup
-\end_layout
-
-\begin_layout Plain Layout
-  
-\backslash
-pagestyle{empty}
-\end_layout
-
-\begin_layout Plain Layout
-  
-\backslash
-cleardoublepage
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-endgroup
-\end_layout
-
-\end_inset
-
+\end_deeper
+\begin_layout Goals
 
 \end_layout
 

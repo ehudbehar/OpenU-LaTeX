@@ -1,7 +1,7 @@
 #\DeclareLyXModule{OpenU Formatting}
 #\DeclareCategory{OpenUniversity}
 #DescriptionBegin
-#Includes commands and settings for the document layout. Author: Ehud Behar. Updated 2026-June-4
+#Includes commands and settings for the document layout. Author: Ehud Behar. Updated 2026-June-7
 #DescriptionEnd
 #Author: Ehud Behar
 
@@ -435,4 +435,34 @@ InsetLayout Flex:MarginNote
 	}}
 	EndPreamble
 	ResetsFont true
+End
+
+Style Goals
+	Category              Sectioning
+	Margin                Dynamic
+	ToggleIndent          Never
+	LabelSep              ""
+	ParSkip               0.4
+	TopSep                1.3
+	BottomSep             0.7
+	ParSep                0.7
+	LatexName ChapterGoals
+	LatexType Environment
+	KeepEmpty 1
+	LabelType Above
+	LabelString "מטרות היחידה"
+	LabelFont
+	    Family Roman
+	    Series Bold
+	    Size Larger
+	EndFont
+	EndLabelType Static
+	EndLabelString "(מעבר עמוד)  ↡"
+	Preamble
+\newenvironment{ChapterGoals}
+  {\section*{מטרות היחידה}
+  \addcontentsline{toc}{section}{מטרות היחידה}
+  }
+  {\clearpage}
+	EndPreamble
 End

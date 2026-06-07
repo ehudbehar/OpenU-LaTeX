@@ -230,7 +230,7 @@ AddToPreamble
 
 % Table of Contens formatting
 \renewcommand\tableofcontents{%
-\pagestyle{plain}
+\thispagestyle{plain}
 \markboth{\@title}{תוכן העניינים}
 % print the title of tableOfContents. Don't use \chapter* as in book.cls so that no \write\stepcounter{chapter} is inserted
   \nointerlineskip % To make schapters and sections be similar in the v direction
@@ -251,6 +251,7 @@ AddToPreamble
 % Redefine the starttoc macro
 \def\@starttoc#1{%
   \begingroup
+  \pagestyle{plain}
   \setlength{\baselineskip}{\tocbaselineskip} \setlength{\parskip}{\tocparskip} % added
     \makeatletter
     \@input{\jobname.#1}%

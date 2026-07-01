@@ -1,7 +1,7 @@
 #\DeclareLyXModule{OpenU Formatting}
 #\DeclareCategory{OpenUniversity}
 #DescriptionBegin
-#Includes commands and settings for the document layout. Author: Ehud Behar. Updated 2026-June-7
+#Includes commands and settings for the document layout. Author: Ehud Behar. Updated 2026-July-1
 #DescriptionEnd
 #Author: Ehud Behar
 
@@ -136,22 +136,22 @@ AddToPreamble
 
 % Redefine the plain page style (used on chapter opening pages)
 \def\ps@plain{%
-  \def\@oddhead{\vbox{\hsize=\headwidth \hfill{\narkistamfamily\large\thepage}\vskip1mm\hrule}\hskip\dimexpr-\marginparwidth-\marginparsep}
-  \def\@evenhead{\vbox{\hsize=\headwidth \hfill\thepage\vskip1mm\hrule}\hskip\dimexpr-\marginparwidth-\marginparsep} % chapters headings are not supposed to appear on even pages; we define it just in case
+  \def\@oddhead{\vbox{\hsize=\headwidth \hfill{\narkistamfamily\bfseries\large\thepage}\vskip1mm\hrule}\hskip\dimexpr-\marginparwidth-\marginparsep}
+  \def\@evenhead{\vbox{\hsize=\headwidth \hfill{\narkistamfamily\bfseries\large\thepage}\vskip1mm\hrule}\hskip\dimexpr-\marginparwidth-\marginparsep}
 }
 
 % Redefine the headings page style (used on regular pages)
 \def\ps@headings{%
-  \def\@oddhead{\vbox{\hsize=\headwidth \hfill{\narkistamfamily\rightmark\hskip2mm\large\thepage}\vskip1mm\hrule}\hskip\dimexpr-\marginparwidth-\marginparsep}
-  \def\@evenhead{\vbox{\hsize=\headwidth \narkistamfamily{\large\thepage}~\leftmark\vskip1mm\hrule}\hskip\dimexpr-\marginparwidth-\marginparsep}
+  \def\@oddhead{\vbox{\hsize=\headwidth \hfill{\narkistamfamily\bfseries\pdfextension literal direct {0.58431 0.58431 0.58431 rg}\rightmark\pdfextension literal direct {0 g}\hskip2.3mm\large\thepage}\vskip1mm\hrule}\hskip\dimexpr-\marginparwidth-\marginparsep}
+  \def\@evenhead{\vbox{\hsize=\headwidth \narkistamfamily\bfseries{\large\thepage}\hskip2.3mm\pdfextension literal direct {0.58431 0.58431 0.58431 rg}\leftmark\pdfextension literal direct {0 g}\vskip1mm\hrule}\hskip\dimexpr-\marginparwidth-\marginparsep}
 }
 
 % Customize chapter and section marks
 \renewcommand{\chaptermark}[1]{%
-  \markboth{\chaptername~\thechapter\hskip0.2cm #1}{}%
+  \markboth{\chaptername~\thechapter\hskip2.1mm #1}{}%
 }
 \renewcommand{\sectionmark}[1]{%
-  \markright{{\textdir TLT\thesection}~#1}%
+  \markright{{\textdir TLT\thesection}\hskip2.1mm#1}%
 }
 \pagestyle{headings}
 EndPreamble

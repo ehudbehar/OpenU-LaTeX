@@ -1,7 +1,7 @@
 #\DeclareLyXModule{OpenU Theorems}
 #\DeclareCategory{OpenUniversity}
 #DescriptionBegin
-#Defines theorem environments in Hebrew. To be used with babel. Author: Ehud Behar. Updated 2026-June-5
+#Defines theorem environments in Hebrew. To be used with babel. Author: Ehud Behar. Updated 2026-July-1
 #DescriptionEnd
 #Author: Ehud Behar
 
@@ -256,14 +256,14 @@ AddToPreamble
 	\marginpar{%
 		\leavevmode
 		\rlap{\pdfextension literal direct {0.847 0.847 0.847 rg}{\vrule height 5.8192mm width\marginparwidth depth 4.0747mm}\pdfextension literal direct {0 g}}
-		\hskip4pt#1% 6pt gap from right edge
+		\hskip4pt#1% 4pt gap from right edge
 	}%
 }
 \protected\def\SolHintMarginRef#1{%
 	\marginpar{%
 		\leavevmode
 		\rlap{\pdfextension literal direct {0.847 0.847 0.847 rg}{\vrule height 4.5mm width\marginparwidth depth 2.6mm}\pdfextension literal direct {0 g}}
-		\hskip4pt#1% 6pt gap from right edge
+		\hskip4pt#1% 4pt gap from right edge
 	}%
 }
 EndPreamble

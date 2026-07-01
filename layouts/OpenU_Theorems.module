@@ -62,8 +62,8 @@ Style Definition
 \par
 \hrule
 \vskip\dimexpr\parskip/2
-    \noindent{\bfseries\narkistamfamily#3\ \csname the#2\endcsname}%
-    \if\relax\detokenize{##1}\relax\else{\bfseries\narkistamfamily\ (##1)}\fi%
+    \noindent{\narkistamfamily\bfseries#3\ \csname the#2\endcsname}%
+    \if\relax\detokenize{##1}\relax\else{\narkistamfamily\bfseries\ (##1)}\fi%
     \newline%
   }%
   {%
@@ -150,7 +150,7 @@ Style Proof
     \topsep0pt\partopsep0pt\relax
     \trivlist
     \item[\hskip\labelsep
-      {\bfseries\narkistamfamily הוכחה%
+      {\narkistamfamily\bfseries הוכחה%
        \if\relax\detokenize{#1}\relax\else\ (#1)\fi}]%
     \hfil\break\ignorespaces
   }%
@@ -198,7 +198,7 @@ Style Example
     \topsep0pt\partopsep0pt\relax
     \trivlist
     \item[\hskip\labelsep
-      \textcolor{DGray}{$\blacktriangleleft$}~{\bfseries\narkistamfamily דוגמה \theexample%
+      \textcolor{DGray}{$\blacktriangleleft$}~{\narkistamfamily\bfseries דוגמה \theexample%
        \if\relax\detokenize{#1}\relax\else\ (#1)\fi}]%
     \hfil\break\ignorespaces
   }%
@@ -226,7 +226,7 @@ Style Examples
     \topsep0pt\partopsep0pt\relax
     \trivlist
     \item[\hskip\labelsep
-      \textcolor{DGray}{$\blacktriangleleft$}~{\bfseries\narkistamfamily דוגמאות \theexample%
+      \textcolor{DGray}{$\blacktriangleleft$}~{\narkistamfamily\bfseries דוגמאות \theexample%
        \if\relax\detokenize{#1}\relax\else\ (#1)\fi}]%
     \hfil\break\ignorespaces
   }%
@@ -300,8 +300,8 @@ Style Question
   \gdef\exerciseopt{#1}%
   \refstepcounter{question}%
   \par\vspace{\parskip}%
-  \noindent{\normalfont\bfseries שאלה \thequestion}%
-  \if\relax\detokenize{#1}\relax\else~{\bfseries(#1)}\fi%
+  \noindent{\narkistamfamily\bfseries שאלה \thequestion}%
+  \if\relax\detokenize{#1}\relax\else~{\narkistamfamily\bfseries(#1)}\fi%
   \par%
   }%
   {%
@@ -322,8 +322,8 @@ Style Solution
     RefPrefix             solutn
     Preamble
 \newenvironment{solutionaux}[2][]{%
-  \par\noindent{\normalfont\bfseries תשובה #2}%
-  \if\relax\detokenize{#1}\relax\else~{\bfseries(#1)}\fi%
+  \par\noindent{\narkistamfamily\bfseries תשובה #2}%
+  \if\relax\detokenize{#1}\relax\else~{\narkistamfamily\bfseries(#1)}\fi%
   \par
 }
 {%
@@ -358,8 +358,8 @@ Style QuestionW/Hint
   \gdef\exerciseopt{#1}%
   \refstepcounter{question}%
   \par\vspace{\parskip}%
-  \noindent{\normalfont\bfseries שאלה \thequestion}%
-  \if\relax\detokenize{#1}\relax\else~{\bfseries(#1)}\fi%
+  \noindent{\narkistamfamily\bfseries שאלה \thequestion}%
+  \if\relax\detokenize{#1}\relax\else~{\narkistamfamily\bfseries(#1)}\fi%
   \par%
   \SolHintMarginRef{רמז בעמוד \pageref{hint:\thequestion}}%
   \SolHintMarginRef{התשובה בעמוד \pageref{sol:\thequestion}}%
@@ -380,8 +380,8 @@ Style Hint
     RefPrefix             hint
     Preamble
 \newenvironment{hintaux}[2][]{%
-  \par\noindent{\normalfont\bfseries רמז #2}%
-  \if\relax\detokenize{#1}\relax\else~{\bfseries(#1)}\fi%
+  \par\noindent{\narkistamfamily\bfseries רמז #2}%
+  \if\relax\detokenize{#1}\relax\else~{\narkistamfamily\bfseries(#1)}\fi%
   \par
 }
 {%

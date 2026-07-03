@@ -258,7 +258,7 @@ AddToPreamble
 \vskip-8pt %controls vertical placement
   \hbox{%
     \rlap{\pdfextension literal direct {0.847 0.847 0.847 rg}%
-    {\vrule height 5.8192mm width\marginparwidth depth 4.0747mm}
+    {\vrule height 5.92mm width\marginparwidth depth 3.5mm}
     \pdfextension literal direct {0 g}}%
     \hskip4pt #1} % 4pt gap from right edge
   }%
@@ -270,13 +270,13 @@ AddToPreamble
 \vskip-8pt %controls vertical placement
   \hbox{%
     \rlap{\pdfextension literal direct {0.847 0.847 0.847 rg}%
-      {\vrule height 4.5mm width\marginparwidth depth 2.6mm}%
+      {\vrule height 3.83mm width\marginparwidth depth 1.76mm}%
       \pdfextension literal direct {0 g}}%
     \hskip4pt #1}
-  \vskip2pt % controls vertical distance between the two gray rectangles
+  \vskip1.55mm % controls vertical distance between the two gray rectangles
   \hbox{%
     \rlap{\pdfextension literal direct {0.847 0.847 0.847 rg}%
-      {\vrule height 4.5mm width\marginparwidth depth 2.6mm}%
+      {\vrule height 3.83mm width\marginparwidth depth 1.76mm}%
       \pdfextension literal direct {0 g}}%
     \hskip4pt #2}%
 }%

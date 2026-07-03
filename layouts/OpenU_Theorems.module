@@ -1,7 +1,7 @@
 #\DeclareLyXModule{OpenU Theorems}
 #\DeclareCategory{OpenUniversity}
 #DescriptionBegin
-#Defines theorem environments in Hebrew. To be used with babel. Author: Ehud Behar. Updated 2026-July-1
+#Defines theorem environments in Hebrew. To be used with babel. Author: Ehud Behar. Updated 2026-July-3
 #DescriptionEnd
 #Author: Ehud Behar
 
@@ -252,19 +252,34 @@ AddToPreamble
   \input solutionlist
 }
 
-\protected\def\SolMarginRef#1{%
-	\marginpar{%
-		\leavevmode
-		\rlap{\pdfextension literal direct {0.847 0.847 0.847 rg}{\vrule height 5.8192mm width\marginparwidth depth 4.0747mm}\pdfextension literal direct {0 g}}
-		\hskip4pt#1% 4pt gap from right edge
-	}%
+% macro to typeset a single marginpar (used in `question` and `answer` envs)
+\protected\def\SingleMarginRef#1{%
+\marginpar{%
+\vskip-8pt %controls vertical placement
+  \hbox{%
+    \rlap{\pdfextension literal direct {0.847 0.847 0.847 rg}%
+    {\vrule height 5.8192mm width\marginparwidth depth 4.0747mm}
+    \pdfextension literal direct {0 g}}%
+    \hskip4pt #1} % 4pt gap from right edge
+  }%
 }
-\protected\def\SolHintMarginRef#1{%
-	\marginpar{%
-		\leavevmode
-		\rlap{\pdfextension literal direct {0.847 0.847 0.847 rg}{\vrule height 4.5mm width\marginparwidth depth 2.6mm}\pdfextension literal direct {0 g}}
-		\hskip4pt#1% 4pt gap from right edge
-	}%
+
+% macro to typeset two marginpars (used in `questionremez` and `hint` envs)
+\protected\def\DoubleMarginRefs#1#2{%
+\marginpar{%
+\vskip-8pt %controls vertical placement
+  \hbox{%
+    \rlap{\pdfextension literal direct {0.847 0.847 0.847 rg}%
+      {\vrule height 4.5mm width\marginparwidth depth 2.6mm}%
+      \pdfextension literal direct {0 g}}%
+    \hskip4pt #1}
+  \vskip2pt % controls vertical distance between the two gray rectangles
+  \hbox{%
+    \rlap{\pdfextension literal direct {0.847 0.847 0.847 rg}%
+      {\vrule height 4.5mm width\marginparwidth depth 2.6mm}%
+      \pdfextension literal direct {0 g}}%
+    \hskip4pt #2}%
+}%
 }
 EndPreamble
 
@@ -303,11 +318,10 @@ Style Question
   \noindent{\narkistamfamily\bfseries שאלה \thequestion}%
   \if\relax\detokenize{#1}\relax\else~{\narkistamfamily\bfseries(#1)}\fi%
   \par%
+  \SingleMarginRef{הפתרון בעמוד \pageref{sol:\thequestion}}
   }%
   {%
   \label{ques:\thequestion}
-  \SolMarginRef{%
-הפתרון בעמוד \pageref{sol:\thequestion}}
 \par\ignorespacesafterend
   }%
     EndPreamble
@@ -322,8 +336,8 @@ Style Solution
     RefPrefix             solutn
     Preamble
 \newenvironment{solutionaux}[2][]{%
-  \par\noindent{\narkistamfamily\bfseries תשובה #2}%
-  \if\relax\detokenize{#1}\relax\else~{\narkistamfamily\bfseries(#1)}\fi%
+  \par\noindent{\normalfont\bfseries תשובה #2}%
+  \if\relax\detokenize{#1}\relax\else~{\bfseries(#1)}\fi%
   \par
 }
 {%
@@ -335,8 +349,8 @@ Style Solution
     \detokenize{\begin{solutionaux}}[\exerciseopt]^^J
     \string{\thequestion\string}^^J%
     \noexpand\label{sol:\thequestion}^^J%
+    \noexpand\SingleMarginRef{השאלה בעמוד \noexpand\pageref{ques:\thequestion}}^^J%
     \detokenize{#1}^^J%
-    \noexpand\SolMarginRef{השאלה בעמוד \noexpand\pageref{ques:\thequestion}}^^J%
     \detokenize{\end{solutionaux}}
   }%
 }{%
@@ -361,8 +375,7 @@ Style QuestionW/Hint
   \noindent{\narkistamfamily\bfseries שאלה \thequestion}%
   \if\relax\detokenize{#1}\relax\else~{\narkistamfamily\bfseries(#1)}\fi%
   \par%
-  \SolHintMarginRef{רמז בעמוד \pageref{hint:\thequestion}}%
-  \SolHintMarginRef{התשובה בעמוד \pageref{sol:\thequestion}}%
+\DoubleMarginRefs{רמז בעמוד \pageref{hint:\thequestion}}{התשובה בעמוד \pageref{sol:\thequestion}}
 }%
 {%
   \label{ques:\thequestion}
@@ -380,8 +393,8 @@ Style Hint
     RefPrefix             hint
     Preamble
 \newenvironment{hintaux}[2][]{%
-  \par\noindent{\narkistamfamily\bfseries רמז #2}%
-  \if\relax\detokenize{#1}\relax\else~{\narkistamfamily\bfseries(#1)}\fi%
+  \par\noindent{\normalfont\bfseries רמז #2}%
+  \if\relax\detokenize{#1}\relax\else~{\bfseries(#1)}\fi%
   \par
 }
 {%
@@ -393,9 +406,9 @@ Style Hint
     \detokenize{\begin{hintaux}}[\exerciseopt]^^J
     \string{\thequestion\string}^^J%
     \noexpand\label{hint:\thequestion}^^J%
+    {\DoubleMarginRefs{השאלה בעמוד \pageref{ques:\thequestion}}{התשובה בעמוד \pageref{sol:\thequestion}}}
     \detokenize{#1}^^J%
-    \noexpand\SolHintMarginRef{השאלה בעמוד \noexpand\pageref{ques:\thequestion}}^^J%
-    \noexpand\SolHintMarginRef{התשובה בעמוד \noexpand\pageref{sol:\thequestion}}^^J%
+^^J%
     \detokenize{\end{hintaux}}
   }%
 }{%

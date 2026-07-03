@@ -21,5 +21,7 @@ To add keyboard shortcuts, create a new file named `user.bind` in LyX user direc
 - [ ] Share with Gil Alon the overleaf project that uses fonts
 - [ ] Consider setting `partopsep` of trivlists to zero: `\partopsep0pt`
 - [ ] Make vertical skip of display equations and itemize envs shorter, or even zero
-- [ ] Consider using `KeepEmpty 1` in all theorem envs
+- [v] `KeepEmpty 1` in all theorem envs
 - [ ] `OutlinerName` is not defined for margin figure and `משפטים והגדרות`. fix it
+- [ ] Verify `vskip`'s in `\SingleMarginRef` and `\DoubleMarginRefs` using tikzmark
+- [ ] Check gray rectangle height, depth and width using Adobe Reader

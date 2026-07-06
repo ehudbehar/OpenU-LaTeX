@@ -472,7 +472,7 @@ Style "Section* in ToC"
 	CopyStyle	Section*
 	LaTeXName SectionToC
 	EndLabelType Static
-	EndLabelString "(יופיע בתוכן עניינים)    "
+	EndLabelString "(יופיע בתוכן העניינים)    "
 	Preamble
 	\newcommand{\SectionToC}[1]{
 	  \section*{#1}%

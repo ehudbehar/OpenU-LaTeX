@@ -168,7 +168,7 @@ Style Example
     LatexName             example
     LabelType             Above
     LabelCounter          example
-    Keep Empty            1 # allow to leave a paragraph empty
+    KeepEmpty            1 # allow to leave a paragraph empty
     ResetArgs             1
     Argument              1
             LabelString    "Additional Theorem Text"
@@ -293,7 +293,7 @@ Style Question
     LabelType             Static
     LabelCounter          question
     RefPrefix             questn
-    Keep Empty            1 # allow to leave a paragraph empty
+    KeepEmpty            1 # allow to leave a paragraph empty
     ResetArgs             1
     Argument              1
             LabelString    "Additional Theorem Text"

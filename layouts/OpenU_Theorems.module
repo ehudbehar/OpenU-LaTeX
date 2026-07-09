@@ -1,7 +1,7 @@
 #\DeclareLyXModule{OpenU Theorems}
 #\DeclareCategory{OpenUniversity}
 #DescriptionBegin
-#Defines theorem environments in Hebrew. To be used with babel. Author: Ehud Behar. Updated 2026-July-3
+#Defines theorem environments in Hebrew. To be used with babel. Author: Ehud Behar. Updated 2026-July-9
 #DescriptionEnd
 #Author: Ehud Behar
 
@@ -142,17 +142,26 @@ Style Proof
     LatexName             proof
     LabelString           "הוכחה"
     RefPrefix             prf
+    Argument 1
+      Mandatory 0
+      LabelString    "כותרת חלופית"
+      Tooltip        "'כותרת מותאמת אישית במקום 'הוכחה"
+      IsTocCaption      1
+      Decoration    Conglomerate
+      Font
+        Series Bold
+      EndFont
+    EndArgument
     Preamble
 \def\qedsymbol{\leavevmode\textcolor{DGray}{$\square$}}
-\renewenvironment{proof}[1][]%
+\renewenvironment{proof}[1][הוכחה]%
   {%
     \par\vskip6pt%
     \pushQED{\qed}%
     \topsep0pt\partopsep0pt\relax
     \trivlist
     \item[\hskip\labelsep
-      {\narkistamfamily\bfseries הוכחה%
-       \if\relax\detokenize{#1}\relax\else\ (#1)\fi}]%
+      {\narkistamfamily\bfseries #1}]%
     \hfil\break\ignorespaces
   }%
   {%

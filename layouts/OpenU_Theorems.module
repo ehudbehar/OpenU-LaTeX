@@ -263,34 +263,53 @@ AddToPreamble
   \input solutionlist
 }
 
+% macro that guarantees that the margin reference is anchored on the baseline of the LAST line of the surrounding environment, no matter how that body ended (hmode or vmode).
+\newcommand\@MarginAnchor[1]{%
+  \ifhmode
+    #1%
+  \else
+    \@tempskipa\lastskip
+    \@tempdima\prevdepth
+    \ifdim\@tempdima<\z@ \@tempdima\z@ \fi % guard against \prevdepth = -1000pt
+    \vskip-\@tempskipa
+    \kern-\@tempdima
+    #1%
+    \kern\@tempdima
+    \vskip\@tempskipa
+  \fi}
+
 % macro to typeset a single marginpar (used in `question` and `answer` envs)
 \protected\def\SingleMarginRef#1{%
-\marginpar{%
-\vskip-8pt %controls vertical placement
-  \hbox{%
-    \rlap{\pdfextension literal direct {0.847 0.847 0.847 rg}%
-    {\vrule height 5.92mm width\marginparwidth depth 3.5mm}
-    \pdfextension literal direct {0 g}}%
-    \hskip4pt #1} % 4pt gap from right edge
-  }%
+  \@MarginAnchor{\marginpar{%
+    \setbox\z@\vbox{%
+      \hbox{%
+        \rlap{\pdfextension literal direct {0.847 0.847 0.847 rg}%
+          {\vrule height 5.92mm width\marginparwidth depth 3.5mm}%
+          \pdfextension literal direct {0 g}}%
+        \hskip4pt #1}%
+    }%
+    \vskip-\ht\z@\relax
+    \box\z@}}%
 }
 
 % macro to typeset two marginpars (used in `questionremez` and `hint` envs)
 \protected\def\DoubleMarginRefs#1#2{%
-\marginpar{%
-\vskip-8pt %controls vertical placement
-  \hbox{%
-    \rlap{\pdfextension literal direct {0.847 0.847 0.847 rg}%
-      {\vrule height 3.83mm width\marginparwidth depth 1.76mm}%
-      \pdfextension literal direct {0 g}}%
-    \hskip4pt #1}
-  \vskip1.55mm % controls vertical distance between the two gray rectangles
-  \hbox{%
-    \rlap{\pdfextension literal direct {0.847 0.847 0.847 rg}%
-      {\vrule height 3.83mm width\marginparwidth depth 1.76mm}%
-      \pdfextension literal direct {0 g}}%
-    \hskip4pt #2}%
-}%
+  \@MarginAnchor{\marginpar{%
+    \setbox\z@\vbox{%
+      \hbox{%
+        \rlap{\pdfextension literal direct {0.847 0.847 0.847 rg}%
+          {\vrule height 3.83mm width\marginparwidth depth 1.76mm}%
+          \pdfextension literal direct {0 g}}%
+        \hskip4pt #1}%
+      \vskip1.55mm
+      \hbox{%
+        \rlap{\pdfextension literal direct {0.847 0.847 0.847 rg}%
+          {\vrule height 3.83mm width\marginparwidth depth 1.76mm}%
+          \pdfextension literal direct {0 g}}%
+        \hskip4pt #2}%
+    }%
+    \vskip-\ht\z@\relax
+    \box\z@}}%
 }
 EndPreamble
 
@@ -327,13 +346,13 @@ Style Question
   \gdef\exerciseopt{#1}%
   \refstepcounter{question}%
   \par\vspace{\parskip}%
-  \noindent{\narkistamfamily\bfseries שאלה \thequestion}%
+  \noindent{\narkistamfamily\bfseries \tikzmark{b}שאלה \thequestion}%
   \if\relax\detokenize{#1}\relax\else~{\narkistamfamily\bfseries(#1)}\fi%
   \par%
-  \SingleMarginRef{הפתרון בעמוד \pageref{sol:\thequestion}}
   }%
   {%
-  \label{ques:\thequestion}
+  \SingleMarginRef{הפתרון בעמוד \pageref{sol:\thequestion}}
+\label{ques:\thequestion}
 \par\ignorespacesafterend
   }%
     EndPreamble
@@ -356,18 +375,17 @@ Style Solution
 \par\ignorespacesafterend
 }
 
-\NewDocumentEnvironment{solution}{+b}{
+\NewDocumentEnvironment{solution}{+b}{%
   \immediate\write\solutionwrite{^^J%
     \detokenize{\begin{solutionaux}}[\exerciseopt]^^J
     \string{\thequestion\string}^^J%
     \noexpand\label{sol:\thequestion}^^J%
+    \detokenize{#1}%
     \noexpand\SingleMarginRef{השאלה בעמוד \noexpand\pageref{ques:\thequestion}}^^J%
-    \detokenize{#1}^^J%
-    \detokenize{\end{solutionaux}}
+^^J%
+    \detokenize{\end{solutionaux}}%
   }%
-}{%
-\immediate\write\solutionwrite{\noexpand\vspace{\parskip}}
-}
+}{\immediate\write\solutionwrite{\noexpand\vspace{\parskip}}}
     EndPreamble
 End
 
@@ -384,12 +402,12 @@ Style QuestionW/Hint
   \gdef\exerciseopt{#1}%
   \refstepcounter{question}%
   \par\vspace{\parskip}%
-  \noindent{\narkistamfamily\bfseries שאלה \thequestion}%
+  \noindent{\narkistamfamily\bfseries \tikzmark{a}שאלה \thequestion}%
   \if\relax\detokenize{#1}\relax\else~{\narkistamfamily\bfseries(#1)}\fi%
   \par%
-\DoubleMarginRefs{רמז בעמוד \pageref{hint:\thequestion}}{התשובה בעמוד \pageref{sol:\thequestion}}
 }%
 {%
+  \DoubleMarginRefs{רמז בעמוד \pageref{hint:\thequestion}}{התשובה בעמוד \pageref{sol:\thequestion}\tikzmark{answerline}}
   \label{ques:\thequestion}
   \par\ignorespacesafterend
 }%
@@ -413,18 +431,16 @@ Style Hint
 \par\ignorespacesafterend
 }
 
-\NewDocumentEnvironment{hint}{+b}{
+\NewDocumentEnvironment{hint}{+b}{%
   \immediate\write\hintwrite{^^J%
     \detokenize{\begin{hintaux}}[\exerciseopt]^^J
     \string{\thequestion\string}^^J%
     \noexpand\label{hint:\thequestion}^^J%
-    {\DoubleMarginRefs{השאלה בעמוד \pageref{ques:\thequestion}}{התשובה בעמוד \pageref{sol:\thequestion}}}
-    \detokenize{#1}^^J%
+    \detokenize{#1}%
+    \noexpand\DoubleMarginRefs{השאלה בעמוד \noexpand\pageref{ques:\thequestion}}{התשובה בעמוד \noexpand\pageref{sol:\thequestion}}^^J%
 ^^J%
-    \detokenize{\end{hintaux}}
+    \detokenize{\end{hintaux}}%
   }%
-}{%
-\immediate\write\hintwrite{\noexpand\vspace{\parskip}}
-}
+}{\immediate\write\hintwrite{\noexpand\vspace{\parskip}}}
     EndPreamble
 End

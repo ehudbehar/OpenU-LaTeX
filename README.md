@@ -26,3 +26,15 @@ To add keyboard shortcuts, create a new file named `user.bind` in LyX user direc
 - [ ] Verify `vskip`'s in `\SingleMarginRef` and `\DoubleMarginRefs` using tikzmark
 - [ ] Check gray rectangle width using Adobe Reader
 - [ ] רמז and תשובה are not in narkistam font
+
+### August 5th 2026
+There is a problem with the following case:
+```tex
+\begin{theorem}
+\begin{enumerate}
+  \item Show that ...
+  \item item two
+\end{theorem}
+\end{exercise}
+```
+The item is in the same line as the theorem head. To avoid that, egreg proposed [a solution](https://tex.stackexchange.com/a/122025/). It works for theorems, but not for `proof`. Check why. Either way, implement this code in the layouts file.

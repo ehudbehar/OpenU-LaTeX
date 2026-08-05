@@ -1,7 +1,7 @@
 #\DeclareLyXModule{OpenU Theorems}
 #\DeclareCategory{OpenUniversity}
 #DescriptionBegin
-#Defines theorem environments in Hebrew. To be used with babel. Author: Ehud Behar. Updated 2026-August-3
+#Defines theorem environments in Hebrew, built on amsthm. To be used with babel. Author: Ehud Behar. Updated 2026-August-5
 #DescriptionEnd
 #Author: Ehud Behar
 
@@ -21,6 +21,141 @@ Counter example
 End
 
 AddToPreamble
+%%% ==================================================================
+%%%  Shared infrastructure for every theorem-like environment.
+%%%
+%%%  Module AddToPreamble content becomes part of the text class
+%%%  preamble, which LyX emits BEFORE the loop over the layouts a given
+%%%  document actually uses.  So everything defined here is guaranteed
+%%%  to exist by the time any Style preamble below is expanded, no
+%%%  matter which subset of the styles the document happens to use.
+%%%  (DependsOn would not be enough: LyX resolves it only one level.)
+%%% ==================================================================
+
+% ---- counters (reset at every \chapter) ---------------------------
+% These live here rather than in the Style preambles because
+% \newtheorem{x}[definition]{...} needs c@definition to exist already.
+\newcounter{definition}[chapter]
+\renewcommand{\thedefinition}{\thechapter.\arabic{definition}}
+\newcounter{example}[chapter]
+\renewcommand{\theexample}{\thechapter.\arabic{example}}
+\newcounter{question}[chapter]
+\renewcommand{\thequestion}{\thechapter.\arabic{question}}
+
+% ---- end-of-block symbols -----------------------------------------
+% Defined here so that `examples` never depends on `example` having
+% been emitted, and `proof` never depends on anything at all.
+\def\qedsymbol{\leavevmode\textcolor{DGray}{$\square$}}
+\def\exampleqedsymbol{\leavevmode\textcolor{DGray}{$\blacktriangleright$}}
+
+% ---- geometry of the ruled blocks ---------------------------------
+% \thmrulesep is measured rule <-> nearest BASELINE (head baseline at
+% the top, last body baseline at the bottom), not rule <-> ink.
+\newlength\thmrulesep    \setlength\thmrulesep{12pt}
+\newlength\thmruleskip   \setlength\thmruleskip{17pt}  % outside the rules
+\newlength\thmrulewidth  \setlength\thmrulewidth{0.4pt}
+
+% ---- head styles --------------------------------------------------
+% The 8th argument, \newline, is the whole trick: amsthm turns it into
+%   \thm@headsep\z@skip \def\thmheadnl{\newline}
+% which routes the head through \deferred@thm@head.  The head is then
+% boxed into \@labels and released only when the body's first paragraph
+% really starts, so we are still in VERTICAL mode when the body is
+% scanned -- and a \par in vertical mode is a no-op.  That is what makes
+% a blank line between the head and the body harmless, for every
+% environment at once.  Nothing below needs to know about it.
+\newtheoremstyle{hebnarkis}{0pt}{0pt}{}{0pt}
+  {\narkistamfamily\bfseries}{}{\newline}
+  {\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
+
+\newtheoremstyle{hebnarkismark}{0pt}{0pt}{}{0pt}
+  {\narkistamfamily\bfseries}{}{\newline}
+  {\textcolor{DGray}{$\blacktriangleleft$}~\thmname{#1}\thmnumber{ #2}\thmnote{ (#3)}}
+
+% Same, but the note is typeset bare rather than parenthesised.  Used by
+% hintaux/solutionaux, which are unnumbered and receive the question
+% number as their note.
+\newtheoremstyle{hebplain}{0pt}{0pt}{}{0pt}
+  {\normalfont\bfseries}{}{\newline}
+  {\thmname{#1}\thmnumber{ #2}\thmnote{ #3}}
+
+% ---- rule frame ---------------------------------------------------
+% Top: an \hrule sets \prevdepth to -1000pt, which suppresses interline
+% glue.  Overriding it with \baselineskip-\thmrulesep makes TeX compute
+% that glue as \thmrulesep-\ht(head line), so rule -> head baseline comes
+% out at exactly \thmrulesep whatever the head's height turns out to be
+% -- no measuring, and it self-corrects if the head font changes.
+% \@topsep must be \parskip (not 0pt): \deferred@thm@head issues
+% \addvspace\@topsep followed by \addvspace{-\parskip}, and those two
+% have to cancel or they land between the rule and the head and offset
+% the arithmetic above by one \parskip.
+% Bottom: the mirror image.  Drop whatever trailing glue the body left
+% (a list's \topsep, a display's \belowdisplayskip, \@endparenv's zero)
+% with \vskip-\lastskip, then kern by \thmrulesep minus the last line's
+% depth, so last baseline -> rule is \thmrulesep regardless of
+% descenders.  Same arithmetic as \@MarginAnchor further down, mirrored.
+\def\thmframe@open{%
+  \par \addvspace{\thmruleskip}%
+  \hrule height\thmrulewidth
+  \prevdepth\dimexpr\baselineskip-\thmrulesep\relax
+  \@topsep\parskip
+  \@beginparpenalty\@M}          % the top rule may not be orphaned
+\def\thmframe@close{%
+  \par
+  \@tempskipa\lastskip \vskip-\@tempskipa
+  \@tempdima\prevdepth \ifdim\@tempdima<\z@ \@tempdima\z@ \fi
+  \kern\dimexpr\thmrulesep-\@tempdima\relax
+  \nobreak                       % nor the bottom rule from the last line
+  \hrule height\thmrulewidth
+  \addvspace{\thmruleskip}}
+
+% ---- factories ----------------------------------------------------
+% Nothing below this point sets a font, forces a line break, or touches
+% \@topsep: head typesetting lives entirely in the styles above, and
+% vertical space around the ruled family entirely in the frame above.
+% \refstepcounter is gone too -- amsthm does it -- so \label placed
+% immediately after \begin{...} still points at the right number, and
+% \qedhere still works.
+
+% ruled family:  \NewThmBlock{<env>}{<counter>}{<head text>}
+\newcommand\NewThmBlock[3]{%
+  \theoremstyle{hebnarkis}%
+  \newtheorem{#1@thm}[#2]{#3}%
+  \newenvironment{#1}[1][]%
+    {\thmframe@open\begin{#1@thm}[##1]}%
+    {\end{#1@thm}\thmframe@close}}
+
+% QED family:  \NewThmQED{<env>}{<counter>}{<head text>}{<symbol macro>}
+\newcommand\NewThmQED[4]{%
+  \theoremstyle{hebnarkismark}%
+  \newtheorem{#1@thm}[#2]{#3}%
+  \newenvironment{#1}[1][]%
+    {\let\qedsymbol#4\pushQED{\qed}\begin{#1@thm}[##1]}%
+    {\popQED\end{#1@thm}}}
+
+% back-matter family:  \NewAuxBlock{<env>}{<head text>}
+% signature [<exercise option>]{<question number>}, unchanged, so the
+% \write templates in Solution and Hint keep working verbatim.
+% The empty-argument test is your own \detokenize idiom from the previous
+% code rather than \IfBlankTF: the latter is not in the LaTeX kernel of
+% TeX Live 2022 and earlier, so it would silently break on older installs.
+\newcommand\NewAuxBlock[2]{%
+  \theoremstyle{hebplain}%
+  \newtheorem*{#1@thm}{#2}%
+  \NewDocumentEnvironment{#1}{O{} m}%
+    {\begin{#1@thm}[##2\if\relax\detokenize{##1}\relax\else~(##1)\fi]}%
+    {\end{#1@thm}}}
+
+% question family:  \NewQuestionEnv{<env>}{<head text>}{<margin-ref code>}
+% Note the end-code order -- margin reference, THEN \label, THEN \end.
+% \label deposits a whatsit on the vertical list, after which \lastskip
+% reads 0pt and \@MarginAnchor's correction silently does nothing.
+\newcommand\NewQuestionEnv[3]{%
+  \theoremstyle{hebnarkis}%
+  \newtheorem{#1@thm}[question]{#2}%
+  \newenvironment{#1}[1][]%
+    {\gdef\exerciseopt{##1}\begin{#1@thm}[##1]}%
+    {#3\label{ques:\thequestion}\end{#1@thm}}}
 EndPreamble
 
 Style Definition
@@ -50,34 +185,7 @@ Style Definition
     EndFont
     RefPrefix             def
     Preamble
-% Create a new counter for thm-like environments, reset every time a new \chapter{...} is started
-\newcounter{definition}[chapter]
-% thm number is printed before chapter number:
-\renewcommand{\thedefinition}{\thechapter.\arabic{definition}}
-% shared thm-like environment:
-\newcommand{\thmblockshared}[3]{%
-  \newenvironment{#1}[1][]%
-  {%
-    \refstepcounter{#2}%
-\vskip\dimexpr\baselineskip
-\par
-\hrule
-\vskip\dimexpr\parskip/2
-    \noindent{\narkistamfamily\bfseries#3\ \csname the#2\endcsname}%
-    \if\relax\detokenize{##1}\relax\else{\narkistamfamily\bfseries\ (##1)}\fi%
-    \newline%
-  }%
-  {%
-    \nobreak\par
-    \vskip\dimexpr\baselineskip
-    \hrule
-    \vskip\dimexpr\parskip/2
-    \par%
-  }%
-}
-
-% Create a new definition environment 
-\thmblockshared{definition}{definition}{הגדרה}
+\NewThmBlock{definition}{definition}{הגדרה}
     EndPreamble
 End
 
@@ -88,7 +196,7 @@ Style Theorem
     LabelString           "משפט \thedefinition"
     RefPrefix             thm
     Preamble
-\thmblockshared{theorem}{definition}{משפט}
+\NewThmBlock{theorem}{definition}{משפט}
     EndPreamble
 End
 
@@ -99,7 +207,7 @@ Style Lemma
     LabelString           "למה \thedefinition"
     RefPrefix             lemma
     Preamble
-\thmblockshared{lemma}{definition}{למה}
+\NewThmBlock{lemma}{definition}{למה}
     EndPreamble
 End
 
@@ -110,7 +218,7 @@ Style Claim
     LabelString           "טענה \thedefinition"
     RefPrefix             claim
     Preamble
-\thmblockshared{claim}{definition}{טענה}
+\NewThmBlock{claim}{definition}{טענה}
     EndPreamble
 End
 
@@ -121,7 +229,7 @@ Style Corollary
     LabelString           "מסקנה \thedefinition"
     RefPrefix             cor
     Preamble
-\thmblockshared{corollary}{definition}{מסקנה}
+\NewThmBlock{corollary}{definition}{מסקנה}
     EndPreamble
 End
 
@@ -132,7 +240,7 @@ End
 #    LabelString           "הערה \thedefinition"
 #    RefPrefix             rmrk
 #    Preamble
-#\thmblockshared{remark}{definition}{הערה}
+#\NewThmBlock{remark}{definition}{הערה}
 #    EndPreamble
 #End
 
@@ -153,20 +261,22 @@ Style Proof
       EndFont
     EndArgument
     Preamble
-\def\qedsymbol{\leavevmode\textcolor{DGray}{$\square$}}
+% proof is deliberately NOT built by a factory: its optional argument
+% replaces the head instead of being appended as a parenthesised note.
+% It therefore calls \deferred@thm@head directly -- the very mechanism the
+% `\newline' head space reaches for every other environment here, so it
+% gains the same immunity to a blank line after \begin{proof}.
+% \@topsep / \@topsepadd must be set AFTER \trivlist, which initialises
+% them from \topsep / \partopsep; with no \item in play that first pair is
+% never read.  \qedsymbol lives in the module's shared preamble.
 \renewenvironment{proof}[1][הוכחה]%
-  {%
-    \par\vskip6pt%
-    \pushQED{\qed}%
-    \topsep0pt\partopsep0pt\relax
-    \trivlist
-    \item[\hskip\labelsep
-      {\narkistamfamily\bfseries #1}]%
-    \hfil\break\ignorespaces
-  }%
-  {%
-    \popQED\endtrivlist\@endpefalse
-  }%
+  {\par
+   \pushQED{\qed}%
+   \normalfont
+   \trivlist                % only so \endtrivlist below has a partner
+   \@topsep 6\p@ \@topsepadd \z@
+   \deferred@thm@head{\noindent{\narkistamfamily\bfseries #1}\newline}}%
+  {\popQED\endtrivlist\@endpefalse}
     EndPreamble
 End
 
@@ -197,25 +307,7 @@ Style Example
     EndFont
     RefPrefix             exmpl
     Preamble
-\newcounter{example}[chapter]
-\renewcommand{\theexample}{\thechapter.\arabic{example}}
-\def\exampleqedsymbol{\leavevmode\textcolor{DGray}{$\blacktriangleright$}}
-\newenvironment{example}[1][]%
-  {%
-    \refstepcounter{example}
-    \par\vskip6pt%
-    \let\qedsymbol\exampleqedsymbol % local; reverts after \end{example}
-    \pushQED{\qed}%
-    \topsep0pt\partopsep0pt\relax
-    \trivlist
-    \item[\hskip\labelsep
-      \textcolor{DGray}{$\blacktriangleleft$}~{\narkistamfamily\bfseries דוגמה \theexample%
-       \if\relax\detokenize{#1}\relax\else\ (#1)\fi}]%
-    \hfil\break\ignorespaces
-  }%
-  {%
-    \popQED\endtrivlist\@endpefalse
-  }%
+\NewThmQED{example}{example}{דוגמה}{\exampleqedsymbol}
     EndPreamble
 End
 
@@ -228,22 +320,7 @@ Style Examples
     RefPrefix             exmpl
 
     Preamble
-\newenvironment{examples}[1][]%
-  {%
-    \refstepcounter{example}
-    \par\vskip6pt%
-    \let\qedsymbol\exampleqedsymbol % local; reverts after \end{example}
-    \pushQED{\qed}%
-    \topsep0pt\partopsep0pt\relax
-    \trivlist
-    \item[\hskip\labelsep
-      \textcolor{DGray}{$\blacktriangleleft$}~{\narkistamfamily\bfseries דוגמאות \theexample%
-       \if\relax\detokenize{#1}\relax\else\ (#1)\fi}]%
-    \hfil\break\ignorespaces
-  }%
-  {%
-    \popQED\endtrivlist\@endpefalse
-  }%
+\NewThmQED{examples}{example}{דוגמאות}{\exampleqedsymbol}
     EndPreamble
 End
 
@@ -264,18 +341,27 @@ AddToPreamble
 }
 
 % macro that guarantees that the margin reference is anchored on the baseline of the LAST line of the surrounding environment, no matter how that body ended (hmode or vmode).
+% CALLER'S RULE: this must be the LAST thing before the environment ends.
+% \lastskip only reports glue when the glue really is the last item, so
+% anything that deposits a node after the body -- a \label whatsit above all
+% -- makes it read 0pt and the correction below silently does nothing.
+% Dedicated registers rather than \@tempskipa / \@tempdima: if the marginpar's
+% float penalty fires the output routine, \@addmarginpar runs and clobbers
+% \@tempdima before the \kern below reads it back.
+\newskip\ma@skip
+\newdimen\ma@depth
 \newcommand\@MarginAnchor[1]{%
   \ifhmode
     #1%
   \else
-    \@tempskipa\lastskip
-    \@tempdima\prevdepth
-    \ifdim\@tempdima<\z@ \@tempdima\z@ \fi % guard against \prevdepth = -1000pt
-    \vskip-\@tempskipa
-    \kern-\@tempdima
+    \ma@skip\lastskip
+    \ma@depth\prevdepth
+    \ifdim\ma@depth<\z@ \ma@depth\z@ \fi % guard against \prevdepth = -1000pt
+    \vskip-\ma@skip
+    \kern-\ma@depth
     #1%
-    \kern\@tempdima
-    \vskip\@tempskipa
+    \kern\ma@depth
+    \vskip\ma@skip
   \fi}
 
 % macro to typeset a single marginpar (used in `question` and `answer` envs)
@@ -340,21 +426,8 @@ Style Question
       Series              Bold
     EndFont
     Preamble
-\newcounter{question}[chapter]
-\renewcommand{\thequestion}{\thechapter.\arabic{question}}
-\newenvironment{question}[1][]{%
-  \gdef\exerciseopt{#1}%
-  \refstepcounter{question}%
-  \par\vspace{\parskip}%
-  \noindent{\narkistamfamily\bfseries שאלה \thequestion}%
-  \if\relax\detokenize{#1}\relax\else~{\narkistamfamily\bfseries(#1)}\fi%
-  \par%
-  }%
-  {%
-  \SingleMarginRef{הפתרון בעמוד \pageref{sol:\thequestion}}
-\label{ques:\thequestion}
-\par\ignorespacesafterend
-  }%
+\NewQuestionEnv{question}{שאלה}
+  {\SingleMarginRef{הפתרון בעמוד \pageref{sol:\thequestion}}}
     EndPreamble
 End
 
@@ -366,14 +439,7 @@ Style Solution
     LabelString           "פתרון \thequestion"
     RefPrefix             solutn
     Preamble
-\newenvironment{solutionaux}[2][]{%
-  \par\noindent{\normalfont\bfseries תשובה #2}%
-  \if\relax\detokenize{#1}\relax\else~{\bfseries(#1)}\fi%
-  \par
-}
-{%
-\par\ignorespacesafterend
-}
+\NewAuxBlock{solutionaux}{תשובה}
 
 \NewDocumentEnvironment{solution}{+b}{%
   \immediate\write\solutionwrite{^^J%
@@ -398,19 +464,9 @@ Style QuestionW/Hint
     LabelString           "שאלה (עם רמז) \thequestion"
     RefPrefix             questn
     Preamble
-\newenvironment{questionremez}[1][]{%
-  \gdef\exerciseopt{#1}%
-  \refstepcounter{question}%
-  \par\vspace{\parskip}%
-  \noindent{\narkistamfamily\bfseries שאלה \thequestion}%
-  \if\relax\detokenize{#1}\relax\else~{\narkistamfamily\bfseries(#1)}\fi%
-  \par%
-}%
-{%
-  \DoubleMarginRefs{רמז בעמוד \pageref{hint:\thequestion}}{התשובה בעמוד \pageref{sol:\thequestion}}
-  \label{ques:\thequestion}
-  \par\ignorespacesafterend
-}%
+\NewQuestionEnv{questionremez}{שאלה}
+  {\DoubleMarginRefs{רמז בעמוד \pageref{hint:\thequestion}}%
+                    {התשובה בעמוד \pageref{sol:\thequestion}}}
     EndPreamble
 End
 
@@ -422,14 +478,7 @@ Style Hint
     LabelString           "רמז \thequestion"
     RefPrefix             hint
     Preamble
-\newenvironment{hintaux}[2][]{%
-  \par\noindent{\normalfont\bfseries רמז #2}%
-  \if\relax\detokenize{#1}\relax\else~{\bfseries(#1)}\fi%
-  \par
-}
-{%
-\par\ignorespacesafterend
-}
+\NewAuxBlock{hintaux}{רמז}
 
 \NewDocumentEnvironment{hint}{+b}{%
   \immediate\write\hintwrite{^^J%

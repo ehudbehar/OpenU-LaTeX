@@ -1,0 +1,25 @@
+#% Do not delete the line below; configure depends on this
+#  \DeclareLaTeXClass[book]{test}
+
+Format 111
+Input stdclass.inc
+Input numreport.inc
+
+Sides                 2
+PageStyle             Headings
+DocBookRoot		      book
+DocBookForceAbstract  true
+
+
+NoStyle Abstract
+
+Style Bibliography
+	TopSep                4
+	LabelString           "Bibliography"
+	LabelFont
+	  Series              Bold
+	  Size                Huge
+	EndFont
+	TocLevel              0
+End
+# LyX layout goes here

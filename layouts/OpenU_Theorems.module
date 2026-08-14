@@ -1,7 +1,7 @@
 #\DeclareLyXModule{OpenU Theorems}
 #\DeclareCategory{OpenUniversity}
 #DescriptionBegin
-#Defines theorem environments in Hebrew, built on amsthm. To be used with babel. Author: Ehud Behar. Updated 2026-August-11
+#Defines theorem environments in Hebrew, built on amsthm. To be used with babel. Author: Ehud Behar. Updated 2026-August-14
 #DescriptionEnd
 #Author: Ehud Behar
 
@@ -36,12 +36,26 @@ AddToPreamble
   {\newline}% space after head
   {\thmname{#1}\ \thmnumber{#2}\ \thmnote{(#3)}}% head spec
 % macros for correct vskips between the hrules and the theorem
-\newlength\thmrulesep    \setlength\thmrulesep{12pt}
+\newlength\thmrulesep    \setlength\thmrulesep{17pt}   % inside the rules
 \newlength\thmruleskip   \setlength\thmruleskip{17pt}  % outside the rules
+\newlength\thmheadht
+\newlength\thmtextht
+\AtBeginDocument{%
+  \settoheight\thmheadht{{\narkistamfamily\bfseries א}}%
+  \settoheight\thmtextht{א}}
 \def\thmframe@open{%
-  \par \addvspace{\thmruleskip}%
+  \par
+  \@tempdima\prevdepth
+  % two blocks in a row: \thmframe@close leaves a rule (possibly followed by its
+  % -\parskip), so measure from that rule rather than from a faked baseline
+  \ifnum\lastnodetype=\thr@@ \@tempdima\z@ \fi
+  \ifdim\lastskip<\z@ \ifdim\lastskip=-\parskip \@tempdima\z@ \fi\fi
+  \ifdim\@tempdima<\z@ \@tempdima\z@ \fi       % guard against the -1000pt sentinel
+  \@tempskipa\lastskip \vskip-\@tempskipa      % drop glue left by the material above
+  \@tempskipb\thmruleskip \advance\@tempskipb-\@tempdima
+  \vskip\@tempskipb
   \hrule
-  \prevdepth\dimexpr\baselineskip-\thmrulesep\relax
+  \prevdepth\dimexpr\baselineskip-\thmrulesep-\thmheadht\relax
   \@topsep\parskip
   \@beginparpenalty\@M}          % the top rule may not be orphaned
 \def\thmframe@close{%
@@ -51,7 +65,9 @@ AddToPreamble
   \kern\dimexpr\thmrulesep-\@tempdima\relax
   \nobreak                       % nor the bottom rule from the last line
   \hrule
-  \addvspace{\thmruleskip}}
+  \prevdepth\dimexpr\baselineskip-\thmruleskip-\thmtextht\relax
+  \vskip-\parskip
+  }
 
 % based on TeX.SE/a/122025, fix when enumerate or itemize are first after theorem head
 \newif\ifthm@startlist
@@ -107,7 +123,7 @@ Style Definition
     RefPrefix             def
     Preamble
 % Create a new definition environment 
-\theoremstyle{thms}% activate style
+\theoremstyle{thms}
 \newtheorem{definition@thm}[definition]{הגדרה}
 \newenvironment{definition}[1][]%
   {\thmframe@open\begin{definition@thm}[#1]}%

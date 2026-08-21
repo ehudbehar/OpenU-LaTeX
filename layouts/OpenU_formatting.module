@@ -1,7 +1,7 @@
 #\DeclareLyXModule{OpenU Formatting}
 #\DeclareCategory{OpenUniversity}
 #DescriptionBegin
-#Includes commands and settings for the document layout. Author: Ehud Behar. Updated 2026-July-6
+#Includes commands and settings for the document layout. Author: Ehud Behar. Updated 2026-Aug-21
 #DescriptionEnd
 #Author: Ehud Behar
 
@@ -137,7 +137,7 @@ AddToPreamble
 % Redefine the plain page style (used on chapter opening pages)
 \def\ps@plain{%
   \def\@oddhead{\vbox{\hsize=\headwidth \hfill{\narkistamfamily\bfseries\large\thepage}\vskip1mm\hrule}\hskip\dimexpr-\marginparwidth-\marginparsep}
-  \def\@evenhead{\vbox{\hsize=\headwidth \hfill{\narkistamfamily\bfseries\large\thepage}\vskip1mm\hrule}\hskip\dimexpr-\marginparwidth-\marginparsep}
+  \def\@evenhead{\vbox{\hsize=\headwidth {\narkistamfamily\bfseries\large\thepage}\vskip1mm\hrule}\hskip\dimexpr-\marginparwidth-\marginparsep}
 }
 
 % Redefine the headings page style (used on regular pages)
@@ -231,7 +231,6 @@ AddToPreamble
 % Table of Contens formatting
 \renewcommand\tableofcontents{%
 \thispagestyle{plain}
-\markboth{\@title}{תוכן העניינים}
 % print the title of tableOfContents. Don't use \chapter* as in book.cls so that no \write\stepcounter{chapter} is inserted
   \nointerlineskip % To make schapters and sections be similar in the v direction
   \vspace*{1cm}%
@@ -260,10 +259,9 @@ AddToPreamble
       \immediate\openout \csname tf@#1\endcsname \jobname.#1\relax
     \fi
     \@nobreakfalse
-  \endgroup %original def ends here
-  % Add a \clearpage so the toc is on a separate page from the rest of the document
   \clearpage
- }
+  \endgroup
+}
  
 % chapter in toc. chaptername added; do it with patchcmd
 \renewcommand*\l@chapter[2]{%

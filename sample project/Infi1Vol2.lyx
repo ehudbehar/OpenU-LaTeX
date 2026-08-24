@@ -109,52 +109,17 @@ status open
 
 \begin_layout Plain Layout
 \align center
-גרסה
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
- 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\numeric on
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-2
+גרסה 3
 \end_layout
 
 \begin_layout Plain Layout
 \align center
-כב סיון ה'תשפו
+יא אלול ה'תשפו
 \end_layout
 
 \begin_layout Plain Layout
 \align center
-
-\numeric on
-7
-\numeric off
- ביוני 
-\numeric on
-2026
+42 באוגוסט 6202
 \end_layout
 
 \end_inset
@@ -195,6 +160,10 @@ status open
 1
 \end_layout
 
+\begin_layout Subtitle
+כרך א
+\end_layout
+
 \begin_layout Author
 גיל אלון
 \end_layout
@@ -218,54 +187,16 @@ LatexCommand tableofcontents
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section* in ToC
 פתח דבר
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-כרגע משתמשים בקוד לטקס ישיר,
- אמצא לזה פתרון
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\backslash
-addcontentsline{toc}{section}{פתח דבר}
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-thispagestyle{headings} % Redefine the page style locally for this page
-\end_layout
-
-\begin_layout Plain Layout
-
-\backslash
-markboth{פתח דבר}{פתח דבר}
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
 
 \emph on
-התשבון האינפיניטסימלי
+החשבון האינפיניטסימלי
 \emph default
- הוא התורה המתמטית העוסקת בכמויות קטנורת לאין שיעור (הנקראות גדלים אינפיניטסימליים) ובקשר בינן לבין כמויות רגילות.
+ הוא התורה המתמטית העוסקת בכמויות קטנות לאין שיעור (הנקראות גדלים אינפיניטסימליים) ובקשר בינן לבין כמויות רגילות.
  קשר כזה קיים כמעט בכל מקום בעולם הסובב אותנו:
  שינויים זעירים לאין שיעור מצטברים לשינויים גדולים.
  למשל,

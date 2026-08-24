@@ -1,7 +1,7 @@
 #\DeclareLyXModule{OpenU Formatting}
 #\DeclareCategory{OpenUniversity}
 #DescriptionBegin
-#Includes commands and settings for the document layout. Author: Ehud Behar. Updated 2026-Aug-21
+#Includes commands and settings for the document layout. Author: Ehud Behar. Updated 2026-Aug-24
 #DescriptionEnd
 #Author: Ehud Behar
 
@@ -157,28 +157,55 @@ AddToPreamble
 EndPreamble
 
 ## Titles (chapter,section,subsec etc.) formatting
+Style Subtitle
+	CopyStyle             Title
+	LatexName             subtitle
+	Font
+	  Size                Larger
+	EndFont
+End
+
+AddToPreamble
+\newcommand*{\@subtitle}{}
+\newcommand*{\subtitle}[1]{\gdef\@subtitle{%
+    #1%
+}}
+
+\def\@maketitle{%
+  \par\noindent
+  \hbox to\textwidth{%
+    \vbox{\hsize=\headwidth \parindent0pt \parskip0pt
+      \normalfont\narkistamfamily\bfseries\color{DGray}%
+      \includegraphics[width=42mm]{figures/logo.pdf}\par
+      \vskip56mm
+      \raggedleft
+      {\Huge\@title\par}%
+      \vskip31pt
+      {\huge\@subtitle\par
+       \vskip0pt
+       יחידות\par}%
+    }\hss}%
+  \par}
+
+\renewcommand{\maketitle}{%
+  \clearpage
+  \begingroup
+    \parindent 0pt \parfillskip 0pt plus 1fil\relax
+    \thispagestyle{empty}%
+    \@maketitle
+    \clearpage
+    \thispagestyle{empty}%
+    \hbox{}          % frontmatter information goes here. At the moment it is empty
+    \clearpage
+  \endgroup}
+EndPreamble
+
 AddToPreamble
 %% Titles (chapter,section,subsec etc.) formatting
 % Part title
-\def\@part[#1]#2{%
-  \thispagestyle{empty}
-  \refstepcounter{part}%
-  \markboth{}{}%
-%\AddToHookNext{shipout/background}{\put(\dimexpr .85\paperwidth-4.5cm,-200){\includegraphics[width=4.5cm]{logo.pdf}}}
-  \vspace*{\fill}
-    {\raggedright
-     \interlinepenalty \@M
-     \normalfont
-     \ifnum \c@secnumdepth >-2\relax
-       \narkistamfamily\Huge\bfseries\textcolor{DGray}{\@title}
-       \par
-       \vskip 20\p@
-     \fi
-     \huge\bfseries\textcolor{DGray}{\partname\ \thepart}\par \textcolor{DGray}{יחידות}\par}%
-  \vspace*{\fill}
-\clearpage\thispagestyle{empty}%\input{copyright}
-\newpage
-}
+\renewcommand\part{\secdef\@part\@spart}
+\def\@part[#1]#2{\refstepcounter{part}}
+\def\@spart#1{}
 
 % Chapter title
 \def\@makechapterhead#1{%

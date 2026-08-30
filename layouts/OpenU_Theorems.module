@@ -36,7 +36,7 @@ AddToPreamble
   {\newline}% space after head
   {\thmname{#1}\ \thmnumber{#2}\ \thmnote{(#3)}}% head spec
 % macros for correct vskips between the hrules and the theorem
-\newlength\thmrulesep    \setlength\thmrulesep{17pt}   % inside the rules
+\newlength\thmrulesep    \setlength\thmrulesep{5pt}   % inside the rules
 \newlength\thmruleskip   \setlength\thmruleskip{17pt}  % outside the rules
 \newlength\thmheadht
 \newlength\thmtextht

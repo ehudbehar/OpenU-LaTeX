@@ -36,43 +36,42 @@ AddToPreamble
   {\newline}% space after head
   {\thmname{#1}\ \thmnumber{#2}\ \thmnote{(#3)}}% head spec
 % macros for correct vskips between the hrules and the theorem
+% Style for the "open" (unframed) blocks: questions, examples, hints and answers.
+\newtheoremstyle{thmsopen}
+  {0pt}% space above -- set live by \thmopen@preskip
+  {0pt}{}{0pt}{\narkistamfamily\bfseries}{}{\newline}
+  {\thmname{#1}\ \thmnumber{#2}\ \thmnote{(#3)}}
+\def\thmopen@above{\parskip}
+\def\thmopen@preskip{%
+  \ifthm@afterframe
+    \thm@preskip\z@
+  \else
+    \thm@preskip\glueexpr\thmopen@above\relax
+  \fi}
+\g@addto@macro\th@thmsopen{\thmopen@preskip}
 \newlength\thmrulesep    \setlength\thmrulesep{5pt}   % inside the rules
 \newlength\thmruleskip   \setlength\thmruleskip{17pt}  % outside the rules
 \newlength\thmheadht
 \newlength\thmtextht
-% \thmskipabove is a vertical space placed above every example(s), question, questionremez, hintaux and solutionaux.
-% It is measured from the baseline of the last line of the preceding text to the title of the environment.
-\newlength\thmskipabove  \setlength\thmskipabove{\parskip}
-% TeX adds \baselineskip worth of interline glue before the title in any case, so \thmskipabove of explicit glue puts the title baseline exactly \baselineskip+\thmskipabove below the previous one -- i.e. one blank line when \thmskipabove is one line of text.
-% Glue left behind by the material above is dropped first so that \parskip is not counted twice.
-\def\thmskip@above{%
-  \ifhmode\unskip\unskip\par\fi
-  \if@nobreak\else
-    \@tempskipb\thmskipabove
-    \ifnum\lastnodetype=\thr@@ \@tempskipb\z@ \fi
-    \ifdim\lastskip<\z@ \ifdim\lastskip=-\parskip \@tempskipb\z@ \fi\fi
-    \ifdim\@tempskipb=\z@\else
-      \@tempskipa\lastskip \vskip-\@tempskipa  % drop glue left by the material above
-      \vskip\@tempskipb
-    \fi
-  \fi}
+\newif\ifthm@afterframe
+\AddToHook{para/begin}{\global\thm@afterframefalse}
 \AtBeginDocument{%
   \settoheight\thmheadht{{\narkistamfamily\bfseries א}}%
   \settoheight\thmtextht{א}}
 \def\thmframe@open{%
   \par
-  \@tempdima\prevdepth
-  % two blocks in a row: \thmframe@close leaves a rule (possibly followed by its
-  % -\parskip), so measure from that rule rather than from a faked baseline
-  \ifnum\lastnodetype=\thr@@ \@tempdima\z@ \fi
-  \ifdim\lastskip<\z@ \ifdim\lastskip=-\parskip \@tempdima\z@ \fi\fi
-  \ifdim\@tempdima<\z@ \@tempdima\z@ \fi       % guard against the -1000pt sentinel
-  \@tempskipa\lastskip \vskip-\@tempskipa      % drop glue left by the material above
-  \@tempskipb\thmruleskip \advance\@tempskipb-\@tempdima
-  \vskip\@tempskipb
+  \ifthm@afterframe
+    % two blocks in a row: measure from \thmframe@close's rule, and drop its -\parskip
+    \@tempskipa\lastskip \vskip-\@tempskipa
+    \vskip\thmruleskip
+  \else
+    \@tempdima\prevdepth
+    \ifdim\@tempdima<\z@ \@tempdima\z@ \fi     % guard against the -1000pt sentinel
+    \@tempskipb\thmruleskip \advance\@tempskipb-\@tempdima
+    \addvspace\@tempskipb                      % merge, do not clobber
+  \fi
   \hrule
   \prevdepth\dimexpr\baselineskip-\thmrulesep-\thmheadht\relax
-  \@topsep\parskip
   \@beginparpenalty\@M}          % the top rule may not be orphaned
 \def\thmframe@close{%
   \par
@@ -82,8 +81,8 @@ AddToPreamble
   \nobreak                       % nor the bottom rule from the last line
   \hrule
   \prevdepth\dimexpr\baselineskip-\thmruleskip-\thmtextht\relax
-  \vskip-\parskip
-  }
+  \vskip-\parskip               % exactly cancels the \parskip that follows
+  \global\thm@afterframetrue}
 
 % based on TeX.SE/a/122025, fix when enumerate or itemize are first after theorem head
 \newif\ifthm@startlist
@@ -280,11 +279,11 @@ Style Example
 \newtheoremstyle{example}{0pt}{0pt}{}{0pt}
   {\narkistamfamily\bfseries}{}{\newline}
   {\textcolor{DGray}{$\blacktriangleleft$}\ \thmname{#1}\ \thmnumber{#2}\ \thmnote{(#3)}}
+\g@addto@macro\th@example{\thmopen@preskip}
 \theoremstyle{example}%
 \newtheorem{example@thm}[example]{דוגמה}%
 \newenvironment{example}[1][]%
-  {\thmskip@above
-   \let\qedsymbol\exampleqedsymbol
+  {\let\qedsymbol\exampleqedsymbol
    \pushQED{\qed}
    \begin{example@thm}[#1]}%
   {\popQED\end{example@thm}}
@@ -302,8 +301,7 @@ Style Examples
 \theoremstyle{example}%
 \newtheorem{examples@thm}[example]{דוגמאות}%
 \newenvironment{examples}[1][]%
-  {\thmskip@above
-   \let\qedsymbol\exampleqedsymbol
+  {\let\qedsymbol\exampleqedsymbol
    \pushQED{\qed}
    \begin{examples@thm}[#1]}%
   {\popQED\end{examples@thm}}
@@ -405,10 +403,10 @@ Style Question
     Preamble
 \newcounter{question}[chapter]
 \renewcommand{\thequestion}{\thechapter.\arabic{question}}
-\theoremstyle{thms}
+\theoremstyle{thmsopen}
 \newtheorem{question@thm}[question]{שאלה}
 \newenvironment{question}[1][]
-  {\gdef\exerciseopt{#1}\thmskip@above\begin{question@thm}[#1]\label{ques:\thequestion}}
+  {\gdef\exerciseopt{#1}\begin{question@thm}[#1]\label{ques:\thequestion}}
   {\end{question@thm}%
    \SingleMarginRef{הפתרון בעמוד \pageref{sol:\thequestion}}}
     EndPreamble
@@ -424,11 +422,11 @@ Style Solution
     Preamble
 \newcounter{solutionaux}
 \def\thesolutionaux{\solutionaux@num}
-\theoremstyle{thms}
+\theoremstyle{thmsopen}
 \newtheorem{solutionaux@thm}[solutionaux]{תשובה}
 \newenvironment{solutionaux}[2][]{%
   \gdef\solutionaux@num{#2}%
-  \thmskip@above
+  \def\thmopen@above{\parskip*2}
   \begin{solutionaux@thm}[#1]%
   \label{sol:#2}%
 }{%
@@ -443,7 +441,7 @@ Style Solution
     \detokenize{#1}^^J%
     \detokenize{\end{solutionaux}}%
   }%
-}{\immediate\write\solutionwrite{\noexpand\vspace{\parskip}}}
+}{}
     EndPreamble
 End
 
@@ -456,10 +454,10 @@ Style QuestionW/Hint
     LabelString           "שאלה (עם רמז) \thequestion"
     RefPrefix             questn
     Preamble
-\theoremstyle{thms}
+\theoremstyle{thmsopen}
 \newtheorem{questionremez@thm}[question]{שאלה}
 \newenvironment{questionremez}[1][]
-  {\gdef\exerciseopt{#1}\thmskip@above\begin{questionremez@thm}[#1]\label{ques:\thequestion}}
+  {\gdef\exerciseopt{#1}\begin{questionremez@thm}[#1]\label{ques:\thequestion}}
   {\end{questionremez@thm}%
   \DoubleMarginRefs{רמז בעמוד \pageref{hint:\thequestion}}{התשובה בעמוד \pageref{sol:\thequestion}}}
     EndPreamble
@@ -475,11 +473,11 @@ Style Hint
     Preamble
 \newcounter{hintaux}
 \def\thehintaux{\hintaux@num}
-\theoremstyle{thms}
+\theoremstyle{thmsopen}
 \newtheorem{hintaux@thm}[hintaux]{רמז}
 \newenvironment{hintaux}[2][]{%
   \gdef\hintaux@num{#2}%
-  \thmskip@above
+  \def\thmopen@above{\parskip*2}
   \begin{hintaux@thm}[#1]%
   \label{hint:#2}%
 }{%
@@ -494,6 +492,6 @@ Style Hint
     \detokenize{#1}^^J%
     \detokenize{\end{hintaux}}%
   }%
-}{\immediate\write\hintwrite{\noexpand\vspace{\parskip}}}
+}{}
     EndPreamble
 End

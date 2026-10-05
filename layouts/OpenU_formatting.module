@@ -116,13 +116,14 @@ AddToPreamble
 \pagewidth=210mm \paperwidth=\pagewidth
 \pageheight=297mm \paperheight=\pageheight
 \textwidth=125mm
-\textheight=220mm
+\textheight=226mm
 \marginparsep=7mm
 \marginparwidth=43mm
-\evensidemargin=0cm
+% Centre the whole (marginpar + marginparsep + text) block on the paper
+\evensidemargin=\dimexpr(\paperwidth-\textwidth-\marginparsep-\marginparwidth)/2-1in\relax
 \headheight=22pt
-\topmargin=0mm
-\headsep=10mm
+\topmargin=\dimexpr26.35mm-1in-\headheight\relax % as measured from Infi1Vol2.pdf
+\headsep=12mm
 % apply a twosided layout in which margins are not swapped on alternate pages:
 \oddsidemargin=\evensidemargin
 \@twocolumnfalse
@@ -136,14 +137,14 @@ AddToPreamble
 
 % Redefine the plain page style (used on chapter opening pages)
 \def\ps@plain{%
-  \def\@oddhead{\vbox{\hsize=\headwidth \hfill{\narkistamfamily\bfseries\large\thepage}\vskip1mm\hrule}\hskip\dimexpr-\marginparwidth-\marginparsep}
-  \def\@evenhead{\vbox{\hsize=\headwidth {\narkistamfamily\bfseries\large\thepage}\vskip1mm\hrule}\hskip\dimexpr-\marginparwidth-\marginparsep}
+  \def\@oddhead{\vbox{\hsize=\headwidth \hfill{\narkistamfamily\bfseries\large\thepage}\vskip2.2mm\hrule}\hskip\dimexpr-\marginparwidth-\marginparsep}
+  \def\@evenhead{\vbox{\hsize=\headwidth {\narkistamfamily\bfseries\large\thepage}\vskip2.2mm\hrule}\hskip\dimexpr-\marginparwidth-\marginparsep}
 }
 
 % Redefine the headings page style (used on regular pages)
 \def\ps@headings{%
-  \def\@oddhead{\vbox{\hsize=\headwidth \hfill{\narkistamfamily\bfseries\pdfextension literal direct {0.58431 0.58431 0.58431 rg}\rightmark\pdfextension literal direct {0 g}\hskip2.3mm\large\thepage}\vskip1mm\hrule}\hskip\dimexpr-\marginparwidth-\marginparsep}
-  \def\@evenhead{\vbox{\hsize=\headwidth \narkistamfamily\bfseries{\large\thepage}\hskip2.3mm\pdfextension literal direct {0.58431 0.58431 0.58431 rg}\leftmark\pdfextension literal direct {0 g}\vskip1mm\hrule}\hskip\dimexpr-\marginparwidth-\marginparsep}
+  \def\@oddhead{\vbox{\hsize=\headwidth \hfill{\narkistamfamily\bfseries\pdfextension literal direct {0.58431 0.58431 0.58431 rg}\rightmark\pdfextension literal direct {0 g}\hskip2.3mm\large\thepage}\vskip2.2mm\hrule}\hskip\dimexpr-\marginparwidth-\marginparsep}
+  \def\@evenhead{\vbox{\hsize=\headwidth \narkistamfamily\bfseries{\large\thepage}\hskip2.3mm\pdfextension literal direct {0.58431 0.58431 0.58431 rg}\leftmark\pdfextension literal direct {0 g}\vskip2.2mm\hrule}\hskip\dimexpr-\marginparwidth-\marginparsep}
 }
 
 % Customize chapter and section marks

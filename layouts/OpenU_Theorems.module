@@ -1,7 +1,7 @@
 #\DeclareLyXModule{OpenU Theorems}
 #\DeclareCategory{OpenUniversity}
 #DescriptionBegin
-#Defines theorem environments in Hebrew, built on amsthm. To be used with babel. Author: Ehud Behar. Updated 2026-August-14
+#Defines theorem environments in Hebrew, built on amsthm. To be used with babel. Author: Ehud Behar. Updated 2026-October-5
 #DescriptionEnd
 #Author: Ehud Behar
 
@@ -42,7 +42,7 @@ AddToPreamble
 \newlength\thmtextht
 % \thmskipabove is a vertical space placed above every example(s), question, questionremez, hintaux and solutionaux.
 % It is measured from the baseline of the last line of the preceding text to the title of the environment.
-\newlength\thmskipabove  \setlength\thmskipabove{17pt plus 2pt minus 2pt}
+\newlength\thmskipabove  \setlength\thmskipabove{\parskip}
 % TeX adds \baselineskip worth of interline glue before the title in any case, so \thmskipabove of explicit glue puts the title baseline exactly \baselineskip+\thmskipabove below the previous one -- i.e. one blank line when \thmskipabove is one line of text.
 % Glue left behind by the material above is dropped first so that \parskip is not counted twice.
 \def\thmskip@above{%

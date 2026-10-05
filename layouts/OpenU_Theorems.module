@@ -40,6 +40,22 @@ AddToPreamble
 \newlength\thmruleskip   \setlength\thmruleskip{17pt}  % outside the rules
 \newlength\thmheadht
 \newlength\thmtextht
+% \thmskipabove is a vertical space placed above every example(s), question, questionremez, hintaux and solutionaux.
+% It is measured from the baseline of the last line of the preceding text to the title of the environment.
+\newlength\thmskipabove  \setlength\thmskipabove{17pt plus 2pt minus 2pt}
+% TeX adds \baselineskip worth of interline glue before the title in any case, so \thmskipabove of explicit glue puts the title baseline exactly \baselineskip+\thmskipabove below the previous one -- i.e. one blank line when \thmskipabove is one line of text.
+% Glue left behind by the material above is dropped first so that \parskip is not counted twice.
+\def\thmskip@above{%
+  \ifhmode\unskip\unskip\par\fi
+  \if@nobreak\else
+    \@tempskipb\thmskipabove
+    \ifnum\lastnodetype=\thr@@ \@tempskipb\z@ \fi
+    \ifdim\lastskip<\z@ \ifdim\lastskip=-\parskip \@tempskipb\z@ \fi\fi
+    \ifdim\@tempskipb=\z@\else
+      \@tempskipa\lastskip \vskip-\@tempskipa  % drop glue left by the material above
+      \vskip\@tempskipb
+    \fi
+  \fi}
 \AtBeginDocument{%
   \settoheight\thmheadht{{\narkistamfamily\bfseries א}}%
   \settoheight\thmtextht{א}}
@@ -267,7 +283,8 @@ Style Example
 \theoremstyle{example}%
 \newtheorem{example@thm}[example]{דוגמה}%
 \newenvironment{example}[1][]%
-  {\let\qedsymbol\exampleqedsymbol
+  {\thmskip@above
+   \let\qedsymbol\exampleqedsymbol
    \pushQED{\qed}
    \begin{example@thm}[#1]}%
   {\popQED\end{example@thm}}
@@ -285,7 +302,8 @@ Style Examples
 \theoremstyle{example}%
 \newtheorem{examples@thm}[example]{דוגמאות}%
 \newenvironment{examples}[1][]%
-  {\let\qedsymbol\exampleqedsymbol
+  {\thmskip@above
+   \let\qedsymbol\exampleqedsymbol
    \pushQED{\qed}
    \begin{examples@thm}[#1]}%
   {\popQED\end{examples@thm}}
@@ -390,7 +408,7 @@ Style Question
 \theoremstyle{thms}
 \newtheorem{question@thm}[question]{שאלה}
 \newenvironment{question}[1][]
-  {\gdef\exerciseopt{#1}\begin{question@thm}[#1]\label{ques:\thequestion}}
+  {\gdef\exerciseopt{#1}\thmskip@above\begin{question@thm}[#1]\label{ques:\thequestion}}
   {\end{question@thm}%
    \SingleMarginRef{הפתרון בעמוד \pageref{sol:\thequestion}}}
     EndPreamble
@@ -410,6 +428,7 @@ Style Solution
 \newtheorem{solutionaux@thm}[solutionaux]{תשובה}
 \newenvironment{solutionaux}[2][]{%
   \gdef\solutionaux@num{#2}%
+  \thmskip@above
   \begin{solutionaux@thm}[#1]%
   \label{sol:#2}%
 }{%
@@ -440,7 +459,7 @@ Style QuestionW/Hint
 \theoremstyle{thms}
 \newtheorem{questionremez@thm}[question]{שאלה}
 \newenvironment{questionremez}[1][]
-  {\gdef\exerciseopt{#1}\begin{questionremez@thm}[#1]\label{ques:\thequestion}}
+  {\gdef\exerciseopt{#1}\thmskip@above\begin{questionremez@thm}[#1]\label{ques:\thequestion}}
   {\end{questionremez@thm}%
   \DoubleMarginRefs{רמז בעמוד \pageref{hint:\thequestion}}{התשובה בעמוד \pageref{sol:\thequestion}}}
     EndPreamble
@@ -460,6 +479,7 @@ Style Hint
 \newtheorem{hintaux@thm}[hintaux]{רמז}
 \newenvironment{hintaux}[2][]{%
   \gdef\hintaux@num{#2}%
+  \thmskip@above
   \begin{hintaux@thm}[#1]%
   \label{hint:#2}%
 }{%

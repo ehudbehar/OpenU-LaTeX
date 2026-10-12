@@ -21,68 +21,21 @@ Counter example
 End
 
 AddToPreamble
-% Create a new counter for thm-like environments, reset every time a new \chapter{...} is started
-\newcounter{definition}[chapter]
-% thm number is printed before chapter number:
-\renewcommand{\thedefinition}{\thechapter.\arabic{definition}}
-% Define style for thms. This style is used for defs, thms, lemmas, corollaries, etc.
-\newtheoremstyle{thms}
-  {0pt}% space above
-  {0pt}% space below
-  {}% body font
-  {0pt}% indent amount
-  {\narkistamfamily\bfseries}% head font
-  {}% punctuation after head
-  {\newline}% space after head
-  {\thmname{#1}\ \thmnumber{#2}\ \thmnote{(#3)}}% head spec
-% macros for correct vskips between the hrules and the theorem
-% Style for the "open" (unframed) blocks: questions, hints and answers.
-\newtheoremstyle{thmsopen}
-  {0pt}% space above -- set live by \thmopen@preskip
-  {0pt}{}{0pt}{\narkistamfamily\bfseries}{}{\newline}
-  {\thmname{#1}\ \thmnumber{#2}\ \thmnote{(#3)}}
-\def\thmopen@above{\parskip}
-\def\thmopen@preskip{%
-  \ifthm@afterframe
-    \thm@preskip\z@
-  \else
-    \thm@preskip\glueexpr\thmopen@above\relax
-  \fi}
-\g@addto@macro\th@thmsopen{\thmopen@preskip}
+\newif\ifthm@afterframe            % set by \thmframe@close  (framed blocks)
+\newif\ifthmopen@afterskip         % set by \thmopen@postskip (open blocks)
+\AddToHook{para/begin}{%
+  \global\thm@afterframefalse
+  \global\thmopen@afterskipfalse}
 \newlength\thmrulesep    \setlength\thmrulesep{5pt}   % inside the rules
 \newlength\thmruleskip   \setlength\thmruleskip{17pt}  % outside the rules
 \newlength\thmheadht
 \newlength\thmtextht
-\newif\ifthm@afterframe
-\AddToHook{para/begin}{\global\thm@afterframefalse}
-\AtBeginDocument{%
-  \settoheight\thmheadht{{\narkistamfamily\bfseries א}}%
-  \settoheight\thmtextht{א}}
-\def\thmframe@open{%
-  \par
-  \ifthm@afterframe
-    % two blocks in a row: measure from \thmframe@close's rule, and drop its -\parskip
-    \@tempskipa\lastskip \vskip-\@tempskipa
-    \vskip\thmruleskip
-  \else
-    \@tempdima\prevdepth
-    \ifdim\@tempdima<\z@ \@tempdima\z@ \fi     % guard against the -1000pt sentinel
-    \@tempskipb\thmruleskip \advance\@tempskipb-\@tempdima
-    \addvspace\@tempskipb                      % merge, do not clobber
-  \fi
-  \hrule
-  \prevdepth\dimexpr\baselineskip-\thmrulesep-\thmheadht\relax
-  \@beginparpenalty\@M}          % the top rule may not be orphaned
-\def\thmframe@close{%
-  \par
-  \@tempskipa\lastskip \vskip-\@tempskipa
-  \@tempdima\prevdepth \ifdim\@tempdima<\z@ \@tempdima\z@ \fi
-  \kern\dimexpr\thmrulesep-\@tempdima\relax
-  \nobreak                       % nor the bottom rule from the last line
-  \hrule
-  \prevdepth\dimexpr\baselineskip-\thmruleskip-\thmtextht\relax
-  \vskip-\parskip               % exactly cancels the \parskip that follows
-  \global\thm@afterframetrue}
+\normalfont\normalsize
+\settoheight\thmheadht{{\narkistamfamily\bfseries א}}
+\settoheight\thmtextht{{\normalfont\normalsize א}}
+%\AtBeginDocument{%
+%  \settoheight\thmheadht{{\narkistamfamily\bfseries א}}%
+%  \settoheight\thmtextht{א}}
 
 % based on TeX.SE/a/122025, fix when enumerate or itemize are first after theorem head
 \newif\ifthm@startlist
@@ -137,6 +90,44 @@ Style Definition
     EndFont
     RefPrefix             def
     Preamble
+% Create a new counter for thm-like environments, reset every time a new \chapter{...} is started
+\newcounter{definition}[chapter]
+% thm number is printed before chapter number:
+\renewcommand{\thedefinition}{\thechapter.\arabic{definition}}
+\def\thmframe@open{%
+  \par
+  \ifthm@afterframe
+    \@tempskipa\lastskip \vskip-\@tempskipa
+    \vskip\thmruleskip
+  \else
+    \@tempdima\prevdepth
+    \ifdim\@tempdima<\z@ \@tempdima\z@ \fi
+    \@tempskipb\thmruleskip \advance\@tempskipb-\@tempdima
+    \addvspace\@tempskipb
+  \fi
+  \hrule
+  \prevdepth\dimexpr\baselineskip-\thmrulesep-\thmheadht\relax
+  \@beginparpenalty\@M}
+\def\thmframe@close{%
+  \par
+  \@tempskipa\lastskip \vskip-\@tempskipa
+  \@tempdima\prevdepth \ifdim\@tempdima<\z@ \@tempdima\z@ \fi
+  \kern\dimexpr\thmrulesep-\@tempdima\relax
+  \nobreak
+  \hrule
+  \prevdepth\dimexpr\baselineskip-\thmruleskip-\thmtextht\relax
+  \vskip-\parskip
+  \global\thm@afterframetrue}
+% Define style for thms. This style is used for defs, thms, lemmas, corollaries, etc.
+\newtheoremstyle{thms}
+  {0pt}% space above
+  {0pt}% space below
+  {}% body font
+  {0pt}% indent amount
+  {\narkistamfamily\bfseries}% head font
+  {}% punctuation after head
+  {\newline}% space after head
+  {\thmname{#1}\ \thmnumber{#2}\ \thmnote{(#3)}}% head spec
 % Create a new definition environment 
 \theoremstyle{thms}
 \newtheorem{definition@thm}[definition]{הגדרה}
@@ -273,12 +264,6 @@ Style Example
     EndFont
     RefPrefix             exmpl
     Preamble
-\newif\ifthm@afterframe            % set by \thmframe@close  (framed blocks)
-\newif\ifthmopen@afterskip         % set by \thmopen@postskip (open blocks)
-\AddToHook{para/begin}{%
-  \global\thm@afterframefalse
-  \global\thmopen@afterskipfalse}
-
 \def\thmopen@preskip{%
   \ifhmode\unskip\unskip\par\fi    % (1) reach vertical mode  -> fixes N1
   \if@nobreak\else                 % (2) heading above: amsthm adds nothing
@@ -300,8 +285,6 @@ Style Example
 \newtheoremstyle{example}{0pt}{0pt}{}{0pt}
   {\narkistamfamily\bfseries}{}{\newline}
   {\textcolor{DGray}{$\blacktriangleleft$}\ \thmname{#1}\ \thmnumber{#2}\ \thmnote{(#3)}}
-\g@addto@macro\th@example{\thmopen@preskip}
-\theoremstyle{example}%
 \newtheorem{example@thm}[example]{דוגמה}%
 \newenvironment{example}[1][]%
   {%
@@ -432,6 +415,19 @@ Style Question
       Series              Bold
     EndFont
     Preamble
+% Style for the "open" (unframed) blocks: questions, hints and answers.
+\newtheoremstyle{thmsopen}
+  {0pt}% space above -- set live by \thmopen@preskip
+  {0pt}{}{0pt}{\narkistamfamily\bfseries}{}{\newline}
+  {\thmname{#1}\ \thmnumber{#2}\ \thmnote{(#3)}}
+\def\thmopen@above{\parskip}
+\def\thmopen@preskip{%
+  \ifthm@afterframe
+    \thm@preskip\z@
+  \else
+    \thm@preskip\glueexpr\thmopen@above\relax
+  \fi}
+\g@addto@macro\th@thmsopen{\thmopen@preskip}
 \newcounter{question}[chapter]
 \renewcommand{\thequestion}{\thechapter.\arabic{question}}
 \theoremstyle{thmsopen}

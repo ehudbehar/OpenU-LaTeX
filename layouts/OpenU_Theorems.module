@@ -36,7 +36,7 @@ AddToPreamble
   {\newline}% space after head
   {\thmname{#1}\ \thmnumber{#2}\ \thmnote{(#3)}}% head spec
 % macros for correct vskips between the hrules and the theorem
-% Style for the "open" (unframed) blocks: questions, examples, hints and answers.
+% Style for the "open" (unframed) blocks: questions, hints and answers.
 \newtheoremstyle{thmsopen}
   {0pt}% space above -- set live by \thmopen@preskip
   {0pt}{}{0pt}{\narkistamfamily\bfseries}{}{\newline}
@@ -273,6 +273,27 @@ Style Example
     EndFont
     RefPrefix             exmpl
     Preamble
+\newif\ifthm@afterframe            % set by \thmframe@close  (framed blocks)
+\newif\ifthmopen@afterskip         % set by \thmopen@postskip (open blocks)
+\AddToHook{para/begin}{%
+  \global\thm@afterframefalse
+  \global\thmopen@afterskipfalse}
+
+\def\thmopen@preskip{%
+  \ifhmode\unskip\unskip\par\fi    % (1) reach vertical mode  -> fixes N1
+  \if@nobreak\else                 % (2) heading above: amsthm adds nothing
+    \ifthm@afterframe\else         % (3) framed block above: rule did it
+      \ifthmopen@afterskip\else    % (4) open block above: its postskip did it
+        \addvspace{\glueexpr\parskip\relax}%   % (5) merge -> fixes N2
+      \fi
+    \fi
+  \fi}
+
+\def\thmopen@postskip{%
+  \par                             % (6) finish the block's last paragraph
+  \addvspace{\glueexpr\parskip\relax}%   % (7) merge -> fixes N2
+  \vskip-\parskip                  % (8) absorb the next \parskip -> fixes N3
+  \global\thmopen@afterskiptrue}
 \newcounter{example}[chapter]
 \renewcommand{\theexample}{\thechapter.\arabic{example}}
 \def\exampleqedsymbol{\leavevmode\textcolor{DGray}{$\blacktriangleright$}}
@@ -283,10 +304,16 @@ Style Example
 \theoremstyle{example}%
 \newtheorem{example@thm}[example]{דוגמה}%
 \newenvironment{example}[1][]%
-  {\let\qedsymbol\exampleqedsymbol
-   \pushQED{\qed}
-   \begin{example@thm}[#1]}%
-  {\popQED\end{example@thm}}
+  {%
+  \thmopen@preskip                   % <<< CODE BEFORE THE ENVIRONMENT
+  \let\qedsymbol\exampleqedsymbol
+  \pushQED{\qed}%
+  \begin{example@thm}[#1]%
+  }%
+  {%
+  \popQED\end{example@thm}%
+  \thmopen@postskip                  % <<< CODE AFTER THE ENVIRONMENT
+  }
     EndPreamble
 End
 
@@ -301,10 +328,14 @@ Style Examples
 \theoremstyle{example}%
 \newtheorem{examples@thm}[example]{דוגמאות}%
 \newenvironment{examples}[1][]%
-  {\let\qedsymbol\exampleqedsymbol
-   \pushQED{\qed}
-   \begin{examples@thm}[#1]}%
-  {\popQED\end{examples@thm}}
+  {%
+  \thmopen@preskip                   % <<< CODE BEFORE THE ENVIRONMENT
+  \let\qedsymbol\exampleqedsymbol
+  \pushQED{\qed}
+  \begin{examples@thm}[#1]}%
+  {\popQED\end{examples@thm}%
+  \thmopen@postskip                  % <<< CODE AFTER THE ENVIRONMENT
+  }
     EndPreamble
 End
 

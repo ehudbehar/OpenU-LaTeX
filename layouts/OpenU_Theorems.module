@@ -1,7 +1,7 @@
 #\DeclareLyXModule{OpenU Theorems}
 #\DeclareCategory{OpenUniversity}
 #DescriptionBegin
-#Defines theorem environments in Hebrew, built on amsthm. To be used with babel. Author: Ehud Behar. Updated 2026-October-5
+#Defines theorem environments in Hebrew, built on amsthm. To be used with babel. Author: Ehud Behar. Updated 2026-October-12
 #DescriptionEnd
 #Author: Ehud Behar
 
@@ -22,7 +22,7 @@ End
 
 AddToPreamble
 \newif\ifthm@afterframe            % set by \thmframe@close  (framed blocks)
-\newif\ifthmopen@afterskip         % set by \thmopen@postskip (open blocks)
+\newif\ifthmopen@afterskip         % set by \thmnoframe@close (unframed blocks)
 \AddToHook{para/begin}{%
   \global\thm@afterframefalse
   \global\thmopen@afterskipfalse}
@@ -30,12 +30,25 @@ AddToPreamble
 \newlength\thmruleskip   \setlength\thmruleskip{17pt}  % outside the rules
 \newlength\thmheadht
 \newlength\thmtextht
-\normalfont\normalsize
-\settoheight\thmheadht{{\narkistamfamily\bfseries א}}
-\settoheight\thmtextht{{\normalfont\normalsize א}}
-%\AtBeginDocument{%
-%  \settoheight\thmheadht{{\narkistamfamily\bfseries א}}%
-%  \settoheight\thmtextht{א}}
+\AtBeginDocument{%
+  \normalfont\normalsize
+  \settoheight\thmheadht{{\narkistamfamily\bfseries א}}%
+  \settoheight\thmtextht{{\normalfont\normalsize א}}}
+
+\def\thmnoframe@open{%
+  \ifhmode\unskip\unskip\par\fi    % (1) reach vertical mode
+  \if@nobreak\else                 % (2) heading above: amsthm adds nothing
+    \ifthm@afterframe\else         % (3) framed block above: the rule did it
+      \ifthmopen@afterskip\else    % (4) open block above: its close did it
+        \addvspace{\glueexpr\parskip\relax}%   % (5) merge, do not accumulate
+      \fi
+    \fi
+  \fi}
+\def\thmnoframe@close{%
+  \par                             % (6) finish the block's last paragraph
+  \addvspace{\glueexpr\parskip\relax}%   % (7) merge, do not accumulate
+  \vskip-\parskip                  % (8) absorb the next paragraph's \parskip
+  \global\thmopen@afterskiptrue}   % (9) tell the next block the gap is there
 
 % based on TeX.SE/a/122025, fix when enumerate or itemize are first after theorem head
 \newif\ifthm@startlist
@@ -100,6 +113,9 @@ Style Definition
     \@tempskipa\lastskip \vskip-\@tempskipa
     \vskip\thmruleskip
   \else
+    \ifthmopen@afterskip                       % unframed block directly above:
+      \@tempskipa\lastskip \vskip-\@tempskipa  % drop the \parskip it pre-subtracted
+    \fi
     \@tempdima\prevdepth
     \ifdim\@tempdima<\z@ \@tempdima\z@ \fi
     \@tempskipb\thmruleskip \advance\@tempskipb-\@tempdima
@@ -264,38 +280,24 @@ Style Example
     EndFont
     RefPrefix             exmpl
     Preamble
-\def\thmopen@preskip{%
-  \ifhmode\unskip\unskip\par\fi    % (1) reach vertical mode  -> fixes N1
-  \if@nobreak\else                 % (2) heading above: amsthm adds nothing
-    \ifthm@afterframe\else         % (3) framed block above: rule did it
-      \ifthmopen@afterskip\else    % (4) open block above: its postskip did it
-        \addvspace{\glueexpr\parskip\relax}%   % (5) merge -> fixes N2
-      \fi
-    \fi
-  \fi}
-
-\def\thmopen@postskip{%
-  \par                             % (6) finish the block's last paragraph
-  \addvspace{\glueexpr\parskip\relax}%   % (7) merge -> fixes N2
-  \vskip-\parskip                  % (8) absorb the next \parskip -> fixes N3
-  \global\thmopen@afterskiptrue}
 \newcounter{example}[chapter]
 \renewcommand{\theexample}{\thechapter.\arabic{example}}
 \def\exampleqedsymbol{\leavevmode\textcolor{DGray}{$\blacktriangleright$}}
 \newtheoremstyle{example}{0pt}{0pt}{}{0pt}
   {\narkistamfamily\bfseries}{}{\newline}
   {\textcolor{DGray}{$\blacktriangleleft$}\ \thmname{#1}\ \thmnumber{#2}\ \thmnote{(#3)}}
+\theoremstyle{example}%
 \newtheorem{example@thm}[example]{דוגמה}%
 \newenvironment{example}[1][]%
   {%
-  \thmopen@preskip                   % <<< CODE BEFORE THE ENVIRONMENT
+  \thmnoframe@open                   % <<< CODE BEFORE THE ENVIRONMENT
   \let\qedsymbol\exampleqedsymbol
   \pushQED{\qed}%
   \begin{example@thm}[#1]%
   }%
   {%
   \popQED\end{example@thm}%
-  \thmopen@postskip                  % <<< CODE AFTER THE ENVIRONMENT
+  \thmnoframe@close                  % <<< CODE AFTER THE ENVIRONMENT
   }
     EndPreamble
 End
@@ -312,12 +314,12 @@ Style Examples
 \newtheorem{examples@thm}[example]{דוגמאות}%
 \newenvironment{examples}[1][]%
   {%
-  \thmopen@preskip                   % <<< CODE BEFORE THE ENVIRONMENT
+  \thmnoframe@open                   % <<< CODE BEFORE THE ENVIRONMENT
   \let\qedsymbol\exampleqedsymbol
   \pushQED{\qed}
   \begin{examples@thm}[#1]}%
   {\popQED\end{examples@thm}%
-  \thmopen@postskip                  % <<< CODE AFTER THE ENVIRONMENT
+  \thmnoframe@close                  % <<< CODE AFTER THE ENVIRONMENT
   }
     EndPreamble
 End

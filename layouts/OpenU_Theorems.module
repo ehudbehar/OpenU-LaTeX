@@ -417,27 +417,23 @@ Style Question
       Series              Bold
     EndFont
     Preamble
-% Style for the "open" (unframed) blocks: questions, hints and answers.
-\newtheoremstyle{thmsopen}
-  {0pt}% space above -- set live by \thmopen@preskip
-  {0pt}{}{0pt}{\narkistamfamily\bfseries}{}{\newline}
+\newtheoremstyle{question}
+  {0pt}
+  {0pt}
+  {}{0pt}{\narkistamfamily\bfseries}{}{\newline}
   {\thmname{#1}\ \thmnumber{#2}\ \thmnote{(#3)}}
-\def\thmopen@above{\parskip}
-\def\thmopen@preskip{%
-  \ifthm@afterframe
-    \thm@preskip\z@
-  \else
-    \thm@preskip\glueexpr\thmopen@above\relax
-  \fi}
-\g@addto@macro\th@thmsopen{\thmopen@preskip}
 \newcounter{question}[chapter]
 \renewcommand{\thequestion}{\thechapter.\arabic{question}}
-\theoremstyle{thmsopen}
+\theoremstyle{question}
 \newtheorem{question@thm}[question]{שאלה}
 \newenvironment{question}[1][]
-  {\gdef\exerciseopt{#1}\begin{question@thm}[#1]\label{ques:\thequestion}}
+  {%
+  \thmnoframe@open                   % <<< CODE BEFORE THE ENVIRONMENT
+  \gdef\exerciseopt{#1}\begin{question@thm}[#1]\label{ques:\thequestion}}
   {\end{question@thm}%
-   \SingleMarginRef{הפתרון בעמוד \pageref{sol:\thequestion}}}
+   \SingleMarginRef{הפתרון בעמוד \pageref{sol:\thequestion}}%
+   \thmnoframe@close                 % <<< CODE AFTER THE ENVIRONMENT
+  }
     EndPreamble
 End
 
@@ -455,13 +451,15 @@ Style Solution
 \newtheorem{solutionaux@thm}[solutionaux]{תשובה}
 \newenvironment{solutionaux}[2][]{%
   \gdef\solutionaux@num{#2}%
-  \def\thmopen@above{\parskip*2}
+  \def\thmnoframe@above{\parskip*2}% local to the environment
+  \thmnoframe@open                   % <<< CODE BEFORE THE ENVIRONMENT
   \begin{solutionaux@thm}[#1]%
   \label{sol:#2}%
 }{%
   \end{solutionaux@thm}%
   \SingleMarginRef{השאלה בעמוד \pageref{ques:\solutionaux@num}}%
-  \par\ignorespacesafterend
+  \thmnoframe@close                  % <<< CODE AFTER THE ENVIRONMENT (does the \par)
+  \ignorespacesafterend
 }
 
 \NewDocumentEnvironment{solution}{+b}{%
@@ -486,11 +484,13 @@ Style QuestionW/Hint
 \theoremstyle{thmsopen}
 \newtheorem{questionremez@thm}[question]{שאלה}
 \newenvironment{questionremez}[1][]
-  {\gdef\exerciseopt{#1}\begin{questionremez@thm}[#1]\label{ques:\thequestion}}
+  {%
+  \thmnoframe@open                   % <<< CODE BEFORE THE ENVIRONMENT
+  \gdef\exerciseopt{#1}\begin{questionremez@thm}[#1]\label{ques:\thequestion}}
   {\end{questionremez@thm}%
-  \DoubleMarginRefs{רמז בעמוד \pageref{hint:\thequestion}}{התשובה בעמוד \pageref{sol:\thequestion}}}
-    EndPreamble
-End
+  \DoubleMarginRefs{רמז בעמוד \pageref{hint:\thequestion}}{התשובה בעמוד \pageref{sol:\thequestion}}%
+  \thmnoframe@close                  % <<< CODE AFTER THE ENVIRONMENT
+  }
 
 Style Hint
     CopyStyle             Question
@@ -506,13 +506,15 @@ Style Hint
 \newtheorem{hintaux@thm}[hintaux]{רמז}
 \newenvironment{hintaux}[2][]{%
   \gdef\hintaux@num{#2}%
-  \def\thmopen@above{\parskip*2}
+  \def\thmnoframe@above{\parskip*2}% local to the environment
+  \thmnoframe@open                   % <<< CODE BEFORE THE ENVIRONMENT
   \begin{hintaux@thm}[#1]%
   \label{hint:#2}%
 }{%
   \end{hintaux@thm}%
   \DoubleMarginRefs{השאלה בעמוד \pageref{ques:\hintaux@num}}{התשובה בעמוד \pageref{sol:\hintaux@num}}%
-  \par\ignorespacesafterend
+  \thmnoframe@close                  % <<< CODE AFTER THE ENVIRONMENT (does the \par)
+  \ignorespacesafterend
 }
 
 \NewDocumentEnvironment{hint}{+b}{%

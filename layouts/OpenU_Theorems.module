@@ -1,7 +1,7 @@
 #\DeclareLyXModule{OpenU Theorems}
 #\DeclareCategory{OpenUniversity}
 #DescriptionBegin
-#Defines theorem environments in Hebrew, built on amsthm. To be used with babel. Author: Ehud Behar. Updated 2026-October-12
+#Defines theorem environments in Hebrew, built on amsthm. To be used with babel. Author: Ehud Behar. Updated 2026-October-13
 #DescriptionEnd
 #Author: Ehud Behar
 
@@ -491,6 +491,8 @@ Style QuestionW/Hint
   \DoubleMarginRefs{רמז בעמוד \pageref{hint:\thequestion}}{התשובה בעמוד \pageref{sol:\thequestion}}%
   \thmnoframe@close                  % <<< CODE AFTER THE ENVIRONMENT
   }
+    EndPreamble
+End
 
 Style Hint
     CopyStyle             Question

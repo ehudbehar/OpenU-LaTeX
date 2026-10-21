@@ -1,0 +1,7465 @@
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass book
+\use_default_options true
+\begin_modules
+OpenU_formatting
+OpenU_Theorems
+\end_modules
+\maintain_unincluded_children no
+\language hebrew
+\language_package babel
+\inputencoding utf8-plain
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format pdf5
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification default
+\crossref_package refstyle
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 33cm
+\paperheight 33mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style hebrew
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\docbook_mathml_version 0
+\end_header
+
+\begin_body
+
+\begin_layout Title
+תורת החבורות
+\end_layout
+
+\begin_layout Subtitle
+כרך א
+\end_layout
+
+\begin_layout Author
+גיל אלון
+\end_layout
+
+\begin_layout Date
+2026
+\end_layout
+
+\begin_layout Part
+כרך ראשון
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+\end_layout
+
+\begin_layout Section* in ToC
+פתח דבר
+\end_layout
+
+\begin_layout Standard
+תורת החבורות עוסקת במבנים המתארים סימטריה, שינוי והרכבה. כאשר מסובבים ריבוע, מחליפים את מקומותיהם של עצמים, מפעילים העתקה לינארית הפיכה או מחברים מספרים שלמים, אנו מבצעים פעולות שונות מאוד מבחינה גאומטרית או חישובית; ובכל זאת, בכל הדוגמאות האלה מופיעים אותם חוקי יסוד. זוהי נקודת המוצא של האלגברה המופשטת: להתעלם לרגע מטבעם של העצמים, לבודד את חוקי הפעולה המשותפים להם, וללמוד את המסקנות הנובעות מן החוקים בלבד.
+\end_layout
+
+\begin_layout Standard
+המעבר אל נקודת המבט המופשטת אינו נועד להרחיק אותנו מן הדוגמאות. להפך: כוחו של מושג החבורה הוא בכך שמשפט אחד יכול להסביר בעת ובעונה אחת תופעות המופיעות במספרים, במטריצות, בתמורות ובגאומטריה. במהלך הספר נחזור שוב ושוב אל כמה חבורות מלוות — החבורות הציקליות, חבורות התמורות \begin_inset Formula $S_n$
+\end_inset
+ והחבורות המתחלפות \begin_inset Formula $A_n$
+\end_inset
+, חבורות המטריצות \begin_inset Formula $GL_n(F)$
+\end_inset
+ ו־\begin_inset Formula $SL_n(F)$
+\end_inset
+, וחבורות דיהדרליות של סימטריות מצולעים — ונראה כיצד כל רעיון חדש מאיר בהן היבט נוסף.
+\end_layout
+
+\begin_layout Standard
+מן המושגים הבסיסיים של פעולה, חבורה ותת־חבורה נתקדם אל מחלקות צד ומשפט לגרנז', אל הומומורפיזמים וחבורות מנה, ואל משפטי האיזומורפיזם. לאחר מכן נלמד לראות חבורה דרך האופן שבו היא פועלת על קבוצות; נקודת מבט זו תוביל למשפטי סילו וליישומים חשובים במבנה של חבורות סופיות. בחלקו השני של הספר נדון במכפלות למחצה, במבנה החבורות האבליות הסופיות והנוצרות סופית, ובמושגים פתירות ונילפוטנטיות.
+\end_layout
+
+\begin_layout Standard
+הספר נכתב ללימוד עצמי. משום כך, לצד הניסוחים הפורמליים, מושם דגש על המוטיבציה להגדרות, על הרעיון שמאחורי הוכחות, ועל דוגמאות המבהירות מדוע כל תנאי נחוץ. המטרה אינה רק לדעת את המשפטים, אלא להתרגל לחשוב באמצעותם.
+\end_layout
+
+\begin_layout Section* in ToC
+הנחיות ללומדים
+\end_layout
+
+\begin_layout Standard
+במהלך הקורס נבנה תורה מתמטית דדוקטיבית: הגדרות מדויקות, טענות ומשפטים, והוכחות המקשרות ביניהם. לפני קריאת הוכחה מומלץ לעצור ולברר לעצמכם מה בדיוק יש להוכיח, אילו הנחות עומדות לרשותכם, ואיזה מן המושגים שכבר נלמדו עשוי להיות רלוונטי. לאחר הקריאה, נסו לזהות את הרעיון המרכזי של ההוכחה בנפרד מן הפרטים הטכניים.
+\end_layout
+
+\begin_layout Standard
+בגוף הטקסט משולבות שאלות רבות. חלקן בודקות הבנה מיידית של הגדרה או משפט, ואחרות דורשות בניית הוכחה עצמאית. לכל השאלות ניתנים פתרונות מלאים בסוף הכרך; לחלקן מצורפים גם רמזים. מומלץ לנסות לפתור כל שאלה לפני קריאת הפתרון, גם כאשר נדמה שהפתרון ברור. כתיבת הוכחה היא מיומנות שנרכשת בעיקר בתרגול.
+\end_layout
+
+\begin_layout Standard
+שאלות וקטעים המסומנים ב־(*) הם חומר העשרה או חומר ברמת קושי גבוהה יותר. ניתן לדלג עליהם בקריאה ראשונה בלי לפגוע ברצף העיקרי של הקורס.
+\end_layout
+
+\begin_layout Chapter
+מושג החבורה
+\end_layout
+
+\begin_layout Goals
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+להכיר את מושג הפעולה הדו־מקומית ואת תכונות הקיבוציות והחילופיות.
+\end_layout
+
+\begin_layout Itemize
+להגדיר חבורה וחבורה אבלית ולהכיר מגוון רחב של דוגמאות.
+\end_layout
+
+\begin_layout Itemize
+להוכיח את חוקי החישוב הראשונים בחבורה.
+\end_layout
+
+\begin_layout Itemize
+להכיר תת־חבורות, תת־חבורות נוצרות וסדר של איבר.
+\end_layout
+
+\begin_layout Itemize
+להכיר חבורות ציקליות, הומומורפיזמים ואיזומורפיזמים.
+\end_layout
+
+\begin_layout Itemize
+להכיר מכפלות ישרות ואת משפט קיילי.
+\end_layout
+
+\end_deeper
+\begin_layout Goals
+
+\end_layout
+
+\begin_layout Section
+פעולות ומבנים אלגבריים
+\end_layout
+
+\begin_layout Standard
+בבית הספר ובקורסים קודמים פגשנו פעולות רבות: חיבור וכפל של מספרים, חיבור וקטורים, כפל מטריצות והרכבת פונקציות. במבט ראשון אלו פעולות שונות זו מזו. כדי לגלות מה משותף להן, נתחיל מן המושג הפורמלי הפשוט ביותר.
+\end_layout
+
+\begin_layout Definition
+תהי \begin_inset Formula $A$
+\end_inset
+ קבוצה. \emph on
+פעולה דו־מקומית\emph default
+ על \begin_inset Formula $A$
+\end_inset
+ היא פונקציה \begin_inset Formula 
+\[
+\ast:A\times A\longrightarrow A.
+\]
+
+\end_inset
+ לזוג \begin_inset Formula $(a,b)$
+\end_inset
+ היא מתאימה איבר יחיד של \begin_inset Formula $A$
+\end_inset
+, שאותו נסמן \begin_inset Formula $a\ast b$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+המילים "על \begin_inset Formula $A$
+\end_inset
+" כוללות דרישה חשובה: תוצאת הפעולה חייבת להישאר בתוך \begin_inset Formula $A$
+\end_inset
+. לתכונה זו קוראים לעיתים \emph on
+סגירות\emph default
+. למשל, חיסור אינו פעולה על קבוצת המספרים הטבעיים \begin_inset Formula $\mathbb N$
+\end_inset
+, משום ש־\begin_inset Formula $2-5$
+\end_inset
+ אינו מספר טבעי; לעומת זאת, חיסור הוא פעולה על \begin_inset Formula $\mathbb Z$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+פעולה \begin_inset Formula $\ast$
+\end_inset
+ על \begin_inset Formula $A$
+\end_inset
+ נקראת \emph on
+קיבוצית\emph default
+ (אסוציאטיבית) אם לכל \begin_inset Formula $a,b,c\in A$
+\end_inset
+ מתקיים \begin_inset Formula 
+\[
+(a\ast b)\ast c=a\ast(b\ast c).
+\]
+
+\end_inset
+ היא נקראת \emph on
+חילופית\emph default
+ (קומוטטיבית) אם לכל \begin_inset Formula $a,b\in A$
+\end_inset
+ מתקיים \begin_inset Formula 
+\[
+a\ast b=b\ast a.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+שתי התכונות שונות בתכלית. קיבוציות עוסקת בשאלה כיצד מציבים סוגריים כאשר מופיעות כמה פעולות בזו אחר זו; חילופיות עוסקת בשינוי סדר האיברים. חיבור מספרים מקיים את שתיהן. כפל מטריצות הוא קיבוצי אך בדרך כלל אינו חילופי. חיסור אינו מקיים אף אחת מהן.
+\end_layout
+
+\begin_layout QuestionW/Hint
+בדקו לגבי כל אחת מן הפעולות הבאות אם היא פעולה על הקבוצה הנתונה, ואם כן — האם היא קיבוצית והאם היא חילופית.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $a\ast b=a-b$
+\end_inset
+ על \begin_inset Formula $\mathbb Z$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $a\ast b=a+b+1$
+\end_inset
+ על \begin_inset Formula $\mathbb Z$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $a\ast b=ab$
+\end_inset
+ על קבוצת המספרים השלמים האי־זוגיים.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $A\ast B=A\cap B$
+\end_inset
+ על קבוצת כל תת־הקבוצות של קבוצה קבועה \begin_inset Formula $X$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+\begin_layout Hint
+בסעיף השלישי בדקו קודם את דרישת הסגירות. בסעיף השני נסו לחשב את שני האגפים של חוק הקיבוץ באופן מפורש.
+\end_layout
+
+\begin_layout Solution
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+זוהי פעולה על \begin_inset Formula $\mathbb Z$
+\end_inset
+, אך היא אינה חילופית, למשל \begin_inset Formula $3-1\ne1-3$
+\end_inset
+, ואינה קיבוצית, שכן \begin_inset Formula $(3-2)-1=0$
+\end_inset
+ ואילו \begin_inset Formula $3-(2-1)=2$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+זוהי פעולה. היא חילופית משום ש־\begin_inset Formula $a+b+1=b+a+1$
+\end_inset
+. כמו כן \begin_inset Formula $(a\ast b)\ast c=(a+b+1)+c+1=a+b+c+2$
+\end_inset
+, וגם \begin_inset Formula $a\ast(b\ast c)=a+(b+c+1)+1=a+b+c+2$
+\end_inset
+, ולכן היא קיבוצית.
+\end_layout
+
+\begin_layout Enumerate
+זוהי פעולה על קבוצת השלמים האי־זוגיים: מכפלה של שני מספרים אי־זוגיים היא שוב אי־זוגית, ולכן מתקיימת סגירות. פעולת הכפל בשלמים היא קיבוצית וחילופית, ולכן גם הפעולה המצומצמת לקבוצה זו קיבוצית וחילופית.
+\end_layout
+
+\begin_layout Enumerate
+חיתוך של שתי תת־קבוצות של \begin_inset Formula $X$
+\end_inset
+ הוא שוב תת־קבוצה של \begin_inset Formula $X$
+\end_inset
+. מתקיים \begin_inset Formula $(A\cap B)\cap C=A\cap(B\cap C)$
+\end_inset
+ וגם \begin_inset Formula $A\cap B=B\cap A$
+\end_inset
+, ולכן הפעולה קיבוצית וחילופית.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+שדות וחוגים — הקשר שממנו צומח מושג החבורה
+\end_layout
+
+\begin_layout Standard
+מושג החבורה אינו מופיע בחלל ריק. אחת הדרכים הטבעיות להגיע אליו היא להתחיל מן המבנים האלגבריים המוכרים לנו מן החשבון: מערכות מספרים שבהן אפשר לחבר ולכפול. הרעיון של אלגברה מופשטת הוא להפריד בין העובדות שתלויות באופי המספרים לבין העובדות שנובעות רק מחוקי הפעולות.
+\end_layout
+
+\begin_layout Definition
+\emph on
+שדה\emph default
+ הוא קבוצה \begin_inset Formula $F$
+\end_inset
+ שעליה מוגדרות שתי פעולות, חיבור וכפל, המקיימות את התכונות הבאות:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+החיבור חילופי וקיבוצי: \begin_inset Formula $a+b=b+a$
+\end_inset
+ ו־\begin_inset Formula $(a+b)+c=a+(b+c)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+קיים איבר \begin_inset Formula $0\in F$
+\end_inset
+ כך ש־\begin_inset Formula $a+0=a$
+\end_inset
+, ולכל \begin_inset Formula $a\in F$
+\end_inset
+ קיים איבר נגדי \begin_inset Formula $-a$
+\end_inset
+ כך ש־\begin_inset Formula $a+(-a)=0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+הכפל חילופי וקיבוצי: \begin_inset Formula $ab=ba$
+\end_inset
+ ו־\begin_inset Formula $(ab)c=a(bc)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+קיים איבר \begin_inset Formula $1\in F$
+\end_inset
+, שונה מ־\begin_inset Formula $0$
+\end_inset
+, כך ש־\begin_inset Formula $a\cdot1=a$
+\end_inset
+; ולכל \begin_inset Formula $a\ne0$
+\end_inset
+ קיים הופכי \begin_inset Formula $a^{-1}$
+\end_inset
+ כך ש־\begin_inset Formula $aa^{-1}=1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+מתקיים חוק הפילוג \begin_inset Formula $a(b+c)=ab+ac$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+הדוגמאות הבסיסיות הן \begin_inset Formula $\mathbb Q$
+\end_inset
+, \begin_inset Formula $\mathbb R$
+\end_inset
+ ו־\begin_inset Formula $\mathbb C$
+\end_inset
+. קיימים גם שדות סופיים. בפרט, אם \begin_inset Formula $p$
+\end_inset
+ ראשוני, מחלקות השארית מודולו \begin_inset Formula $p$
+\end_inset
+ יוצרות שדה, המסומן \begin_inset Formula $\mathbb F_p$
+\end_inset
+. למשל, ב־\begin_inset Formula $\mathbb F_5$
+\end_inset
+ מתקיים \begin_inset Formula $2^{-1}=3$
+\end_inset
+, משום ש־\begin_inset Formula $2\cdot3\equiv1\pmod5$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+לא בכל מערכת מספרים יש חילוק בכל איבר לא־אפס. השלמים \begin_inset Formula $\mathbb Z$
+\end_inset
+, למשל, סגורים לחיבור ולכפל, אבל ל־\begin_inset Formula $2$
+\end_inset
+ אין הופכי כפלי שלם. מצב זה מוביל למושג רחב יותר.
+\end_layout
+
+\begin_layout Definition
+\emph on
+חוג\emph default
+ הוא קבוצה \begin_inset Formula $R$
+\end_inset
+ עם שתי פעולות \begin_inset Formula $+$
+\end_inset
+ ו־\begin_inset Formula $\cdot$
+\end_inset
+ כך ש־ \begin_inset Formula 
+\[
+a(b+c)=ab+ac,\qquad (a+b)c=ac+bc.
+\]
+
+\end_inset
+ אין דורשים שהכפל יהיה חילופי, ואין דורשים שלכל איבר שונה מאפס יהיה הופכי כפלי. בספר זה נשתמש במוסכמה שלחוג יש יחידה.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $(R,+)$
+\end_inset
+ מקיימת את כל חוקי החיבור של שדה: החיבור חילופי וקיבוצי, יש איבר \begin_inset Formula $0$
+\end_inset
+, ולכל איבר יש נגדי;
+\end_layout
+
+\begin_layout Enumerate
+הכפל קיבוצי ויש לו איבר יחידה \begin_inset Formula $1$
+\end_inset
+;
+\end_layout
+
+\begin_layout Enumerate
+מתקיימים שני חוקי הפילוג
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+חוג שבו \begin_inset Formula $ab=ba$
+\end_inset
+ לכל \begin_inset Formula $a,b$
+\end_inset
+ נקרא \emph on
+חוג חילופי\emph default
+. כך \begin_inset Formula $\mathbb Z$
+\end_inset
+ הוא חוג חילופי. אם \begin_inset Formula $F$
+\end_inset
+ שדה, גם חוג הפולינומים \begin_inset Formula $F[x]$
+\end_inset
+ הוא חוג חילופי. איבריו הם ביטויים סופיים \begin_inset Formula 
+\[
+f(x)=a_0+a_1x+\cdots+a_nx^n,\qquad a_i\in F,
+\]
+
+\end_inset
+ והחיבור והכפל מוגדרים על־ידי חיבור מקדמים ופתיחת סוגריים לפי חוק הפילוג. למשל, המקדם של \begin_inset Formula $x^k$
+\end_inset
+ במכפלה \begin_inset Formula 
+\[
+\left(\sum_i a_ix^i\right)\left(\sum_j b_jx^j\right)
+\]
+
+\end_inset
+ הוא \begin_inset Formula $\sum_{i+j=k}a_ib_j$
+\end_inset
+. לעומת זאת, חוג המטריצות \begin_inset Formula $M_n(F)$
+\end_inset
+ אינו חילופי כאשר \begin_inset Formula $n\ge2$
+\end_inset
+: כבר ב־\begin_inset Formula $M_2(F)$
+\end_inset
+ אפשר למצוא מטריצות \begin_inset Formula $A,B$
+\end_inset
+ שעבורן \begin_inset Formula $AB\ne BA$
+\end_inset
+.
+\end_layout
+
+\begin_layout Example
+מעל שדה סופי חשוב להבחין בין פולינום לבין הפונקציה שהוא מגדיר. ב־\begin_inset Formula $\mathbb F_2[x]$
+\end_inset
+ הפולינום \begin_inset Formula $x^2+x$
+\end_inset
+ אינו פולינום האפס, אך בהצבת שני איברי השדה מתקבל \begin_inset Formula 
+\[
+0^2+0=0,\qquad 1^2+1=0,
+\]
+
+\end_inset
+ ולכן הפונקציה \begin_inset Formula $\mathbb F_2\to\mathbb F_2$
+\end_inset
+ שהוא מגדיר היא פונקציית האפס. הדוגמה ממחישה שמבנה אלגברי הוא לא רק אוסף הערכים שאנו רגילים לחשב, אלא גם הפעולות והאופן שבו האיברים מיוצגים.
+\end_layout
+
+\begin_layout Question
+קבעו לגבי כל אחת מן המערכות הבאות אם היא שדה, חוג שאינו שדה, או שאינה חוג לפי המוסכמה שלנו. נמקו לפי האקסיומה שנכשלת או מתקיימת.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\mathbb Z$
+\end_inset
+ עם החיבור והכפל הרגילים.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $M_2(\mathbb R)$
+\end_inset
+ עם חיבור וכפל מטריצות.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $2\mathbb Z$
+\end_inset
+ עם החיבור והכפל הרגילים.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\mathbb Q$
+\end_inset
+ עם החיבור והכפל הרגילים.
+\end_layout
+
+\end_deeper
+\begin_layout Solution
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\mathbb Z$
+\end_inset
+ הוא חוג חילופי אך אינו שדה: למשל, \begin_inset Formula $2\ne0$
+\end_inset
+ ואין לו הופכי כפלי ב־\begin_inset Formula $\mathbb Z$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $M_2(\mathbb R)$
+\end_inset
+ הוא חוג עם יחידה \begin_inset Formula $I$
+\end_inset
+, אבל אינו שדה. ראשית, הכפל אינו חילופי. נוסף לכך, יש מטריצות לא־אפס שאינן הפיכות, למשל \begin_inset Formula $\begin{pmatrix}1&0\\0&0\end{pmatrix}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $2\mathbb Z$
+\end_inset
+ סגורה לחיבור ולכפל ויש בה \begin_inset Formula $0$
+\end_inset
+, אך אין בה את איבר היחידה הכפלי \begin_inset Formula $1$
+\end_inset
+. לפי המוסכמה שלנו היא אינה חוג. אילו היינו משתמשים בהגדרה שאינה דורשת יחידה, היא היתה דוגמה לחוג ללא יחידה.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\mathbb Q$
+\end_inset
+ הוא שדה: כל רציונלי לא־אפס \begin_inset Formula $a/b$
+\end_inset
+ הוא בעל הופכי \begin_inset Formula $b/a$
+\end_inset
+, ושאר האקסיומות מוכרות מן החשבון הרגיל.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+מנקודת המבט של תורת החבורות חשוב כעת לבודד תופעה משותפת המסתתרת בתוך שדה. אם מתבוננים רק בחיבור, מקבלים מערכת שבה יש קיבוציות, יחידה והופכי; ואם מוחקים את \begin_inset Formula $0$
+\end_inset
+ ומתבוננים רק בכפל, מתקבל שוב אותו סוג של מבנה. איננו זקוקים לשתי פעולות כדי לתאר את המבנה המשותף. די בפעולה אחת. זהו מושג החבורה.
+\end_layout
+
+\begin_layout Section
+חבורות: ההגדרה והדוגמאות הראשונות
+\end_layout
+
+\begin_layout Definition
+\emph on
+חבורה\emph default
+ היא קבוצה \begin_inset Formula $G$
+\end_inset
+ עם פעולה דו־מקומית, שאותה נסמן בדרך כלל בכפל, המקיימת שלוש אקסיומות:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+קיבוציות: לכל \begin_inset Formula $a,b,c\in G$
+\end_inset
+, מתקיים \begin_inset Formula $(ab)c=a(bc)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+איבר יחידה: קיים \begin_inset Formula $e\in G$
+\end_inset
+ כך שלכל \begin_inset Formula $g\in G$
+\end_inset
+, מתקיים \begin_inset Formula $eg=ge=g$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+הופכיים: לכל \begin_inset Formula $g\in G$
+\end_inset
+ קיים איבר \begin_inset Formula $g^{-1}\in G$
+\end_inset
+ כך ש־\begin_inset Formula $gg^{-1}=g^{-1}g=e$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+נשים לב למה שאינו נדרש: אין דרישה שהפעולה תהיה חילופית. חבורה שבה מתקיים \begin_inset Formula $ab=ba$
+\end_inset
+ לכל \begin_inset Formula $a,b$
+\end_inset
+ נקראת \emph on
+חבורה אבלית\emph default
+ או \emph on
+חבורה חילופית\emph default
+. בחבורה אבלית נוח לעיתים לעבור לסימון חיבורי: הפעולה מסומנת \begin_inset Formula $+$
+\end_inset
+, איבר היחידה מסומן \begin_inset Formula $0$
+\end_inset
+, וההופכי של \begin_inset Formula $a$
+\end_inset
+ מסומן \begin_inset Formula $-a$
+\end_inset
+.
+\end_layout
+
+\begin_layout Examples
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $(\mathbb Z,+)$
+\end_inset
+ היא חבורה אבלית. איבר היחידה הוא \begin_inset Formula $0$
+\end_inset
+ וההופכי של \begin_inset Formula $n$
+\end_inset
+ הוא \begin_inset Formula $-n$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם \begin_inset Formula $F$
+\end_inset
+ שדה, אז \begin_inset Formula $(F,+)$
+\end_inset
+ היא חבורה אבלית, וגם \begin_inset Formula $F^\times=F\setminus\{0\}$
+\end_inset
+ היא חבורה אבלית ביחס לכפל.
+\end_layout
+
+\begin_layout Enumerate
+הקבוצה \begin_inset Formula $\{e\}$
+\end_inset
+ היא חבורה. היא נקראת \emph on
+החבורה הטריוויאלית\emph default
+.
+\end_layout
+
+\begin_layout Enumerate
+אם \begin_inset Formula $F$
+\end_inset
+ שדה, אז \begin_inset Formula $GL_n(F)=\{A\in M_n(F):\det A\ne0\}$
+\end_inset
+ היא חבורה תחת כפל מטריצות. עבור \begin_inset Formula $n\ge2$
+\end_inset
+ היא בדרך כלל אינה אבלית.
+\end_layout
+
+\begin_layout Enumerate
+האיזומטריות של המישור יוצרות חבורה תחת הרכבה. האיזומטריות השומרות צורה נתונה יוצרות את \emph on
+חבורת הסימטריות\emph default
+ שלה.
+\end_layout
+
+\end_deeper
+\begin_layout Example
+יש, עד כדי איזומורפיזם, חבורה יחידה בת שני איברים. אם \begin_inset Formula $G=\{e,a\}$
+\end_inset
+, אז \begin_inset Formula $a^2$
+\end_inset
+ מוכרח להיות \begin_inset Formula $e$
+\end_inset
+ או \begin_inset Formula $a$
+\end_inset
+. האפשרות \begin_inset Formula $a^2=a$
+\end_inset
+ גוררת בצמצום \begin_inset Formula $a=e$
+\end_inset
+, בסתירה לכך שיש שני איברים; לכן \begin_inset Formula $a^2=e$
+\end_inset
+. טבלת הכפל נקבעת כולה: \begin_inset Formula 
+\[
+\begin{array}{c|cc} \cdot&e&a\\ \hline e&e&a\\ a&a&e \end{array}
+\]
+
+\end_inset
+ חבורה זו מסומנת \begin_inset Formula $C_2$
+\end_inset
+.
+\end_layout
+
+\begin_layout Subsection
+דוגמאות נוספות ואי־דוגמאות
+\end_layout
+
+\begin_layout Standard
+הדרך הטובה ביותר להתרגל להגדרת החבורה היא לבדוק אותה על מערכות מוכרות — ובמיוחד להבין היכן היא נכשלת.
+\end_layout
+
+\begin_layout Standard
+אם \begin_inset Formula $n\ge2$
+\end_inset
+, נסמן ב־ \begin_inset Formula 
+\[
+U(n)=\{\bar a\in\mathbb Z/n\mathbb Z:\gcd(a,n)=1\}
+\]
+
+\end_inset
+ את מחלקות השארית ההפיכות מודולו \begin_inset Formula $n$
+\end_inset
+. ביחס לכפל מודולו \begin_inset Formula $n$
+\end_inset
+ זוהי חבורה. למשל \begin_inset Formula 
+\[
+U(8)=\{\bar1,\bar3,\bar5,\bar7\}.
+\]
+
+\end_inset
+ לכל אחד מארבעת האיברים ריבוע \begin_inset Formula $\bar1$
+\end_inset
+, ולכן \begin_inset Formula $U(8)\cong C_2\times C_2$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+לעומת זאת, קבוצת השלמים הלא־אפסיים אינה חבורה ביחס לכפל: אמנם הכפל קיבוצי ויש יחידה \begin_inset Formula $1$
+\end_inset
+, אך ל־\begin_inset Formula $2$
+\end_inset
+ אין הופכי שלם. גם קבוצת המטריצות \begin_inset Formula $M_n(F)$
+\end_inset
+ אינה חבורה ביחס לכפל, משום שמטריצות סינגולריות אינן הפיכות. המעבר אל \begin_inset Formula $GL_n(F)$
+\end_inset
+ הוא בדיוק המעבר לתת־הקבוצה שבה בעיית ההופכיים נפתרת.
+\end_layout
+
+\begin_layout Standard
+עוד דוגמה מועילה היא חבורת הסימטריות של משולש שווה־צלעות. יש בה שלושה סיבובים ושלושה שיקופים, ולכן שישה איברים. אם נסמן סיבוב של \begin_inset Formula $120^\circ$
+\end_inset
+ ב־\begin_inset Formula $r$
+\end_inset
+ ושיקוף ב־\begin_inset Formula $s$
+\end_inset
+, מתקיימים \begin_inset Formula 
+\[
+r^3=e,\qquad s^2=e,\qquad srs=r^{-1}.
+\]
+
+\end_inset
+ זוהי החבורה הדיהדרלית \begin_inset Formula $D_3$
+\end_inset
+, והיא איזומורפית ל־\begin_inset Formula $S_3$
+\end_inset
+. בהמשך נראה שהיחסים האלה מאפיינים את החבורה כולה.
+\end_layout
+
+\begin_layout Question
+חשבו את החבורות \begin_inset Formula $U(5)$
+\end_inset
+, \begin_inset Formula $U(8)$
+\end_inset
+ ו־\begin_inset Formula $U(10)$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+מצאו את סדר כל איבר.
+\end_layout
+
+\begin_layout Enumerate
+קבעו אילו מן החבורות ציקליות.
+\end_layout
+
+\begin_layout Enumerate
+מצאו איזומורפיזם מפורש כאשר אתם מזהים חבורה ציקלית מוכרת.
+\end_layout
+
+\end_deeper
+\begin_layout Solution
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $U(5)=\{\bar1,\bar2,\bar3,\bar4\}$
+\end_inset
+. מתקיים \begin_inset Formula $\bar2^2=\bar4$
+\end_inset
+, \begin_inset Formula $\bar2^3=\bar3$
+\end_inset
+, \begin_inset Formula $\bar2^4=\bar1$
+\end_inset
+, ולכן \begin_inset Formula $\bar2$
+\end_inset
+ מסדר \begin_inset Formula $4$
+\end_inset
+ ו־\begin_inset Formula $U(5)=\langle\bar2\rangle\cong C_4$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $U(8)=\{\bar1,\bar3,\bar5,\bar7\}$
+\end_inset
+. לכל איבר לא־יחידה ריבוע \begin_inset Formula $\bar1$
+\end_inset
+: \begin_inset Formula $3^2\equiv5^2\equiv7^2\equiv1\pmod8$
+\end_inset
+. לכן אין איבר מסדר \begin_inset Formula $4$
+\end_inset
+, והחבורה אינה ציקלית; היא איזומורפית ל־\begin_inset Formula $C_2\times C_2$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $U(10)=\{\bar1,\bar3,\bar7,\bar9\}$
+\end_inset
+. החזקות של \begin_inset Formula $\bar3$
+\end_inset
+ הן \begin_inset Formula $\bar3,\bar9,\bar7,\bar1$
+\end_inset
+, ולכן \begin_inset Formula $\bar3$
+\end_inset
+ מסדר \begin_inset Formula $4$
+\end_inset
+ ו־\begin_inset Formula $U(10)\cong C_4$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+דוגמת הסימטריות חשובה במיוחד. נניח שאנו מסובבים ריבוע ברבע סיבוב, ולאחר מכן משקפים אותו ביחס לציר. שתי הפעולות בזו אחר זו הן שוב סימטריה של הריבוע. הפעולה הטבעית בחבורה אינה "חיבור" של סימטריות אלא \emph on
+הרכבה\emph default
+: מבצעים תחילה אחת ואחר כך את השנייה. סדר הביצוע עשוי לשנות את התוצאה, ולכן חבורות סימטריה הן מקור טבעי לחבורות לא־אבליות.
+\end_layout
+
+\begin_layout Subsection
+חבורת התמורות
+\end_layout
+
+\begin_layout Standard
+תהי \begin_inset Formula $X$
+\end_inset
+ קבוצה. תמורה של \begin_inset Formula $X$
+\end_inset
+ היא פונקציה חד־חד־ערכית ועל מ־\begin_inset Formula $X$
+\end_inset
+ אל עצמה. אוסף כל התמורות של \begin_inset Formula $X$
+\end_inset
+, עם פעולת ההרכבה, הוא חבורה; נסמן אותו \begin_inset Formula $S_X$
+\end_inset
+. כאשר \begin_inset Formula $X=\{1,\ldots,n\}$
+\end_inset
+, נסמן את החבורה \begin_inset Formula $S_n$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+נשתמש במוסכמה \begin_inset Formula 
+\[
+(\sigma\tau)(i)=\sigma(\tau(i)),
+\]
+
+\end_inset
+ כלומר התמורה הימנית פועלת ראשונה.
+\end_layout
+
+\begin_layout Example
+ב־\begin_inset Formula $S_3$
+\end_inset
+ ניקח \begin_inset Formula $\sigma=(12)$
+\end_inset
+ ו־\begin_inset Formula $\tau=(23)$
+\end_inset
+. אז \begin_inset Formula 
+\[
+\sigma\tau=(123),\qquad \tau\sigma=(132).
+\]
+
+\end_inset
+ לכן \begin_inset Formula $\sigma\tau\ne\tau\sigma$
+\end_inset
+, ומכאן \begin_inset Formula $S_3$
+\end_inset
+ אינה אבלית. אותו רעיון מראה ש־\begin_inset Formula $S_n$
+\end_inset
+ אינה אבלית לכל \begin_inset Formula $n\ge3$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+נשתמש בהרחבה בכתיב מחזורים. המחזור \begin_inset Formula $(a_1a_2\ldots a_k)$
+\end_inset
+ שולח את \begin_inset Formula $a_1$
+\end_inset
+ אל \begin_inset Formula $a_2$
+\end_inset
+, את \begin_inset Formula $a_2$
+\end_inset
+ אל \begin_inset Formula $a_3$
+\end_inset
+, וכן הלאה, ואת \begin_inset Formula $a_k$
+\end_inset
+ אל \begin_inset Formula $a_1$
+\end_inset
+, ומשאיר את שאר הנקודות במקומן. מחזורים זרים, כלומר מחזורים שאין להם נקודות משותפות, מתחלפים זה עם זה.
+\end_layout
+
+\begin_layout Question
+חשבו ב־\begin_inset Formula $S_4$
+\end_inset
+ את המכפלות הבאות, כאשר התמורה הימנית פועלת ראשונה.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $(12)(1234)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $(1234)(12)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $(12)(34)(13)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+הראו במישרין שמחזורים זרים מתחלפים.
+\end_layout
+
+\end_deeper
+\begin_layout Solution
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+נעקוב אחרי התמונות: \begin_inset Formula $1\mapsto2\mapsto1$
+\end_inset
+, ולכן \begin_inset Formula $1$
+\end_inset
+ קבוע; \begin_inset Formula $2\mapsto3\mapsto3$
+\end_inset
+, \begin_inset Formula $3\mapsto4\mapsto4$
+\end_inset
+, \begin_inset Formula $4\mapsto1\mapsto2$
+\end_inset
+. לכן המכפלה היא \begin_inset Formula $(234)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+כאן \begin_inset Formula $1\mapsto2\mapsto3$
+\end_inset
+, \begin_inset Formula $3\mapsto3\mapsto4$
+\end_inset
+, \begin_inset Formula $4\mapsto4\mapsto1$
+\end_inset
+, ואילו \begin_inset Formula $2\mapsto1\mapsto2$
+\end_inset
+. לכן נקבל \begin_inset Formula $(134)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+מפעילים תחילה \begin_inset Formula $(13)$
+\end_inset
+, אחר כך \begin_inset Formula $(34)$
+\end_inset
+ ולבסוף \begin_inset Formula $(12)$
+\end_inset
+. מתקבל \begin_inset Formula $1\mapsto4$
+\end_inset
+, \begin_inset Formula $4\mapsto3$
+\end_inset
+, \begin_inset Formula $3\mapsto2$
+\end_inset
+, \begin_inset Formula $2\mapsto1$
+\end_inset
+, ולכן \begin_inset Formula $(1432)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם \begin_inset Formula $\alpha$
+\end_inset
+ ו־\begin_inset Formula $\beta$
+\end_inset
+ מחזורים זרים, כל נקודה מוזזת לכל היותר על־ידי אחד מהם. אם \begin_inset Formula $x$
+\end_inset
+ אינו בתמיכת אף אחד, שני סדרי ההרכבה משאירים אותו במקום. אם \begin_inset Formula $x$
+\end_inset
+ בתמיכת \begin_inset Formula $\alpha$
+\end_inset
+, אז \begin_inset Formula $\beta$
+\end_inset
+ משאירה גם את \begin_inset Formula $x$
+\end_inset
+ וגם את \begin_inset Formula $\alpha(x)$
+\end_inset
+ במקום, ולכן \begin_inset Formula $\alpha\beta(x)=\alpha(x)=\beta\alpha(x)$
+\end_inset
+. המקרה שבו \begin_inset Formula $x$
+\end_inset
+ בתמיכת \begin_inset Formula $\beta$
+\end_inset
+ דומה. לכן \begin_inset Formula $\alpha\beta=\beta\alpha$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+פירוק תמורה למחזורים זרים
+\end_layout
+
+\begin_layout Standard
+כתיב המחזורים אינו רק קיצור נוח. הוא נותן תיאור קנוני כמעט לחלוטין של תמורה.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+פירוק למחזורים זרים
+\end_layout
+
+\end_inset
+כל תמורה \begin_inset Formula $\sigma\in S_n$
+\end_inset
+ ניתנת להצגה כמכפלה של מחזורים זרים. הפירוק יחיד עד כדי שינוי סדר המחזורים ועד כדי בחירת נקודת ההתחלה בכל מחזור.
+\end_layout
+
+\begin_layout Proof
+נפעיל שוב ושוב את \begin_inset Formula $\sigma$
+\end_inset
+ על נקודה \begin_inset Formula $i$
+\end_inset
+. מכיוון שיש רק מספר סופי של נקודות, בשלב כלשהו נקבל חזרה את \begin_inset Formula $i$
+\end_inset
+; לפני החזרה אין חזרות, משום שאם \begin_inset Formula $\sigma^r(i)=\sigma^s(i)$
+\end_inset
+ עם \begin_inset Formula $r<s$
+\end_inset
+, הפעלת \begin_inset Formula $\sigma^{-r}$
+\end_inset
+ נותנת \begin_inset Formula $i=\sigma^{s-r}(i)$
+\end_inset
+. לכן הנקודות \begin_inset Formula 
+\[
+i,\sigma(i),\sigma^2(i),\ldots
+\]
+
+\end_inset
+ עד החזרה הראשונה יוצרות מחזור אחד של \begin_inset Formula $\sigma$
+\end_inset
+. נבחר נקודה שלא הופיעה במחזור הזה ונבצע אותו תהליך. נקבל מחזור זר מן הראשון. נמשיך עד שכל הנקודות טופלו. המחזורים זרים ולכן מתחלפים, ומכפלתם פועלת על כל נקודה בדיוק כמו \begin_inset Formula $\sigma$
+\end_inset
+. ליחידות, כל נקודה \begin_inset Formula $i$
+\end_inset
+ קובעת באופן חד־משמעי את קבוצת הנקודות שאליהן אפשר להגיע ממנה באמצעות חזקות של \begin_inset Formula $\sigma$
+\end_inset
+. זו בדיוק קבוצת הנקודות במחזור המכיל את \begin_inset Formula $i$
+\end_inset
+. לכן כל פירוק למחזורים זרים חייב להשתמש באותן קבוצות נקודות ובאותו סדר מחזורי בתוכן.
+\end_layout
+
+\begin_layout Standard
+מחזורים באורך \begin_inset Formula $1$
+\end_inset
+ הם נקודות קבועות, ובדרך כלל משמיטים אותם מן הכתיב.
+\end_layout
+
+\begin_layout Corollary
+אם פירוק המחזורים הזרים של \begin_inset Formula $\sigma$
+\end_inset
+ מכיל מחזורים באורכים \begin_inset Formula $m_1,\ldots,m_r$
+\end_inset
+, אז \begin_inset Formula 
+\[
+\operatorname{ord}(\sigma)=\operatorname{lcm}(m_1,\ldots,m_r).
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+החזקה \begin_inset Formula $\sigma^k$
+\end_inset
+ היא הזהות אם ורק אם כל אחד מן המחזורים חוזר למקומו לאחר \begin_inset Formula $k$
+\end_inset
+ צעדים, כלומר אם ורק אם \begin_inset Formula $m_i\mid k$
+\end_inset
+ לכל \begin_inset Formula $i$
+\end_inset
+. המספר החיובי הקטן ביותר המקיים זאת הוא הכפולה המשותפת הקטנה ביותר.
+\end_layout
+
+\begin_layout Question
+תהי \begin_inset Formula 
+\[
+\sigma=(1\ 4\ 3)(2\ 5)(6\ 7\ 8\ 9)\in S_9.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+מצאו את סדר \begin_inset Formula $\sigma$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+חשבו את \begin_inset Formula $\sigma^6$
+\end_inset
+ ואת \begin_inset Formula $\sigma^{12}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+מצאו את סדר \begin_inset Formula $\sigma^5$
+\end_inset
+ בלי לחשב תחילה את כל התמורה \begin_inset Formula $\sigma^5$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+\begin_layout Solution
+אורכי המחזורים הם \begin_inset Formula $3,2,4$
+\end_inset
+, ולכן \begin_inset Formula $\operatorname{ord}(\sigma)=12$
+\end_inset
+. בחזקה השישית, המחזור באורך \begin_inset Formula $3$
+\end_inset
+ והמחזור באורך \begin_inset Formula $2$
+\end_inset
+ מתאפסים, ואילו במחזור באורך \begin_inset Formula $4$
+\end_inset
+ מתקבלת חזקה שנייה; לכן \begin_inset Formula $\sigma^6=(6\ 8)(7\ 9)$
+\end_inset
+ ו־\begin_inset Formula $\sigma^{12}=e$
+\end_inset
+. לבסוף, אם איבר מסדר \begin_inset Formula $12$
+\end_inset
+ מועלה בחזקה \begin_inset Formula $5$
+\end_inset
+, סדר התוצאה הוא \begin_inset Formula $12/\gcd(12,5)=12$
+\end_inset
+.
+\end_layout
+
+\begin_layout Section
+חוקי החישוב הראשונים בחבורה
+\end_layout
+
+\begin_layout Standard
+אקסיומות החבורה מבטיחות קיום של איבר יחידה ושל הופכיים, אך אינן אומרות במפורש שהם יחידים. זהו המקום הראשון שבו רואים כיצד מסיקים משפטים מן האקסיומות.
+\end_layout
+
+\begin_layout Claim
+איבר היחידה בחבורה הוא יחיד.
+\end_layout
+
+\begin_layout Proof
+נניח ש־\begin_inset Formula $e_1$
+\end_inset
+ ו־\begin_inset Formula $e_2$
+\end_inset
+ הם שניהם איברי יחידה. משום ש־\begin_inset Formula $e_2$
+\end_inset
+ הוא יחידה, \begin_inset Formula $e_1e_2=e_1$
+\end_inset
+; ומשום ש־\begin_inset Formula $e_1$
+\end_inset
+ הוא יחידה, \begin_inset Formula $e_1e_2=e_2$
+\end_inset
+. לכן \begin_inset Formula $e_1=e_2$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+חוקי הצמצום
+\end_layout
+
+\end_inset
+לכל \begin_inset Formula $a,b,c\in G$
+\end_inset
+ מתקיים \begin_inset Formula 
+\[
+ab=ac\Longrightarrow b=c,
+\]
+
+\end_inset
+ וכן \begin_inset Formula 
+\[
+ba=ca\Longrightarrow b=c.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+אם \begin_inset Formula $ab=ac$
+\end_inset
+, נכפול משמאל ב־\begin_inset Formula $a^{-1}$
+\end_inset
+ ונשתמש בקיבוציות: \begin_inset Formula 
+\[
+a^{-1}(ab)=a^{-1}(ac)\Longrightarrow (a^{-1}a)b=(a^{-1}a)c\Longrightarrow b=c.
+\]
+
+\end_inset
+ הצמצום מימין מוכח באותו אופן.
+\end_layout
+
+\begin_layout Corollary
+לכל \begin_inset Formula $a\in G$
+\end_inset
+ יש הופכי יחיד.
+\end_layout
+
+\begin_layout Proof
+אם \begin_inset Formula $b$
+\end_inset
+ ו־\begin_inset Formula $c$
+\end_inset
+ הם שני הופכיים של \begin_inset Formula $a$
+\end_inset
+, אז \begin_inset Formula $ab=e=ac$
+\end_inset
+, ומחוק הצמצום נקבל \begin_inset Formula $b=c$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+מכאן ואילך הסימון \begin_inset Formula $a^{-1}$
+\end_inset
+ חד־משמעי. כמו במספרים, מגדירים חזקות של איבר חבורה לכל \begin_inset Formula $n\in\mathbb Z$
+\end_inset
+: \begin_inset Formula 
+\[
+a^0=e,\qquad a^n=\underbrace{aa\cdots a}_{n\text{ פעמים}}\ (n>0),\qquad a^{-n}=(a^{-1})^n.
+\]
+
+\end_inset
+ הקיבוציות מאפשרת להשמיט את הסוגריים במכפלה ארוכה.
+\end_layout
+
+\begin_layout Claim
+לכל \begin_inset Formula $a\in G$
+\end_inset
+ ולכל \begin_inset Formula $m,n\in\mathbb Z$
+\end_inset
+ מתקיימים חוקי החזקות \begin_inset Formula 
+\[
+a^ma^n=a^{m+n},\qquad (a^m)^n=a^{mn}.
+\]
+
+\end_inset
+ בנוסף, \begin_inset Formula 
+\[
+(ab)^{-1}=b^{-1}a^{-1}.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+חוקי החזקות מוכחים תחילה עבור מעריכים לא־שליליים בעזרת קיבוציות, ולאחר מכן מרחיבים למעריכים שליליים בעזרת הגדרת ההופכי. לנוסחה האחרונה די לבדוק שהאיבר \begin_inset Formula $b^{-1}a^{-1}$
+\end_inset
+ הוא הופכי של \begin_inset Formula $ab$
+\end_inset
+: \begin_inset Formula 
+\[
+(ab)(b^{-1}a^{-1})=a(bb^{-1})a^{-1}=e,
+\]
+
+\end_inset
+ ובאותו אופן \begin_inset Formula $(b^{-1}a^{-1})(ab)=e$
+\end_inset
+. מיחידות ההופכי מתקבלת הנוסחה.
+\end_layout
+
+\begin_layout Standard
+היפוך סדר הגורמים בנוסחת ההופכי הוא תופעה אופיינית לחבורות לא־אבליות. אם נרצה "לבטל" את הפעולות \begin_inset Formula $a$
+\end_inset
+ ואז \begin_inset Formula $b$
+\end_inset
+, עלינו לבטל תחילה את הפעולה האחרונה, \begin_inset Formula $b$
+\end_inset
+, ורק אחר כך את \begin_inset Formula $a$
+\end_inset
+.
+\end_layout
+
+\begin_layout Question
+יהיו \begin_inset Formula $a,b,c\in G$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+הוכיחו שאם \begin_inset Formula $a^2=a$
+\end_inset
+, אז \begin_inset Formula $a=e$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+פתרו את המשוואה \begin_inset Formula $axb=c$
+\end_inset
+ עבור \begin_inset Formula $x$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+הוכיחו \begin_inset Formula $(a_1a_2\cdots a_r)^{-1}=a_r^{-1}\cdots a_2^{-1}a_1^{-1}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+האם מן השוויון \begin_inset Formula $a^2=b^2$
+\end_inset
+ נובע תמיד \begin_inset Formula $a=b$
+\end_inset
+? תנו דוגמה או הוכחה.
+\end_layout
+
+\end_deeper
+\begin_layout Solution
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+מן \begin_inset Formula $a^2=a$
+\end_inset
+ נקבל בצמצום משמאל של \begin_inset Formula $a$
+\end_inset
+ כי \begin_inset Formula $a=e$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+נכפול משמאל ב־\begin_inset Formula $a^{-1}$
+\end_inset
+ ומימין ב־\begin_inset Formula $b^{-1}$
+\end_inset
+: \begin_inset Formula $x=a^{-1}cb^{-1}$
+\end_inset
+. הצבה מראה שזהו אכן הפתרון, והוא יחיד מחוקי הצמצום.
+\end_layout
+
+\begin_layout Enumerate
+באינדוקציה על \begin_inset Formula $r$
+\end_inset
+. עבור \begin_inset Formula $r=2$
+\end_inset
+ זו הנוסחה שכבר הוכחה. אם הטענה נכונה עבור \begin_inset Formula $r$
+\end_inset
+, אז \begin_inset Formula $((a_1\cdots a_r)a_{r+1})^{-1}=a_{r+1}^{-1}(a_1\cdots a_r)^{-1}=a_{r+1}^{-1}a_r^{-1}\cdots a_1^{-1}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+לא. בחבורה \begin_inset Formula $C_2=\{e,a\}$
+\end_inset
+ מתקיים \begin_inset Formula $e^2=a^2=e$
+\end_inset
+ אף ש־\begin_inset Formula $e\ne a$
+\end_inset
+. גם ב־\begin_inset Formula $\mathbb Z$
+\end_inset
+ בסימון חיבורי, \begin_inset Formula $x+x=y+y$
+\end_inset
+ כן גורר \begin_inset Formula $x=y$
+\end_inset
+, ולכן הכשל אינו נובע מעצם מושג החבורה אלא מקיום איברי פיתול.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+תת־חבורות וקבוצות יוצרים
+\end_layout
+
+\begin_layout Standard
+לעיתים חבורה גדולה מכילה בתוכה אוסף איברים הסגור לכל הפעולות החבורתיות. אוסף כזה הוא חבורה בפני עצמו.
+\end_layout
+
+\begin_layout Definition
+תהי \begin_inset Formula $G$
+\end_inset
+ חבורה. תת־קבוצה \begin_inset Formula $H\subseteq G$
+\end_inset
+ נקראת \emph on
+תת־חבורה\emph default
+ אם היא חבורה ביחס לפעולה של \begin_inset Formula $G$
+\end_inset
+. נסמן \begin_inset Formula $H\le G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+אין צורך לבדוק מחדש את הקיבוציות: היא עוברת בירושה מ־\begin_inset Formula $G$
+\end_inset
+. לכן מתקבל מבחן פשוט.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+מבחן תת־החבורה
+\end_layout
+
+\end_inset
+תת־קבוצה לא־ריקה \begin_inset Formula $H\subseteq G$
+\end_inset
+ היא תת־חבורה אם ורק אם לכל \begin_inset Formula $a,b\in H$
+\end_inset
+ מתקיים \begin_inset Formula 
+\[
+ab^{-1}\in H.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+אם \begin_inset Formula $H\le G$
+\end_inset
+, התנאי ברור. בכיוון ההפוך, נניח \begin_inset Formula $H$
+\end_inset
+ לא־ריקה ומקיימת את התנאי. נבחר \begin_inset Formula $a\in H$
+\end_inset
+. בהצבה \begin_inset Formula $a=b$
+\end_inset
+ נקבל \begin_inset Formula $e=aa^{-1}\in H$
+\end_inset
+. בהצבה \begin_inset Formula $a=e$
+\end_inset
+ נקבל \begin_inset Formula $b^{-1}\in H$
+\end_inset
+ לכל \begin_inset Formula $b\in H$
+\end_inset
+. לבסוף, אם \begin_inset Formula $a,b\in H$
+\end_inset
+, אז גם \begin_inset Formula $b^{-1}\in H$
+\end_inset
+, ולכן מן התנאי המוחל על \begin_inset Formula $a$
+\end_inset
+ ועל \begin_inset Formula $b^{-1}$
+\end_inset
+ נקבל \begin_inset Formula $a(b^{-1})^{-1}=ab\in H$
+\end_inset
+. לכן \begin_inset Formula $H$
+\end_inset
+ סגורה לכפל ולהופכיים ומכילה את היחידה.
+\end_layout
+
+\begin_layout Examples
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $m\mathbb Z\le\mathbb Z$
+\end_inset
+ ביחס לחיבור, לכל \begin_inset Formula $m\ge0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $SL_n(F)=\{A\in GL_n(F):\det A=1\}$
+\end_inset
+ היא תת־חבורה של \begin_inset Formula $GL_n(F)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\mathbb Q\le\mathbb R$
+\end_inset
+ כחבורות חיבוריות.
+\end_layout
+
+\begin_layout Enumerate
+קבוצת הסימטריות של צורה היא תת־חבורה של חבורת האיזומטריות של המישור.
+\end_layout
+
+\end_deeper
+\begin_layout Definition
+אם \begin_inset Formula $A\subseteq G$
+\end_inset
+, \emph on
+תת־החבורה הנוצרת על־ידי $A$\emph default
+, המסומנת \begin_inset Formula $\langle A\rangle$
+\end_inset
+, היא תת־החבורה הקטנה ביותר של \begin_inset Formula $G$
+\end_inset
+ המכילה את \begin_inset Formula $A$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+אפשר לתאר אותה במפורש: \begin_inset Formula $\langle A\rangle$
+\end_inset
+ מורכבת מכל המכפלות הסופיות של איברים מ־\begin_inset Formula $A$
+\end_inset
+ ומהופכיהם. המכפלה הריקה מייצגת את \begin_inset Formula $e$
+\end_inset
+. עבור איבר יחיד \begin_inset Formula $a$
+\end_inset
+ נכתוב \begin_inset Formula $\langle a\rangle$
+\end_inset
+; במקרה זה \begin_inset Formula 
+\[
+\langle a\rangle=\{a^n:n\in\mathbb Z\}.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+הקבוצה \begin_inset Formula $\langle A\rangle$
+\end_inset
+ היא תת־חבורה של \begin_inset Formula $G$
+\end_inset
+, ואם \begin_inset Formula $A\subseteq H\le G$
+\end_inset
+, אז \begin_inset Formula $\langle A\rangle\le H$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+מכפלה של שתי מילים באיברי \begin_inset Formula $A\cup A^{-1}$
+\end_inset
+ היא שוב מילה כזו, וההופכי של מילה מתקבל מהיפוך סדר האותיות והחלפת כל אות בהופכית; לכן הקבוצה המתוארת היא תת־חבורה. כל תת־חבורה המכילה את \begin_inset Formula $A$
+\end_inset
+ חייבת להכיל גם את ההופכיים של איברי \begin_inset Formula $A$
+\end_inset
+ ואת כל המכפלות הסופיות שלהם, ולכן היא מכילה את \begin_inset Formula $\langle A\rangle$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+יש גם דרך מושגית לתאר את תת־החבורה הנוצרת. חיתוך של תת־חבורות הוא שוב תת־חבורה, ואף חיתוך של משפחה כלשהי של תת־חבורות הוא תת־חבורה: היחידה נמצאת בכולן, ואם \begin_inset Formula $a,b$
+\end_inset
+ נמצאים בכולן אז גם \begin_inset Formula $ab^{-1}$
+\end_inset
+ נמצא בכולן. לכן \begin_inset Formula 
+\[
+\langle A\rangle=\bigcap_{\substack{H\le G\\ A\subseteq H}}H.
+\]
+
+\end_inset
+ כלומר, אפשר לחשוב על \begin_inset Formula $\langle A\rangle$
+\end_inset
+ בשתי דרכים שקולות: כאוסף כל המילים שאפשר לבנות מן היוצרים ומהופכיהם, או כחיתוך כל תת־החבורות שנאלצות להכיל אותם. הדרך הראשונה טובה לחישוב; השנייה טובה להוכחות של מינימליות.
+\end_layout
+
+\begin_layout QuestionW/Hint
+יהי \begin_inset Formula $G$
+\end_inset
+ חבורה ויהיו \begin_inset Formula $H,K\le G$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+הוכיחו ש־\begin_inset Formula $H\cap K\le G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+האם \begin_inset Formula $H\cup K$
+\end_inset
+ היא תמיד תת־חבורה?
+\end_layout
+
+\begin_layout Enumerate
+הוכיחו ש־\begin_inset Formula $H\cup K$
+\end_inset
+ היא תת־חבורה אם ורק אם \begin_inset Formula $H\subseteq K$
+\end_inset
+ או \begin_inset Formula $K\subseteq H$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+\begin_layout Hint
+בסעיף השלישי, אם אף אחת מן התת־חבורות אינה מוכלת באחרת, בחרו \begin_inset Formula $h\in H\setminus K$
+\end_inset
+ ו־\begin_inset Formula $k\in K\setminus H$
+\end_inset
+ ובדקו היכן יכול להיות \begin_inset Formula $hk$
+\end_inset
+.
+\end_layout
+
+\begin_layout Solution
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+החיתוך מכיל את \begin_inset Formula $e$
+\end_inset
+. אם \begin_inset Formula $a,b\in H\cap K$
+\end_inset
+, אז \begin_inset Formula $ab^{-1}$
+\end_inset
+ שייך גם ל־\begin_inset Formula $H$
+\end_inset
+ וגם ל־\begin_inset Formula $K$
+\end_inset
+, ולכן ל־\begin_inset Formula $H\cap K$
+\end_inset
+. ממבחן תת־החבורה נקבל \begin_inset Formula $H\cap K\le G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+לא. ב־\begin_inset Formula $(\mathbb Z,+)$
+\end_inset
+, הקבוצות \begin_inset Formula $2\mathbb Z$
+\end_inset
+ ו־\begin_inset Formula $3\mathbb Z$
+\end_inset
+ הן תת־חבורות, אבל \begin_inset Formula $2\in2\mathbb Z$
+\end_inset
+, \begin_inset Formula $3\in3\mathbb Z$
+\end_inset
+, ואילו \begin_inset Formula $2+3=5$
+\end_inset
+ אינו באיחוד.
+\end_layout
+
+\begin_layout Enumerate
+אם \begin_inset Formula $H\subseteq K$
+\end_inset
+, אז \begin_inset Formula $H\cup K=K$
+\end_inset
+ והיא תת־חבורה; וכן בכיוון השני. להפך, נניח שהאיחוד תת־חבורה ושאף הכלה אינה מתקיימת. נבחר \begin_inset Formula $h\in H\setminus K$
+\end_inset
+ ו־\begin_inset Formula $k\in K\setminus H$
+\end_inset
+. אז \begin_inset Formula $hk\in H\cup K$
+\end_inset
+. אם \begin_inset Formula $hk\in H$
+\end_inset
+, אז \begin_inset Formula $k=h^{-1}(hk)\in H$
+\end_inset
+, סתירה. אם \begin_inset Formula $hk\in K$
+\end_inset
+, אז \begin_inset Formula $h=(hk)k^{-1}\in K$
+\end_inset
+, שוב סתירה. לכן אחת ההכלות מוכרחה להתקיים.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+תת־חבורות של \begin_inset Formula $\mathbb Z$
+\end_inset
+ ותזכורת מתורת המספרים
+\end_layout
+
+\begin_layout Standard
+הדוגמה \begin_inset Formula $m\mathbb Z\le\mathbb Z$
+\end_inset
+ אינה רק מקור לדוגמאות. למעשה, אין ל־\begin_inset Formula $(\mathbb Z,+)$
+\end_inset
+ תת־חבורות אחרות. עובדה פשוטה זו תקשר בין שפה חבורתית לבין אלגוריתם החילוק.
+\end_layout
+
+\begin_layout Theorem
+כל תת־חבורה \begin_inset Formula $H\le(\mathbb Z,+)$
+\end_inset
+ היא מן הצורה \begin_inset Formula $m\mathbb Z$
+\end_inset
+ עבור מספר שלם יחיד \begin_inset Formula $m\ge0$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+אם \begin_inset Formula $H=\{0\}$
+\end_inset
+ ניקח \begin_inset Formula $m=0$
+\end_inset
+. אחרת, מאחר שאם \begin_inset Formula $h\in H$
+\end_inset
+ אז גם \begin_inset Formula $-h\in H$
+\end_inset
+, יש ב־\begin_inset Formula $H$
+\end_inset
+ מספרים חיוביים. יהי \begin_inset Formula $m$
+\end_inset
+ החיובי הקטן ביותר ב־\begin_inset Formula $H$
+\end_inset
+. ברור ש־\begin_inset Formula $m\mathbb Z\subseteq H$
+\end_inset
+. יהי \begin_inset Formula $b\in H$
+\end_inset
+. לפי אלגוריתם החילוק קיימים \begin_inset Formula $q,r\in\mathbb Z$
+\end_inset
+ כך ש־ \begin_inset Formula 
+\[
+b=qm+r,\qquad 0\le r<m.
+\]
+
+\end_inset
+ מאחר \begin_inset Formula $b,m\in H$
+\end_inset
+, גם \begin_inset Formula $r=b-qm\in H$
+\end_inset
+. ממינימליות \begin_inset Formula $m$
+\end_inset
+ נובע \begin_inset Formula $r=0$
+\end_inset
+, ולכן \begin_inset Formula $m\mid b$
+\end_inset
+. מכאן \begin_inset Formula $b\in m\mathbb Z$
+\end_inset
+, ולכן \begin_inset Formula $H=m\mathbb Z$
+\end_inset
+. המספר \begin_inset Formula $m$
+\end_inset
+ הוא האיבר החיובי הקטן ביותר של \begin_inset Formula $H$
+\end_inset
+, ולכן הוא יחיד.
+\end_layout
+
+\begin_layout Corollary
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+זהות בזו
+\end_layout
+
+\end_inset
+לכל \begin_inset Formula $a,b\in\mathbb Z$
+\end_inset
+, קיימים \begin_inset Formula $x,y\in\mathbb Z$
+\end_inset
+ כך ש־ \begin_inset Formula 
+\[
+ax+by=\gcd(a,b).
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+הקבוצה \begin_inset Formula 
+\[
+H=\{ax+by:x,y\in\mathbb Z\}
+\]
+
+\end_inset
+ היא תת־חבורה של \begin_inset Formula $\mathbb Z$
+\end_inset
+, ולכן \begin_inset Formula $H=m\mathbb Z$
+\end_inset
+ עבור \begin_inset Formula $m\ge0$
+\end_inset
+. מצד אחד \begin_inset Formula $m\in H$
+\end_inset
+, ולכן \begin_inset Formula $m=ax+by$
+\end_inset
+ לצמד שלמים כלשהו \begin_inset Formula $x,y$
+\end_inset
+. מצד שני \begin_inset Formula $a,b\in H$
+\end_inset
+, ולכן \begin_inset Formula $m$
+\end_inset
+ מחלק את שניהם. וכל מחלק משותף של \begin_inset Formula $a,b$
+\end_inset
+ מחלק כל צירוף \begin_inset Formula $ax+by$
+\end_inset
+, ובפרט את \begin_inset Formula $m$
+\end_inset
+. לכן \begin_inset Formula $m=\gcd(a,b)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+הזהות תהיה שימושית שוב ושוב. למשל, אם \begin_inset Formula $\gcd(k,n)=1$
+\end_inset
+, אז קיימים \begin_inset Formula $u,v$
+\end_inset
+ כך ש־\begin_inset Formula $uk+vn=1$
+\end_inset
+; בחבורה שבה \begin_inset Formula $a^n=e$
+\end_inset
+ נקבל מכאן \begin_inset Formula $a=(a^k)^u$
+\end_inset
+. זוהי הדרך החבורתית לראות מדוע העלאה בחזקה זרה ל־\begin_inset Formula $n$
+\end_inset
+ אינה מאבדת מידע בחבורה ציקלית מסדר \begin_inset Formula $n$
+\end_inset
+.
+\end_layout
+
+\begin_layout Section
+סדר של איבר וחבורות ציקליות
+\end_layout
+
+\begin_layout Definition
+\emph on
+סדרו\emph default
+ של איבר \begin_inset Formula $a\in G$
+\end_inset
+ הוא גודל תת־החבורה \begin_inset Formula $\langle a\rangle$
+\end_inset
+. נסמן אותו \begin_inset Formula $\operatorname{ord}(a)$
+\end_inset
+. אם \begin_inset Formula $\langle a\rangle$
+\end_inset
+ אינסופית, נאמר שסדרו של \begin_inset Formula $a$
+\end_inset
+ אינסופי.
+\end_layout
+
+\begin_layout Standard
+אם \begin_inset Formula $\operatorname{ord}(a)=n<\infty$
+\end_inset
+, אז \begin_inset Formula 
+\[
+e,a,a^2,\ldots,a^{n-1}
+\]
+
+\end_inset
+ הם איברים שונים, \begin_inset Formula $a^n=e$
+\end_inset
+, וכל חזקה של \begin_inset Formula $a$
+\end_inset
+ שווה לאחד מהם. למעשה, \begin_inset Formula $n$
+\end_inset
+ הוא המספר החיובי הקטן ביותר שעבורו \begin_inset Formula $a^n=e$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+אם \begin_inset Formula $\operatorname{ord}(a)=n<\infty$
+\end_inset
+, אז לכל \begin_inset Formula $r,s\in\mathbb Z$
+\end_inset
+, \begin_inset Formula 
+\[
+a^r=a^s\Longleftrightarrow n\mid(r-s).
+\]
+
+\end_inset
+ בפרט, \begin_inset Formula 
+\[
+a^m=e\Longleftrightarrow n\mid m.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+השוויון \begin_inset Formula $a^r=a^s$
+\end_inset
+ שקול לאחר כפל ב־\begin_inset Formula $a^{-s}$
+\end_inset
+ לשוויון \begin_inset Formula $a^{r-s}=e$
+\end_inset
+. נכתוב לפי אלגוריתם החילוק \begin_inset Formula $r-s=qn+t$
+\end_inset
+ עם \begin_inset Formula $0\le t<n$
+\end_inset
+. אז \begin_inset Formula $a^{r-s}=(a^n)^q a^t=a^t$
+\end_inset
+. לפי מינימליות \begin_inset Formula $n$
+\end_inset
+, מתקיים \begin_inset Formula $a^t=e$
+\end_inset
+ רק אם \begin_inset Formula $t=0$
+\end_inset
+, כלומר \begin_inset Formula $n\mid(r-s)$
+\end_inset
+. הכיוון ההפוך מיידי מן \begin_inset Formula $a^n=e$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+תוצאה מקדימה לחבורה אבלית סופית
+\end_layout
+
+\end_inset
+אם \begin_inset Formula $G$
+\end_inset
+ חבורה אבלית סופית ו־\begin_inset Formula $|G|=N$
+\end_inset
+, אז לכל \begin_inset Formula $a\in G$
+\end_inset
+ מתקיים \begin_inset Formula 
+\[
+a^N=e.
+\]
+
+\end_inset
+ ולכן \begin_inset Formula $\operatorname{ord}(a)$
+\end_inset
+ מחלק את \begin_inset Formula $N$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+נכתוב \begin_inset Formula $G=\{g_1,\ldots,g_N\}$
+\end_inset
+. הכפל משמאל ב־\begin_inset Formula $a$
+\end_inset
+ הוא תמורה של \begin_inset Formula $G$
+\end_inset
+, ולכן הרשימה \begin_inset Formula 
+\[
+ag_1,\ldots,ag_N
+\]
+
+\end_inset
+ מכילה בדיוק את אותם איברים, רק בסדר אחר. מאחר \begin_inset Formula $G$
+\end_inset
+ אבלית, אפשר לכפול את כל האיברים בלי לחשוש מסדר הגורמים ולקבל \begin_inset Formula 
+\[
+g_1\cdots g_N=(ag_1)\cdots(ag_N)=a^N g_1\cdots g_N.
+\]
+
+\end_inset
+ לאחר צמצום מתקבל \begin_inset Formula $a^N=e$
+\end_inset
+. אם \begin_inset Formula $n=\operatorname{ord}(a)$
+\end_inset
+, התוצאה הקודמת אומרת ש־\begin_inset Formula $a^N=e$
+\end_inset
+ אם ורק אם \begin_inset Formula $n\mid N$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+זוהי גרסה ראשונה של תופעה כללית הרבה יותר. ביחידה הבאה נוכיח את משפט לגרנז', שמסיר לחלוטין את הנחת החילופיות ומראה שסדרו של כל איבר בחבורה סופית מחלק את סדר החבורה.
+\end_layout
+
+\begin_layout Definition
+חבורה \begin_inset Formula $G$
+\end_inset
+ נקראת \emph on
+ציקלית\emph default
+ אם קיים \begin_inset Formula $a\in G$
+\end_inset
+ כך ש־\begin_inset Formula $G=\langle a\rangle$
+\end_inset
+. האיבר \begin_inset Formula $a$
+\end_inset
+ נקרא \emph on
+יוצר\emph default
+ של \begin_inset Formula $G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+כל חבורה ציקלית היא אבלית, משום שכל שני איברים הם חזקות של אותו איבר: \begin_inset Formula $a^ra^s=a^{r+s}=a^{s+r}=a^sa^r$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+הדוגמאות הבסיסיות הן \begin_inset Formula $(\mathbb Z,+)$
+\end_inset
+ והחבורות הסופיות \begin_inset Formula $\mathbb Z/n\mathbb Z$
+\end_inset
+ של מחלקות שארית מודולו \begin_inset Formula $n$
+\end_inset
+. בסימון חיבורי, \begin_inset Formula $\mathbb Z/n\mathbb Z$
+\end_inset
+ נוצרת על־ידי המחלקה \begin_inset Formula $\overline1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+מיון החבורות הציקליות
+\end_layout
+
+\end_inset
+כל חבורה ציקלית אינסופית איזומורפית ל־\begin_inset Formula $\mathbb Z$
+\end_inset
+. כל חבורה ציקלית סופית מסדר \begin_inset Formula $n$
+\end_inset
+ איזומורפית ל־\begin_inset Formula $\mathbb Z/n\mathbb Z$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+יהי \begin_inset Formula $G=\langle a\rangle$
+\end_inset
+. נגדיר \begin_inset Formula $f:\mathbb Z\to G$
+\end_inset
+ על־ידי \begin_inset Formula $f(m)=a^m$
+\end_inset
+. זוהי העתקה על ושומרת פעולה. אם סדר \begin_inset Formula $a$
+\end_inset
+ אינסופי, אז \begin_inset Formula $a^m=a^r$
+\end_inset
+ גורר \begin_inset Formula $m=r$
+\end_inset
+, ולכן \begin_inset Formula $f$
+\end_inset
+ חד־חד־ערכית. אם סדר \begin_inset Formula $a$
+\end_inset
+ הוא \begin_inset Formula $n$
+\end_inset
+, אז \begin_inset Formula $a^m=a^r$
+\end_inset
+ אם ורק אם \begin_inset Formula $m\equiv r\pmod n$
+\end_inset
+; לכן \begin_inset Formula $f$
+\end_inset
+ תלויה רק במחלקת השארית של \begin_inset Formula $m$
+\end_inset
+ ומשרה איזומורפיזם \begin_inset Formula $\mathbb Z/n\mathbb Z\to G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+אם \begin_inset Formula $\operatorname{ord}(a)=n<\infty$
+\end_inset
+, אז \begin_inset Formula 
+\[
+\operatorname{ord}(a^k)=\frac{n}{\gcd(n,k)}.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+סדר \begin_inset Formula $a^k$
+\end_inset
+ הוא המספר החיובי הקטן ביותר \begin_inset Formula $m$
+\end_inset
+ שעבורו \begin_inset Formula $a^{km}=e$
+\end_inset
+, כלומר \begin_inset Formula $n\mid km$
+\end_inset
+. אם \begin_inset Formula $d=\gcd(n,k)$
+\end_inset
+ ונכתוב \begin_inset Formula $n=dn_0$
+\end_inset
+, \begin_inset Formula $k=dk_0$
+\end_inset
+ עם \begin_inset Formula $\gcd(n_0,k_0)=1$
+\end_inset
+, התנאי שקול ל־\begin_inset Formula $n_0\mid m$
+\end_inset
+. המספר החיובי הקטן ביותר הוא אפוא \begin_inset Formula $n_0=n/d$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+בחבורה ציקלית מסדר \begin_inset Formula $n$
+\end_inset
+, האיבר \begin_inset Formula $a^k$
+\end_inset
+ הוא יוצר אם ורק אם \begin_inset Formula $\gcd(k,n)=1$
+\end_inset
+. בפרט, מספר היוצרים הוא \begin_inset Formula $\varphi(n)$
+\end_inset
+, פונקציית אוילר.
+\end_layout
+
+\begin_layout Question
+בחבורה ציקלית \begin_inset Formula $G=\langle a\rangle$
+\end_inset
+ מסדר \begin_inset Formula $60$
+\end_inset
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+מצאו את סדר \begin_inset Formula $a^{18}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+כמה יוצרים יש ל־\begin_inset Formula $G$
+\end_inset
+?
+\end_layout
+
+\begin_layout Enumerate
+מצאו את תת־החבורה \begin_inset Formula $\langle a^{12}\rangle$
+\end_inset
+ ואת הסדר שלה.
+\end_layout
+
+\begin_layout Enumerate
+הוכיחו שלכל מחלק \begin_inset Formula $d$
+\end_inset
+ של \begin_inset Formula $60$
+\end_inset
+ קיימת ב־\begin_inset Formula $G$
+\end_inset
+ תת־חבורה יחידה מסדר \begin_inset Formula $d$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+\begin_layout Solution
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\operatorname{ord}(a^{18})=60/\gcd(60,18)=60/6=10$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+מספר היוצרים הוא \begin_inset Formula $\varphi(60)=60(1-1/2)(1-1/3)(1-1/5)=16$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\gcd(60,12)=12$
+\end_inset
+, ולכן סדר \begin_inset Formula $a^{12}$
+\end_inset
+ הוא \begin_inset Formula $5$
+\end_inset
+. לפיכך \begin_inset Formula $\langle a^{12}\rangle=\{e,a^{12},a^{24},a^{36},a^{48}\}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם \begin_inset Formula $d\mid60$
+\end_inset
+, האיבר \begin_inset Formula $a^{60/d}$
+\end_inset
+ הוא מסדר \begin_inset Formula $d$
+\end_inset
+, ולכן קיימת תת־חבורה מסדר \begin_inset Formula $d$
+\end_inset
+. ליחידות, תהי \begin_inset Formula $H\le G$
+\end_inset
+ מסדר \begin_inset Formula $d$
+\end_inset
+. כל תת־חבורה של חבורה ציקלית היא ציקלית: אם \begin_inset Formula $a^m$
+\end_inset
+ היא החזקה החיובית בעלת המעריך הקטן ביותר ב־\begin_inset Formula $H$
+\end_inset
+, אלגוריתם החילוק מראה שכל חזקה השייכת ל־\begin_inset Formula $H$
+\end_inset
+ היא חזקה של \begin_inset Formula $a^m$
+\end_inset
+. לכן \begin_inset Formula $H=\langle a^m\rangle$
+\end_inset
+. הסדר שלה קובע \begin_inset Formula $\gcd(60,m)=60/d$
+\end_inset
+, ומכאן \begin_inset Formula $\langle a^m\rangle=\langle a^{60/d}\rangle$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+הומומורפיזמים ואיזומורפיזמים
+\end_layout
+
+\begin_layout Standard
+כאשר משווים שתי חבורות, איננו מחפשים התאמה השומרת את שמות האיברים, אלא התאמה השומרת את חוק הכפל. זהו תפקידו של הומומורפיזם.
+\end_layout
+
+\begin_layout Definition
+תהיינה \begin_inset Formula $G,H$
+\end_inset
+ חבורות. העתקה \begin_inset Formula $f:G\to H$
+\end_inset
+ נקראת \emph on
+הומומורפיזם\emph default
+ אם לכל \begin_inset Formula $a,b\in G$
+\end_inset
+ מתקיים \begin_inset Formula 
+\[
+f(ab)=f(a)f(b).
+\]
+
+\end_inset
+ הומומורפיזם חד־חד־ערכי ועל נקרא \emph on
+איזומורפיזם\emph default
+. אם קיים איזומורפיזם בין \begin_inset Formula $G$
+\end_inset
+ ל־\begin_inset Formula $H$
+\end_inset
+, נכתוב \begin_inset Formula $G\cong H$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+איזומורפיזם אומר ששתי החבורות הן אותו מבנה חבורתי בשמות שונים. לדוגמה, חבורת הסיבובים של משולש שווה־צלעות איזומורפית ל־\begin_inset Formula $C_3$
+\end_inset
+; אין חשיבות לכך שאיברי החבורה האחת הם העתקות גאומטריות ואיברי האחרת מחלקות שארית.
+\end_layout
+
+\begin_layout Claim
+אם \begin_inset Formula $f:G\to H$
+\end_inset
+ הומומורפיזם, אז \begin_inset Formula 
+\[
+f(e_G)=e_H,\qquad f(a^{-1})=f(a)^{-1},\qquad f(a^n)=f(a)^n
+\]
+
+\end_inset
+ לכל \begin_inset Formula $a\in G$
+\end_inset
+ ו־\begin_inset Formula $n\in\mathbb Z$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+מן \begin_inset Formula $f(e_G)=f(e_Ge_G)=f(e_G)^2$
+\end_inset
+ וביטול \begin_inset Formula $f(e_G)$
+\end_inset
+ נקבל \begin_inset Formula $f(e_G)=e_H$
+\end_inset
+. כעת \begin_inset Formula $e_H=f(e_G)=f(aa^{-1})=f(a)f(a^{-1})$
+\end_inset
+, ולכן \begin_inset Formula $f(a^{-1})$
+\end_inset
+ הוא ההופכי של \begin_inset Formula $f(a)$
+\end_inset
+. חוק החזקות נובע באינדוקציה למעריכים חיוביים, ומהנוסחה להופכי למעריכים שליליים.
+\end_layout
+
+\begin_layout Examples
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+ההעתקה \begin_inset Formula $\exp:(\mathbb R,+)\to(\mathbb R_{>0},\cdot)$
+\end_inset
+ היא איזומורפיזם.
+\end_layout
+
+\begin_layout Enumerate
+הדטרמיננטה \begin_inset Formula $\det:GL_n(F)\to F^\times$
+\end_inset
+ היא הומומורפיזם.
+\end_layout
+
+\begin_layout Enumerate
+לכל חבורה \begin_inset Formula $G$
+\end_inset
+, ההעתקה הקבועה \begin_inset Formula $g\mapsto e$
+\end_inset
+ היא הומומורפיזם.
+\end_layout
+
+\begin_layout Enumerate
+אם \begin_inset Formula $G$
+\end_inset
+ אבלית ו־\begin_inset Formula $m\in\mathbb Z$
+\end_inset
+, ההעתקה \begin_inset Formula $g\mapsto g^m$
+\end_inset
+ היא הומומורפיזם. בחבורה לא־אבלית היא בדרך כלל אינה הומומורפיזם.
+\end_layout
+
+\end_deeper
+\begin_layout QuestionW/Hint
+יהי \begin_inset Formula $f:G\to H$
+\end_inset
+ הומומורפיזם.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+הוכיחו שאם \begin_inset Formula $a$
+\end_inset
+ מסדר סופי, אז \begin_inset Formula $\operatorname{ord}(f(a))$
+\end_inset
+ מחלק את \begin_inset Formula $\operatorname{ord}(a)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+הוכיחו שאיזומורפיזם שומר סדר של איברים.
+\end_layout
+
+\begin_layout Enumerate
+תנו דוגמה להומומורפיזם שאינו חד־חד־ערכי ושאינו ההומומורפיזם הטריוויאלי.
+\end_layout
+
+\begin_layout Enumerate
+הראו שהמפה \begin_inset Formula $x\mapsto x^2$
+\end_inset
+ היא הומומורפיזם אם \begin_inset Formula $G$
+\end_inset
+ אבלית, והוכיחו שאם היא הומומורפיזם בחבורה \begin_inset Formula $G$
+\end_inset
+, אז \begin_inset Formula $G$
+\end_inset
+ אבלית.
+\end_layout
+
+\end_deeper
+\begin_layout Hint
+בסעיף האחרון השוו בין \begin_inset Formula $(ab)^2$
+\end_inset
+ לבין \begin_inset Formula $a^2b^2$
+\end_inset
+ ובצעו צמצום.
+\end_layout
+
+\begin_layout Solution
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אם \begin_inset Formula $\operatorname{ord}(a)=n$
+\end_inset
+, אז \begin_inset Formula $a^n=e$
+\end_inset
+, ולכן \begin_inset Formula $f(a)^n=f(a^n)=e$
+\end_inset
+. סדר \begin_inset Formula $f(a)$
+\end_inset
+ הוא המספר החיובי הקטן ביותר שמאפס חזקה שלו, ולכן הוא מחלק כל מעריך כזה, ובפרט את \begin_inset Formula $n$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+ניישם את הסעיף הקודם על \begin_inset Formula $f$
+\end_inset
+ ונקבל \begin_inset Formula $\operatorname{ord}(f(a))\mid\operatorname{ord}(a)$
+\end_inset
+. מכיוון שאיזומורפיזם הפיך וההופכי שלו הומומורפיזם, נקבל גם את החלוקה ההפוכה. לכן הסדרים שווים.
+\end_layout
+
+\begin_layout Enumerate
+למשל \begin_inset Formula $f:\mathbb Z\to\mathbb Z/2\mathbb Z$
+\end_inset
+, \begin_inset Formula $f(n)=\overline n$
+\end_inset
+. זהו הומומורפיזם על, והוא אינו חד־חד־ערכי משום ש־\begin_inset Formula $f(0)=f(2)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם \begin_inset Formula $G$
+\end_inset
+ אבלית, \begin_inset Formula $(ab)^2=a^2b^2$
+\end_inset
+, ולכן המפה שומרת מכפלה. להפך, אם היא הומומורפיזם, אז לכל \begin_inset Formula $a,b$
+\end_inset
+, \begin_inset Formula $(ab)^2=a^2b^2$
+\end_inset
+, כלומר \begin_inset Formula $abab=aabb$
+\end_inset
+. מצמצמים משמאל ב־\begin_inset Formula $a$
+\end_inset
+ ומימין ב־\begin_inset Formula $b$
+\end_inset
+ ומקבלים \begin_inset Formula $ba=ab$
+\end_inset
+. לכן \begin_inset Formula $G$
+\end_inset
+ אבלית.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+מה איזומורפיזם חייב לשמר?
+\end_layout
+
+\begin_layout Standard
+כאשר רוצים להראות ששתי חבורות \emph on
+אינן\emph default
+ איזומורפיות, כמעט אף פעם אין צורך לבדוק את כל ההתאמות האפשריות ביניהן. במקום זאת מחפשים תכונה מבנית הנשמרת באיזומורפיזם.
+\end_layout
+
+\begin_layout Standard
+איזומורפיזם שומר, בין היתר, את סדר החבורה, את סדרו של כל איבר, את מספר האיברים מכל סדר, ואת היות החבורה אבלית או ציקלית. למשל \begin_inset Formula $C_4$
+\end_inset
+ ו־\begin_inset Formula $C_2\times C_2$
+\end_inset
+ שתיהן מסדר \begin_inset Formula $4$
+\end_inset
+, אך ב־\begin_inset Formula $C_4$
+\end_inset
+ יש איברים מסדר \begin_inset Formula $4$
+\end_inset
+, ואילו ב־\begin_inset Formula $C_2\times C_2$
+\end_inset
+ כל איבר לא־יחידה מסדר \begin_inset Formula $2$
+\end_inset
+.
+\end_layout
+
+\begin_layout Question
+הראו שהחבורות הבאות אינן איזומורפיות, באמצעות אינווריאנט פשוט ככל האפשר.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $C_6$
+\end_inset
+ ו־\begin_inset Formula $S_3$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $C_8$
+\end_inset
+ ו־\begin_inset Formula $C_4\times C_2$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $(\mathbb Q,+)$
+\end_inset
+ ו־\begin_inset Formula $(\mathbb Z,+)$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+\begin_layout Solution
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $C_6$
+\end_inset
+ אבלית ואילו \begin_inset Formula $S_3$
+\end_inset
+ אינה אבלית.
+\end_layout
+
+\begin_layout Enumerate
+ב־\begin_inset Formula $C_8$
+\end_inset
+ יש איבר מסדר \begin_inset Formula $8$
+\end_inset
+; במכפלה \begin_inset Formula $C_4\times C_2$
+\end_inset
+ סדר כל איבר מחלק את \begin_inset Formula $\operatorname{lcm}(4,2)=4$
+\end_inset
+, ולכן אין איבר מסדר \begin_inset Formula $8$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+ב־\begin_inset Formula $\mathbb Q$
+\end_inset
+ כל איבר ניתן לחלוקה ב־\begin_inset Formula $2$
+\end_inset
+: לכל \begin_inset Formula $q$
+\end_inset
+ קיים \begin_inset Formula $r=q/2$
+\end_inset
+ כך ש־\begin_inset Formula $2r=q$
+\end_inset
+. ב־\begin_inset Formula $\mathbb Z$
+\end_inset
+ התכונה אינה מתקיימת עבור \begin_inset Formula $1$
+\end_inset
+. תכונה זו נשמרת באיזומורפיזם חיבורי.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+שיכונים ומכפלות ישרות
+\end_layout
+
+\begin_layout Definition
+נאמר ש־\begin_inset Formula $H$
+\end_inset
+ \emph on
+ניתנת לשיכון\emph default
+ ב־\begin_inset Formula $G$
+\end_inset
+ אם \begin_inset Formula $H$
+\end_inset
+ איזומורפית לתת־חבורה של \begin_inset Formula $G$
+\end_inset
+. שקול לכך שקיים הומומורפיזם חד־חד־ערכי \begin_inset Formula $H\to G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+המכפלה הישרה של החבורות \begin_inset Formula $G_1,G_2$
+\end_inset
+ היא הקבוצה \begin_inset Formula $G_1\times G_2$
+\end_inset
+ עם הפעולה \begin_inset Formula 
+\[
+(g_1,g_2)(h_1,h_2)=(g_1h_1,g_2h_2).
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+היחידה היא \begin_inset Formula $(e_1,e_2)$
+\end_inset
+ וההופכי הוא \begin_inset Formula $(g_1^{-1},g_2^{-1})$
+\end_inset
+. אם שתי החבורות סופיות, \begin_inset Formula $|G_1\times G_2|=|G_1||G_2|$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+הדוגמה \begin_inset Formula $C_4$
+\end_inset
+ לעומת \begin_inset Formula $C_2\times C_2$
+\end_inset
+ מראה לראשונה בבירור שסדר החבורה אינו קובע אותה עד כדי איזומורפיזם. בשתיהן ארבעה איברים, אך ב־\begin_inset Formula $C_4$
+\end_inset
+ יש איבר מסדר \begin_inset Formula $4$
+\end_inset
+, ואילו כל איבר לא־יחידה ב־\begin_inset Formula $C_2\times C_2$
+\end_inset
+ הוא מסדר \begin_inset Formula $2$
+\end_inset
+.
+\end_layout
+
+\begin_layout Claim
+אם \begin_inset Formula $a\in G$
+\end_inset
+ ו־\begin_inset Formula $b\in H$
+\end_inset
+ הם מסדרים סופיים \begin_inset Formula $m,n$
+\end_inset
+, אז \begin_inset Formula 
+\[
+\operatorname{ord}(a,b)=\operatorname{lcm}(m,n).
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+מתקיים \begin_inset Formula $(a,b)^k=(a^k,b^k)$
+\end_inset
+. זוהי היחידה אם ורק אם \begin_inset Formula $m\mid k$
+\end_inset
+ וגם \begin_inset Formula $n\mid k$
+\end_inset
+. המספר החיובי הקטן ביותר המקיים את שתי החלוקות הוא \begin_inset Formula $\operatorname{lcm}(m,n)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+אם \begin_inset Formula $\gcd(m,n)=1$
+\end_inset
+, אז \begin_inset Formula $C_m\times C_n\cong C_{mn}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Section
+משפט קיילי
+\end_layout
+
+\begin_layout Standard
+עד כה חבורות התמורות היו דוגמה חשובה אחת בין רבות. משפט קיילי אומר, במובן מסוים, שכל חבורה היא חבורת תמורות.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+משפט קיילי
+\end_layout
+
+\end_inset
+כל חבורה \begin_inset Formula $G$
+\end_inset
+ ניתנת לשיכון בחבורת התמורות \begin_inset Formula $S_G$
+\end_inset
+ של הקבוצה \begin_inset Formula $G$
+\end_inset
+. בפרט, אם \begin_inset Formula $|G|=n<\infty$
+\end_inset
+, אז \begin_inset Formula $G$
+\end_inset
+ ניתנת לשיכון ב־\begin_inset Formula $S_n$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+לכל \begin_inset Formula $g\in G$
+\end_inset
+ נגדיר את ההזזה השמאלית \begin_inset Formula $L_g:G\to G$
+\end_inset
+ על־ידי \begin_inset Formula $L_g(x)=gx$
+\end_inset
+. היא תמורה, וההופכית שלה היא \begin_inset Formula $L_{g^{-1}}$
+\end_inset
+. נגדיר \begin_inset Formula $L:G\to S_G$
+\end_inset
+ על־ידי \begin_inset Formula $g\mapsto L_g$
+\end_inset
+. לכל \begin_inset Formula $g,h$
+\end_inset
+, \begin_inset Formula 
+\[
+L_gL_h(x)=g(hx)=(gh)x=L_{gh}(x),
+\]
+
+\end_inset
+ ולכן \begin_inset Formula $L$
+\end_inset
+ הומומורפיזם. אם \begin_inset Formula $L_g=L_h$
+\end_inset
+, נציב \begin_inset Formula $x=e$
+\end_inset
+ ונקבל \begin_inset Formula $g=L_g(e)=L_h(e)=h$
+\end_inset
+. לכן \begin_inset Formula $L$
+\end_inset
+ חד־חד־ערכי.
+\end_layout
+
+\begin_layout Standard
+משפט קיילי משנה את נקודת המבט: אין צורך לחשוב על חבורה מופשטת כעל אוסף מסתורי של איברים. תמיד ניתן לחשוב על איבריה כתמורות של קבוצה, כאשר הכפל הוא הרכבה. בהמשך נראה שמושג \emph on
+פעולה של חבורה על קבוצה\emph default
+ הוא ההכללה הטבעית של הרעיון הזה.
+\end_layout
+
+\begin_layout Section* in ToC
+סיכום יחידה 1
+\end_layout
+
+\begin_layout Standard
+ביחידה זו הגדרנו חבורה כמערכת בעלת פעולה קיבוצית, יחידה והופכיים. ראינו כיצד אקסיומות מעטות אלה מולידות חוקי חישוב: יחידות היחידה וההופכי, צמצום וחוקי חזקות. הכרנו תת־חבורות וקבוצות יוצרים, והגדרנו סדר של איבר וחבורה ציקלית. החבורות הציקליות מוינו במלואן: כל חבורה ציקלית היא \begin_inset Formula $\mathbb Z$
+\end_inset
+ או \begin_inset Formula $\mathbb Z/n\mathbb Z$
+\end_inset
+ עד כדי איזומורפיזם. לבסוף הכרנו הומומורפיזמים, מכפלות ישרות ושיכונים, ומשפט קיילי הראה שכל חבורה ניתנת למימוש כחבורת תמורות.
+\end_layout
+
+\begin_layout Section* in ToC
+שאלות להערכה עצמית
+\end_layout
+
+\begin_layout Question
+תהי \begin_inset Formula $G$
+\end_inset
+ חבורה שבה \begin_inset Formula $a^2=e$
+\end_inset
+ לכל \begin_inset Formula $a\in G$
+\end_inset
+. הוכיחו ש־\begin_inset Formula $G$
+\end_inset
+ אבלית.
+\end_layout
+
+\begin_layout Solution
+לכל \begin_inset Formula $a,b\in G$
+\end_inset
+ מתקיים \begin_inset Formula $(ab)^2=e$
+\end_inset
+, ולכן \begin_inset Formula $abab=e$
+\end_inset
+. מצד שני \begin_inset Formula $a^2=b^2=e$
+\end_inset
+, ולכן \begin_inset Formula $a^{-1}=a$
+\end_inset
+ ו־\begin_inset Formula $b^{-1}=b$
+\end_inset
+. מן \begin_inset Formula $(ab)^{-1}=b^{-1}a^{-1}$
+\end_inset
+ נקבל \begin_inset Formula $(ab)^{-1}=ba$
+\end_inset
+, ואילו מן \begin_inset Formula $(ab)^2=e$
+\end_inset
+ נקבל \begin_inset Formula $(ab)^{-1}=ab$
+\end_inset
+. לכן \begin_inset Formula $ab=ba$
+\end_inset
+. מכיוון שהאיברים שרירותיים, \begin_inset Formula $G$
+\end_inset
+ אבלית.
+\end_layout
+
+\begin_layout Question
+מצאו את כל תת־החבורות של \begin_inset Formula $\mathbb Z/12\mathbb Z$
+\end_inset
+, וציינו את סדר כל אחת מהן.
+\end_layout
+
+\begin_layout Solution
+כל תת־חבורה של חבורה ציקלית היא ציקלית, ולכל מחלק \begin_inset Formula $d$
+\end_inset
+ של \begin_inset Formula $12$
+\end_inset
+ יש תת־חבורה יחידה מסדר \begin_inset Formula $d$
+\end_inset
+. המחלקים הם \begin_inset Formula $1,2,3,4,6,12$
+\end_inset
+. התת־חבורות הן: \begin_inset Formula $\{\bar0\}$
+\end_inset
+; \begin_inset Formula $\langle\bar6\rangle=\{\bar0,\bar6\}$
+\end_inset
+; \begin_inset Formula $\langle\bar4\rangle=\{\bar0,\bar4,\bar8\}$
+\end_inset
+; \begin_inset Formula $\langle\bar3\rangle=\{\bar0,\bar3,\bar6,\bar9\}$
+\end_inset
+; \begin_inset Formula $\langle\bar2\rangle=\{\bar0,\bar2,\bar4,\bar6,\bar8,\bar{10}\}$
+\end_inset
+; והחבורה כולה \begin_inset Formula $\langle\bar1\rangle$
+\end_inset
+.
+\end_layout
+
+\begin_layout Question
+יהיו \begin_inset Formula $G,H$
+\end_inset
+ חבורות סופיות. הוכיחו שאם \begin_inset Formula $\gcd(|G|,|H|)=1$
+\end_inset
+, אז כל הומומורפיזם \begin_inset Formula $f:G\to H$
+\end_inset
+ הוא טריוויאלי, בהנחה שמותר להשתמש בעובדה שסדר איבר מחלק את סדר החבורה במקרה הסופי.
+\end_layout
+
+\begin_layout Solution
+לכל \begin_inset Formula $g\in G$
+\end_inset
+, סדר \begin_inset Formula $g$
+\end_inset
+ מחלק את \begin_inset Formula $|G|$
+\end_inset
+. סדר \begin_inset Formula $f(g)$
+\end_inset
+ מחלק את סדר \begin_inset Formula $g$
+\end_inset
+, ולכן מחלק את \begin_inset Formula $|G|$
+\end_inset
+. מצד שני \begin_inset Formula $f(g)\in H$
+\end_inset
+, ולכן סדרו מחלק את \begin_inset Formula $|H|$
+\end_inset
+. מאחר שהסדרים של \begin_inset Formula $G,H$
+\end_inset
+ זרים, סדר \begin_inset Formula $f(g)$
+\end_inset
+ הוא \begin_inset Formula $1$
+\end_inset
+, ולכן \begin_inset Formula $f(g)=e_H$
+\end_inset
+. הדבר נכון לכל \begin_inset Formula $g$
+\end_inset
+, ולכן \begin_inset Formula $f$
+\end_inset
+ טריוויאלי.
+\end_layout
+
+\begin_layout Question
+הוכיחו שכל תת־חבורה של חבורה ציקלית היא ציקלית.
+\end_layout
+
+\begin_layout Solution
+יהי \begin_inset Formula $G=\langle a\rangle$
+\end_inset
+ ו־\begin_inset Formula $H\le G$
+\end_inset
+. אם \begin_inset Formula $H=\{e\}$
+\end_inset
+ היא ציקלית. אחרת קיימת חזקה חיובית של \begin_inset Formula $a$
+\end_inset
+ השייכת ל־\begin_inset Formula $H$
+\end_inset
+; יהי \begin_inset Formula $m>0$
+\end_inset
+ המעריך הקטן ביותר שעבורו \begin_inset Formula $a^m\in H$
+\end_inset
+. ברור \begin_inset Formula $\langle a^m\rangle\subseteq H$
+\end_inset
+. אם \begin_inset Formula $a^r\in H$
+\end_inset
+, נכתוב \begin_inset Formula $r=qm+s$
+\end_inset
+ עם \begin_inset Formula $0\le s<m$
+\end_inset
+. אז \begin_inset Formula $a^s=a^r(a^m)^{-q}\in H$
+\end_inset
+. ממינימליות \begin_inset Formula $m$
+\end_inset
+ נובע \begin_inset Formula $s=0$
+\end_inset
+, ולכן \begin_inset Formula $a^r\in\langle a^m\rangle$
+\end_inset
+. מכאן \begin_inset Formula $H=\langle a^m\rangle$
+\end_inset
+.
+\end_layout
+
+\begin_layout QuestionW/Hint
+קבעו מתי \begin_inset Formula $C_m\times C_n$
+\end_inset
+ היא חבורה ציקלית.
+\end_layout
+
+\begin_layout Hint
+חשבו מהו הסדר המרבי האפשרי של איבר \begin_inset Formula $(a,b)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Solution
+החבורה ציקלית אם ורק אם \begin_inset Formula $\gcd(m,n)=1$
+\end_inset
+. אם הסדרים זרים, זוג של יוצרים הוא מסדר \begin_inset Formula $\operatorname{lcm}(m,n)=mn$
+\end_inset
+, ולכן יוצר את כל המכפלה. אם \begin_inset Formula $d=\gcd(m,n)>1$
+\end_inset
+, אז סדר כל איבר מחלק \begin_inset Formula $\operatorname{lcm}(m,n)=mn/d<mn=|C_m\times C_n|$
+\end_inset
+, ולכן אין איבר שיכול ליצור את החבורה כולה.
+\end_layout
+
+\begin_layout Chapter
+מחלקות צד, חבורות מנה והומומורפיזמים
+\end_layout
+
+\begin_layout Goals
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+להכיר יחסי שקילות ומחלקות שקילות בהקשר חבורתי.
+\end_layout
+
+\begin_layout Itemize
+להגדיר הצמדה ומחלקות צמידות.
+\end_layout
+
+\begin_layout Itemize
+להכיר מחלקות צד, אינדקס ומשפט לגרנז'.
+\end_layout
+
+\begin_layout Itemize
+להבין מדוע חבורת מנה דורשת תת־חבורה נורמלית.
+\end_layout
+
+\begin_layout Itemize
+להעמיק במבנה של הומומורפיזמים באמצעות גרעין ותמונה.
+\end_layout
+
+\begin_layout Itemize
+להוכיח את משפט האיזומורפיזם הראשון ולהכיר את סימן התמורה.
+\end_layout
+
+\end_deeper
+\begin_layout Goals
+
+\end_layout
+
+\begin_layout Section
+יחסי שקילות והצמדה
+\end_layout
+
+\begin_layout Standard
+לפני שנבנה חבורות חדשות מתוך חבורה נתונה, נזדקק למנגנון כללי המאפשר לאגד איברים למחלקות.
+\end_layout
+
+\begin_layout Definition
+יחס \begin_inset Formula $\sim$
+\end_inset
+ על קבוצה \begin_inset Formula $X$
+\end_inset
+ נקרא \emph on
+יחס שקילות\emph default
+ אם הוא רפלקסיבי, סימטרי וטרנזיטיבי. מחלקת השקילות של \begin_inset Formula $x$
+\end_inset
+ היא \begin_inset Formula 
+\[
+[x]=\{y\in X:y\sim x\}.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+מחלקות השקילות יוצרות חלוקה של \begin_inset Formula $X$
+\end_inset
+: כל איבר נמצא במחלקה אחת, ושתי מחלקות הן שוות או זרות. ולהפך, כל חלוקה של \begin_inset Formula $X$
+\end_inset
+ לחלקים זרים מגדירה יחס שקילות — שני איברים שקולים כאשר הם נמצאים באותו חלק.
+\end_layout
+
+\begin_layout Standard
+בחבורה יש יחס שקילות טבעי שאינו דורש בחירת תת־חבורה.
+\end_layout
+
+\begin_layout Definition
+איברים \begin_inset Formula $a,b\in G$
+\end_inset
+ נקראים \emph on
+צמודים\emph default
+ אם קיים \begin_inset Formula $g\in G$
+\end_inset
+ כך ש־ \begin_inset Formula 
+\[
+b=gag^{-1}.
+\]
+
+\end_inset
+ ההעתקה \begin_inset Formula $c_g(a)=gag^{-1}$
+\end_inset
+ נקראת \emph on
+הצמדה על־ידי $g$\emph default
+.
+\end_layout
+
+\begin_layout Claim
+הצמדה על־ידי \begin_inset Formula $g$
+\end_inset
+ היא אוטומורפיזם של \begin_inset Formula $G$
+\end_inset
+, וצמידות היא יחס שקילות.
+\end_layout
+
+\begin_layout Proof
+מתקיים \begin_inset Formula $c_g(ab)=gabg^{-1}=(gag^{-1})(gbg^{-1})$
+\end_inset
+, ולכן \begin_inset Formula $c_g$
+\end_inset
+ הומומורפיזם; ההופכי שלו הוא \begin_inset Formula $c_{g^{-1}}$
+\end_inset
+. רפלקסיביות של צמידות מתקבלת מהצמדה על־ידי \begin_inset Formula $e$
+\end_inset
+, סימטריות מהיפוך המצמיד, וטרנזיטיביות מן \begin_inset Formula $h(gag^{-1})h^{-1}=(hg)a(hg)^{-1}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+צמידות משמרת כל תכונה הנשמרת באוטומורפיזם. בפרט, איברים צמודים הם בעלי אותו סדר. ב־\begin_inset Formula $GL_n(F)$
+\end_inset
+ הצמדה היא דמיון מטריצות. ב־\begin_inset Formula $S_n$
+\end_inset
+ הצמדה משנה את שמות הנקודות במחזורים: \begin_inset Formula 
+\[
+g(a_1a_2\ldots a_k)g^{-1}=(g(a_1)g(a_2)\ldots g(a_k)).
+\]
+
+\end_inset
+ מכאן שתי תמורות צמודות ב־\begin_inset Formula $S_n$
+\end_inset
+ אם ורק אם יש להן אותו מבנה מחזורים.
+\end_layout
+
+\begin_layout Question
+מצאו את מחלקות הצמידות של \begin_inset Formula $S_3$
+\end_inset
+.
+\end_layout
+
+\begin_layout Solution
+מבני המחזורים האפשריים ב־\begin_inset Formula $S_3$
+\end_inset
+ הם \begin_inset Formula $1+1+1$
+\end_inset
+, \begin_inset Formula $2+1$
+\end_inset
+, ו־\begin_inset Formula $3$
+\end_inset
+. לכן יש שלוש מחלקות: \begin_inset Formula $\{e\}$
+\end_inset
+; שלוש הטרנספוזיציות \begin_inset Formula $\{(12),(13),(23)\}$
+\end_inset
+; ושני המחזורים באורך שלוש \begin_inset Formula $\{(123),(132)\}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Section
+מחלקות צד ומשפט לגרנז'
+\end_layout
+
+\begin_layout Standard
+תהי \begin_inset Formula $H\le G$
+\end_inset
+. נכפיל את כל איברי \begin_inset Formula $H$
+\end_inset
+ באיבר קבוע \begin_inset Formula $g$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+הקבוצה \begin_inset Formula 
+\[
+gH=\{gh:h\in H\}
+\]
+
+\end_inset
+ נקראת \emph on
+מחלקה שמאלית\emph default
+ של \begin_inset Formula $H$
+\end_inset
+, והקבוצה \begin_inset Formula 
+\[
+Hg=\{hg:h\in H\}
+\]
+
+\end_inset
+ נקראת \emph on
+מחלקה ימנית\emph default
+.
+\end_layout
+
+\begin_layout Standard
+ההעתקה \begin_inset Formula $H\to gH$
+\end_inset
+, \begin_inset Formula $h\mapsto gh$
+\end_inset
+, היא חד־חד־ערכית ועל. לכן כל מחלקת צד היא באותו גודל כמו \begin_inset Formula $H$
+\end_inset
+. אולם ההיבט החשוב יותר הוא שמחלקות הצד הן מחלקות שקילות.
+\end_layout
+
+\begin_layout Theorem
+היחס על \begin_inset Formula $G$
+\end_inset
+ המוגדר על־ידי \begin_inset Formula 
+\[
+g_1\sim_L g_2\Longleftrightarrow g_1^{-1}g_2\in H
+\]
+
+\end_inset
+ הוא יחס שקילות, ומחלקת השקילות של \begin_inset Formula $g$
+\end_inset
+ היא \begin_inset Formula $gH$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+רפלקסיביות: \begin_inset Formula $g^{-1}g=e\in H$
+\end_inset
+. סימטריות: אם \begin_inset Formula $g_1^{-1}g_2\in H$
+\end_inset
+, אז גם ההופכי \begin_inset Formula $g_2^{-1}g_1\in H$
+\end_inset
+. טרנזיטיביות: אם \begin_inset Formula $g_1^{-1}g_2,g_2^{-1}g_3\in H$
+\end_inset
+, אז מכפלתם \begin_inset Formula $g_1^{-1}g_3\in H$
+\end_inset
+. לבסוף, \begin_inset Formula $g\sim_L x$
+\end_inset
+ אם ורק אם \begin_inset Formula $g^{-1}x\in H$
+\end_inset
+, כלומר \begin_inset Formula $x=gh$
+\end_inset
+ עבור \begin_inset Formula $h\in H$
+\end_inset
+, וזה בדיוק \begin_inset Formula $x\in gH$
+\end_inset
+. מאחר שהיחס סימטרי, זהו גם התנאי \begin_inset Formula $x\sim_L g$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+מכאן המחלקות השמאליות מחלקות את \begin_inset Formula $G$
+\end_inset
+. זו הסיבה העמוקה למשפט הבא.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+משפט לגרנז'
+\end_layout
+
+\end_inset
+אם \begin_inset Formula $G$
+\end_inset
+ חבורה סופית ו־\begin_inset Formula $H\le G$
+\end_inset
+, אז \begin_inset Formula 
+\[
+|H|\mid |G|.
+\]
+
+\end_inset
+ ליתר דיוק, אם מספר המחלקות השמאליות הוא \begin_inset Formula $k$
+\end_inset
+, אז \begin_inset Formula 
+\[
+|G|=k|H|.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+המחלקות השמאליות של \begin_inset Formula $H$
+\end_inset
+ הן קבוצות זרות שאיחודן \begin_inset Formula $G$
+\end_inset
+, וכל אחת מהן מכילה \begin_inset Formula $|H|$
+\end_inset
+ איברים. אם מספרן \begin_inset Formula $k$
+\end_inset
+, סכום הגדלים הוא \begin_inset Formula $k|H|$
+\end_inset
+, והוא שווה ל־\begin_inset Formula $|G|$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+מספר המחלקות השמאליות של \begin_inset Formula $H$
+\end_inset
+ ב־\begin_inset Formula $G$
+\end_inset
+ נקרא \emph on
+האינדקס\emph default
+ של \begin_inset Formula $H$
+\end_inset
+ ב־\begin_inset Formula $G$
+\end_inset
+ ומסומן \begin_inset Formula $[G:H]$
+\end_inset
+. בחבורה סופית, \begin_inset Formula 
+\[
+[G:H]=\frac{|G|}{|H|}.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+מספר המחלקות הימניות שווה למספר המחלקות השמאליות, משום שההופכי נותן התאמה \begin_inset Formula $(gH)^{-1}=Hg^{-1}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Subsection
+דוגמה מפורטת: מחלקות צד ב־\begin_inset Formula $S_3$
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+מחלקות צד הן מושג פשוט להגדרה, אך בחבורה לא־אבלית חשוב לראות במפורש את ההבדל בין שמאל לימין. ניקח \begin_inset Formula 
+\[
+H=\langle(12)\rangle=\{e,(12)\}\le S_3.
+\]
+
+\end_inset
+ המחלקות השמאליות הן \begin_inset Formula 
+\[
+H,\qquad (13)H=\{(13),(123)\},\qquad (23)H=\{(23),(132)\}.
+\]
+
+\end_inset
+ לעומת זאת המחלקות הימניות הן \begin_inset Formula 
+\[
+H,\qquad H(13)=\{(13),(132)\},\qquad H(23)=\{(23),(123)\}.
+\]
+
+\end_inset
+ כל אחת משתי הרשימות מחלקת את \begin_inset Formula $S_3$
+\end_inset
+ לשלוש קבוצות בנות שני איברים, אך שתי החלוקות אינן זהות. זהו הסימן הראשון לכך ש־\begin_inset Formula $H$
+\end_inset
+ אינה תת־חבורה נורמלית.
+\end_layout
+
+\begin_layout Standard
+בדוגמה זו אפשר גם לראות מדוע אין משמעות לבחירת נציג "מיוחד" של מחלקה: למשל \begin_inset Formula $(13)H=(123)H$
+\end_inset
+. ברגע שאיבר אחד שייך למחלקה, הוא יכול לשמש כנציג שלה בדיוק כמו כל איבר אחר.
+\end_layout
+
+\begin_layout Question
+יהי \begin_inset Formula $K=A_3=\{e,(123),(132)\}\le S_3$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+רשמו את כל המחלקות השמאליות והימניות של \begin_inset Formula $K$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+חשבו את \begin_inset Formula $[S_3:K]$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+הסבירו, כבר מן החישוב, מדוע \begin_inset Formula $K$
+\end_inset
+ נורמלית.
+\end_layout
+
+\end_deeper
+\begin_layout Solution
+המחלקה האחת היא \begin_inset Formula $K$
+\end_inset
+ עצמה. כל איבר אי־זוגי נמצא במחלקה האחרת, ולכן \begin_inset Formula 
+\[
+(12)K=K(12)=\{(12),(13),(23)\}.
+\]
+
+\end_inset
+ מכאן יש שתי מחלקות, ולכן \begin_inset Formula $[S_3:K]=2$
+\end_inset
+. המחלקות השמאליות והימניות זהות; לפי קריטריון הנורמליות, \begin_inset Formula $K\trianglelefteq S_3$
+\end_inset
+. אפשר גם להסתמך על העובדה שכל תת־חבורה מאינדקס \begin_inset Formula $2$
+\end_inset
+ נורמלית.
+\end_layout
+
+\begin_layout Corollary
+אם \begin_inset Formula $G$
+\end_inset
+ סופית ו־\begin_inset Formula $g\in G$
+\end_inset
+, אז \begin_inset Formula $\operatorname{ord}(g)$
+\end_inset
+ מחלק את \begin_inset Formula $|G|$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+מפעילים את משפט לגרנז' על תת־החבורה \begin_inset Formula $\langle g\rangle$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+חבורה מסדר ראשוני היא ציקלית, ובפרט אבלית.
+\end_layout
+
+\begin_layout Proof
+אם \begin_inset Formula $|G|=p$
+\end_inset
+ ראשוני ו־\begin_inset Formula $g\ne e$
+\end_inset
+, אז סדר \begin_inset Formula $g$
+\end_inset
+ מחלק את \begin_inset Formula $p$
+\end_inset
+ ואינו \begin_inset Formula $1$
+\end_inset
+, ולכן הוא \begin_inset Formula $p$
+\end_inset
+. מכאן \begin_inset Formula $\langle g\rangle=G$
+\end_inset
+.
+\end_layout
+
+\begin_layout QuestionW/Hint
+תהי \begin_inset Formula $G$
+\end_inset
+ חבורה סופית ו־\begin_inset Formula $H,K\le G$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+הוכיחו שאם \begin_inset Formula $H\subseteq K$
+\end_inset
+, אז \begin_inset Formula $[G:H]=[G:K][K:H]$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+הוכיחו שאם \begin_inset Formula $[G:H]=2$
+\end_inset
+, אז כל מחלקה שמאלית של \begin_inset Formula $H$
+\end_inset
+ היא גם מחלקה ימנית.
+\end_layout
+
+\begin_layout Enumerate
+הוכיחו שאין ב־\begin_inset Formula $A_4$
+\end_inset
+ תת־חבורה מסדר \begin_inset Formula $6$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+\begin_layout Hint
+בסעיף השני יש רק שתי מחלקות: \begin_inset Formula $H$
+\end_inset
+ והמשלים שלה. בסעיף השלישי, תת־חבורה מאינדקס \begin_inset Formula $2$
+\end_inset
+ תהיה נורמלית; אפשר גם להשתמש בכך שריבוע של כל \begin_inset Formula $3$
+\end_inset
+־מחזור הוא \begin_inset Formula $3$
+\end_inset
+־מחזור.
+\end_layout
+
+\begin_layout Solution
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+מספר מחלקות \begin_inset Formula $H$
+\end_inset
+ בתוך כל מחלקת \begin_inset Formula $K$
+\end_inset
+ הוא \begin_inset Formula $[K:H]$
+\end_inset
+, ויש \begin_inset Formula $[G:K]$
+\end_inset
+ מחלקות \begin_inset Formula $K$
+\end_inset
+. לכן מספר מחלקות \begin_inset Formula $H$
+\end_inset
+ הכולל הוא המכפלה. בחבורה סופית אפשר גם לחשב \begin_inset Formula $|G|/|H|=(|G|/|K|)(|K|/|H|)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם \begin_inset Formula $g\in H$
+\end_inset
+, אז \begin_inset Formula $gH=H=Hg$
+\end_inset
+. אם \begin_inset Formula $g\notin H$
+\end_inset
+, גם \begin_inset Formula $gH$
+\end_inset
+ וגם \begin_inset Formula $Hg$
+\end_inset
+ הן מחלקות שאינן \begin_inset Formula $H$
+\end_inset
+, ולכן שתיהן שוות לקבוצה היחידה שנותרה, \begin_inset Formula $G\setminus H$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אילו \begin_inset Formula $H\le A_4$
+\end_inset
+ היה מסדר \begin_inset Formula $6$
+\end_inset
+, האינדקס היה \begin_inset Formula $2$
+\end_inset
+, ולכן \begin_inset Formula $H$
+\end_inset
+ היה נורמלי. מנה \begin_inset Formula $A_4/H$
+\end_inset
+ הייתה מסדר \begin_inset Formula $2$
+\end_inset
+, ולכן לכל \begin_inset Formula $g\in A_4$
+\end_inset
+ היה \begin_inset Formula $g^2\in H$
+\end_inset
+. כל \begin_inset Formula $3$
+\end_inset
+־מחזור הוא ריבוע של \begin_inset Formula $3$
+\end_inset
+־מחזור אחר, ולכן כל שמונת ה־\begin_inset Formula $3$
+\end_inset
+־מחזורים היו ב־\begin_inset Formula $H$
+\end_inset
+, בסתירה ל־\begin_inset Formula $|H|=6$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+תת־חבורות נורמליות וחבורות מנה
+\end_layout
+
+\begin_layout Standard
+ב־\begin_inset Formula $\mathbb Z$
+\end_inset
+ מודולו \begin_inset Formula $n$
+\end_inset
+ אנחנו רגילים לחבר מחלקות שארית על־ידי \begin_inset Formula 
+\[
+[a]+[b]=[a+b].
+\]
+
+\end_inset
+ אפשר לנסות לחקות זאת בכל חבורה: להגדיר מכפלת מחלקות צד על־ידי \begin_inset Formula 
+\[
+(gH)(kH)=gkH.
+\]
+
+\end_inset
+ אך כאן מתעוררת שאלה שאינה קיימת כאשר עובדים עם איברים רגילים: מחלקת צד יכולה להיכתב בעזרת נציגים רבים. עלינו לוודא שהתוצאה אינה תלויה בבחירת הנציג.
+\end_layout
+
+\begin_layout Standard
+אם \begin_inset Formula $G$
+\end_inset
+ אבלית, אין בעיה: \begin_inset Formula $g_1H g_2H=g_1g_2HH=g_1g_2H$
+\end_inset
+. בחבורה כללית נדרש תנאי מיוחד.
+\end_layout
+
+\begin_layout Theorem
+ל־\begin_inset Formula $H\le G$
+\end_inset
+ התנאים הבאים שקולים:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $gH=Hg$
+\end_inset
+ לכל \begin_inset Formula $g\in G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $gHg^{-1}=H$
+\end_inset
+ לכל \begin_inset Formula $g\in G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $gHg^{-1}\subseteq H$
+\end_inset
+ לכל \begin_inset Formula $g\in G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+מכפלת שתי מחלקות שמאליות היא מחלקה שמאלית.
+\end_layout
+
+\begin_layout Enumerate
+הנוסחה \begin_inset Formula $(gH)(kH)=gkH$
+\end_inset
+ אינה תלויה בבחירת הנציגים.
+\end_layout
+
+\end_deeper
+\begin_layout Proof
+נוכיח את המעגל בשלבים. השוויון \begin_inset Formula $gH=Hg$
+\end_inset
+ שקול, לאחר כפל מימין ב־\begin_inset Formula $g^{-1}$
+\end_inset
+, לשוויון \begin_inset Formula $gHg^{-1}=H$
+\end_inset
+. ברור ששוויון גורר הכלה. להפך, אם \begin_inset Formula $gHg^{-1}\subseteq H$
+\end_inset
+ לכל \begin_inset Formula $g$
+\end_inset
+, ניישם זאת ב־\begin_inset Formula $g^{-1}$
+\end_inset
+ ונקבל \begin_inset Formula $g^{-1}Hg\subseteq H$
+\end_inset
+; הצמדה ב־\begin_inset Formula $g$
+\end_inset
+ נותנת \begin_inset Formula $H\subseteq gHg^{-1}$
+\end_inset
+, ולכן יש שוויון. נניח כעת \begin_inset Formula $gH=Hg$
+\end_inset
+ לכל \begin_inset Formula $g$
+\end_inset
+. אז לכל \begin_inset Formula $g,k\in G$
+\end_inset
+, \begin_inset Formula 
+\[
+gHkH=gkHH=gkH,
+\]
+
+\end_inset
+ כאשר במעבר הראשון העברנו את \begin_inset Formula $H$
+\end_inset
+ דרך \begin_inset Formula $k$
+\end_inset
+. לכן מכפלת שתי מחלקות שמאליות היא מחלקה שמאלית, ואף שווה ל־\begin_inset Formula $gkH$
+\end_inset
+. בפרט, אם \begin_inset Formula $gH=g'H$
+\end_inset
+ ו־\begin_inset Formula $kH=k'H$
+\end_inset
+, אז \begin_inset Formula 
+\[
+gkH=(gH)(kH)=(g'H)(k'H)=g'k'H,
+\]
+
+\end_inset
+ ולכן הנוסחה אינה תלויה בבחירת הנציגים. נותר להראות שהדרישה האחרונה גוררת נורמליות. יהיו \begin_inset Formula $g\in G$
+\end_inset
+ ו־\begin_inset Formula $h\in H$
+\end_inset
+. למחלקה \begin_inset Formula $H$
+\end_inset
+ יש שני נציגים, \begin_inset Formula $e$
+\end_inset
+ ו־\begin_inset Formula $h$
+\end_inset
+. מן המוגדרות היטב, בהכפלת \begin_inset Formula $H$
+\end_inset
+ במחלקה \begin_inset Formula $gH$
+\end_inset
+, נקבל \begin_inset Formula 
+\[
+(eH)(gH)=(hH)(gH),
+\]
+
+\end_inset
+ כלומר \begin_inset Formula $gH=hgH$
+\end_inset
+. מכאן \begin_inset Formula $hg\in gH$
+\end_inset
+, ולכן קיים \begin_inset Formula $h'\in H$
+\end_inset
+ כך ש־\begin_inset Formula $hg=gh'$
+\end_inset
+. לכן \begin_inset Formula $g^{-1}hg=h'\in H$
+\end_inset
+. קיבלנו \begin_inset Formula $g^{-1}Hg\subseteq H$
+\end_inset
+ לכל \begin_inset Formula $g$
+\end_inset
+; החלפת \begin_inset Formula $g$
+\end_inset
+ ב־\begin_inset Formula $g^{-1}$
+\end_inset
+ נותנת את התנאי השקול \begin_inset Formula $gHg^{-1}\subseteq H$
+\end_inset
+. בכך הושלמו כל השקילויות.
+\end_layout
+
+\begin_layout Definition
+תת־חבורה \begin_inset Formula $N\le G$
+\end_inset
+ נקראת \emph on
+נורמלית\emph default
+ אם \begin_inset Formula $gNg^{-1}=N$
+\end_inset
+ לכל \begin_inset Formula $g\in G$
+\end_inset
+. נסמן \begin_inset Formula $N\trianglelefteq G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+כל תת־חבורה של חבורה אבלית היא נורמלית. גם כל תת־חבורה מאינדקס \begin_inset Formula $2$
+\end_inset
+ נורמלית. מצד אחר, \begin_inset Formula $\langle(12)\rangle$
+\end_inset
+ אינה נורמלית ב־\begin_inset Formula $S_3$
+\end_inset
+, שכן למשל \begin_inset Formula $(123)(12)(123)^{-1}=(23)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+אם \begin_inset Formula $N\trianglelefteq G$
+\end_inset
+, קבוצת המחלקות \begin_inset Formula $G/N$
+\end_inset
+ נעשית חבורה על־ידי \begin_inset Formula 
+\[
+(gN)(hN)=ghN.
+\]
+
+\end_inset
+ חבורה זו נקראת \emph on
+חבורת המנה\emph default
+ של \begin_inset Formula $G$
+\end_inset
+ ב־\begin_inset Formula $N$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+איבר היחידה במנה הוא \begin_inset Formula $N=eN$
+\end_inset
+, וההופכי של \begin_inset Formula $gN$
+\end_inset
+ הוא \begin_inset Formula $g^{-1}N$
+\end_inset
+. הרעיון של מנה הוא "להכריז" שכל איברי \begin_inset Formula $N$
+\end_inset
+ שווים ליחידה, ובכך לזהות איברים שנבדלים בכפל באיבר מ־\begin_inset Formula $N$
+\end_inset
+.
+\end_layout
+
+\begin_layout Examples
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $\mathbb Z/n\mathbb Z$
+\end_inset
+ היא חבורת המנה של \begin_inset Formula $\mathbb Z$
+\end_inset
+ בתת־החבורה \begin_inset Formula $n\mathbb Z$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם \begin_inset Formula $G=C_4=\langle a\rangle$
+\end_inset
+ ו־\begin_inset Formula $N=\langle a^2\rangle$
+\end_inset
+, אז \begin_inset Formula $G/N\cong C_2$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $SL_n(F)\trianglelefteq GL_n(F)$
+\end_inset
+, ובהמשך נראה ש־\begin_inset Formula $GL_n(F)/SL_n(F)\cong F^\times$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם \begin_inset Formula $G,H$
+\end_inset
+ חבורות, אז \begin_inset Formula $G\times\{e\}\trianglelefteq G\times H$
+\end_inset
+ ו־\begin_inset Formula $(G\times H)/(G\times\{e\})\cong H$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+מפת המנה וקריטריונים לנורמליות
+\end_layout
+
+\begin_layout Standard
+לחבורת מנה נלווית תמיד מפה טבעית.
+\end_layout
+
+\begin_layout Definition
+אם \begin_inset Formula $N\trianglelefteq G$
+\end_inset
+, \emph on
+מפת המנה\emph default
+ היא \begin_inset Formula 
+\[
+\pi:G\longrightarrow G/N,\qquad \pi(g)=gN.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+מפת המנה היא הומומורפיזם על, ו־\begin_inset Formula $\ker\pi=N$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+מתקיים \begin_inset Formula $\pi(gh)=ghN=(gN)(hN)=\pi(g)\pi(h)$
+\end_inset
+, וכל מחלקה היא \begin_inset Formula $\pi(g)$
+\end_inset
+ עבור נציג כלשהו. לבסוף, \begin_inset Formula $\pi(g)=N$
+\end_inset
+ אם ורק אם \begin_inset Formula $g\in N$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+מכאן מתקבלת תובנה חשובה: \emph on
+תת־החבורות הנורמליות הן בדיוק הגרעינים של הומומורפיזמים\emph default
+. כל גרעין נורמלי, כפי שנוכיח מיד; ובכיוון ההפוך, \begin_inset Formula $N\trianglelefteq G$
+\end_inset
+ היא גרעין מפת המנה \begin_inset Formula $G\to G/N$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+נורמליות אינה טרנזיטיבית. למשל \begin_inset Formula $\langle(12)(34)\rangle\trianglelefteq V_4$
+\end_inset
+ מפני ש־\begin_inset Formula $V_4$
+\end_inset
+ אבלית, ו־\begin_inset Formula $V_4\trianglelefteq A_4$
+\end_inset
+, אך \begin_inset Formula $\langle(12)(34)\rangle$
+\end_inset
+ אינה נורמלית ב־\begin_inset Formula $A_4$
+\end_inset
+: הצמדה ב־\begin_inset Formula $(123)$
+\end_inset
+ שולחת את היוצר שלה לכפול־טרנספוזיציה אחרת.
+\end_layout
+
+\begin_layout Question
+הוכיחו: \begin_inset Formula $Z(G)\trianglelefteq G$
+\end_inset
+; ואם \begin_inset Formula $N\trianglelefteq G$
+\end_inset
+ ו־\begin_inset Formula $H\le G$
+\end_inset
+, אז \begin_inset Formula $N\cap H\trianglelefteq H$
+\end_inset
+.
+\end_layout
+
+\begin_layout Solution
+אם \begin_inset Formula $z\in Z(G)$
+\end_inset
+ ו־\begin_inset Formula $g\in G$
+\end_inset
+, אז \begin_inset Formula $gzg^{-1}=z$
+\end_inset
+, ולכן המרכז נשמר בהצמדה. אם \begin_inset Formula $x\in N\cap H$
+\end_inset
+ ו־\begin_inset Formula $h\in H$
+\end_inset
+, אז \begin_inset Formula $hxh^{-1}\in N$
+\end_inset
+ מנורמליות \begin_inset Formula $N$
+\end_inset
+ וגם \begin_inset Formula $hxh^{-1}\in H$
+\end_inset
+ משום \begin_inset Formula $H$
+\end_inset
+ תת־חבורה; לכן הוא בחיתוך.
+\end_layout
+
+\begin_layout Question
+יהי \begin_inset Formula $N\trianglelefteq G$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+הוכיחו ש־\begin_inset Formula $G/N$
+\end_inset
+ אבלית אם ורק אם לכל \begin_inset Formula $a,b\in G$
+\end_inset
+ מתקיים \begin_inset Formula $aba^{-1}b^{-1}\in N$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+חשבו את \begin_inset Formula $(\mathbb Z/12\mathbb Z)/\langle\bar4\rangle$
+\end_inset
+ עד כדי איזומורפיזם.
+\end_layout
+
+\begin_layout Enumerate
+מצאו את כל תת־החבורות הנורמליות של \begin_inset Formula $S_3$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+\begin_layout Solution
+\begin_inset Formula 
+\[
+(aN)(bN)(aN)^{-1}(bN)^{-1}=(aba^{-1}b^{-1})N.
+\]
+
+\end_inset
+ לכן \begin_inset Formula $G/N$
+\end_inset
+ אבלית אם ורק אם \begin_inset Formula $aba^{-1}b^{-1}\in N$
+\end_inset
+ לכל \begin_inset Formula $a,b\in G$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+במנה מתקיים \begin_inset Formula $(aN)(bN)=(bN)(aN)$
+\end_inset
+ אם ורק אם הקומוטטור של שתי המחלקות הוא היחידה. אבל
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $\langle\bar4\rangle$
+\end_inset
+ היא מסדר \begin_inset Formula $3$
+\end_inset
+, ולכן המנה מסדר \begin_inset Formula $4$
+\end_inset
+. החבורה \begin_inset Formula $\mathbb Z/12\mathbb Z$
+\end_inset
+ ציקלית, ומנה של חבורה ציקלית ציקלית: המחלקה של \begin_inset Formula $\bar1$
+\end_inset
+ יוצרת. לכן המנה איזומורפית ל־\begin_inset Formula $C_4$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+תת־חבורה נורמלית היא איחוד של מחלקות צמידות ומכילה את \begin_inset Formula $e$
+\end_inset
+. מחלקות הצמידות של \begin_inset Formula $S_3$
+\end_inset
+ הן בגדלים \begin_inset Formula $1,3,2$
+\end_inset
+. האפשרויות שנותנות תת־חבורה הן \begin_inset Formula $\{e\}$
+\end_inset
+, \begin_inset Formula $A_3=\{e,(123),(132)\}$
+\end_inset
+, ו־\begin_inset Formula $S_3$
+\end_inset
+. תת־חבורה מסדר \begin_inset Formula $2$
+\end_inset
+ אינה נורמלית כי שלוש תת־החבורות מסדר זה צמודות זו לזו.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+הומומורפיזמים: גרעין ותמונה
+\end_layout
+
+\begin_layout Definition
+להומומורפיזם \begin_inset Formula $f:G\to H$
+\end_inset
+ נגדיר את \emph on
+התמונה\emph default
+ \begin_inset Formula 
+\[
+\operatorname{Im}f=f(G),
+\]
+
+\end_inset
+ ואת \emph on
+הגרעין\emph default
+ \begin_inset Formula 
+\[
+\ker f=\{g\in G:f(g)=e_H\}.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $\operatorname{Im}f\le H$
+\end_inset
+ ו־\begin_inset Formula $\ker f\trianglelefteq G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+אם \begin_inset Formula $x=f(a)$
+\end_inset
+ ו־\begin_inset Formula $y=f(b)$
+\end_inset
+ בתמונה, אז \begin_inset Formula $xy^{-1}=f(ab^{-1})$
+\end_inset
+ בתמונה, ולכן זו תת־חבורה. אם \begin_inset Formula $k\in\ker f$
+\end_inset
+ ו־\begin_inset Formula $g\in G$
+\end_inset
+, אז \begin_inset Formula $f(gkg^{-1})=f(g)e f(g)^{-1}=e$
+\end_inset
+, ולכן \begin_inset Formula $gkg^{-1}\in\ker f$
+\end_inset
+. מכאן הגרעין נורמלי.
+\end_layout
+
+\begin_layout Lemma
+הומומורפיזם \begin_inset Formula $f:G\to H$
+\end_inset
+ הוא חד־חד־ערכי אם ורק אם \begin_inset Formula $\ker f=\{e\}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+אם \begin_inset Formula $f$
+\end_inset
+ חד־חד־ערכי ו־\begin_inset Formula $f(g)=e=f(e)$
+\end_inset
+, אז \begin_inset Formula $g=e$
+\end_inset
+. להפך, אם הגרעין טריוויאלי ו־\begin_inset Formula $f(a)=f(b)$
+\end_inset
+, אז \begin_inset Formula $f(a^{-1}b)=e$
+\end_inset
+, ולכן \begin_inset Formula $a^{-1}b=e$
+\end_inset
+ ומכאן \begin_inset Formula $a=b$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+הגרעין מודד בדיוק כמה מידע ההומומורפיזם מאבד. שני איברים נשלחים לאותה תמונה אם ורק אם הם באותה מחלקה של הגרעין: \begin_inset Formula 
+\[
+f(a)=f(b)\Longleftrightarrow a^{-1}b\in\ker f\Longleftrightarrow a\ker f=b\ker f.
+\]
+
+\end_inset
+ זוהי התצפית שמובילה למשפט האיזומורפיזם הראשון.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+משפט האיזומורפיזם הראשון
+\end_layout
+
+\end_inset
+אם \begin_inset Formula $f:G\to H$
+\end_inset
+ הומומורפיזם, אז \begin_inset Formula 
+\[
+G/\ker f\cong\operatorname{Im}f.
+\]
+
+\end_inset
+ האיזומורפיזם נתון על־ידי \begin_inset Formula 
+\[
+g\ker f\longmapsto f(g).
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+נגדיר \begin_inset Formula $\bar f(g\ker f)=f(g)$
+\end_inset
+. אם \begin_inset Formula $g\ker f=h\ker f$
+\end_inset
+, אז \begin_inset Formula $h^{-1}g\in\ker f$
+\end_inset
+, ולכן \begin_inset Formula $f(g)=f(h)$
+\end_inset
+; מכאן ההגדרה אינה תלויה בנציג. המפה שומרת מכפלה וברור שהיא על \begin_inset Formula $\operatorname{Im}f$
+\end_inset
+. אם \begin_inset Formula $\bar f(g\ker f)=e$
+\end_inset
+, אז \begin_inset Formula $g\in\ker f$
+\end_inset
+, ולכן \begin_inset Formula $g\ker f=\ker f$
+\end_inset
+, איבר היחידה במנה. הגרעין של \begin_inset Formula $\bar f$
+\end_inset
+ טריוויאלי, ולכן היא חד־חד־ערכית.
+\end_layout
+
+\begin_layout Standard
+המשפט אומר שכל הומומורפיזם מתפרק לשני שלבים טבעיים: \begin_inset Formula 
+\[
+G\longrightarrow G/\ker f\ \cong\ \operatorname{Im}f\hookrightarrow H.
+\]
+
+\end_inset
+ תחילה מזהים את האיברים שאין ביניהם הבדל מבחינת \begin_inset Formula $f$
+\end_inset
+, ואז משכנים את התוצאה ביעד.
+\end_layout
+
+\begin_layout Examples
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+עבור \begin_inset Formula $\det:GL_n(F)\to F^\times$
+\end_inset
+, הגרעין הוא \begin_inset Formula $SL_n(F)$
+\end_inset
+ וההעתקה על. לכן \begin_inset Formula $GL_n(F)/SL_n(F)\cong F^\times$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+ההומומורפיזם \begin_inset Formula $\mathbb Z\to\mathbb Z/n\mathbb Z$
+\end_inset
+ נתון על־ידי \begin_inset Formula $k\mapsto\bar k$
+\end_inset
+. גרעינו \begin_inset Formula $n\mathbb Z$
+\end_inset
+, ולכן משפט האיזומורפיזם משחזר את המנה \begin_inset Formula $\mathbb Z/n\mathbb Z$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+ההטלה \begin_inset Formula $G\times H\to H$
+\end_inset
+, \begin_inset Formula $(g,h)\mapsto h$
+\end_inset
+, היא על וגרעינה \begin_inset Formula $G\times\{e\}$
+\end_inset
+. לכן \begin_inset Formula $(G\times H)/(G\times\{e\})\cong H$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+העברה דרך מנה
+\end_layout
+
+\end_inset
+יהי \begin_inset Formula $N\trianglelefteq G$
+\end_inset
+ ויהי \begin_inset Formula $f:G\to H$
+\end_inset
+ הומומורפיזם. אם \begin_inset Formula $N\subseteq\ker f$
+\end_inset
+, אז קיים הומומורפיזם יחיד \begin_inset Formula $\bar f:G/N\to H$
+\end_inset
+ כך ש־ \begin_inset Formula 
+\[
+f=\bar f\circ\pi,
+\]
+
+\end_inset
+ כאשר \begin_inset Formula $\pi:G\to G/N$
+\end_inset
+ היא מפת המנה.
+\end_layout
+
+\begin_layout Proof
+אין לנו בחירה: אם \begin_inset Formula $f=\bar f\circ\pi$
+\end_inset
+, מוכרחים להגדיר \begin_inset Formula $\bar f(gN)=f(g)$
+\end_inset
+. התנאי \begin_inset Formula $N\subseteq\ker f$
+\end_inset
+ מבטיח שהגדרה זו אינה תלויה בנציג: אם \begin_inset Formula $gN=hN$
+\end_inset
+, אז \begin_inset Formula $h^{-1}g\in N\subseteq\ker f$
+\end_inset
+, ולכן \begin_inset Formula $f(g)=f(h)$
+\end_inset
+. קל לבדוק שהמפה הומומורפיזם. היחידות נובעת מכך ש־\begin_inset Formula $\pi$
+\end_inset
+ על.
+\end_layout
+
+\begin_layout Section
+סימן של תמורה והחבורה המתחלפת
+\end_layout
+
+\begin_layout Standard
+כדוגמה חשובה להומומורפיזם שאינו מובן מאליו, נבנה מפה מ־\begin_inset Formula $S_n$
+\end_inset
+ לחבורה \begin_inset Formula $\{\pm1\}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+ל־\begin_inset Formula $\pi\in S_n$
+\end_inset
+, זוג \begin_inset Formula $(i,j)$
+\end_inset
+ עם \begin_inset Formula $i<j$
+\end_inset
+ נקרא \emph on
+היפוך\emph default
+ אם \begin_inset Formula $\pi(i)>\pi(j)$
+\end_inset
+. סימן התמורה הוא \begin_inset Formula 
+\[
+\operatorname{sgn}(\pi)=(-1)^{\#\{\text{היפוכים של }\pi\}}.
+\]
+
+\end_inset
+ תמורה בעלת סימן \begin_inset Formula $1$
+\end_inset
+ נקראת זוגית, ותמורה בעלת סימן \begin_inset Formula $-1$
+\end_inset
+ נקראת אי־זוגית.
+\end_layout
+
+\begin_layout Lemma
+יהיו \begin_inset Formula $x_1,\ldots,x_n$
+\end_inset
+ מספרים ממשיים שונים. אז לכל \begin_inset Formula $\pi\in S_n$
+\end_inset
+, \begin_inset Formula 
+\[
+\frac{\prod_{i<j}(x_{\pi(i)}-x_{\pi(j)})}{\prod_{i<j}(x_i-x_j)}=\operatorname{sgn}(\pi).
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+במונה מופיע עבור כל זוג ערכים \begin_inset Formula $r<s$
+\end_inset
+ בדיוק אחד מן הגורמים \begin_inset Formula $x_r-x_s$
+\end_inset
+ או \begin_inset Formula $x_s-x_r$
+\end_inset
+. כאשר סדרם התהפך ביחס לסדר המקורי מתקבל גורם \begin_inset Formula $-1$
+\end_inset
+. מספר ההיפוכים הוא בדיוק מספר שינויי הסימן, ולכן היחס הוא \begin_inset Formula $(-1)^m$
+\end_inset
+ כאשר \begin_inset Formula $m$
+\end_inset
+ מספר ההיפוכים.
+\end_layout
+
+\begin_layout Theorem
+המפה \begin_inset Formula 
+\[
+\operatorname{sgn}:S_n\to\{\pm1\}
+\]
+
+\end_inset
+ היא הומומורפיזם.
+\end_layout
+
+\begin_layout Proof
+נשתמש בלמה. נסמן \begin_inset Formula $\Delta(x_1,\ldots,x_n)=\prod_{i<j}(x_i-x_j)$
+\end_inset
+. אז \begin_inset Formula 
+\[
+\operatorname{sgn}(\sigma\pi)=\frac{\Delta(x_{\sigma(\pi(1))},\ldots,x_{\sigma(\pi(n))})}{\Delta(x_1,\ldots,x_n)}.
+\]
+
+\end_inset
+ נכפיל ונחלק הפעם ב־\begin_inset Formula $\Delta(x_{\sigma(1)},\ldots,x_{\sigma(n)})$
+\end_inset
+. אם נסמן \begin_inset Formula $y_i=x_{\sigma(i)}$
+\end_inset
+, אז לפי הלמה \begin_inset Formula 
+\[
+\frac{\Delta(x_{\sigma(\pi(1))},\ldots,x_{\sigma(\pi(n))})}{\Delta(x_{\sigma(1)},\ldots,x_{\sigma(n)})} =\frac{\Delta(y_{\pi(1)},\ldots,y_{\pi(n)})}{\Delta(y_1,\ldots,y_n)} =\operatorname{sgn}(\pi).
+\]
+
+\end_inset
+ ושוב לפי הלמה, \begin_inset Formula 
+\[
+\frac{\Delta(x_{\sigma(1)},\ldots,x_{\sigma(n)})}{\Delta(x_1,\ldots,x_n)}=\operatorname{sgn}(\sigma).
+\]
+
+\end_inset
+ מכפלת שני השוויונות נותנת \begin_inset Formula 
+\[
+\operatorname{sgn}(\sigma\pi)=\operatorname{sgn}(\sigma)\operatorname{sgn}(\pi),
+\]
+
+\end_inset
+ כנדרש.
+\end_layout
+
+\begin_layout Definition
+הגרעין של \begin_inset Formula $\operatorname{sgn}$
+\end_inset
+ נקרא \emph on
+החבורה המתחלפת\emph default
+ ומסומן \begin_inset Formula 
+\[
+A_n=\{\pi\in S_n:\operatorname{sgn}(\pi)=1\}.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+מאחר שזהו גרעין, \begin_inset Formula $A_n\trianglelefteq S_n$
+\end_inset
+. עבור \begin_inset Formula $n\ge2$
+\end_inset
+ הסימן על, ולכן ממשפט האיזומורפיזם הראשון \begin_inset Formula 
+\[
+S_n/A_n\cong C_2,
+\]
+
+\end_inset
+ ובפרט \begin_inset Formula $[S_n:A_n]=2$
+\end_inset
+ ו־\begin_inset Formula $|A_n|=n!/2$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+כל טרנספוזיציה היא אי־זוגית. מכיוון שהסימן הומומורפיזם, אם \begin_inset Formula $\pi$
+\end_inset
+ נכתבת כמכפלה של \begin_inset Formula $k$
+\end_inset
+ טרנספוזיציות, אז \begin_inset Formula $\operatorname{sgn}(\pi)=(-1)^k$
+\end_inset
+. מכאן זוגיותו של מספר הטרנספוזיציות בכל פירוק של תמורה נקבעת באופן יחיד, אף שהפירוק עצמו רחוק מלהיות יחיד.
+\end_layout
+
+\begin_layout Claim
+למחזור באורך \begin_inset Formula $r$
+\end_inset
+ יש סימן \begin_inset Formula $(-1)^{r-1}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+\begin_inset Formula 
+\[
+(a_1a_2\ldots a_r)=(a_1a_r)(a_1a_{r-1})\cdots(a_1a_2),
+\]
+
+\end_inset
+ פירוק ל־\begin_inset Formula $r-1$
+\end_inset
+ טרנספוזיציות.
+\end_layout
+
+\begin_layout Question
+חשבו את הסימן של כל אחת מן התמורות הבאות, בשתי דרכים שונות כאשר הדבר נוח.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $(12345)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $(12)(345)(6789)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $(12)(13)(14)(15)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+הוכיחו שכל תמורה זוגית היא מכפלה של \begin_inset Formula $3$
+\end_inset
+־מחזורים.
+\end_layout
+
+\end_deeper
+\begin_layout Solution
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+מחזור באורך \begin_inset Formula $5$
+\end_inset
+ הוא בעל סימן \begin_inset Formula $(-1)^4=1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+הסימנים הם \begin_inset Formula $-1,1,-1$
+\end_inset
+, ולכן המכפלה בעלת סימן \begin_inset Formula $1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+זו מכפלה של ארבע טרנספוזיציות, ולכן זוגית. למעשה היא המחזור \begin_inset Formula $(15432)$
+\end_inset
+, שגם הוא באורך \begin_inset Formula $5$
+\end_inset
+ ולכן זוגי.
+\end_layout
+
+\begin_layout Enumerate
+תמורה זוגית היא מכפלה של מספר זוגי של טרנספוזיציות. מספיק לצמד אותן. אם שתי הטרנספוזיציות חולקות נקודה, \begin_inset Formula $(ab)(ac)$
+\end_inset
+ הוא \begin_inset Formula $3$
+\end_inset
+־מחזור (עד לכיוון). אם הן זרות, \begin_inset Formula $(ab)(cd)=(ab)(ac)(ac)(cd)$
+\end_inset
+, וכל אחד משני הזוגות שבאגף ימין חולק נקודה ולכן הוא \begin_inset Formula $3$
+\end_inset
+־מחזור. מכאן כל זוג טרנספוזיציות הוא מכפלה של \begin_inset Formula $3$
+\end_inset
+־מחזורים.
+\end_layout
+
+\end_deeper
+\begin_layout Section* in ToC
+סיכום יחידה 2
+\end_layout
+
+\begin_layout Standard
+מחלקות הצד של תת־חבורה \begin_inset Formula $H$
+\end_inset
+ מחלקות את \begin_inset Formula $G$
+\end_inset
+ לקבוצות שוות־גודל, ומכאן משפט לגרנז'. כאשר המחלקות השמאליות והימניות מתלכדות, כלומר כאשר \begin_inset Formula $H$
+\end_inset
+ נורמלית, אפשר לכפול מחלקות ולקבל את חבורת המנה \begin_inset Formula $G/H$
+\end_inset
+. הומומורפיזם קושר בין שני המושגים: גרעינו תמיד נורמלי, ומשפט האיזומורפיזם הראשון קובע שהמנה בגרעין היא בדיוק התמונה. סימן התמורה סיפק דוגמה מרכזית: גרעינו הוא \begin_inset Formula $A_n$
+\end_inset
+, תת־חבורה נורמלית מאינדקס \begin_inset Formula $2$
+\end_inset
+.
+\end_layout
+
+\begin_layout Section* in ToC
+שאלות להערכה עצמית
+\end_layout
+
+\begin_layout Question
+תהי \begin_inset Formula $G$
+\end_inset
+ חבורה סופית מסדר \begin_inset Formula $24$
+\end_inset
+. אילו מן המספרים \begin_inset Formula $5,6,8,9,12$
+\end_inset
+ יכולים להיות סדר של איבר ב־\begin_inset Formula $G$
+\end_inset
+? אילו מהם מוכרחים להופיע?
+\end_layout
+
+\begin_layout Solution
+לפי משפט לגרנז', סדרו של איבר בחבורה מסדר \begin_inset Formula $24$
+\end_inset
+ חייב לחלק את \begin_inset Formula $24$
+\end_inset
+. לכן \begin_inset Formula $5$
+\end_inset
+ ו־\begin_inset Formula $9$
+\end_inset
+ אינם יכולים להיות סדרי איברים. המספרים \begin_inset Formula $6,8,12$
+\end_inset
+ אכן יכולים להופיע: בחבורה הציקלית \begin_inset Formula $C_{24}$
+\end_inset
+ יש איברים מכל אחד מן הסדרים האלה. אף אחד מן המספרים \begin_inset Formula $6,8,12$
+\end_inset
+ אינו מוכרח להופיע בכל חבורה מסדר \begin_inset Formula $24$
+\end_inset
+. דוגמה אחת מספיקה לכל שלוש האפשרויות: ב־\begin_inset Formula $S_4$
+\end_inset
+ הסדר של תמורה הוא הכפולה המשותפת הקטנה ביותר של אורכי המחזורים הזרים שלה. מאחר שסכום אורכי המחזורים הוא לכל היותר \begin_inset Formula $4$
+\end_inset
+, סדרי האיברים האפשריים ב־\begin_inset Formula $S_4$
+\end_inset
+ הם רק \begin_inset Formula $1,2,3,4$
+\end_inset
+. לכן אין ב־\begin_inset Formula $S_4$
+\end_inset
+ איבר מסדר \begin_inset Formula $6$
+\end_inset
+, \begin_inset Formula $8$
+\end_inset
+ או \begin_inset Formula $12$
+\end_inset
+.
+\end_layout
+
+\begin_layout Question
+הוכיחו שאם \begin_inset Formula $H,K\le G$
+\end_inset
+, אז כל מחלקה שמאלית של \begin_inset Formula $H\cap K$
+\end_inset
+ מוכלת בחיתוך של מחלקה שמאלית של \begin_inset Formula $H$
+\end_inset
+ ומחלקה שמאלית של \begin_inset Formula $K$
+\end_inset
+. הסיקו, כאשר האינדקסים סופיים, כי \begin_inset Formula 
+\[
+[G:H\cap K]\le [G:H][G:K].
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Solution
+נגדיר מפה \begin_inset Formula $G/(H\cap K)\to G/H\times G/K$
+\end_inset
+ על־ידי \begin_inset Formula $g(H\cap K)\mapsto(gH,gK)$
+\end_inset
+. היא מוגדרת היטב. אם שתי מחלקות נשלחות לאותו זוג, אז \begin_inset Formula $g^{-1}g'\in H$
+\end_inset
+ וגם \begin_inset Formula $g^{-1}g'\in K$
+\end_inset
+, ולכן \begin_inset Formula $g^{-1}g'\in H\cap K$
+\end_inset
+ והמחלקות שוות. לכן המפה חד־חד־ערכית. מכאן מספר מחלקות \begin_inset Formula $H\cap K$
+\end_inset
+ אינו עולה על מכפלת מספרי המחלקות של \begin_inset Formula $H$
+\end_inset
+ ושל \begin_inset Formula $K$
+\end_inset
+.
+\end_layout
+
+\begin_layout QuestionW/Hint
+יהי \begin_inset Formula $f:G\to H$
+\end_inset
+ הומומורפיזם על. הוכיחו שיש התאמה בין תת־חבורות של \begin_inset Formula $H$
+\end_inset
+ לבין תת־חבורות של \begin_inset Formula $G$
+\end_inset
+ המכילות את \begin_inset Formula $\ker f$
+\end_inset
+, באמצעות \begin_inset Formula $K\mapsto f^{-1}(K)$
+\end_inset
+. אל תשתמשו עדיין במשפט ההתאמה של היחידה הבאה.
+\end_layout
+
+\begin_layout Hint
+לכיוון ההפוך השתמשו ב־\begin_inset Formula $L\mapsto f(L)$
+\end_inset
+ כאשר \begin_inset Formula $\ker f\subseteq L$
+\end_inset
+.
+\end_layout
+
+\begin_layout Solution
+אם \begin_inset Formula $K\le H$
+\end_inset
+, אז \begin_inset Formula $f^{-1}(K)\le G$
+\end_inset
+ ומכיל את הגרעין. אם \begin_inset Formula $L\le G$
+\end_inset
+ מכילה את הגרעין, אז \begin_inset Formula $f(L)\le H$
+\end_inset
+. ברור \begin_inset Formula $f(f^{-1}(K))=K$
+\end_inset
+ משום ש־\begin_inset Formula $f$
+\end_inset
+ על. מצד שני, אם \begin_inset Formula $g\in f^{-1}(f(L))$
+\end_inset
+, קיים \begin_inset Formula $\ell\in L$
+\end_inset
+ עם \begin_inset Formula $f(g)=f(\ell)$
+\end_inset
+, ולכן \begin_inset Formula $\ell^{-1}g\in\ker f\subseteq L$
+\end_inset
+, ומכאן \begin_inset Formula $g\in L$
+\end_inset
+. לכן \begin_inset Formula $f^{-1}(f(L))=L$
+\end_inset
+, וההתאמות הפוכות.
+\end_layout
+
+\begin_layout Question
+מצאו את כל ההומומורפיזמים \begin_inset Formula $\mathbb Z/12\mathbb Z\to\mathbb Z/18\mathbb Z$
+\end_inset
+ בסימון חיבורי.
+\end_layout
+
+\begin_layout Solution
+הומומורפיזם מחבורה ציקלית נקבע על־ידי תמונת היוצר \begin_inset Formula $\bar1$
+\end_inset
+. אם \begin_inset Formula $f(\bar1)=\bar a$
+\end_inset
+, חייב להתקיים \begin_inset Formula $12\bar a=\bar0$
+\end_inset
+ ב־\begin_inset Formula $\mathbb Z/18\mathbb Z$
+\end_inset
+, כלומר \begin_inset Formula $18\mid12a$
+\end_inset
+, או \begin_inset Formula $3\mid2a$
+\end_inset
+, ולכן \begin_inset Formula $3\mid a$
+\end_inset
+. יש שש מחלקות אפשריות: \begin_inset Formula $a=0,3,6,9,12,15$
+\end_inset
+ מודולו \begin_inset Formula $18$
+\end_inset
+. כל בחירה כזו אכן מגדירה הומומורפיזם, על־ידי \begin_inset Formula $f(\bar k)=\overline{ka}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Question
+תהי \begin_inset Formula $N\trianglelefteq G$
+\end_inset
+. הוכיחו שכל מחלקת צמידות של \begin_inset Formula $G$
+\end_inset
+ מוכלת כולה ב־\begin_inset Formula $N$
+\end_inset
+ או זרה ל־\begin_inset Formula $N$
+\end_inset
+. הסיקו שתת־חבורה היא נורמלית אם ורק אם היא איחוד של מחלקות צמידות.
+\end_layout
+
+\begin_layout Solution
+אם \begin_inset Formula $x\in N$
+\end_inset
+ ו־\begin_inset Formula $y=gxg^{-1}$
+\end_inset
+ צמוד ל־\begin_inset Formula $x$
+\end_inset
+, נורמליות נותנת \begin_inset Formula $y\in N$
+\end_inset
+. לכן כל מחלקת הצמידות של איבר ב־\begin_inset Formula $N$
+\end_inset
+ מוכלת ב־\begin_inset Formula $N$
+\end_inset
+. מכאן \begin_inset Formula $N$
+\end_inset
+ היא איחוד מחלקות צמידות. להפך, אם \begin_inset Formula $N$
+\end_inset
+ היא איחוד מחלקות צמידות, אז לכל \begin_inset Formula $n\in N$
+\end_inset
+ ולכל \begin_inset Formula $g\in G$
+\end_inset
+, האיבר \begin_inset Formula $gng^{-1}$
+\end_inset
+ נמצא באותה מחלקת צמידות של \begin_inset Formula $n$
+\end_inset
+, ולכן ב־\begin_inset Formula $N$
+\end_inset
+. מכאן \begin_inset Formula $gNg^{-1}\subseteq N$
+\end_inset
+, ולכן \begin_inset Formula $N$
+\end_inset
+ נורמלית.
+\end_layout
+
+\begin_layout Chapter
+משפטי האיזומורפיזם, חבורות פשוטות וטורי הרכב
+\end_layout
+
+\begin_layout Goals
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+להכיר את משפטי האיזומורפיזם השני והשלישי ואת משפט ההתאמה.
+\end_layout
+
+\begin_layout Itemize
+להכיר מנרמל ותפקידו בהבנת נורמליות מקומית.
+\end_layout
+
+\begin_layout Itemize
+להבין את מושג החבורה הפשוטה ואת רעיון גורמי ההרכב.
+\end_layout
+
+\begin_layout Itemize
+להוכיח את משפט ז'ורדן–הולדר לחבורות סופיות.
+\end_layout
+
+\begin_layout Itemize
+להכיר סדרות מדויקות והרחבות של חבורות.
+\end_layout
+
+\begin_layout Itemize
+להוכיח את פשטות \begin_inset Formula $A_n$
+\end_inset
+ עבור \begin_inset Formula $n\ge5$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+\begin_layout Goals
+
+\end_layout
+
+\begin_layout Section
+שני משפטי איזומורפיזם נוספים
+\end_layout
+
+\begin_layout Standard
+משפט האיזומורפיזם הראשון מתחיל בהומומורפיזם ומזהה מנה עם תמונה. שני המשפטים הבאים מראים כיצד מנה מתנהגת כאשר משלבים תת־חבורות בתוך אותה חבורה.
+\end_layout
+
+\begin_layout Standard
+ראשית נזדקק למכפלה של תת־חבורות. אם \begin_inset Formula $H,K\le G$
+\end_inset
+, נסמן \begin_inset Formula 
+\[
+HK=\{hk:h\in H,\ k\in K\}.
+\]
+
+\end_inset
+ אין סיבה כללית ש־\begin_inset Formula $HK$
+\end_inset
+ תהיה תת־חבורה. נורמליות של אחד הגורמים פותרת את הבעיה.
+\end_layout
+
+\begin_layout Lemma
+אם \begin_inset Formula $H\le G$
+\end_inset
+ ו־\begin_inset Formula $N\trianglelefteq G$
+\end_inset
+, אז \begin_inset Formula 
+\[
+HN=NH\le G.
+\]
+
+\end_inset
+ כמו כן \begin_inset Formula $N\trianglelefteq HN$
+\end_inset
+ ו־\begin_inset Formula $H\cap N\trianglelefteq H$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+מן הנורמליות, לכל \begin_inset Formula $h\in H$
+\end_inset
+ מתקיים \begin_inset Formula $hN=Nh$
+\end_inset
+, ולכן \begin_inset Formula $HN=NH$
+\end_inset
+. אם \begin_inset Formula $h_1n_1,h_2n_2\in HN$
+\end_inset
+, אז \begin_inset Formula 
+\[
+(h_1n_1)(h_2n_2)=h_1h_2(h_2^{-1}n_1h_2)n_2\in HN,
+\]
+
+\end_inset
+ והופכי של \begin_inset Formula $hn$
+\end_inset
+ הוא \begin_inset Formula $n^{-1}h^{-1}=h^{-1}(hn^{-1}h^{-1})\in HN$
+\end_inset
+. לכן \begin_inset Formula $HN$
+\end_inset
+ תת־חבורה. הנורמליות של \begin_inset Formula $N$
+\end_inset
+ ב־\begin_inset Formula $HN$
+\end_inset
+ נובעת מן \begin_inset Formula $N\trianglelefteq G$
+\end_inset
+, והנורמליות של \begin_inset Formula $H\cap N$
+\end_inset
+ ב־\begin_inset Formula $H$
+\end_inset
+ נובעת מכך שצמוד על־ידי איבר של \begin_inset Formula $H$
+\end_inset
+ שומר הן את \begin_inset Formula $H$
+\end_inset
+ והן את \begin_inset Formula $N$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+משפט האיזומורפיזם השני
+\end_layout
+
+\end_inset
+אם \begin_inset Formula $H\le G$
+\end_inset
+ ו־\begin_inset Formula $N\trianglelefteq G$
+\end_inset
+, אז \begin_inset Formula 
+\[
+H/(H\cap N)\cong HN/N.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+נגדיר \begin_inset Formula $f:H\to HN/N$
+\end_inset
+ על־ידי \begin_inset Formula $f(h)=hN$
+\end_inset
+. זוהי הגבלת מפת המנה. היא על, משום שכל מחלקה ב־\begin_inset Formula $HN/N$
+\end_inset
+ נכתבת \begin_inset Formula $hnN=hN$
+\end_inset
+. הגרעין הוא בדיוק \begin_inset Formula $\{h\in H:hN=N\}=H\cap N$
+\end_inset
+. משפט האיזומורפיזם הראשון נותן את התוצאה.
+\end_layout
+
+\begin_layout Standard
+אפשר לזכור את המשפט באמצעות "יהלום" של תת־חבורות: למעלה \begin_inset Formula $HN$
+\end_inset
+, למטה \begin_inset Formula $H\cap N$
+\end_inset
+, ובצדדים \begin_inset Formula $H,N$
+\end_inset
+. שתי המנות שעל הצלעות הנגדיות איזומורפיות.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+משפט ההתאמה
+\end_layout
+
+\end_inset
+יהי \begin_inset Formula $N\trianglelefteq G$
+\end_inset
+ ותהי \begin_inset Formula $\pi:G\to G/N$
+\end_inset
+ מפת המנה. קיימת התאמה חד־חד־ערכית ועל בין תת־החבורות \begin_inset Formula $K$
+\end_inset
+ של \begin_inset Formula $G$
+\end_inset
+ המכילות את \begin_inset Formula $N$
+\end_inset
+ לבין תת־החבורות של \begin_inset Formula $G/N$
+\end_inset
+: \begin_inset Formula 
+\[
+K\longmapsto K/N=\pi(K).
+\]
+
+\end_inset
+ ההתאמה שומרת הכלה ונורמליות. אם \begin_inset Formula $N\le K_1\le K_2\le G$
+\end_inset
+, אז גם \begin_inset Formula 
+\[
+[K_2:K_1]=[K_2/N:K_1/N]
+\]
+
+\end_inset
+ כאשר האינדקסים סופיים.
+\end_layout
+
+\begin_layout Proof
+ההתאמה ההפוכה היא \begin_inset Formula $L\mapsto\pi^{-1}(L)$
+\end_inset
+. אם \begin_inset Formula $N\le K$
+\end_inset
+, אז \begin_inset Formula $\pi^{-1}(\pi(K))=K$
+\end_inset
+: אכן, אם \begin_inset Formula $\pi(g)=\pi(k)$
+\end_inset
+ עבור \begin_inset Formula $k\in K$
+\end_inset
+, אז \begin_inset Formula $k^{-1}g\in N\subseteq K$
+\end_inset
+, ולכן \begin_inset Formula $g\in K$
+\end_inset
+. מאחר ש־\begin_inset Formula $\pi$
+\end_inset
+ על, \begin_inset Formula $\pi(\pi^{-1}(L))=L$
+\end_inset
+. שתי המפות שומרות הכלה. נורמליות נשמרת משום שצמוד במנה הוא תמונת הצמוד בחבורה: \begin_inset Formula $\pi(gkg^{-1})=\pi(g)\pi(k)\pi(g)^{-1}$
+\end_inset
+. לבסוף, מחלקות \begin_inset Formula $K_1$
+\end_inset
+ ב־\begin_inset Formula $K_2$
+\end_inset
+ מתאימות למחלקות \begin_inset Formula $K_1/N$
+\end_inset
+ ב־\begin_inset Formula $K_2/N$
+\end_inset
+ על־ידי \begin_inset Formula $kK_1\mapsto(kN)(K_1/N)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+משפט האיזומורפיזם השלישי
+\end_layout
+
+\end_inset
+אם \begin_inset Formula $N\trianglelefteq H\trianglelefteq G$
+\end_inset
+ וגם \begin_inset Formula $N\trianglelefteq G$
+\end_inset
+, אז \begin_inset Formula $H/N\trianglelefteq G/N$
+\end_inset
+ ומתקיים \begin_inset Formula 
+\[
+(G/N)/(H/N)\cong G/H.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+הנורמליות \begin_inset Formula $H/N\trianglelefteq G/N$
+\end_inset
+ נובעת ממשפט ההתאמה. נגדיר \begin_inset Formula $f:G/N\to G/H$
+\end_inset
+ על־ידי \begin_inset Formula $f(gN)=gH$
+\end_inset
+. המפה מוגדרת היטב מפני \begin_inset Formula $N\subseteq H$
+\end_inset
+, היא על, וגרעינה \begin_inset Formula $H/N$
+\end_inset
+. ממשפט האיזומורפיזם הראשון נקבל את האיזומורפיזם המבוקש.
+\end_layout
+
+\begin_layout Question
+יהי \begin_inset Formula $G=\mathbb Z/60\mathbb Z$
+\end_inset
+ ויהיו \begin_inset Formula $N=\langle\bar{12}\rangle$
+\end_inset
+, \begin_inset Formula $H=\langle\bar6\rangle$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+חשבו את \begin_inset Formula $|N|,|H|$
+\end_inset
+ והראו \begin_inset Formula $N\le H\le G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+חשבו את \begin_inset Formula $H/N$
+\end_inset
+ ואת \begin_inset Formula $G/H$
+\end_inset
+ עד כדי איזומורפיזם.
+\end_layout
+
+\begin_layout Enumerate
+בדקו במפורש את משפט האיזומורפיזם השלישי במקרה זה.
+\end_layout
+
+\end_deeper
+\begin_layout Solution
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+סדר \begin_inset Formula $\bar{12}$
+\end_inset
+ הוא \begin_inset Formula $60/12=5$
+\end_inset
+, ולכן \begin_inset Formula $|N|=5$
+\end_inset
+. סדר \begin_inset Formula $\bar6$
+\end_inset
+ הוא \begin_inset Formula $60/6=10$
+\end_inset
+, ולכן \begin_inset Formula $|H|=10$
+\end_inset
+. מאחר \begin_inset Formula $\bar{12}=2\bar6$
+\end_inset
+, מתקיים \begin_inset Formula $N\le H$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $|H/N|=2$
+\end_inset
+, והיא ציקלית, ולכן \begin_inset Formula $H/N\cong C_2$
+\end_inset
+. כמו כן \begin_inset Formula $|G/H|=6$
+\end_inset
+, ומנה של חבורה ציקלית היא ציקלית, ולכן \begin_inset Formula $G/H\cong C_6$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $G/N$
+\end_inset
+ היא ציקלית מסדר \begin_inset Formula $12$
+\end_inset
+. בתוכה \begin_inset Formula $H/N$
+\end_inset
+ מסדר \begin_inset Formula $2$
+\end_inset
+. לכן \begin_inset Formula $(G/N)/(H/N)$
+\end_inset
+ ציקלית מסדר \begin_inset Formula $6$
+\end_inset
+, כלומר איזומורפית ל־\begin_inset Formula $C_6\cong G/H$
+\end_inset
+, כמשפט.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+המנרמל
+\end_layout
+
+\begin_layout Standard
+נורמליות של \begin_inset Formula $N\le G$
+\end_inset
+ דורשת שכל איבר של \begin_inset Formula $G$
+\end_inset
+ ישמור את \begin_inset Formula $N$
+\end_inset
+ בהצמדה. לעיתים רק חלק מן החבורה עושה זאת. חלק זה הוא בעצמו תת־חבורה חשובה.
+\end_layout
+
+\begin_layout Definition
+יהי \begin_inset Formula $N\le G$
+\end_inset
+. \emph on
+המנרמל\emph default
+ של \begin_inset Formula $N$
+\end_inset
+ ב־\begin_inset Formula $G$
+\end_inset
+ הוא \begin_inset Formula 
+\[
+N_G(N)=\{g\in G:gNg^{-1}=N\}.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset Formula $N_G(N)\le G$
+\end_inset
+, ו־\begin_inset Formula $N\trianglelefteq N_G(N)$
+\end_inset
+. יתרה מכך, \begin_inset Formula $N_G(N)$
+\end_inset
+ היא תת־החבורה הגדולה ביותר של \begin_inset Formula $G$
+\end_inset
+ שבה \begin_inset Formula $N$
+\end_inset
+ נורמלית.
+\end_layout
+
+\begin_layout Proof
+אם \begin_inset Formula $g,h$
+\end_inset
+ מנרמלים את \begin_inset Formula $N$
+\end_inset
+, אז \begin_inset Formula $(gh)N(gh)^{-1}=g(hNh^{-1})g^{-1}=gNg^{-1}=N$
+\end_inset
+. גם \begin_inset Formula $g^{-1}$
+\end_inset
+ מנרמל, ולכן זהו תת־חבורה. מן ההגדרה כל איבר בה מצמיד את \begin_inset Formula $N$
+\end_inset
+ לעצמה, ולכן \begin_inset Formula $N$
+\end_inset
+ נורמלית בה. אם \begin_inset Formula $N\trianglelefteq K\le G$
+\end_inset
+, כל \begin_inset Formula $k\in K$
+\end_inset
+ מנרמל את \begin_inset Formula $N$
+\end_inset
+, ולכן \begin_inset Formula $K\le N_G(N)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+המנרמל הוא דרך למדוד עד כמה תת־חבורה קרובה להיות נורמלית: \begin_inset Formula $N$
+\end_inset
+ נורמלית ב־\begin_inset Formula $G$
+\end_inset
+ אם ורק אם \begin_inset Formula $N_G(N)=G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Section
+חבורות פשוטות
+\end_layout
+
+\begin_layout Standard
+חבורות מנה מאפשרות לפרק חבורה באמצעות תת־חבורות נורמליות. לכן החבורות שאין להן תת־חבורות נורמליות לא־טריוויאליות ממלאות תפקיד של אבני בניין.
+\end_layout
+
+\begin_layout Definition
+חבורה לא־טריוויאלית \begin_inset Formula $G$
+\end_inset
+ נקראת \emph on
+פשוטה\emph default
+ אם תת־החבורות הנורמליות היחידות שלה הן \begin_inset Formula $\{e\}$
+\end_inset
+ ו־\begin_inset Formula $G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+כל \begin_inset Formula $C_p$
+\end_inset
+ פשוטה כאשר \begin_inset Formula $p$
+\end_inset
+ ראשוני. לעומת זאת, \begin_inset Formula $C_n$
+\end_inset
+ אינה פשוטה כאשר \begin_inset Formula $n$
+\end_inset
+ פריק. \begin_inset Formula $A_4$
+\end_inset
+ אינה פשוטה, מפני שחבורת קליין \begin_inset Formula 
+\[
+V_4=\{e,(12)(34),(13)(24),(14)(23)\}
+\]
+
+\end_inset
+ נורמלית בה. בהמשך היחידה נוכיח ש־\begin_inset Formula $A_n$
+\end_inset
+ פשוטה לכל \begin_inset Formula $n\ge5$
+\end_inset
+.
+\end_layout
+
+\begin_layout Lemma
+אם \begin_inset Formula $N\trianglelefteq G$
+\end_inset
+ ו־\begin_inset Formula $N<G$
+\end_inset
+, אז \begin_inset Formula $G/N$
+\end_inset
+ פשוטה אם ורק אם אין תת־חבורה נורמלית \begin_inset Formula $K$
+\end_inset
+ המקיימת \begin_inset Formula 
+\[
+N<K<G.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+לפי משפט ההתאמה, תת־חבורות נורמליות של \begin_inset Formula $G/N$
+\end_inset
+ מתאימות בדיוק לתת־חבורות נורמליות של \begin_inset Formula $G$
+\end_inset
+ המכילות את \begin_inset Formula $N$
+\end_inset
+. שתי התת־חבורות הטריוויאליות במנה מתאימות ל־\begin_inset Formula $N$
+\end_inset
+ ול־\begin_inset Formula $G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Section
+טורים נורמליים וטורי הרכב
+\end_layout
+
+\begin_layout Definition
+\emph on
+טור נורמלי\emph default
+ של חבורה \begin_inset Formula $G$
+\end_inset
+ הוא שרשרת \begin_inset Formula 
+\[
+G=G_0\trianglerighteq G_1\trianglerighteq\cdots\trianglerighteq G_r=\{e\},
+\]
+
+\end_inset
+ כאשר \begin_inset Formula $G_{i+1}\trianglelefteq G_i$
+\end_inset
+ לכל \begin_inset Formula $i$
+\end_inset
+. המנות \begin_inset Formula $G_i/G_{i+1}$
+\end_inset
+ נקראות גורמי הטור. טור נקרא \emph on
+טור הרכב\emph default
+ אם כל הגורמים \begin_inset Formula $G_i/G_{i+1}$
+\end_inset
+ פשוטים ולא־טריוויאליים. גורמים אלה נקראים \emph on
+גורמי ההרכב\emph default
+ של \begin_inset Formula $G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Example
+ל־\begin_inset Formula $S_3$
+\end_inset
+ יש טור הרכב \begin_inset Formula 
+\[
+S_3\trianglerighteq A_3\trianglerighteq\{e\},
+\]
+
+\end_inset
+ שגורמיו \begin_inset Formula $C_2$
+\end_inset
+ ו־\begin_inset Formula $C_3$
+\end_inset
+. גם ל־\begin_inset Formula $C_6$
+\end_inset
+ יש גורמי הרכב \begin_inset Formula $C_2,C_3$
+\end_inset
+, אף ש־\begin_inset Formula $S_3$
+\end_inset
+ ו־\begin_inset Formula $C_6$
+\end_inset
+ אינן איזומורפיות. גורמי ההרכב אינם משחזרים את החבורה, אך הם מידע מבני בסיסי עליה.
+\end_layout
+
+\begin_layout Claim
+לכל חבורה סופית לא־טריוויאלית יש טור הרכב.
+\end_layout
+
+\begin_layout Proof
+באינדוקציה על \begin_inset Formula $|G|$
+\end_inset
+. אם \begin_inset Formula $G$
+\end_inset
+ פשוטה, \begin_inset Formula $G\trianglerighteq\{e\}$
+\end_inset
+ הוא טור הרכב. אחרת נבחר תת־חבורה נורמלית ממש \begin_inset Formula $N$
+\end_inset
+ שהיא מקסימלית ביחס להכלה. אז \begin_inset Formula $G/N$
+\end_inset
+ פשוטה. לפי הנחת האינדוקציה ל־\begin_inset Formula $N$
+\end_inset
+ יש טור הרכב; הוספת \begin_inset Formula $G$
+\end_inset
+ בראש הטור נותנת טור הרכב של \begin_inset Formula $G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+השאלה המתבקשת היא אם בחירה אחרת של תת־חבורות נורמליות יכולה לתת גורמים אחרים. התשובה המפתיעה היא שלא.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+משפט ז'ורדן–הולדר
+\end_layout
+
+\end_inset
+לחבורה סופית, כל שני טורי הרכב הם בעלי אותו אורך ואותם גורמי הרכב, עד כדי איזומורפיזם ושינוי סדר.
+\end_layout
+
+\begin_layout Proof
+נוכיח באינדוקציה על \begin_inset Formula $|G|$
+\end_inset
+. יהיו שני טורי הרכב, ונביט בתת־החבורות הראשונות שלהם \begin_inset Formula $H$
+\end_inset
+ ו־\begin_inset Formula $K$
+\end_inset
+: \begin_inset Formula 
+\[
+G\trianglerighteq H\trianglerighteq\cdots, \qquad G\trianglerighteq K\trianglerighteq\cdots.
+\]
+
+\end_inset
+ המנה \begin_inset Formula $G/H$
+\end_inset
+ פשוטה, ולכן \begin_inset Formula $H$
+\end_inset
+ תת־חבורה נורמלית מקסימלית ממש; וכן \begin_inset Formula $K$
+\end_inset
+. אם \begin_inset Formula $H=K$
+\end_inset
+, שני הטורים ממשיכים בשני טורי הרכב של \begin_inset Formula $H$
+\end_inset
+, והטענה נובעת מהנחת האינדוקציה. נניח \begin_inset Formula $H\ne K$
+\end_inset
+. מאחר ש־\begin_inset Formula $H,K\trianglelefteq G$
+\end_inset
+, גם \begin_inset Formula $HK\trianglelefteq G$
+\end_inset
+. הוא מכיל ממש את \begin_inset Formula $H$
+\end_inset
+, ולכן ממקסימליות \begin_inset Formula $H$
+\end_inset
+ נקבל \begin_inset Formula $HK=G$
+\end_inset
+. נסמן \begin_inset Formula $D=H\cap K$
+\end_inset
+. ממשפט האיזומורפיזם השני, \begin_inset Formula 
+\[
+H/D\cong HK/K=G/K,
+\]
+
+\end_inset
+ וכן \begin_inset Formula 
+\[
+K/D\cong G/H.
+\]
+
+\end_inset
+ בפרט \begin_inset Formula $H/D$
+\end_inset
+ ו־\begin_inset Formula $K/D$
+\end_inset
+ פשוטות. נבחר טור הרכב כלשהו של \begin_inset Formula $D$
+\end_inset
+. הוספת \begin_inset Formula $H$
+\end_inset
+ בראשו נותנת טור הרכב של \begin_inset Formula $H$
+\end_inset
+, כי \begin_inset Formula $H/D$
+\end_inset
+ פשוטה; והוספת \begin_inset Formula $K$
+\end_inset
+ נותנת טור הרכב של \begin_inset Formula $K$
+\end_inset
+. לפי הנחת האינדוקציה, גורמי ההרכב של הטור הנתון בתוך \begin_inset Formula $H$
+\end_inset
+ הם גורמי ההרכב של \begin_inset Formula $D$
+\end_inset
+ יחד עם \begin_inset Formula $H/D$
+\end_inset
+; ובאותו אופן גורמי הטור בתוך \begin_inset Formula $K$
+\end_inset
+ הם גורמי \begin_inset Formula $D$
+\end_inset
+ יחד עם \begin_inset Formula $K/D$
+\end_inset
+. לכן גורמי הטור הראשון של \begin_inset Formula $G$
+\end_inset
+ הם \begin_inset Formula 
+\[
+G/H,\quad H/D,\quad \text{גורמי }D,
+\]
+
+\end_inset
+ ואילו גורמי הטור השני הם \begin_inset Formula 
+\[
+G/K,\quad K/D,\quad \text{גורמי }D.
+\]
+
+\end_inset
+ אבל \begin_inset Formula $H/D\cong G/K$
+\end_inset
+ ו־\begin_inset Formula $K/D\cong G/H$
+\end_inset
+, ולכן שתי הרשימות זהות עד כדי החלפת שני הגורמים הראשונים. זה משלים את האינדוקציה.
+\end_layout
+
+\begin_layout Standard
+המשפט אינו אומר שחבורה נקבעת על־ידי גורמי ההרכב שלה. הוא אומר שה"חומרים" הפשוטים שמהם היא בנויה נקבעים באופן יחיד; עדיין נשארת השאלה כיצד הם מחוברים זה לזה.
+\end_layout
+
+\begin_layout Subsection
+משפט העידון של שרייר (*)
+\end_layout
+
+\begin_layout Standard
+טור נורמלי אחד נקרא \emph on
+עידון\emph default
+ של טור אחר אם הוא מתקבל ממנו על־ידי הכנסת תת־חבורות נוספות בין איברי הטור. משפט שרייר קובע שכל שני טורים נורמליים סופיים ניתנים לעידון כך שרשימות הגורמים של שני העידונים איזומורפיות זו לזו, עד כדי סדר. משפט ז'ורדן–הולדר הוא המקרה שבו אי אפשר לעדן עוד, משום שכל הגורמים פשוטים.
+\end_layout
+
+\begin_layout Standard
+הרעיון בהוכחת שרייר הוא לפרוס שתי שרשראות זו כנגד זו. בין \begin_inset Formula $G_i$
+\end_inset
+ ל־\begin_inset Formula $G_{i+1}$
+\end_inset
+ מכניסים את התת־חבורות \begin_inset Formula 
+\[
+(G_i\cap H_j)G_{i+1},
+\]
+
+\end_inset
+ ובין \begin_inset Formula $H_j$
+\end_inset
+ ל־\begin_inset Formula $H_{j+1}$
+\end_inset
+ מכניסים באופן סימטרי את \begin_inset Formula 
+\[
+(H_j\cap G_i)H_{j+1}.
+\]
+
+\end_inset
+ משפט האיזומורפיזם השני מראה שהגורמים המתקבלים משני הצדדים איזומורפיים. הניסוח המלא מכונה לעיתים \emph on
+למת הפרפר של זסנהאוס\emph default
+.
+\end_layout
+
+\begin_layout Question
+מצאו טורי הרכב וגורמי הרכב עבור החבורות הבאות.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $C_{12}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $C_2\times C_2$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $A_4$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+\begin_layout Solution
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אפשר לקחת \begin_inset Formula $C_{12}\trianglerighteq C_6\trianglerighteq C_3\trianglerighteq\{e\}$
+\end_inset
+. הגורמים הם \begin_inset Formula $C_2,C_2,C_3$
+\end_inset
+ (בסדר המתאים). כל טור אחר ייתן אותם גורמים.
+\end_layout
+
+\begin_layout Enumerate
+כל תת־חבורה מסדר \begin_inset Formula $2$
+\end_inset
+ נורמלית כי החבורה אבלית. לכן \begin_inset Formula $C_2\times C_2\trianglerighteq C_2\trianglerighteq\{e\}$
+\end_inset
+, והגורמים \begin_inset Formula $C_2,C_2$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $A_4\trianglerighteq V_4\trianglerighteq C_2\trianglerighteq\{e\}$
+\end_inset
+ הוא טור הרכב. המנה \begin_inset Formula $A_4/V_4$
+\end_inset
+ מסדר \begin_inset Formula $3$
+\end_inset
+, \begin_inset Formula $V_4/C_2$
+\end_inset
+ מסדר \begin_inset Formula $2$
+\end_inset
+, והגורם האחרון \begin_inset Formula $C_2$
+\end_inset
+. לכן גורמי ההרכב הם \begin_inset Formula $C_3,C_2,C_2$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+סדרות מדויקות והרחבות
+\end_layout
+
+\begin_layout Standard
+גורמי ההרכב נותנים את החלקים הפשוטים, אך אינם אומרים כיצד מרכיבים אותם. השאלה הבסיסית ביותר היא: בהינתן חבורות \begin_inset Formula $N,H$
+\end_inset
+, אילו חבורות \begin_inset Formula $G$
+\end_inset
+ מכילות עותק נורמלי של \begin_inset Formula $N$
+\end_inset
+ כך שהמנה איזומורפית ל־\begin_inset Formula $H$
+\end_inset
+?
+\end_layout
+
+\begin_layout Definition
+סדרה של הומומורפיזמים \begin_inset Formula 
+\[
+\cdots\longrightarrow G_{i-1}\xrightarrow{f_{i-1}}G_i\xrightarrow{f_i}G_{i+1}\longrightarrow\cdots
+\]
+
+\end_inset
+ נקראת \emph on
+מדויקת\emph default
+ אם \begin_inset Formula $\operatorname{Im}f_{i-1}=\ker f_i$
+\end_inset
+ בכל מקום.
+\end_layout
+
+\begin_layout Standard
+בפרט, סדרה קצרה \begin_inset Formula 
+\[
+1\longrightarrow N\xrightarrow{i}G\xrightarrow{\pi}H\longrightarrow1
+\]
+
+\end_inset
+ מדויקת אם ורק אם \begin_inset Formula $i$
+\end_inset
+ חד־חד־ערכית, \begin_inset Formula $\pi$
+\end_inset
+ על, ו־\begin_inset Formula $\operatorname{Im}i=\ker\pi$
+\end_inset
+. במקרה זה \begin_inset Formula $G$
+\end_inset
+ נקראת \emph on
+הרחבה של $H$ על־ידי $N$\emph default
+. ממשפט האיזומורפיזם הראשון מתקבל \begin_inset Formula $G/i(N)\cong H$
+\end_inset
+.
+\end_layout
+
+\begin_layout Examples
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $1\to A_n\to S_n\xrightarrow{\operatorname{sgn}}C_2\to1$
+\end_inset
+ מדויקת.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $1\to C_2\to C_4\to C_2\to1$
+\end_inset
+ מדויקת.
+\end_layout
+
+\begin_layout Enumerate
+ההרחבה \begin_inset Formula $1\to N\to N\times H\to H\to1$
+\end_inset
+ קיימת תמיד.
+\end_layout
+
+\end_deeper
+\begin_layout Definition
+הרחבה קצרה נקראת \emph on
+מתפצלת\emph default
+ אם קיים הומומורפיזם \begin_inset Formula $s:H\to G$
+\end_inset
+ כך ש־\begin_inset Formula $\pi\circ s=\operatorname{id}_H$
+\end_inset
+. המפה \begin_inset Formula $s$
+\end_inset
+ נקראת חתך.
+\end_layout
+
+\begin_layout Standard
+אם יש חתך, \begin_inset Formula $s$
+\end_inset
+ חד־חד־ערכית; לכן \begin_inset Formula $H$
+\end_inset
+ מופיעה בתוך \begin_inset Formula $G$
+\end_inset
+ כתת־חבורה. יתרה מכך, אם נסמן \begin_inset Formula $N'=i(N)$
+\end_inset
+ ו־\begin_inset Formula $H'=s(H)$
+\end_inset
+, אז \begin_inset Formula 
+\[
+G=N'H',\qquad N'\cap H'=\{e\},\qquad N'\trianglelefteq G.
+\]
+
+\end_inset
+ מצב זה יוביל בכרך הבא למושג מכפלה למחצה.
+\end_layout
+
+\begin_layout Standard
+ההרחבה \begin_inset Formula $C_2\to C_4\to C_2$
+\end_inset
+ אינה מתפצלת: ב־\begin_inset Formula $C_4$
+\end_inset
+ יש תת־חבורה יחידה מסדר \begin_inset Formula $2$
+\end_inset
+, והיא הגרעין, ולכן אין עותק נוסף של \begin_inset Formula $C_2$
+\end_inset
+ שיכול לשמש חתך. לעומת זאת \begin_inset Formula $A_3\to S_3\to C_2$
+\end_inset
+ מתפצלת: תת־החבורה \begin_inset Formula $\langle(12)\rangle$
+\end_inset
+ נותנת חתך.
+\end_layout
+
+\begin_layout Standard
+דוגמה חשובה נוספת להרחבה שאינה מתפצלת מתקבלת מחבורת הקווטרניונים \begin_inset Formula 
+\[
+Q_8=\{\pm1,\pm i,\pm j,\pm k\},
+\]
+
+\end_inset
+ שבה \begin_inset Formula $i^2=j^2=k^2=-1$
+\end_inset
+ ו־\begin_inset Formula $ij=k$
+\end_inset
+, \begin_inset Formula $ji=-k$
+\end_inset
+. התת־חבורה \begin_inset Formula $\{\pm1\}$
+\end_inset
+ מרכזית, והמנה היא \begin_inset Formula 
+\[
+Q_8/\{\pm1\}\cong C_2\times C_2.
+\]
+
+\end_inset
+ לכן יש סדרה מדויקת \begin_inset Formula 
+\[
+1\longrightarrow C_2\longrightarrow Q_8\longrightarrow C_2\times C_2\longrightarrow1.
+\]
+
+\end_inset
+ היא אינה מתפצלת: ב־\begin_inset Formula $Q_8$
+\end_inset
+ יש איבר יחיד מסדר \begin_inset Formula $2$
+\end_inset
+, והוא \begin_inset Formula $-1$
+\end_inset
+. אילו היה חתך, הייתה ב־\begin_inset Formula $Q_8$
+\end_inset
+ תת־חבורה איזומורפית ל־\begin_inset Formula $C_2\times C_2$
+\end_inset
+, ובה שלושה איברים מסדר \begin_inset Formula $2$
+\end_inset
+ — דבר שאינו אפשרי.
+\end_layout
+
+\begin_layout Standard
+הדוגמאות \begin_inset Formula $C_4$
+\end_inset
+ ו־\begin_inset Formula $Q_8$
+\end_inset
+ מחדדות נקודה עקרונית: ידיעת הגרעין והמנה אינה קובעת לבדה את החבורה. גם השאלה אם ההרחבה מתפצלת היא מידע מבני נוסף.
+\end_layout
+
+\begin_layout Section
+פשטות החבורה \begin_inset Formula $A_n$
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+נוכיח כעת את הדוגמה המרכזית הראשונה לחבורה פשוטה לא־אבלית.
+\end_layout
+
+\begin_layout Lemma
+\begin_inset Formula $A_n$
+\end_inset
+ נוצרת על־ידי \begin_inset Formula $3$
+\end_inset
+־מחזורים.
+\end_layout
+
+\begin_layout Proof
+ראינו שכל תמורה זוגית היא מכפלה של מספר זוגי של טרנספוזיציות. כל זוג טרנספוזיציות ניתן לכתוב כמכפלה של \begin_inset Formula $3$
+\end_inset
+־מחזורים: אם הן חולקות נקודה, למשל \begin_inset Formula $(ab)(ac)$
+\end_inset
+, המכפלה עצמה היא \begin_inset Formula $3$
+\end_inset
+־מחזור; ואם הן זרות, נכניס טרנספוזיציה מתווכת ונכתוב \begin_inset Formula 
+\[
+(ab)(cd)=(ab)(ac)\,(ac)(cd),
+\]
+
+\end_inset
+ ושני הגורמים הם \begin_inset Formula $3$
+\end_inset
+־מחזורים. לכן כל איבר של \begin_inset Formula $A_n$
+\end_inset
+ הוא מכפלה של \begin_inset Formula $3$
+\end_inset
+־מחזורים.
+\end_layout
+
+\begin_layout Lemma
+אם \begin_inset Formula $n\ge5$
+\end_inset
+ ו־\begin_inset Formula $N\trianglelefteq A_n$
+\end_inset
+ אינה טריוויאלית, אז \begin_inset Formula $N$
+\end_inset
+ מכילה \begin_inset Formula $3$
+\end_inset
+־מחזור.
+\end_layout
+
+\begin_layout Proof
+נבחר \begin_inset Formula $e\ne\sigma\in N$
+\end_inset
+ ונבחן את פירוק המחזורים הזרים שלה. אם ל־\begin_inset Formula $\sigma$
+\end_inset
+ יש מחזור באורך לפחות \begin_inset Formula $4$
+\end_inset
+, נכתוב חלק ממנו \begin_inset Formula $(abcd\ldots)$
+\end_inset
+ וניקח \begin_inset Formula $\tau=(abc)\in A_n$
+\end_inset
+. הקומוטטור \begin_inset Formula 
+\[
+\sigma\tau\sigma^{-1}\tau^{-1}
+\]
+
+\end_inset
+ שייך ל־\begin_inset Formula $N$
+\end_inset
+ משום ש־\begin_inset Formula $N$
+\end_inset
+ נורמלית. על הנקודות \begin_inset Formula $a,b,c,d$
+\end_inset
+ מתקבל \begin_inset Formula $3$
+\end_inset
+־מחזור (זהותו המדויקת תלויה במוסכמת סדר ההרכבה), ושאר המחזורים הזרים של \begin_inset Formula $\sigma$
+\end_inset
+ אינם משפיעים על החישוב. לכן מצאנו \begin_inset Formula $3$
+\end_inset
+־מחזור ב־\begin_inset Formula $N$
+\end_inset
+. נניח מעתה שכל המחזורים הם באורכים \begin_inset Formula $2$
+\end_inset
+ או \begin_inset Formula $3$
+\end_inset
+. אם יש בדיוק \begin_inset Formula $3$
+\end_inset
+־מחזור אחד, חזקת \begin_inset Formula $\sigma$
+\end_inset
+ מתאימה (למשל \begin_inset Formula $\sigma^2$
+\end_inset
+) מבטלת את כל הטרנספוזיציות ומשאירה \begin_inset Formula $3$
+\end_inset
+־מחזור. אם יש לפחות שני \begin_inset Formula $3$
+\end_inset
+־מחזורים, נכתוב ביניהם \begin_inset Formula $(abc)(def)$
+\end_inset
+ וניקח \begin_inset Formula $\tau=(abd)$
+\end_inset
+. הקומוטטור המתאים הוא \begin_inset Formula $5$
+\end_inset
+־מחזור על חמש מן הנקודות, ולכן חזרנו למקרה הראשון ומקבלים ממנו \begin_inset Formula $3$
+\end_inset
+־מחזור. נותר המקרה שבו \begin_inset Formula $\sigma$
+\end_inset
+ היא מכפלה של מספר זוגי של טרנספוזיציות זרות. אם יש נקודה קבועה \begin_inset Formula $x$
+\end_inset
+, ונכתוב שניים מן האיברים המתחלפים כ־\begin_inset Formula $(ab)$
+\end_inset
+, אז הקומוטטור עם \begin_inset Formula $(abx)$
+\end_inset
+ הוא \begin_inset Formula $3$
+\end_inset
+־מחזור. אם אין נקודה קבועה, יש לפחות שלוש טרנספוזיציות, נאמר \begin_inset Formula $(ab)(cd)(ef)$
+\end_inset
+. הקומוטטור עם \begin_inset Formula $(ace)$
+\end_inset
+ הוא מכפלה של שני \begin_inset Formula $3$
+\end_inset
+־מחזורים; לפי המקרה הקודם הוא מוביל ל־\begin_inset Formula $3$
+\end_inset
+־מחזור ב־\begin_inset Formula $N$
+\end_inset
+. בכל המקרים \begin_inset Formula $N$
+\end_inset
+ מכילה \begin_inset Formula $3$
+\end_inset
+־מחזור.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Formula $A_n$
+\end_inset
+ פשוטה לכל \begin_inset Formula $n\ge5$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+יהי \begin_inset Formula $N\trianglelefteq A_n$
+\end_inset
+ לא־טריוויאלי. לפי הלמה, \begin_inset Formula $N$
+\end_inset
+ מכילה \begin_inset Formula $3$
+\end_inset
+־מחזור \begin_inset Formula $\alpha$
+\end_inset
+. כל שני \begin_inset Formula $3$
+\end_inset
+־מחזורים צמודים בתוך \begin_inset Formula $A_n$
+\end_inset
+: ב־\begin_inset Formula $S_n$
+\end_inset
+ הם צמודים; אם המצמיד שמצאנו אי־זוגי, נכפיל אותו בטרנספוזיציה של שתי נקודות שאינן משתתפות ב־\begin_inset Formula $3$
+\end_inset
+־מחזור היעד. הדבר אפשרי כי \begin_inset Formula $n\ge5$
+\end_inset
+, והטרנספוזיציה הנוספת מתחלפת עם מחזור היעד, כך שהצמוד אינו משתנה אך המצמיד נעשה זוגי. מאחר ש־\begin_inset Formula $N$
+\end_inset
+ נורמלית, היא מכילה אפוא את כל ה־\begin_inset Formula $3$
+\end_inset
+־מחזורים. לפי הלמה הראשונה הם יוצרים את \begin_inset Formula $A_n$
+\end_inset
+, ולכן \begin_inset Formula $N=A_n$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+המשפט הוא אחד המקומות הראשונים שבהם מבנה של תמורות מתחבר לשאלה עמוקה יותר. בתורת גלואה, פשטות \begin_inset Formula $A_n$
+\end_inset
+ עבור \begin_inset Formula $n\ge5$
+\end_inset
+ היא מרכיב מרכזי בהסבר לכך שאין נוסחה באמצעות רדיקלים לפתרון משוואה כללית ממעלה חמש ומעלה.
+\end_layout
+
+\begin_layout Section* in ToC
+סיכום יחידה 3
+\end_layout
+
+\begin_layout Standard
+משפטי האיזומורפיזם וההתאמה מאפשרים להעביר מידע בין תת־חבורות, מכפלות ומנות. בעזרתם הגדרנו חבורות פשוטות וטורי הרכב, והוכחנו במשפט ז'ורדן–הולדר שגורמי ההרכב של חבורה סופית נקבעים באופן יחיד. סדרות מדויקות ניסחו את בעיית ההרחבה: כיצד לבנות חבורה מחבורה נורמלית ומחבורת מנה. לבסוף הוכחנו ש־\begin_inset Formula $A_n$
+\end_inset
+ פשוטה לכל \begin_inset Formula $n\ge5$
+\end_inset
+.
+\end_layout
+
+\begin_layout Section* in ToC
+שאלות להערכה עצמית
+\end_layout
+
+\begin_layout Question
+יהיו \begin_inset Formula $N,M\trianglelefteq G$
+\end_inset
+. הוכיחו ש־\begin_inset Formula $NM\trianglelefteq G$
+\end_inset
+ וש־ \begin_inset Formula 
+\[
+NM/M\cong N/(N\cap M).
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Solution
+מכיוון \begin_inset Formula $M\trianglelefteq G$
+\end_inset
+, הלמה על מכפלת תת־חבורות נותנת \begin_inset Formula $NM\le G$
+\end_inset
+. עבור \begin_inset Formula $g\in G$
+\end_inset
+, \begin_inset Formula $gNMg^{-1}=(gNg^{-1})(gMg^{-1})=NM$
+\end_inset
+, ולכן המכפלה נורמלית. משפט האיזומורפיזם השני עם \begin_inset Formula $H=N$
+\end_inset
+ ו־\begin_inset Formula $M$
+\end_inset
+ בתפקיד התת־חבורה הנורמלית נותן \begin_inset Formula $N/(N\cap M)\cong NM/M$
+\end_inset
+.
+\end_layout
+
+\begin_layout Question
+הוכיחו שאם \begin_inset Formula $G/Z(G)$
+\end_inset
+ ציקלית, אז \begin_inset Formula $G$
+\end_inset
+ אבלית.
+\end_layout
+
+\begin_layout Solution
+נניח \begin_inset Formula $G/Z(G)=\langle gZ(G)\rangle$
+\end_inset
+. לכל \begin_inset Formula $a,b\in G$
+\end_inset
+ קיימים \begin_inset Formula $m,n\in\mathbb Z$
+\end_inset
+ ו־\begin_inset Formula $z_1,z_2\in Z(G)$
+\end_inset
+ כך ש־\begin_inset Formula $a=g^mz_1$
+\end_inset
+, \begin_inset Formula $b=g^nz_2$
+\end_inset
+. מאחר שאיברי המרכז מתחלפים עם הכול וגם חזקות של \begin_inset Formula $g$
+\end_inset
+ מתחלפות זו עם זו, נקבל \begin_inset Formula $ab=g^{m+n}z_1z_2=g^{n+m}z_2z_1=ba$
+\end_inset
+. לכן \begin_inset Formula $G$
+\end_inset
+ אבלית.
+\end_layout
+
+\begin_layout Question
+מצאו את גורמי ההרכב של \begin_inset Formula $S_4$
+\end_inset
+.
+\end_layout
+
+\begin_layout Solution
+יש טור \begin_inset Formula 
+\[
+S_4\trianglerighteq A_4\trianglerighteq V_4\trianglerighteq C_2\trianglerighteq\{e\}.
+\]
+
+\end_inset
+ הגורמים הם \begin_inset Formula $S_4/A_4\cong C_2$
+\end_inset
+, \begin_inset Formula $A_4/V_4\cong C_3$
+\end_inset
+, \begin_inset Formula $V_4/C_2\cong C_2$
+\end_inset
+, ו־\begin_inset Formula $C_2$
+\end_inset
+. לכן גורמי ההרכב הם שלושה עותקים של \begin_inset Formula $C_2$
+\end_inset
+ ועותק אחד של \begin_inset Formula $C_3$
+\end_inset
+.
+\end_layout
+
+\begin_layout QuestionW/Hint
+נניח \begin_inset Formula $N\trianglelefteq G$
+\end_inset
+ וגם \begin_inset Formula $H\le G$
+\end_inset
+, ו־\begin_inset Formula $G=NH$
+\end_inset
+. הוכיחו שההגבלה של מפת המנה \begin_inset Formula $H\to G/N$
+\end_inset
+ היא על ושגרעינה \begin_inset Formula $H\cap N$
+\end_inset
+. הסיקו שוב את משפט האיזומורפיזם השני.
+\end_layout
+
+\begin_layout Hint
+כל איבר של \begin_inset Formula $G/N$
+\end_inset
+ נכתב \begin_inset Formula $nhN=hN$
+\end_inset
+.
+\end_layout
+
+\begin_layout Solution
+המפה \begin_inset Formula $h\mapsto hN$
+\end_inset
+ היא הומומורפיזם. מאחר שכל \begin_inset Formula $g\in G$
+\end_inset
+ נכתב \begin_inset Formula $g=nh$
+\end_inset
+, מתקיים \begin_inset Formula $gN=nhN=hN$
+\end_inset
+, ולכן המפה על. הגרעין הוא כל \begin_inset Formula $h\in H$
+\end_inset
+ השייך ל־\begin_inset Formula $N$
+\end_inset
+, כלומר \begin_inset Formula $H\cap N$
+\end_inset
+. משפט האיזומורפיזם הראשון נותן \begin_inset Formula $H/(H\cap N)\cong G/N=HN/N$
+\end_inset
+.
+\end_layout
+
+\begin_layout Question
+הוכיחו שהסדרה \begin_inset Formula $1\to C_3\to S_3\to C_2\to1$
+\end_inset
+ מתפצלת בשתי דרכים שונות כתת־חבורות, אך שתי התמונות של החתכים צמודות זו לזו.
+\end_layout
+
+\begin_layout Solution
+הגרעין הוא \begin_inset Formula $A_3=C_3$
+\end_inset
+. כל אחת משלוש תת־החבורות \begin_inset Formula $\langle(12)\rangle$
+\end_inset
+, \begin_inset Formula $\langle(13)\rangle$
+\end_inset
+, \begin_inset Formula $\langle(23)\rangle$
+\end_inset
+ מסדר \begin_inset Formula $2$
+\end_inset
+ נשלחת איזומורפית אל \begin_inset Formula $S_3/A_3\cong C_2$
+\end_inset
+, ולכן נותנת חתך. בפרט יש יותר מחתך אחד. שלוש הטרנספוזיציות צמודות ב־\begin_inset Formula $S_3$
+\end_inset
+, ולכן גם שלוש תת־החבורות שהן יוצרות צמודות. זהו רמז לתופעה כללית במשפט שור–זסנהאוס שנפגוש בהמשך.
+\end_layout
+
+\begin_layout Chapter
+פעולות של חבורות
+\end_layout
+
+\begin_layout Goals
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+להגדיר פעולה של חבורה על קבוצה ולהבין את שקילותה להומומורפיזם לחבורת תמורות.
+\end_layout
+
+\begin_layout Itemize
+להכיר פעולות נאמנות, מסלולים ומייצבים.
+\end_layout
+
+\begin_layout Itemize
+להוכיח את משפט מסלול–מייצב וליישמו.
+\end_layout
+
+\begin_layout Itemize
+להכיר את למת ברנסייד לספירת מסלולים.
+\end_layout
+
+\begin_layout Itemize
+ליישם פעולת הצמדה למחלקות צמידות, מרכז ומרכזנים.
+\end_layout
+
+\begin_layout Itemize
+להוכיח את משוואת המחלקות ואת קיום המרכז הלא־טריוויאלי בחבורת \begin_inset Formula $p$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+\begin_layout Goals
+
+\end_layout
+
+\begin_layout Section
+מהי פעולה של חבורה?
+\end_layout
+
+\begin_layout Standard
+חבורות רבות הופיעו אצלנו מלכתחילה כחבורות של טרנספורמציות: \begin_inset Formula $S_n$
+\end_inset
+ פועלת על \begin_inset Formula $\{1,\ldots,n\}$
+\end_inset
+, \begin_inset Formula $GL_n(F)$
+\end_inset
+ פועלת על \begin_inset Formula $F^n$
+\end_inset
+, וחבורת סימטריות פועלת על הנקודות של הצורה. משפט קיילי הראה שגם חבורה מופשטת יכולה לפעול על קבוצה — על עצמה. המושג הבא הופך את נקודת המבט הזו לכלי מרכזי.
+\end_layout
+
+\begin_layout Definition
+תהי \begin_inset Formula $G$
+\end_inset
+ חבורה ו־\begin_inset Formula $X$
+\end_inset
+ קבוצה. \emph on
+פעולה שמאלית\emph default
+ של \begin_inset Formula $G$
+\end_inset
+ על \begin_inset Formula $X$
+\end_inset
+ היא התאמה \begin_inset Formula $(g,x)\mapsto gx$
+\end_inset
+ המקיימת \begin_inset Formula 
+\[
+(gh)x=g(hx),\qquad ex=x
+\]
+
+\end_inset
+ לכל \begin_inset Formula $g,h\in G$
+\end_inset
+ ו־\begin_inset Formula $x\in X$
+\end_inset
+.
+\end_layout
+
+\begin_layout Examples
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Formula $S_n$
+\end_inset
+ פועלת על \begin_inset Formula $\{1,\ldots,n\}$
+\end_inset
+ בדרך הטבעית, וכל תת־חבורה של \begin_inset Formula $S_n$
+\end_inset
+ פועלת באותה דרך.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $GL_n(F)$
+\end_inset
+ פועלת על \begin_inset Formula $F^n$
+\end_inset
+ על־ידי כפל מטריצה בווקטור.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $G$
+\end_inset
+ פועלת על עצמה משמאל על־ידי \begin_inset Formula $gx=gx$
+\end_inset
+, ומימין באופן מקביל.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $G$
+\end_inset
+ פועלת על עצמה בהצמדה: \begin_inset Formula $g\cdot x=gxg^{-1}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+אם \begin_inset Formula $H\le G$
+\end_inset
+, אז \begin_inset Formula $G$
+\end_inset
+ פועלת על קבוצת המחלקות השמאליות \begin_inset Formula $G/H$
+\end_inset
+ על־ידי \begin_inset Formula $g\cdot(aH)=(ga)H$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $G$
+\end_inset
+ פועלת על אוסף תת־החבורות שלה בהצמדה: \begin_inset Formula $g\cdot H=gHg^{-1}$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+\begin_layout Lemma
+לכל \begin_inset Formula $g\in G$
+\end_inset
+, ההעתקה \begin_inset Formula $x\mapsto gx$
+\end_inset
+ היא תמורה של \begin_inset Formula $X$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+ההעתקה המתאימה ל־\begin_inset Formula $g^{-1}$
+\end_inset
+ היא ההופכית, מפני \begin_inset Formula $g^{-1}(gx)=x$
+\end_inset
+ ו־\begin_inset Formula $g(g^{-1}x)=x$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+לכן פעולה של \begin_inset Formula $G$
+\end_inset
+ נותנת לכל איבר \begin_inset Formula $g$
+\end_inset
+ תמורה של \begin_inset Formula $X$
+\end_inset
+. האקסיומה \begin_inset Formula $(gh)x=g(hx)$
+\end_inset
+ אומרת שההתאמה שומרת כפל.
+\end_layout
+
+\begin_layout Theorem
+יש התאמה חד־חד־ערכית בין פעולות של \begin_inset Formula $G$
+\end_inset
+ על \begin_inset Formula $X$
+\end_inset
+ לבין הומומורפיזמים \begin_inset Formula 
+\[
+\rho:G\to S_X.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+מפעולה נגדיר \begin_inset Formula $\rho(g)(x)=gx$
+\end_inset
+. לפי הלמה \begin_inset Formula $\rho(g)$
+\end_inset
+ תמורה, ומאקסיומת הפעולה \begin_inset Formula $\rho(gh)=\rho(g)\rho(h)$
+\end_inset
+. להפך, מהומומורפיזם \begin_inset Formula $\rho$
+\end_inset
+ נגדיר \begin_inset Formula $gx=\rho(g)(x)$
+\end_inset
+. אז \begin_inset Formula $ex=\rho(e)(x)=x$
+\end_inset
+ ו־\begin_inset Formula $(gh)x=\rho(gh)(x)=\rho(g)\rho(h)(x)=g(hx)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Definition
+פעולה נקראת \emph on
+נאמנה\emph default
+ אם ההומומורפיזם \begin_inset Formula $\rho:G\to S_X$
+\end_inset
+ חד־חד־ערכי. שקול לכך שהאיבר היחיד המקבע כל נקודה ב־\begin_inset Formula $X$
+\end_inset
+ הוא \begin_inset Formula $e$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+משפט קיילי הוא בדיוק הטענה שהפעולה של \begin_inset Formula $G$
+\end_inset
+ על עצמה בכפל משמאל היא נאמנה.
+\end_layout
+
+\begin_layout Subsection
+גרעין של פעולה והליבה של תת־חבורה
+\end_layout
+
+\begin_layout Standard
+לפעולה של \begin_inset Formula $G$
+\end_inset
+ על \begin_inset Formula $X$
+\end_inset
+ יש גרעין, \begin_inset Formula 
+\[
+\ker(G\curvearrowright X)=\{g\in G:gx=x\text{ לכל }x\in X\}.
+\]
+
+\end_inset
+ זוהי תת־חבורה נורמלית, והפעולה נאמנה אם ורק אם הגרעין טריוויאלי.
+\end_layout
+
+\begin_layout Definition
+\emph on
+הליבה\emph default
+ של \begin_inset Formula $H\le G$
+\end_inset
+ היא \begin_inset Formula 
+\[
+\operatorname{Core}_G(H)=\bigcap_{g\in G}gHg^{-1}.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+הליבה היא תת־החבורה הנורמלית הגדולה ביותר של \begin_inset Formula $G$
+\end_inset
+ המוכלת ב־\begin_inset Formula $H$
+\end_inset
+, והיא גרעין הפעולה של \begin_inset Formula $G$
+\end_inset
+ על \begin_inset Formula $G/H$
+\end_inset
+ בכפל משמאל.
+\end_layout
+
+\begin_layout Proof
+החיתוך של כל הצמודים נורמלי ומוכל ב־\begin_inset Formula $H$
+\end_inset
+. אם \begin_inset Formula $N\trianglelefteq G$
+\end_inset
+ ו־\begin_inset Formula $N\le H$
+\end_inset
+, אז \begin_inset Formula $N=gNg^{-1}\le gHg^{-1}$
+\end_inset
+ לכל \begin_inset Formula $g$
+\end_inset
+, ולכן \begin_inset Formula $N$
+\end_inset
+ מוכל בחיתוך. מצד שני, \begin_inset Formula $a$
+\end_inset
+ פועל טריוויאלית על כל מחלקות הצד אם ורק אם \begin_inset Formula $agH=gH$
+\end_inset
+ לכל \begin_inset Formula $g$
+\end_inset
+, כלומר \begin_inset Formula $g^{-1}ag\in H$
+\end_inset
+ לכל \begin_inset Formula $g$
+\end_inset
+; זה בדיוק תנאי השייכות לחיתוך כל הצמודים של \begin_inset Formula $H$
+\end_inset
+.
+\end_layout
+
+\begin_layout Question
+חשבו את \begin_inset Formula $\operatorname{Core}_{S_3}(\langle(12)\rangle)$
+\end_inset
+ ואת הליבה ב־\begin_inset Formula $S_4$
+\end_inset
+ של מייצב הנקודה \begin_inset Formula $4$
+\end_inset
+.
+\end_layout
+
+\begin_layout Solution
+הצמודים של \begin_inset Formula $\langle(12)\rangle$
+\end_inset
+ הם שלוש תת־החבורות מסדר \begin_inset Formula $2$
+\end_inset
+, וחיתוכן טריוויאלי. מייצב הנקודה \begin_inset Formula $4$
+\end_inset
+ ב־\begin_inset Formula $S_4$
+\end_inset
+ הוא עותק של \begin_inset Formula $S_3$
+\end_inset
+; הצמודים שלו הם ארבעת מייצבי הנקודות. איבר בחיתוכם מקבע את כל ארבע הנקודות ולכן הוא הזהות. בשני המקרים הליבה טריוויאלית.
+\end_layout
+
+\begin_layout Theorem
+אם \begin_inset Formula $H\le G$
+\end_inset
+ ובעלת אינדקס סופי \begin_inset Formula $k$
+\end_inset
+, אז \begin_inset Formula $H$
+\end_inset
+ מכילה תת־חבורה נורמלית \begin_inset Formula $N\trianglelefteq G$
+\end_inset
+ בעלת אינדקס סופי, ובפרט \begin_inset Formula 
+\[
+[G:N]\mid k!.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+נפעיל את \begin_inset Formula $G$
+\end_inset
+ על \begin_inset Formula $G/H$
+\end_inset
+, קבוצה בת \begin_inset Formula $k$
+\end_inset
+ איברים. מתקבל הומומורפיזם \begin_inset Formula $\rho:G\to S_k$
+\end_inset
+. נסמן \begin_inset Formula $N=\ker\rho$
+\end_inset
+. זהו תת־חבורה נורמלית. אם \begin_inset Formula $g\in N$
+\end_inset
+, בפרט \begin_inset Formula $g$
+\end_inset
+ מקבע את המחלקה \begin_inset Formula $H$
+\end_inset
+, ולכן \begin_inset Formula $gH=H$
+\end_inset
+ ומכאן \begin_inset Formula $g\in H$
+\end_inset
+. לכן \begin_inset Formula $N\subseteq H$
+\end_inset
+. ממשפט האיזומורפיזם הראשון \begin_inset Formula $G/N\cong\operatorname{Im}\rho\le S_k$
+\end_inset
+, ולכן \begin_inset Formula $[G:N]=|G/N|$
+\end_inset
+ מחלק את \begin_inset Formula $k!$
+\end_inset
+.
+\end_layout
+
+\begin_layout Section
+מסלולים ומייצבים
+\end_layout
+
+\begin_layout Definition
+אם \begin_inset Formula $G$
+\end_inset
+ פועלת על \begin_inset Formula $X$
+\end_inset
+ ו־\begin_inset Formula $x\in X$
+\end_inset
+, \emph on
+המסלול\emph default
+ של \begin_inset Formula $x$
+\end_inset
+ הוא \begin_inset Formula 
+\[
+Gx=\{gx:g\in G\}.
+\]
+
+\end_inset
+ \emph on
+המייצב\emph default
+ של \begin_inset Formula $x$
+\end_inset
+ הוא \begin_inset Formula 
+\[
+G_x=\operatorname{Stab}(x)=\{g\in G:gx=x\}.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Claim
+\begin_inset Formula $G_x\le G$
+\end_inset
+. המסלולים הם מחלקות שקילות של היחס \begin_inset Formula 
+\[
+x\sim y\Longleftrightarrow \exists g\in G:\ y=gx.
+\]
+
+\end_inset
+ לכן הם מחלקים את \begin_inset Formula $X$
+\end_inset
+.
+\end_layout
+
+\begin_layout Proof
+אם \begin_inset Formula $g,h$
+\end_inset
+ מקבעים את \begin_inset Formula $x$
+\end_inset
+, אז \begin_inset Formula $gh^{-1}x=g(h^{-1}x)=gx=x$
+\end_inset
+, ולכן המייצב תת־חבורה. היחס על \begin_inset Formula $X$
+\end_inset
+ רפלקסיבי באמצעות \begin_inset Formula $e$
+\end_inset
+, סימטרי באמצעות \begin_inset Formula $g^{-1}$
+\end_inset
+, וטרנזיטיבי באמצעות מכפלת איברי החבורה; מחלקת השקילות של \begin_inset Formula $x$
+\end_inset
+ היא בדיוק \begin_inset Formula $Gx$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+פעולה נקראת \emph on
+טרנזיטיבית\emph default
+ אם יש מסלול יחיד, כלומר לכל \begin_inset Formula $x,y\in X$
+\end_inset
+ קיים \begin_inset Formula $g$
+\end_inset
+ עם \begin_inset Formula $gx=y$
+\end_inset
+.
+\end_layout
+
+\begin_layout Subsection
+טרנזיטיביות גבוהה יותר
+\end_layout
+
+\begin_layout Standard
+פעולה טרנזיטיבית מאפשרת להעביר נקודה אחת לכל נקודה אחרת. לעיתים החבורה גמישה הרבה יותר.
+\end_layout
+
+\begin_layout Definition
+פעולה של \begin_inset Formula $G$
+\end_inset
+ על \begin_inset Formula $X$
+\end_inset
+ נקראת \emph on
+$k$־טרנזיטיבית\emph default
+ אם \begin_inset Formula $G$
+\end_inset
+ פועלת טרנזיטיבית על כל ה־\begin_inset Formula $k$
+\end_inset
+־יות הסדורות של איברים שונים בזוגות. כלומר, לכל \begin_inset Formula 
+\[
+(x_1,\ldots,x_k),\qquad(y_1,\ldots,y_k)
+\]
+
+\end_inset
+ של \begin_inset Formula $k$
+\end_inset
+ נקודות שונות קיימת \begin_inset Formula $g\in G$
+\end_inset
+ כך ש־\begin_inset Formula $gx_i=y_i$
+\end_inset
+ לכל \begin_inset Formula $i$
+\end_inset
+.
+\end_layout
+
+\begin_layout Standard
+הפעולה הטבעית של \begin_inset Formula $S_n$
+\end_inset
+ על \begin_inset Formula $\{1,\ldots,n\}$
+\end_inset
+ היא \begin_inset Formula $k$
+\end_inset
+־טרנזיטיבית לכל \begin_inset Formula $k\le n$
+\end_inset
+: אפשר לקבוע את תמונותיהן של \begin_inset Formula $k$
+\end_inset
+ נקודות שונות כרצוננו ולהשלים להתאמה של שאר הנקודות. המושג שימושי מפני שהוא מתרגם "עושר של סימטריות" לטענה חבורתית מדויקת.
+\end_layout
+
+\begin_layout Question
+בפעולה הטבעית של \begin_inset Formula $S_n$
+\end_inset
+ על \begin_inset Formula $\{1,\ldots,n\}$
+\end_inset
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+מצאו את מייצב הנקודה \begin_inset Formula $1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+מצאו את מייצב הזוג הסדור \begin_inset Formula $(1,2)$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+השתמשו במשפט מסלול–מייצב כדי לחשב את מספר הזוגות הסדורים \begin_inset Formula $(i,j)$
+\end_inset
+ עם \begin_inset Formula $i\ne j$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+\begin_layout Solution
+מייצב \begin_inset Formula $1$
+\end_inset
+ רשאי להתמיר כרצונו את \begin_inset Formula $\{2,\ldots,n\}$
+\end_inset
+, ולכן הוא איזומורפי ל־\begin_inset Formula $S_{n-1}$
+\end_inset
+. מייצב הזוג \begin_inset Formula $(1,2)$
+\end_inset
+ חייב לקבע את שתי הנקודות בנפרד, ולכן הוא איזומורפי ל־\begin_inset Formula $S_{n-2}$
+\end_inset
+. מסלול הזוג \begin_inset Formula $(1,2)$
+\end_inset
+ הוא כל הזוגות הסדורים של נקודות שונות, ולכן גודלו \begin_inset Formula 
+\[
+[S_n:S_{n-2}]=\frac{n!}{(n-2)!}=n(n-1),
+\]
+
+\end_inset
+ כצפוי.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+משפט מסלול–מייצב
+\end_layout
+
+\end_inset
+לכל פעולה של \begin_inset Formula $G$
+\end_inset
+ על \begin_inset Formula $X$
+\end_inset
+ ולכל \begin_inset Formula $x\in X$
+\end_inset
+ יש התאמה \begin_inset Formula 
+\[
+G/G_x\longrightarrow Gx,\qquad gG_x\longmapsto gx.
+\]
+
+\end_inset
+ לכן \begin_inset Formula 
+\[
+|Gx|=[G:G_x]
+\]
+
+\end_inset
+ כאשר הגדלים סופיים.
+\end_layout
+
+\begin_layout Proof
+אם \begin_inset Formula $gG_x=hG_x$
+\end_inset
+, אז \begin_inset Formula $h^{-1}g\in G_x$
+\end_inset
+, ולכן \begin_inset Formula $h^{-1}gx=x$
+\end_inset
+ ומכאן \begin_inset Formula $gx=hx$
+\end_inset
+; המפה מוגדרת היטב. אם \begin_inset Formula $gx=hx$
+\end_inset
+, אותו חישוב לאחור נותן \begin_inset Formula $h^{-1}g\in G_x$
+\end_inset
+, ולכן המחלקות שוות; המפה חד־חד־ערכית. היא על לפי הגדרת המסלול.
+\end_layout
+
+\begin_layout Corollary
+אם \begin_inset Formula $G$
+\end_inset
+ סופית, גודל כל מסלול מחלק את \begin_inset Formula $|G|$
+\end_inset
+.
+\end_layout
+
+\begin_layout Example
+חבורה מסדר \begin_inset Formula $15$
+\end_inset
+ פועלת על קבוצה בת \begin_inset Formula $7$
+\end_inset
+ איברים. גדלי המסלולים מחלקים את \begin_inset Formula $15$
+\end_inset
+, ולכן הם \begin_inset Formula $1,3,5$
+\end_inset
+ או \begin_inset Formula $15$
+\end_inset
+. סכום גדלי המסלולים הוא \begin_inset Formula $7$
+\end_inset
+. אי אפשר לכתוב \begin_inset Formula $7$
+\end_inset
+ כסכום של \begin_inset Formula $3$
+\end_inset
+ ו־\begin_inset Formula $5$
+\end_inset
+ בלבד, ולכן יש מסלול בגודל \begin_inset Formula $1$
+\end_inset
+. כלומר קיימת נקודה שמקובעת על־ידי כל החבורה.
+\end_layout
+
+\begin_layout Claim
+אם \begin_inset Formula $y=gx$
+\end_inset
+, אז \begin_inset Formula 
+\[
+G_y=gG_xg^{-1}.
+\]
+
+\end_inset
+ בפרט, למייצבים של נקודות באותו מסלול יש אותו סדר.
+\end_layout
+
+\begin_layout Proof
+איבר \begin_inset Formula $h$
+\end_inset
+ מקבע את \begin_inset Formula $gx$
+\end_inset
+ אם ורק אם \begin_inset Formula $hgx=gx$
+\end_inset
+, כלומר \begin_inset Formula $g^{-1}hgx=x$
+\end_inset
+, כלומר \begin_inset Formula $g^{-1}hg\in G_x$
+\end_inset
+. זה שקול ל־\begin_inset Formula $h\in gG_xg^{-1}$
+\end_inset
+.
+\end_layout
+
+\begin_layout Question
+החבורה \begin_inset Formula $S_n$
+\end_inset
+ פועלת על קבוצת כל תת־הקבוצות בנות \begin_inset Formula $k$
+\end_inset
+ איברים של \begin_inset Formula $\{1,\ldots,n\}$
+\end_inset
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+הוכיחו שהפעולה טרנזיטיבית.
+\end_layout
+
+\begin_layout Enumerate
+מצאו את המייצב של הקבוצה \begin_inset Formula $\{1,\ldots,k\}$
+\end_inset
+ עד כדי איזומורפיזם.
+\end_layout
+
+\begin_layout Enumerate
+הסיקו את הנוסחה \begin_inset Formula $\binom nk=n!/(k!(n-k)!)$
+\end_inset
+ ממשפט מסלול–מייצב.
+\end_layout
+
+\end_deeper
+\begin_layout Solution
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+אם \begin_inset Formula $A,B$
+\end_inset
+ הן שתי תת־קבוצות בנות \begin_inset Formula $k$
+\end_inset
+ איברים, קיימת תמורה השולחת את איברי \begin_inset Formula $A$
+\end_inset
+ בהתאמה לאיברי \begin_inset Formula $B$
+\end_inset
+ ואת המשלים של \begin_inset Formula $A$
+\end_inset
+ למשלים של \begin_inset Formula $B$
+\end_inset
+. לכן \begin_inset Formula $A$
+\end_inset
+ ו־\begin_inset Formula $B$
+\end_inset
+ באותו מסלול.
+\end_layout
+
+\begin_layout Enumerate
+תמורה מייצבת את \begin_inset Formula $\{1,\ldots,k\}$
+\end_inset
+ כקבוצה אם ורק אם היא מתמירה את \begin_inset Formula $k$
+\end_inset
+ האיברים הראשונים בינם לבין עצמם ואת \begin_inset Formula $n-k$
+\end_inset
+ האחרים בינם לבין עצמם. לכן המייצב איזומורפי ל־\begin_inset Formula $S_k\times S_{n-k}$
+\end_inset
+ ומסדר \begin_inset Formula $k!(n-k)!$
+\end_inset
+.
+\end_layout
+
+\begin_layout Enumerate
+המסלול הוא כל קבוצת ה־\begin_inset Formula $k$
+\end_inset
+־תת־קבוצות, ולכן גודלו \begin_inset Formula $[S_n:S_k\times S_{n-k}]=n!/(k!(n-k)!)$
+\end_inset
+.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+למת ברנסייד
+\end_layout
+
+\begin_layout Standard
+משפט מסלול–מייצב מחשב גודל של מסלול אחד מתוך מייצב של נקודה. למת ברנסייד סופרת את \emph on
+מספר המסלולים\emph default
+ על־ידי ספירת נקודות קבועות של איברי החבורה.
+\end_layout
+
+\begin_layout Definition
+לאיבר \begin_inset Formula $g\in G$
+\end_inset
+ נסמן \begin_inset Formula 
+\[
+\operatorname{Fix}(g)=\{x\in X:gx=x\}.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+למת קושי–פרובניוס–ברנסייד
+\end_layout
+
+\end_inset
+אם חבורה סופית \begin_inset Formula $G$
+\end_inset
+ פועלת על קבוצה סופית \begin_inset Formula $X$
+\end_inset
+, מספר המסלולים הוא \begin_inset Formula 
+\[
+\frac1{|G|}\sum_{g\in G}|\operatorname{Fix}(g)|.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+נספור בשתי דרכים את הקבוצה \begin_inset Formula 
+\[
+P=\{(g,x)\in G\times X:gx=x\}.
+\]
+
+\end_inset
+ אם מקבעים \begin_inset Formula $g$
+\end_inset
+, מספר הזוגות הוא \begin_inset Formula $|\operatorname{Fix}(g)|$
+\end_inset
+, ולכן \begin_inset Formula 
+\[
+|P|=\sum_{g\in G}|\operatorname{Fix}(g)|.
+\]
+
+\end_inset
+ אם מקבעים \begin_inset Formula $x$
+\end_inset
+, מספר הזוגות הוא \begin_inset Formula $|G_x|$
+\end_inset
+. לכן \begin_inset Formula 
+\[
+|P|=\sum_{x\in X}|G_x|.
+\]
+
+\end_inset
+ נפרק את הסכום לפי מסלולים. בכל מסלול \begin_inset Formula $O$
+\end_inset
+, לכל \begin_inset Formula $x\in O$
+\end_inset
+ מתקיים \begin_inset Formula $|G_x|=|G|/|O|$
+\end_inset
+, ולכן תרומת המסלול היא \begin_inset Formula $|O|\cdot |G|/|O|=|G|$
+\end_inset
+. אם יש \begin_inset Formula $r$
+\end_inset
+ מסלולים, \begin_inset Formula $|P|=r|G|$
+\end_inset
+, ומכאן הנוסחה.
+\end_layout
+
+\begin_layout Example
+כמה צביעות של ארבעת קודקודי ריבוע בשני צבעים שונות זו מזו עד כדי סיבוב? יש \begin_inset Formula $16$
+\end_inset
+ צביעות. חבורת הסיבובים היא \begin_inset Formula $C_4$
+\end_inset
+. לכן מספר המסלולים הוא \begin_inset Formula 
+\[
+\frac{16+4+2+2}{4}=6.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+הזהות מקבעת \begin_inset Formula $16$
+\end_inset
+ צביעות.
+\end_layout
+
+\begin_layout Enumerate
+סיבוב ב־\begin_inset Formula $180^\circ$
+\end_inset
+ מחלק את הקודקודים לשני זוגות, ולכן מקבע \begin_inset Formula $2^2=4$
+\end_inset
+ צביעות.
+\end_layout
+
+\begin_layout Enumerate
+כל אחד משני הסיבובים ברבע סיבוב מחייב את כל ארבעת הקודקודים להיות באותו צבע, ולכן מקבע \begin_inset Formula $2$
+\end_inset
+ צביעות.
+\end_layout
+
+\end_deeper
+\begin_layout QuestionW/Hint
+כמה צביעות של קודקודי ריבוע בשלושה צבעים שונות זו מזו עד כדי כל הסימטריות של הריבוע, כולל שיקופים?
+\end_layout
+
+\begin_layout Hint
+לחבורת הדיהדרלית יש שמונה איברים: ארבעה סיבובים, שני שיקופים בצירים העוברים דרך זוגות קודקודים, ושני שיקופים בצירים העוברים דרך אמצעי צלעות. ספרו את מחזורי התמורה של הקודקודים בכל סוג.
+\end_layout
+
+\begin_layout Solution
+הזהות מקבעת \begin_inset Formula $3^4=81$
+\end_inset
+ צביעות. שני סיבובי רבע סיבוב מקבעים \begin_inset Formula $3$
+\end_inset
+ כל אחד. סיבוב חצי סיבוב מקבע \begin_inset Formula $3^2=9$
+\end_inset
+. כל אחד משני השיקופים דרך זוג קודקודים יוצר שני קודקודים קבועים וזוג מתחלף, כלומר שלושה מחזורים, ולכן מקבע \begin_inset Formula $3^3=27$
+\end_inset
+ צביעות. כל אחד משני השיקופים דרך אמצעי צלעות יוצר שני זוגות, ולכן מקבע \begin_inset Formula $3^2=9$
+\end_inset
+. הסכום הוא \begin_inset Formula $81+3+3+9+27+27+9+9=168$
+\end_inset
+, ולכן מספר המסלולים \begin_inset Formula $168/8=21$
+\end_inset
+.
+\end_layout
+
+\begin_layout Section
+פעולת ההצמדה ומשוואת המחלקות
+\end_layout
+
+\begin_layout Standard
+נחזור לפעולה של \begin_inset Formula $G$
+\end_inset
+ על עצמה בהצמדה. המסלולים הם בדיוק מחלקות הצמידות. מהו המייצב של איבר \begin_inset Formula $x$
+\end_inset
+?
+\end_layout
+
+\begin_layout Definition
+\emph on
+המרכזן\emph default
+ של \begin_inset Formula $x\in G$
+\end_inset
+ הוא \begin_inset Formula 
+\[
+C_G(x)=\{g\in G:gx=xg\}.
+\]
+
+\end_inset
+ \emph on
+המרכז\emph default
+ של \begin_inset Formula $G$
+\end_inset
+ הוא \begin_inset Formula 
+\[
+Z(G)=\{x\in G:gx=xg\ \text{לכל }g\in G\}.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Standard
+המרכזן הוא המייצב של \begin_inset Formula $x$
+\end_inset
+ בפעולת ההצמדה, ולכן \begin_inset Formula 
+\[
+|x^G|=[G:C_G(x)],
+\]
+
+\end_inset
+ כאשר \begin_inset Formula $x^G$
+\end_inset
+ היא מחלקת הצמידות של \begin_inset Formula $x$
+\end_inset
+. בפרט, גודל מחלקת צמידות בחבורה סופית מחלק את סדר החבורה.
+\end_layout
+
+\begin_layout Standard
+איבר נמצא במרכז אם ורק אם מחלקת הצמידות שלו בגודל \begin_inset Formula $1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Example
+נחשב את המרכזן של טרנספוזיציה ב־\begin_inset Formula $S_n$
+\end_inset
+. כל הטרנספוזיציות צמודות, ומספרן \begin_inset Formula $\binom n2$
+\end_inset
+. לכן ממשפט מסלול–מייצב בפעולת ההצמדה, \begin_inset Formula 
+\[
+[S_n:C_{S_n}((12))]=\binom n2,
+\]
+
+\end_inset
+ ומכאן \begin_inset Formula 
+\[
+|C_{S_n}((12))|=\frac{n!}{\binom n2}=2(n-2)!.
+\]
+
+\end_inset
+ אפשר לראות זאת גם ישירות: תמורה המתחלפת עם \begin_inset Formula $(12)$
+\end_inset
+ חייבת לשמר את הקבוצה \begin_inset Formula $\{1,2\}$
+\end_inset
+; היא רשאית או לקבע את \begin_inset Formula $1,2$
+\end_inset
+ או להחליפם, ובאופן בלתי־תלוי להתמיר את \begin_inset Formula $n-2$
+\end_inset
+ הנקודות האחרות.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+משוואת המחלקות
+\end_layout
+
+\end_inset
+אם \begin_inset Formula $G$
+\end_inset
+ סופית ונבחר נציג \begin_inset Formula $x_i$
+\end_inset
+ מכל מחלקת צמידות שאינה בת איבר יחיד, אז \begin_inset Formula 
+\[
+|G|=|Z(G)|+\sum_i [G:C_G(x_i)].
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+מחלקות הצמידות מחלקות את \begin_inset Formula $G$
+\end_inset
+. המחלקות בנות איבר יחיד הן בדיוק איברי המרכז. כל מחלקה אחרת של נציג \begin_inset Formula $x_i$
+\end_inset
+ היא בגודל \begin_inset Formula $[G:C_G(x_i)]$
+\end_inset
+ ממשפט מסלול–מייצב. סכימת הגדלים נותנת את הנוסחה.
+\end_layout
+
+\begin_layout Definition
+חבורה סופית מסדר \begin_inset Formula $p^n$
+\end_inset
+, כאשר \begin_inset Formula $p$
+\end_inset
+ ראשוני, נקראת \emph on
+חבורת $p$\emph default
+.
+\end_layout
+
+\begin_layout Theorem
+לכל חבורת \begin_inset Formula $p$
+\end_inset
+ לא־טריוויאלית יש מרכז לא־טריוויאלי.
+\end_layout
+
+\begin_layout Proof
+במשוואת המחלקות, כל מחלקת צמידות לא־מרכזית היא בגודל \begin_inset Formula $[G:C_G(x)]$
+\end_inset
+. אינדקס זה מחלק את \begin_inset Formula $|G|=p^n$
+\end_inset
+ והוא גדול מ־\begin_inset Formula $1$
+\end_inset
+, ולכן מתחלק ב־\begin_inset Formula $p$
+\end_inset
+. מכאן כל איברי הסכום חוץ מ־\begin_inset Formula $|Z(G)|$
+\end_inset
+ מתחלקים ב־\begin_inset Formula $p$
+\end_inset
+. גם \begin_inset Formula $|G|$
+\end_inset
+ מתחלק ב־\begin_inset Formula $p$
+\end_inset
+, ולכן \begin_inset Formula $|Z(G)|$
+\end_inset
+ מתחלק ב־\begin_inset Formula $p$
+\end_inset
+. מאחר שהמרכז מכיל לפחות את \begin_inset Formula $e$
+\end_inset
+, גודלו לפחות \begin_inset Formula $p$
+\end_inset
+.
+\end_layout
+
+\begin_layout Corollary
+כל חבורה מסדר \begin_inset Formula $p^2$
+\end_inset
+ היא אבלית.
+\end_layout
+
+\begin_layout Proof
+המרכז לא־טריוויאלי, ולכן גודלו \begin_inset Formula $p$
+\end_inset
+ או \begin_inset Formula $p^2$
+\end_inset
+. אם \begin_inset Formula $|Z(G)|=p^2$
+\end_inset
+, החבורה אבלית. אם \begin_inset Formula $|Z(G)|=p$
+\end_inset
+, אז \begin_inset Formula $G/Z(G)$
+\end_inset
+ מסדר \begin_inset Formula $p$
+\end_inset
+, ולכן ציקלית. הוכחנו בשאלה ביחידה הקודמת שאם המנה במרכז ציקלית, אז החבורה אבלית. בשני המקרים \begin_inset Formula $G$
+\end_inset
+ אבלית.
+\end_layout
+
+\begin_layout Corollary
+עד כדי איזומורפיזם יש בדיוק שתי חבורות מסדר \begin_inset Formula $p^2$
+\end_inset
+: \begin_inset Formula 
+\[
+C_{p^2}\qquad\text{ו־}\qquad C_p\times C_p.
+\]
+
+\end_inset
+
+\end_layout
+
+\begin_layout Proof
+כבר הוכחנו שכל חבורה מסדר \begin_inset Formula $p^2$
+\end_inset
+ אבלית. אם יש בה איבר מסדר \begin_inset Formula $p^2$
+\end_inset
+, הוא יוצר את החבורה. אחרת כל איבר לא־יחידה הוא מסדר \begin_inset Formula $p$
+\end_inset
+. נבחר \begin_inset Formula $a\ne e$
+\end_inset
+ ו־\begin_inset Formula $b\notin\langle a\rangle$
+\end_inset
+. שתי התת־חבורות \begin_inset Formula $\langle a\rangle,\langle b\rangle$
+\end_inset
+ מסדר \begin_inset Formula $p$
+\end_inset
+ ונחתכות טריוויאלית. מאחר שהחבורה אבלית, \begin_inset Formula $\langle a\rangle\langle b\rangle$
+\end_inset
+ מסדר \begin_inset Formula $p^2$
+\end_inset
+ ולכן שווה ל־\begin_inset Formula $G$
+\end_inset
+, והמפה \begin_inset Formula $C_p\times C_p\to G$
+\end_inset
+ השולחת את שני היוצרים ל־\begin_inset Formula $a,b$
+\end_inset
+ היא איזומורפיזם.
+\end_layout
+
+\begin_layout Question
+חשבו את המרכז ואת גדלי מחלקות הצמידות של \begin_inset Formula $S_3$
+\end_inset
+ ושל \begin_inset Formula $D_4$
+\end_inset
+, חבורת הסימטריות של ריבוע.
+\end_layout
+
+\begin_layout Solution
+ב־\begin_inset Formula $S_3$
+\end_inset
+ המרכז טריוויאלי. מחלקות הצמידות הן \begin_inset Formula $\{e\}$
+\end_inset
+ בגודל \begin_inset Formula $1$
+\end_inset
+, מחלקת שלוש הטרנספוזיציות בגודל \begin_inset Formula $3$
+\end_inset
+, ומחלקת שני ה־\begin_inset Formula $3$
+\end_inset
+־מחזורים בגודל \begin_inset Formula $2$
+\end_inset
+. ל־\begin_inset Formula $D_4=\langle r,s\mid r^4=s^2=e,\ srs=r^{-1}\rangle$
+\end_inset
+ יש מרכז \begin_inset Formula $\{e,r^2\}$
+\end_inset
+. מחלקות הצמידות הן \begin_inset Formula $\{e\}$
+\end_inset
+, \begin_inset Formula $\{r^2\}$
+\end_inset
+, \begin_inset Formula $\{r,r^3\}$
+\end_inset
+, \begin_inset Formula $\{s,r^2s\}$
+\end_inset
+, \begin_inset Formula $\{rs,r^3s\}$
+\end_inset
+, ולכן הגדלים \begin_inset Formula $1,1,2,2,2$
+\end_inset
+. הסכום \begin_inset Formula $8$
+\end_inset
+ תואם למשוואת המחלקות.
+\end_layout
+
+\begin_layout Section* in ToC
+סיכום יחידה 4
+\end_layout
+
+\begin_layout Standard
+פעולה של חבורה על קבוצה שקולה להומומורפיזם אל חבורת תמורות. המסלולים מחלקים את הקבוצה, והמייצב של נקודה מודד את גודל מסלולה באמצעות משפט מסלול–מייצב. למת ברנסייד הפכה ספירת נקודות קבועות לכלי לספירת מסלולים. בפעולת ההצמדה, המייצבים הם מרכזנים והמסלולים הם מחלקות צמידות; משוואת המחלקות הנובעת מכך הובילה למשפט היסודי שלחבורת \begin_inset Formula $p$
+\end_inset
+ יש מרכז לא־טריוויאלי.
+\end_layout
+
+\begin_layout Section* in ToC
+שאלות להערכה עצמית
+\end_layout
+
+\begin_layout Question
+חבורה \begin_inset Formula $G$
+\end_inset
+ מסדר \begin_inset Formula $21$
+\end_inset
+ פועלת על קבוצה \begin_inset Formula $X$
+\end_inset
+ בת \begin_inset Formula $10$
+\end_inset
+ איברים. הוכיחו שיש נקודה קבועה על־ידי כל \begin_inset Formula $G$
+\end_inset
+, או תארו במדויק אילו גדלי מסלולים אפשריים אם אין נקודה כזו.
+\end_layout
+
+\begin_layout Solution
+גדלי המסלולים מחלקים את \begin_inset Formula $21$
+\end_inset
+, ולכן הם \begin_inset Formula $1,3,7,21$
+\end_inset
+. מאחר \begin_inset Formula $|X|=10$
+\end_inset
+, לא יכול להופיע מסלול בגודל \begin_inset Formula $21$
+\end_inset
+. אם אין נקודה קבועה, כל המסלולים בגדלים \begin_inset Formula $3$
+\end_inset
+ או \begin_inset Formula $7$
+\end_inset
+. הדרך היחידה לכתוב \begin_inset Formula $10$
+\end_inset
+ כסכום כזה היא \begin_inset Formula $3+7$
+\end_inset
+. לכן אם אין נקודה קבועה, יש בדיוק שני מסלולים, אחד בגודל \begin_inset Formula $3$
+\end_inset
+ ואחד בגודל \begin_inset Formula $7$
+\end_inset
+. בניגוד לדוגמה מסדר \begin_inset Formula $15$
+\end_inset
+ על \begin_inset Formula $7$
+\end_inset
+ נקודות, כאן אין הכרח בנקודה קבועה.
+\end_layout
+
+\begin_layout Question
+החבורה \begin_inset Formula $S_4$
+\end_inset
+ פועלת על שלושת הפירוקים של \begin_inset Formula $\{1,2,3,4\}$
+\end_inset
+ לשני זוגות לא־סדורים. כתבו את ההומומורפיזם \begin_inset Formula $S_4\to S_3$
+\end_inset
+, מצאו את גרעינו, והסיקו מנה מוכרת של \begin_inset Formula $S_4$
+\end_inset
+.
+\end_layout
+
+\begin_layout Solution
+שלושת הפירוקים הם \begin_inset Formula $12|34$
+\end_inset
+, \begin_inset Formula $13|24$
+\end_inset
+, \begin_inset Formula $14|23$
+\end_inset
+. כל תמורה של ארבע הנקודות מתמירה פירוק כזה לפירוק אחר, ולכן מתקבל הומומורפיזם \begin_inset Formula $\rho:S_4\to S_3$
+\end_inset
+. הפעולה טרנזיטיבית ויש תמורות המחליפות שני פירוקים, ולכן התמונה היא כל \begin_inset Formula $S_3$
+\end_inset
+. הגרעין מורכב מן התמורות המשאירות כל אחד משלושת הפירוקים, והוא בדיוק \begin_inset Formula $V_4=\{e,(12)(34),(13)(24),(14)(23)\}$
+\end_inset
+. ממשפט האיזומורפיזם הראשון \begin_inset Formula $S_4/V_4\cong S_3$
+\end_inset
+.
+\end_layout
+
+\begin_layout QuestionW/Hint
+חבורה סופית \begin_inset Formula $G$
+\end_inset
+ פועלת על עצמה בכפל משמאל. חשבו את \begin_inset Formula $\operatorname{Fix}(g)$
+\end_inset
+ לכל \begin_inset Formula $g$
+\end_inset
+, והשתמשו בלמת ברנסייד כדי לאשר שמספר המסלולים הוא \begin_inset Formula $1$
+\end_inset
+.
+\end_layout
+
+\begin_layout Hint
+אם \begin_inset Formula $gx=x$
+\end_inset
+, אפשר לצמצם את \begin_inset Formula $x$
+\end_inset
+.
+\end_layout
+
+\begin_layout Solution
+אם \begin_inset Formula $g=e$
+\end_inset
+, כל \begin_inset Formula $|G|$
+\end_inset
+ הנקודות קבועות. אם \begin_inset Formula $g\ne e$
+\end_inset
+ ואין \begin_inset Formula $x$
+\end_inset
+ עם \begin_inset Formula $gx=x$
+\end_inset
+, שכן צמצום מימין היה נותן \begin_inset Formula $g=e$
+\end_inset
+. לכן סכום מספרי הנקודות הקבועות הוא \begin_inset Formula $|G|$
+\end_inset
+, והממוצע הוא \begin_inset Formula $|G|/|G|=1$
+\end_inset
+. אכן פעולת הכפל משמאל טרנזיטיבית.
+\end_layout
+
+\begin_layout Question
+הוכיחו שאם \begin_inset Formula $G$
+\end_inset
+ חבורת \begin_inset Formula $p$
+\end_inset
+ ופועלת על קבוצה סופית \begin_inset Formula $X$
+\end_inset
+, אז \begin_inset Formula 
+\[
+|X|\equiv |X^G|\pmod p,
+\]
+
+\end_inset
+ כאשר \begin_inset Formula $X^G$
+\end_inset
+ היא קבוצת הנקודות המקובעות על־ידי כל \begin_inset Formula $G$
+\end_inset
+.
+\end_layout
+
+\begin_layout Solution
+המסלולים מחלקים את \begin_inset Formula $X$
+\end_inset
+, וגודל כל מסלול מחלק את \begin_inset Formula $|G|=p^n$
+\end_inset
+, ולכן הוא חזקה של \begin_inset Formula $p$
+\end_inset
+. מסלול בגודל \begin_inset Formula $1$
+\end_inset
+ הוא בדיוק נקודה שמקובעת על־ידי כל \begin_inset Formula $G$
+\end_inset
+. כל מסלול אחר בגודל המתחלק ב־\begin_inset Formula $p$
+\end_inset
+. לכן בסכימת גדלי המסלולים, מודולו \begin_inset Formula $p$
+\end_inset
+ נשאר רק מספר המסלולים בני איבר אחד, שהוא \begin_inset Formula $|X^G|$
+\end_inset
+.
+\end_layout
+
+\begin_layout Question
+הוכיחו בדרך של פעולות חבורה שכל חבורה מסדר \begin_inset Formula $p^2$
+\end_inset
+ היא אבלית, בלי להשתמש ישירות במשוואת המחלקות המלאה אלא רק בפעולת ההצמדה.
+\end_layout
+
+\begin_layout Solution
+\begin_inset Formula $G$
+\end_inset
+ פועלת על עצמה בהצמדה. לפי השאלה הקודמת, מספר הנקודות המקובעות על־ידי כל \begin_inset Formula $G$
+\end_inset
+, שהוא \begin_inset Formula $|Z(G)|$
+\end_inset
+, שקול ל־\begin_inset Formula $|G|=p^2$
+\end_inset
+ מודולו \begin_inset Formula $p$
+\end_inset
+. לכן \begin_inset Formula $p\mid|Z(G)|$
+\end_inset
+. המרכז אינו יכול להיות בגודל \begin_inset Formula $1$
+\end_inset
+, ולכן גודלו \begin_inset Formula $p$
+\end_inset
+ או \begin_inset Formula $p^2$
+\end_inset
+. אם \begin_inset Formula $p^2$
+\end_inset
+, סיימנו. אם \begin_inset Formula $p$
+\end_inset
+, המנה \begin_inset Formula $G/Z(G)$
+\end_inset
+ מסדר \begin_inset Formula $p$
+\end_inset
+ וציקלית, ומכאן \begin_inset Formula $G$
+\end_inset
+ אבלית.
+\end_layout
+
+\end_body
+\end_document

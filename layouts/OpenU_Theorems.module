@@ -89,7 +89,6 @@ Style Definition
             IsTocCaption      1
          Decoration    Minimalistic
         EndArgument
-    AddToToc              "משפטים והגדרות"
     IsTocCaption          1
     LabelSep              xx
     TopSep                1
@@ -268,7 +267,6 @@ Style Example
             IsTocCaption      1
          Decoration    Minimalistic
         EndArgument
-    AddToToc              "משפטים והגדרות"
     IsTocCaption          1
     LabelSep              xx
     TopSep                1
@@ -402,7 +400,6 @@ Style Question
             IsTocCaption      1
          Decoration    Minimalistic
         EndArgument
-    AddToToc              "משפטים והגדרות"
     IsTocCaption          1
     LabelSep              xx
     TopSep                1

@@ -5,7 +5,7 @@
 #DescriptionEnd
 #Author: Ehud Behar
 
-Format 66
+Format 111
 Requires amsthm
 # Define Counters
 Counter definition

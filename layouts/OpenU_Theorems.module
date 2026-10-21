@@ -283,21 +283,19 @@ Style Example
 \newcounter{example}[chapter]
 \renewcommand{\theexample}{\thechapter.\arabic{example}}
 \def\exampleqedsymbol{\leavevmode\textcolor{DGray}{$\blacktriangleright$}}
-\newtheoremstyle{example}{0pt}{0pt}{}{0pt}
+\newtheoremstyle{example}{\parskip}{0pt}{}{0pt}
   {\narkistamfamily\bfseries}{}{\newline}
-  {\textcolor{DGray}{$\blacktriangleleft$}\ \thmname{#1}\ \thmnumber{#2}\ \thmnote{(#3)}}
+  {\thmname{#1}\ \thmnumber{#2}\ \thmnote{(#3)}}
 \theoremstyle{example}%
-\newtheorem{example@thm}[example]{דוגמה}%
+\newtheorem{example@thm}[example]{\textcolor{DGray}{$\blacktriangleleft$}\ דוגמה}%
 \newenvironment{example}[1][]%
   {%
-  \thmnoframe@open                   % <<< CODE BEFORE THE ENVIRONMENT
   \let\qedsymbol\exampleqedsymbol
   \pushQED{\qed}%
   \begin{example@thm}[#1]%
   }%
   {%
   \popQED\end{example@thm}%
-  \thmnoframe@close                  % <<< CODE AFTER THE ENVIRONMENT
   }
     EndPreamble
 End
@@ -311,15 +309,13 @@ Style Examples
 
     Preamble
 \theoremstyle{example}%
-\newtheorem{examples@thm}[example]{דוגמאות}%
+\newtheorem{examples@thm}[example]{\textcolor{DGray}{$\blacktriangleleft$}\ דוגמאות}%
 \newenvironment{examples}[1][]%
   {%
-  \thmnoframe@open                   % <<< CODE BEFORE THE ENVIRONMENT
   \let\qedsymbol\exampleqedsymbol
   \pushQED{\qed}
   \begin{examples@thm}[#1]}%
   {\popQED\end{examples@thm}%
-  \thmnoframe@close                  % <<< CODE AFTER THE ENVIRONMENT
   }
     EndPreamble
 End
@@ -417,22 +413,15 @@ Style Question
       Series              Bold
     EndFont
     Preamble
-\newtheoremstyle{question}
-  {0pt}
-  {0pt}
-  {}{0pt}{\narkistamfamily\bfseries}{}{\newline}
-  {\thmname{#1}\ \thmnumber{#2}\ \thmnote{(#3)}}
 \newcounter{question}[chapter]
 \renewcommand{\thequestion}{\thechapter.\arabic{question}}
-\theoremstyle{question}
+\theoremstyle{example}
 \newtheorem{question@thm}[question]{שאלה}
 \newenvironment{question}[1][]
   {%
-  \thmnoframe@open                   % <<< CODE BEFORE THE ENVIRONMENT
   \gdef\exerciseopt{#1}\begin{question@thm}[#1]\label{ques:\thequestion}}
   {\end{question@thm}%
    \SingleMarginRef{הפתרון בעמוד \pageref{sol:\thequestion}}%
-   \thmnoframe@close                 % <<< CODE AFTER THE ENVIRONMENT
   }
     EndPreamble
 End
@@ -447,18 +436,15 @@ Style Solution
     Preamble
 \newcounter{solutionaux}
 \def\thesolutionaux{\solutionaux@num}
-\theoremstyle{thmsopen}
+\theoremstyle{example}
 \newtheorem{solutionaux@thm}[solutionaux]{תשובה}
 \newenvironment{solutionaux}[2][]{%
   \gdef\solutionaux@num{#2}%
-  \def\thmnoframe@above{\parskip*2}% local to the environment
-  \thmnoframe@open                   % <<< CODE BEFORE THE ENVIRONMENT
   \begin{solutionaux@thm}[#1]%
   \label{sol:#2}%
 }{%
   \end{solutionaux@thm}%
   \SingleMarginRef{השאלה בעמוד \pageref{ques:\solutionaux@num}}%
-  \thmnoframe@close                  % <<< CODE AFTER THE ENVIRONMENT (does the \par)
   \ignorespacesafterend
 }
 
@@ -481,15 +467,13 @@ Style QuestionW/Hint
     LabelString           "שאלה (עם רמז) \thequestion"
     RefPrefix             questn
     Preamble
-\theoremstyle{thmsopen}
+\theoremstyle{example}
 \newtheorem{questionremez@thm}[question]{שאלה}
 \newenvironment{questionremez}[1][]
   {%
-  \thmnoframe@open                   % <<< CODE BEFORE THE ENVIRONMENT
   \gdef\exerciseopt{#1}\begin{questionremez@thm}[#1]\label{ques:\thequestion}}
   {\end{questionremez@thm}%
   \DoubleMarginRefs{רמז בעמוד \pageref{hint:\thequestion}}{התשובה בעמוד \pageref{sol:\thequestion}}%
-  \thmnoframe@close                  % <<< CODE AFTER THE ENVIRONMENT
   }
     EndPreamble
 End
@@ -504,18 +488,15 @@ Style Hint
     Preamble
 \newcounter{hintaux}
 \def\thehintaux{\hintaux@num}
-\theoremstyle{thmsopen}
+\theoremstyle{example}
 \newtheorem{hintaux@thm}[hintaux]{רמז}
 \newenvironment{hintaux}[2][]{%
   \gdef\hintaux@num{#2}%
-  \def\thmnoframe@above{\parskip*2}% local to the environment
-  \thmnoframe@open                   % <<< CODE BEFORE THE ENVIRONMENT
   \begin{hintaux@thm}[#1]%
   \label{hint:#2}%
 }{%
   \end{hintaux@thm}%
   \DoubleMarginRefs{השאלה בעמוד \pageref{ques:\hintaux@num}}{התשובה בעמוד \pageref{sol:\hintaux@num}}%
-  \thmnoframe@close                  % <<< CODE AFTER THE ENVIRONMENT (does the \par)
   \ignorespacesafterend
 }
 

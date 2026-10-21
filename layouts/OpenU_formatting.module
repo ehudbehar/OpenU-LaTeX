@@ -1,7 +1,7 @@
 #\DeclareLyXModule{OpenU Formatting}
 #\DeclareCategory{OpenUniversity}
 #DescriptionBegin
-#Includes commands and settings for the document layout. Author: Ehud Behar. Updated 2026-October-14
+#Includes commands and settings for the document layout. Author: Ehud Behar. Updated 2026-October-21
 #DescriptionEnd
 #Author: Ehud Behar
 
@@ -416,7 +416,7 @@ Float
 	AllowsSideways		0
 	AllowsWide		    0
 	Extension		      lof
-	NumberWithin		  chapter
+	NumberWithin		  none
 	Style			        plain
 	ListName		      "List of Figures"
 	ListCommand	    	listoffigures
@@ -426,28 +426,28 @@ Float
 End
 
 # Define a new environment `marginfigure*` for un-numbered figures (mainly portraits of people)
-OutlinerName marginfigure* "Margin Figures (unnumbered)"
 AddToPreamble
 \newenvironment{marginfigure*}[1][]
     {
+\edef\unnumbered*fig{\the\value{figure}}
 \marginfigure[#1]
 \selectlanguage{english}
 \captionsetup{labelformat=empty,justification=raggedright}
     }
     { 
-\addtocounter{figure}{-1}
+\setcounter{figure}{\unnumbered*fig}
 \endmarginfigure
     }
 EndPreamble
 
 Float
   Type              marginfigure*
-  GuiName	          marginFigure*
+  GuiName           "Margin Figure*"
   AllowedPlacement  none
   AllowsSideways    0
   AllowsWide        0
   Extension         lof
-  NumberWithin      chapter
+  NumberWithin      none
   Style             plain
   ListName          "List of Figures"
   ListCommand       listoffigures
@@ -455,6 +455,7 @@ Float
   IsPredefined      1
   UsesFloatPkg      false
 End
+OutlinerName marginfigure* "Margin Figures (unnumbered)"
 
 InsetLayout Flex:MarginNote
 	LyXType               custom
